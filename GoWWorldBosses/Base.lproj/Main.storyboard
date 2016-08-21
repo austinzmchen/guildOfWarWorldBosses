@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qsg-yQ-Hqg">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Main-->
+        <scene sceneID="ZEf-Ed-Trm">
+            <objects>
+                <viewController storyboardIdentifier="TripHistoryViewController" id="i3K-KC-L0H" userLabel="Main" customClass="WBMainViewController" customModule="GoWWorldBosses" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xeQ-Lf-6Xl"/>
+                        <viewControllerLayoutGuide type="bottom" id="K4M-M2-9QL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="T3l-of-Qug">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="115" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Sj2-Zd-APg">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="mainTableViewCell" id="uVv-WM-G6b" userLabel="tableViewCell" customClass="WBMainTableViewCell" customModule="GoWWorldBosses" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="115"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uVv-WM-G6b" id="beR-1z-S5Q">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="115"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Claw of Jormag" translatesAutoresizingMaskIntoConstraints="NO" id="qbJ-PM-HzZ" userLabel="bossImageView">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="114"/>
+                                                </imageView>
+                                                <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pwu-LB-iT5" userLabel="topHorizontalRule">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="1"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="5O8-Gh-MH5"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Claw of Jormag" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="37a-Or-YpF" userLabel="nameLabel">
+                                                    <rect key="frame" x="15" y="28" width="114" height="20"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Active" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6d0-tJ-8Ju" userLabel="countDownLabel">
+                                                    <rect key="frame" x="15" y="49" width="59" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                    <color key="textColor" red="0.45882352941176469" green="0.83921568627450982" blue="0.066666666666666666" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view alpha="0.10000000000000001" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Gf-8y-ea6" userLabel="separator">
+                                                    <rect key="frame" x="15" y="78" width="200" height="1"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="200" id="Gci-9u-GMJ"/>
+                                                        <constraint firstAttribute="height" constant="1" id="cbD-df-q6A"/>
+                                                    </constraints>
+                                                </view>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="clockIcon" translatesAutoresizingMaskIntoConstraints="NO" id="e6d-ce-NMg" userLabel="clockIcon">
+                                                    <rect key="frame" x="15" y="88" width="10" height="10"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="10" id="ba1-aj-55o"/>
+                                                        <constraint firstAttribute="width" constant="10" id="lhO-0L-Bui"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="1:30PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHq-bA-Waj" userLabel="spawnTimeLabel">
+                                                    <rect key="frame" x="33" y="86" width="43" height="15"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="0.55000000000000004" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unheartIcon" translatesAutoresizingMaskIntoConstraints="NO" id="wcn-6H-Bec">
+                                                    <rect key="frame" x="570" y="10" width="20" height="18"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="18" id="Fm7-ng-Z53"/>
+                                                        <constraint firstAttribute="width" constant="20" id="tBn-a1-hG1"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="wcn-6H-Bec" firstAttribute="top" secondItem="beR-1z-S5Q" secondAttribute="top" constant="10" id="5kn-ED-OiA"/>
+                                                <constraint firstAttribute="trailing" secondItem="qbJ-PM-HzZ" secondAttribute="trailing" id="8gm-X0-hWv"/>
+                                                <constraint firstItem="8Gf-8y-ea6" firstAttribute="bottom" secondItem="beR-1z-S5Q" secondAttribute="bottom" constant="-35" id="D8x-Jn-cb3"/>
+                                                <constraint firstItem="qbJ-PM-HzZ" firstAttribute="top" secondItem="beR-1z-S5Q" secondAttribute="top" id="Fsu-CY-TCP"/>
+                                                <constraint firstItem="ZHq-bA-Waj" firstAttribute="leading" secondItem="e6d-ce-NMg" secondAttribute="trailing" constant="8" id="GDE-bN-DeI"/>
+                                                <constraint firstItem="qbJ-PM-HzZ" firstAttribute="leading" secondItem="beR-1z-S5Q" secondAttribute="leading" id="SAl-1I-MIn"/>
+                                                <constraint firstItem="8Gf-8y-ea6" firstAttribute="leading" secondItem="37a-Or-YpF" secondAttribute="leading" id="SbL-FO-HcF"/>
+                                                <constraint firstItem="pwu-LB-iT5" firstAttribute="width" secondItem="beR-1z-S5Q" secondAttribute="width" id="TSo-yf-n9K"/>
+                                                <constraint firstItem="37a-Or-YpF" firstAttribute="leading" secondItem="beR-1z-S5Q" secondAttribute="leading" constant="15" id="U1T-3j-943"/>
+                                                <constraint firstItem="37a-Or-YpF" firstAttribute="top" secondItem="beR-1z-S5Q" secondAttribute="top" constant="28" id="UDf-MK-N9H"/>
+                                                <constraint firstAttribute="trailing" secondItem="wcn-6H-Bec" secondAttribute="trailing" constant="10" id="YDr-xh-CCB"/>
+                                                <constraint firstItem="pwu-LB-iT5" firstAttribute="leading" secondItem="beR-1z-S5Q" secondAttribute="leading" id="cWo-Kn-VoR"/>
+                                                <constraint firstItem="6d0-tJ-8Ju" firstAttribute="top" secondItem="37a-Or-YpF" secondAttribute="bottom" constant="1" id="e6w-Q5-RjH"/>
+                                                <constraint firstItem="8Gf-8y-ea6" firstAttribute="top" secondItem="e6d-ce-NMg" secondAttribute="bottom" constant="-20" id="g5V-IH-NhU"/>
+                                                <constraint firstItem="pwu-LB-iT5" firstAttribute="top" secondItem="beR-1z-S5Q" secondAttribute="top" id="hXe-Eh-vye"/>
+                                                <constraint firstItem="6d0-tJ-8Ju" firstAttribute="leading" secondItem="37a-Or-YpF" secondAttribute="leading" id="m0k-IC-j9d"/>
+                                                <constraint firstItem="e6d-ce-NMg" firstAttribute="leading" secondItem="8Gf-8y-ea6" secondAttribute="leading" id="o4a-Vv-FWD"/>
+                                                <constraint firstAttribute="bottom" secondItem="qbJ-PM-HzZ" secondAttribute="bottom" id="q2M-P4-ozy"/>
+                                                <constraint firstItem="ZHq-bA-Waj" firstAttribute="centerY" secondItem="e6d-ce-NMg" secondAttribute="centerY" id="xIO-yF-Wo3"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.74509803919999995" green="0.74509803919999995" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="bossImageView" destination="qbJ-PM-HzZ" id="MOh-If-DwG"/>
+                                            <outlet property="countDownLabel" destination="6d0-tJ-8Ju" id="NRb-gn-hNa"/>
+                                            <outlet property="favImageView" destination="wcn-6H-Bec" id="xud-cV-hcJ"/>
+                                            <outlet property="nameLabel" destination="37a-Or-YpF" id="UaZ-ma-JSp"/>
+                                            <outlet property="spawnTimeLabel" destination="ZHq-bA-Waj" id="s2p-QX-Krc"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.89411764709999997" green="0.91764705879999997" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Sj2-Zd-APg" firstAttribute="width" secondItem="T3l-of-Qug" secondAttribute="width" id="1EZ-zX-xCR"/>
+                            <constraint firstItem="Sj2-Zd-APg" firstAttribute="height" secondItem="T3l-of-Qug" secondAttribute="height" id="SGj-ng-TzB"/>
+                            <constraint firstItem="Sj2-Zd-APg" firstAttribute="centerX" secondItem="T3l-of-Qug" secondAttribute="centerX" id="g5z-6n-gfO"/>
+                            <constraint firstItem="Sj2-Zd-APg" firstAttribute="centerY" secondItem="T3l-of-Qug" secondAttribute="centerY" id="zUK-Mq-OCl"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="ijq-31-xpF"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="Sj2-Zd-APg" id="Tk4-wq-lsk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m2q-Zw-XUF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="332" y="382"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="AfT-6J-Wc4">
+            <objects>
+                <navigationController id="qsg-yQ-Hqg" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pl0-rj-jrU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="i3K-KC-L0H" kind="relationship" relationship="rootViewController" id="BtO-FP-FD1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oHY-5x-dGl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-387" y="382"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Claw of Jormag" width="750" height="230"/>
+        <image name="clockIcon" width="20" height="20"/>
+        <image name="unheartIcon" width="40" height="37"/>
+    </resources>
+</document>

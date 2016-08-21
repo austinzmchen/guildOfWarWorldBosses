@@ -1,0 +1,602 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		161DBD38910A1D608A170B8F /* Pods_GoWWorldBossesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EB20CCACEE9948E9477B6C9 /* Pods_GoWWorldBossesTests.framework */; };
+		C45B6C9E1D68BE5800F94060 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C45B6C9C1D68BE5800F94060 /* Main.storyboard */; };
+		C45B6CA11D68BE5800F94060 /* GoWWorldBosses.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C45B6C9F1D68BE5800F94060 /* GoWWorldBosses.xcdatamodeld */; };
+		C45B6CA31D68BE5800F94060 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C45B6CA21D68BE5800F94060 /* Assets.xcassets */; };
+		C45B6CA61D68BE5800F94060 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C45B6CA41D68BE5800F94060 /* LaunchScreen.storyboard */; };
+		C45B6CB11D68BE5900F94060 /* GoWWorldBossesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45B6CB01D68BE5900F94060 /* GoWWorldBossesTests.swift */; };
+		C4A781881D68CFB200786488 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A781821D68CFB200786488 /* AppDelegate.swift */; };
+		C4A781891D68CFB200786488 /* WBMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A781841D68CFB200786488 /* WBMainViewController.swift */; };
+		C4A7818A1D68CFB200786488 /* WBMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A781871D68CFB200786488 /* WBMainTableViewCell.swift */; };
+		C4A7818E1D6915E900786488 /* WBBossFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A7818D1D6915E900786488 /* WBBossFactory.swift */; };
+		C4A781901D69165B00786488 /* WBBoss.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A7818F1D69165B00786488 /* WBBoss.swift */; };
+		C4A781921D69227300786488 /* NSDate+Plus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A781911D69227300786488 /* NSDate+Plus.swift */; };
+		D8EDC5C29F28059ED1EE9EA5 /* Pods_GoWWorldBosses.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F55442F3DB8D49ACCDB9BF38 /* Pods_GoWWorldBosses.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C45B6CAD1D68BE5900F94060 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C45B6C8D1D68BE5800F94060 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C45B6C941D68BE5800F94060;
+			remoteInfo = GoWWorldBosses;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3865BF67528F5244C12D4F6D /* Pods-GoWWorldBossesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoWWorldBossesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoWWorldBossesTests/Pods-GoWWorldBossesTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7EB20CCACEE9948E9477B6C9 /* Pods_GoWWorldBossesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoWWorldBossesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9212AE45394A87BA0CC5B5F7 /* Pods-GoWWorldBosses.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoWWorldBosses.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoWWorldBosses/Pods-GoWWorldBosses.release.xcconfig"; sourceTree = "<group>"; };
+		C45B6C951D68BE5800F94060 /* GoWWorldBosses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoWWorldBosses.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C45B6C9D1D68BE5800F94060 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C45B6CA01D68BE5800F94060 /* GoWWorldBosses.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GoWWorldBosses.xcdatamodel; sourceTree = "<group>"; };
+		C45B6CA21D68BE5800F94060 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C45B6CA51D68BE5800F94060 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C45B6CA71D68BE5800F94060 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C45B6CAC1D68BE5900F94060 /* GoWWorldBossesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoWWorldBossesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C45B6CB01D68BE5900F94060 /* GoWWorldBossesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoWWorldBossesTests.swift; sourceTree = "<group>"; };
+		C45B6CB21D68BE5900F94060 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4A781821D68CFB200786488 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C4A781841D68CFB200786488 /* WBMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBMainViewController.swift; sourceTree = "<group>"; };
+		C4A781871D68CFB200786488 /* WBMainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBMainTableViewCell.swift; sourceTree = "<group>"; };
+		C4A7818D1D6915E900786488 /* WBBossFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBBossFactory.swift; sourceTree = "<group>"; };
+		C4A7818F1D69165B00786488 /* WBBoss.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBBoss.swift; sourceTree = "<group>"; };
+		C4A781911D69227300786488 /* NSDate+Plus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Plus.swift"; sourceTree = "<group>"; };
+		DBC9EA2A064114E4100C7FB1 /* Pods-GoWWorldBossesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoWWorldBossesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoWWorldBossesTests/Pods-GoWWorldBossesTests.release.xcconfig"; sourceTree = "<group>"; };
+		EA84700B364AA4445FA5CB07 /* Pods-GoWWorldBosses.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoWWorldBosses.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoWWorldBosses/Pods-GoWWorldBosses.debug.xcconfig"; sourceTree = "<group>"; };
+		F55442F3DB8D49ACCDB9BF38 /* Pods_GoWWorldBosses.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoWWorldBosses.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C45B6C921D68BE5800F94060 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8EDC5C29F28059ED1EE9EA5 /* Pods_GoWWorldBosses.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C45B6CA91D68BE5900F94060 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				161DBD38910A1D608A170B8F /* Pods_GoWWorldBossesTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C45B6C8C1D68BE5800F94060 = {
+			isa = PBXGroup;
+			children = (
+				C45B6C971D68BE5800F94060 /* GoWWorldBosses */,
+				C45B6CAF1D68BE5900F94060 /* GoWWorldBossesTests */,
+				C45B6C961D68BE5800F94060 /* Products */,
+				EA216089FBB4F8F0B269A8C9 /* Pods */,
+				D6F30776B3EBFC5A5699A11C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C45B6C961D68BE5800F94060 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C45B6C951D68BE5800F94060 /* GoWWorldBosses.app */,
+				C45B6CAC1D68BE5900F94060 /* GoWWorldBossesTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C45B6C971D68BE5800F94060 /* GoWWorldBosses */ = {
+			isa = PBXGroup;
+			children = (
+				C4A781821D68CFB200786488 /* AppDelegate.swift */,
+				C4A781831D68CFB200786488 /* ViewControllers */,
+				C4A781851D68CFB200786488 /* ViewModels */,
+				C4A781861D68CFB200786488 /* Views */,
+				C45B6C9C1D68BE5800F94060 /* Main.storyboard */,
+				C45B6CA21D68BE5800F94060 /* Assets.xcassets */,
+				C45B6CA41D68BE5800F94060 /* LaunchScreen.storyboard */,
+				C45B6CA71D68BE5800F94060 /* Info.plist */,
+				C45B6C9F1D68BE5800F94060 /* GoWWorldBosses.xcdatamodeld */,
+			);
+			path = GoWWorldBosses;
+			sourceTree = "<group>";
+		};
+		C45B6CAF1D68BE5900F94060 /* GoWWorldBossesTests */ = {
+			isa = PBXGroup;
+			children = (
+				C45B6CB01D68BE5900F94060 /* GoWWorldBossesTests.swift */,
+				C45B6CB21D68BE5900F94060 /* Info.plist */,
+			);
+			path = GoWWorldBossesTests;
+			sourceTree = "<group>";
+		};
+		C4A781831D68CFB200786488 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C4A781841D68CFB200786488 /* WBMainViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		C4A781851D68CFB200786488 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				C4A7818D1D6915E900786488 /* WBBossFactory.swift */,
+				C4A7818F1D69165B00786488 /* WBBoss.swift */,
+				C4A781911D69227300786488 /* NSDate+Plus.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		C4A781861D68CFB200786488 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C4A781871D68CFB200786488 /* WBMainTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D6F30776B3EBFC5A5699A11C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F55442F3DB8D49ACCDB9BF38 /* Pods_GoWWorldBosses.framework */,
+				7EB20CCACEE9948E9477B6C9 /* Pods_GoWWorldBossesTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EA216089FBB4F8F0B269A8C9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EA84700B364AA4445FA5CB07 /* Pods-GoWWorldBosses.debug.xcconfig */,
+				9212AE45394A87BA0CC5B5F7 /* Pods-GoWWorldBosses.release.xcconfig */,
+				3865BF67528F5244C12D4F6D /* Pods-GoWWorldBossesTests.debug.xcconfig */,
+				DBC9EA2A064114E4100C7FB1 /* Pods-GoWWorldBossesTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C45B6C941D68BE5800F94060 /* GoWWorldBosses */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C45B6CB51D68BE5900F94060 /* Build configuration list for PBXNativeTarget "GoWWorldBosses" */;
+			buildPhases = (
+				AFB8883A8513954F8306A5C0 /* [CP] Check Pods Manifest.lock */,
+				C45B6C911D68BE5800F94060 /* Sources */,
+				C45B6C921D68BE5800F94060 /* Frameworks */,
+				C45B6C931D68BE5800F94060 /* Resources */,
+				B1440FB1E09F8D8397E7F933 /* [CP] Embed Pods Frameworks */,
+				B0B0EDF9B1E08D019965315B /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GoWWorldBosses;
+			productName = GoWWorldBosses;
+			productReference = C45B6C951D68BE5800F94060 /* GoWWorldBosses.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C45B6CAB1D68BE5900F94060 /* GoWWorldBossesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C45B6CB81D68BE5900F94060 /* Build configuration list for PBXNativeTarget "GoWWorldBossesTests" */;
+			buildPhases = (
+				639A7AB10E16E8C7C7D6EE90 /* [CP] Check Pods Manifest.lock */,
+				C45B6CA81D68BE5900F94060 /* Sources */,
+				C45B6CA91D68BE5900F94060 /* Frameworks */,
+				C45B6CAA1D68BE5900F94060 /* Resources */,
+				A8D8E09158E85324B800214C /* [CP] Embed Pods Frameworks */,
+				75524C7920783D688D7F9CCB /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C45B6CAE1D68BE5900F94060 /* PBXTargetDependency */,
+			);
+			name = GoWWorldBossesTests;
+			productName = GoWWorldBossesTests;
+			productReference = C45B6CAC1D68BE5900F94060 /* GoWWorldBossesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C45B6C8D1D68BE5800F94060 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Austin Chen";
+				TargetAttributes = {
+					C45B6C941D68BE5800F94060 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					C45B6CAB1D68BE5900F94060 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = C45B6C941D68BE5800F94060;
+					};
+				};
+			};
+			buildConfigurationList = C45B6C901D68BE5800F94060 /* Build configuration list for PBXProject "GoWWorldBosses" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C45B6C8C1D68BE5800F94060;
+			productRefGroup = C45B6C961D68BE5800F94060 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C45B6C941D68BE5800F94060 /* GoWWorldBosses */,
+				C45B6CAB1D68BE5900F94060 /* GoWWorldBossesTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C45B6C931D68BE5800F94060 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C45B6CA61D68BE5800F94060 /* LaunchScreen.storyboard in Resources */,
+				C45B6CA31D68BE5800F94060 /* Assets.xcassets in Resources */,
+				C45B6C9E1D68BE5800F94060 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C45B6CAA1D68BE5900F94060 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		639A7AB10E16E8C7C7D6EE90 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		75524C7920783D688D7F9CCB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GoWWorldBossesTests/Pods-GoWWorldBossesTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A8D8E09158E85324B800214C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GoWWorldBossesTests/Pods-GoWWorldBossesTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AFB8883A8513954F8306A5C0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B0B0EDF9B1E08D019965315B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GoWWorldBosses/Pods-GoWWorldBosses-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B1440FB1E09F8D8397E7F933 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GoWWorldBosses/Pods-GoWWorldBosses-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C45B6C911D68BE5800F94060 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4A7818E1D6915E900786488 /* WBBossFactory.swift in Sources */,
+				C4A781881D68CFB200786488 /* AppDelegate.swift in Sources */,
+				C4A7818A1D68CFB200786488 /* WBMainTableViewCell.swift in Sources */,
+				C4A781921D69227300786488 /* NSDate+Plus.swift in Sources */,
+				C45B6CA11D68BE5800F94060 /* GoWWorldBosses.xcdatamodeld in Sources */,
+				C4A781891D68CFB200786488 /* WBMainViewController.swift in Sources */,
+				C4A781901D69165B00786488 /* WBBoss.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C45B6CA81D68BE5900F94060 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C45B6CB11D68BE5900F94060 /* GoWWorldBossesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C45B6CAE1D68BE5900F94060 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C45B6C941D68BE5800F94060 /* GoWWorldBosses */;
+			targetProxy = C45B6CAD1D68BE5900F94060 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C45B6C9C1D68BE5800F94060 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C45B6C9D1D68BE5800F94060 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C45B6CA41D68BE5800F94060 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C45B6CA51D68BE5800F94060 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C45B6CB31D68BE5900F94060 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C45B6CB41D68BE5900F94060 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C45B6CB61D68BE5900F94060 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA84700B364AA4445FA5CB07 /* Pods-GoWWorldBosses.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = GoWWorldBosses/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.accodeworks.GoWWorldBosses;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C45B6CB71D68BE5900F94060 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9212AE45394A87BA0CC5B5F7 /* Pods-GoWWorldBosses.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = GoWWorldBosses/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.accodeworks.GoWWorldBosses;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		C45B6CB91D68BE5900F94060 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3865BF67528F5244C12D4F6D /* Pods-GoWWorldBossesTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = GoWWorldBossesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.accodeworks.GoWWorldBossesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GoWWorldBosses.app/GoWWorldBosses";
+			};
+			name = Debug;
+		};
+		C45B6CBA1D68BE5900F94060 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DBC9EA2A064114E4100C7FB1 /* Pods-GoWWorldBossesTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = GoWWorldBossesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.accodeworks.GoWWorldBossesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GoWWorldBosses.app/GoWWorldBosses";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C45B6C901D68BE5800F94060 /* Build configuration list for PBXProject "GoWWorldBosses" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C45B6CB31D68BE5900F94060 /* Debug */,
+				C45B6CB41D68BE5900F94060 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C45B6CB51D68BE5900F94060 /* Build configuration list for PBXNativeTarget "GoWWorldBosses" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C45B6CB61D68BE5900F94060 /* Debug */,
+				C45B6CB71D68BE5900F94060 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C45B6CB81D68BE5900F94060 /* Build configuration list for PBXNativeTarget "GoWWorldBossesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C45B6CB91D68BE5900F94060 /* Debug */,
+				C45B6CBA1D68BE5900F94060 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C45B6C9F1D68BE5800F94060 /* GoWWorldBosses.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C45B6CA01D68BE5800F94060 /* GoWWorldBosses.xcdatamodel */,
+			);
+			currentVersion = C45B6CA01D68BE5800F94060 /* GoWWorldBosses.xcdatamodel */;
+			path = GoWWorldBosses.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = C45B6C8D1D68BE5800F94060 /* Project object */;
+}
