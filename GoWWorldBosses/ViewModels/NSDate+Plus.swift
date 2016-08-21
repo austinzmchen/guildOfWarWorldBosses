@@ -9,25 +9,20 @@
 import Foundation
 
 extension NSDate {
-    static func dateByHoursAndMinutes(hours hours:Int, minutes:Int) -> NSDate {
-        // Initialize Date components
-        let c = NSDateComponents()
-        c.year = 0
-        c.month = 0
-        c.day = 0
-        c.hour = hours
-        c.minute = minutes
-        c.second = 0
+    static func dateByHoursAndMinutes(hours hours:Int, minutes:Int, seconds: Int = 0) -> NSDate {
+        let d: NSDate = NSDate(timeIntervalSince1970: 0)
+        let cal: NSCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
         
-        // Get NSDate given the above date components
-        let date = NSCalendar(identifier: NSCalendarIdentifierGregorian)?.dateFromComponents(c)
-        return date!
+        let date: NSDate = cal.dateBySettingHour(hours, minute: minutes, second: seconds, ofDate: d, options: NSCalendarOptions())!
+        
+        return date
     }
     
     static var wbNow: NSDate {
         let now = NSDate()
         let hours = NSCalendar.currentCalendar().component(.Hour, fromDate: now)
         let minutes = NSCalendar.currentCalendar().component(.Minute, fromDate: now)
-        return NSDate.dateByHoursAndMinutes(hours:hours, minutes:minutes)
+        let seconds = NSCalendar.currentCalendar().component(.Second, fromDate: now)
+        return NSDate.dateByHoursAndMinutes(hours: hours, minutes: minutes, seconds: seconds)
     }
 }

@@ -35,7 +35,9 @@ class WBMainViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func timerFired() {
-        self.tableView.reloadData()
+        if let indexPaths = self.tableView.indexPathsForVisibleRows {
+            self.tableView.reloadRowsAtIndexPaths(indexPaths, withRowAnimation: .None)
+        }
     }
     
     
@@ -44,7 +46,7 @@ class WBMainViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return self.bosses.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -54,7 +56,19 @@ class WBMainViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.bossImageView.image = UIImage(named: boss.name)
         
         // set count down
-        cell.countDownLabel.text = boss.nextSpawnTimeCountDownStringFromDate(NSDate.wbNow)
+        if boss.isActive {
+            cell.countDownLabel.textColor = UIColor.redColor()
+            cell.countDownLabel.text = "ACTIVE"
+        } else {
+            let countDown = boss.nextSpawnTimeCountDown(NSDate.wbNow)
+            if countDown < 30 * 60 // under 30 minutes
+            {
+                cell.countDownLabel.textColor = UIColor.redColor()
+            } else {
+                cell.countDownLabel.textColor = UIColor(red: 117/255.0, green: 214/255.0, blue: 17/255.0, alpha: 1)
+            }
+            cell.countDownLabel.text = countDown.nextSpawnTimeCountDownStringFromDate()
+        }
         
         // set next spawn time
         cell.spawnTimeLabel.text = boss.nextSpawnTimeString
