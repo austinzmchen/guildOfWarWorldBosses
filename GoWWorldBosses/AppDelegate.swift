@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Fabric
+import Crashlytics
+
 import CoreData
 
 @UIApplicationMain
@@ -16,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        Fabric.with([Crashlytics.self])
+
         // Override point for customization after application launch.
         UIApplication.sharedApplication().setStatusBarStyle(.LightContent, animated: true)
         UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: .Fade)

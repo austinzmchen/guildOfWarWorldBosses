@@ -7,6 +7,9 @@ source 'https://github.com/CocoaPods/Specs.git'
 def addCommonDependancies
     # UI
     pod 'KYDrawerController'
+    
+    pod 'Fabric'
+    pod 'Crashlytics'
 end
 
 

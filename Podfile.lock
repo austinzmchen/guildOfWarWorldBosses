@@ -1,12 +1,19 @@
 PODS:
+  - Crashlytics (3.7.3):
+    - Fabric (~> 1.6.3)
+  - Fabric (1.6.8)
   - KYDrawerController (1.1.5)
 
 DEPENDENCIES:
+  - Crashlytics
+  - Fabric
   - KYDrawerController
 
 SPEC CHECKSUMS:
+  Crashlytics: 76f6beaff70acf226139582c09c78461597c2b98
+  Fabric: 5755268d0171435ab167e3d0878a28a777deaf10
   KYDrawerController: 98eb8f8c53164de1098b3ca5c6789f3d8aa86c3e
 
-PODFILE CHECKSUM: 7d3c2004f6a1bfe5ff26906cee61405b8a7e9b62
+PODFILE CHECKSUM: e0af56780dde53e61741f9a9178f46b07c057fd3
 
 COCOAPODS: 1.0.1

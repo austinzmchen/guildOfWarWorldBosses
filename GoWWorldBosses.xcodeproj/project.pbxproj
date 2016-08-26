@@ -180,6 +180,7 @@
 				C45B6C931D68BE5800F94060 /* Resources */,
 				B1440FB1E09F8D8397E7F933 /* [CP] Embed Pods Frameworks */,
 				B0B0EDF9B1E08D019965315B /* [CP] Copy Pods Resources */,
+				C446B4F91D6FBC1700975AAE /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -223,6 +224,7 @@
 				TargetAttributes = {
 					C45B6C941D68BE5800F94060 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = JF6RD64R9G;
 					};
 					C45B6CAB1D68BE5900F94060 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -359,6 +361,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GoWWorldBosses/Pods-GoWWorldBosses-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		C446B4F91D6FBC1700975AAE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 1f573285199355017945172de0ea6336f3c314fb daaada88e637b9d80914cea235f36892ef83e8b0e36ddb3b296eb1aec5a55467";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -506,10 +521,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Zhiming Chen (CZ737Y868M)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Zhiming Chen (CZ737Y868M)";
 				INFOPLIST_FILE = GoWWorldBosses/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.accodeworks.GoWWorldBosses;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -520,10 +538,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Zhiming Chen (CZ737Y868M)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Zhiming Chen (CZ737Y868M)";
 				INFOPLIST_FILE = GoWWorldBosses/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.accodeworks.GoWWorldBosses;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
