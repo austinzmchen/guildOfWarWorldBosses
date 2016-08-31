@@ -23,6 +23,7 @@ class WBBoss: NSObject {
         self.name = name
         self.firstSpawnTime = firstSpawnTime
         self.spawnPattern = spawnPattern
+        
     }
     
     var isActive: Bool {
@@ -41,12 +42,18 @@ class WBBoss: NSObject {
     
     var lastSpawnTime: NSDate? {
         var lst: NSDate? = nil
-        var dt = self.firstSpawnTime
-        while dt.compare(NSDate.wbNow) == .OrderedAscending {
-            lst = dt
-            dt = NSDate(timeInterval: Double(self.spawnPattern.rawValue), sinceDate: dt)
+        let interval = NSDate.wbNow.timeIntervalSinceDate(self.firstSpawnTime)
+        if interval > 0 {
+            let everyPatternHours = Int(interval) / self.spawnPattern.rawValue
+            lst = NSDate(timeInterval: Double(everyPatternHours * self.spawnPattern.rawValue), sinceDate: self.firstSpawnTime)
+        } else {
+            lst = self.firstSpawnTime
         }
-        return lst
+        
+        // return time in local time zone
+        let timeZoneoffset: Int = NSTimeZone.localTimeZone().secondsFromGMT
+        let d = NSDate(timeInterval: Double(timeZoneoffset), sinceDate: lst!)
+        return d
     }
     
     var nextSpawnTime: NSDate {
@@ -58,14 +65,18 @@ class WBBoss: NSObject {
     }
 }
 
+// global, to optimize
+let formatter = NSDateFormatter()
+func getFormatter() -> NSDateFormatter {
+    formatter.dateFormat = "hh:mma"
+    formatter.AMSymbol = "AM"
+    formatter.PMSymbol = "PM"
+    return formatter
+}
+
 extension WBBoss {
     var nextSpawnTimeString: String {
-        let formatter = NSDateFormatter()
-        formatter.dateFormat = "hh:mma"
-        formatter.AMSymbol = "AM"
-        formatter.PMSymbol = "PM"
-        
-        let dateString = formatter.stringFromDate(self.nextSpawnTime)
+        let dateString = getFormatter().stringFromDate(self.nextSpawnTime)
         return dateString
     }
     

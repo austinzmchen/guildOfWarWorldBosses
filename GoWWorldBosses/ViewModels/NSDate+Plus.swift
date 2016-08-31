@@ -19,7 +19,7 @@ extension NSDate {
     }
     
     static var wbNow: NSDate {
-        let now = NSDate()
+        let now = NSDate() // in utc timezone
         let hours = NSCalendar.currentCalendar().component(.Hour, fromDate: now)
         let minutes = NSCalendar.currentCalendar().component(.Minute, fromDate: now)
         let seconds = NSCalendar.currentCalendar().component(.Second, fromDate: now)

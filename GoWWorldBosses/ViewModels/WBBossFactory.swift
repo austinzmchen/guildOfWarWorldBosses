@@ -35,10 +35,39 @@ class WBBossFactory: NSObject {
         let m6 = WBBoss(name: "Claw of Jormag",
                         firstSpawnTime: NSDate.dateByHoursAndMinutes(hours: 2, minutes: 30), spawnPattern: .Pattern3hrs)
         
+        // high level bosses
+        let h1 = WBHighLevelBoss(name: "Tequatl The Sunless",
+                                 spawnTimes: [
+                                    NSDate.dateByHoursAndMinutes(hours: 0, minutes: 0),
+                                    NSDate.dateByHoursAndMinutes(hours: 3, minutes: 0),
+                                    NSDate.dateByHoursAndMinutes(hours: 7, minutes: 0),
+                                    NSDate.dateByHoursAndMinutes(hours: 11, minutes: 30),
+                                    NSDate.dateByHoursAndMinutes(hours: 16, minutes: 0),
+                                    NSDate.dateByHoursAndMinutes(hours: 19, minutes: 0)
+            ])
+        let h2 = WBHighLevelBoss(name: "Evolved Jungle Wurm",
+                                 spawnTimes: [
+                                    NSDate.dateByHoursAndMinutes(hours: 1, minutes: 0),
+                                    NSDate.dateByHoursAndMinutes(hours: 4, minutes: 0),
+                                    NSDate.dateByHoursAndMinutes(hours: 8, minutes: 0),
+                                    NSDate.dateByHoursAndMinutes(hours: 12, minutes: 30),
+                                    NSDate.dateByHoursAndMinutes(hours: 17, minutes: 0),
+                                    NSDate.dateByHoursAndMinutes(hours: 20, minutes: 0)
+            ])
+        let h3 = WBHighLevelBoss(name: "Karka Queen",
+                                 spawnTimes: [
+                                    NSDate.dateByHoursAndMinutes(hours: 2, minutes: 0),
+                                    NSDate.dateByHoursAndMinutes(hours: 6, minutes: 0),
+                                    NSDate.dateByHoursAndMinutes(hours: 10, minutes: 30),
+                                    NSDate.dateByHoursAndMinutes(hours: 15, minutes: 0),
+                                    NSDate.dateByHoursAndMinutes(hours: 18, minutes: 0),
+                                    NSDate.dateByHoursAndMinutes(hours: 23, minutes: 0)
+            ])
+        
         return [
             l1,l2,l3,l4,
-            m1,m2,m3,m4,m5,m6
-            
+            m1,m2,m3,m4,m5,m6,
+            h1,h2,h3
         ]
     }
     
