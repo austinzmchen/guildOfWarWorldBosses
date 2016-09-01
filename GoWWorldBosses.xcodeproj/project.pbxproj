@@ -173,9 +173,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C45B6C941D68BE5800F94060 /* GoWWorldBosses */ = {
+		C45B6C941D68BE5800F94060 /* My GW2 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C45B6CB51D68BE5900F94060 /* Build configuration list for PBXNativeTarget "GoWWorldBosses" */;
+			buildConfigurationList = C45B6CB51D68BE5900F94060 /* Build configuration list for PBXNativeTarget "My GW2" */;
 			buildPhases = (
 				AFB8883A8513954F8306A5C0 /* [CP] Check Pods Manifest.lock */,
 				C45B6C911D68BE5800F94060 /* Sources */,
@@ -189,7 +189,7 @@
 			);
 			dependencies = (
 			);
-			name = GoWWorldBosses;
+			name = "My GW2";
 			productName = GoWWorldBosses;
 			productReference = C45B6C951D68BE5800F94060 /* GoWWorldBosses.app */;
 			productType = "com.apple.product-type.application";
@@ -248,7 +248,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C45B6C941D68BE5800F94060 /* GoWWorldBosses */,
+				C45B6C941D68BE5800F94060 /* My GW2 */,
 				C45B6CAB1D68BE5900F94060 /* GoWWorldBossesTests */,
 			);
 		};
@@ -409,7 +409,7 @@
 /* Begin PBXTargetDependency section */
 		C45B6CAE1D68BE5900F94060 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C45B6C941D68BE5800F94060 /* GoWWorldBosses */;
+			target = C45B6C941D68BE5800F94060 /* My GW2 */;
 			targetProxy = C45B6CAD1D68BE5900F94060 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -590,7 +590,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C45B6CB51D68BE5900F94060 /* Build configuration list for PBXNativeTarget "GoWWorldBosses" */ = {
+		C45B6CB51D68BE5900F94060 /* Build configuration list for PBXNativeTarget "My GW2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C45B6CB61D68BE5900F94060 /* Debug */,

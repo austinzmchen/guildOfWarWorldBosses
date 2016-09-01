@@ -49,11 +49,11 @@ class WBBoss: NSObject {
         } else {
             lst = self.firstSpawnTime
         }
-        
-        // return time in local time zone
-        let timeZoneoffset: Int = NSTimeZone.localTimeZone().secondsFromGMT
-        let d = NSDate(timeInterval: Double(timeZoneoffset), sinceDate: lst!)
-        return d
+        return lst
+//        // return time in local time zone
+//        let timeZoneoffset: Int = NSTimeZone.localTimeZone().secondsFromGMT
+//        let d = NSDate(timeInterval: Double(timeZoneoffset), sinceDate: lst!)
+//        return d
     }
     
     var nextSpawnTime: NSDate {
