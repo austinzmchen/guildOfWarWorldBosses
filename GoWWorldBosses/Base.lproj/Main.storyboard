@@ -8,7 +8,7 @@
         <!--Main-->
         <scene sceneID="ZEf-Ed-Trm">
             <objects>
-                <viewController storyboardIdentifier="TripHistoryViewController" id="i3K-KC-L0H" userLabel="Main" customClass="WBMainViewController" customModule="GoWWorldBosses" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TripHistoryViewController" id="i3K-KC-L0H" userLabel="Main" customClass="WBMainViewController" customModule="My_GW2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xeQ-Lf-6Xl"/>
                         <viewControllerLayoutGuide type="bottom" id="K4M-M2-9QL"/>
@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="mainTableViewCell" id="uVv-WM-G6b" userLabel="tableViewCell" customClass="WBMainTableViewCell" customModule="GoWWorldBosses" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="mainTableViewCell" id="uVv-WM-G6b" userLabel="tableViewCell" customClass="WBMainTableViewCell" customModule="My_GW2" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="92" width="600" height="115"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uVv-WM-G6b" id="beR-1z-S5Q">
@@ -30,6 +30,7 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qbJ-PM-HzZ" userLabel="bossImageView">
                                                     <rect key="frame" x="0.0" y="0.0" width="600" height="115"/>
+                                                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 </imageView>
                                                 <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pwu-LB-iT5" userLabel="topHorizontalRule">
                                                     <rect key="frame" x="0.0" y="0.0" width="600" height="1"/>

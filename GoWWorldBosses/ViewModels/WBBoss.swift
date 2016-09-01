@@ -50,10 +50,6 @@ class WBBoss: NSObject {
             lst = self.firstSpawnTime
         }
         return lst
-//        // return time in local time zone
-//        let timeZoneoffset: Int = NSTimeZone.localTimeZone().secondsFromGMT
-//        let d = NSDate(timeInterval: Double(timeZoneoffset), sinceDate: lst!)
-//        return d
     }
     
     var nextSpawnTime: NSDate {
@@ -76,7 +72,11 @@ func getFormatter() -> NSDateFormatter {
 
 extension WBBoss {
     var nextSpawnTimeString: String {
-        let dateString = getFormatter().stringFromDate(self.nextSpawnTime)
+        // return time in local time zone
+        let timeZoneoffset: Int = NSTimeZone.localTimeZone().secondsFromGMT
+        let d = NSDate(timeInterval: Double(timeZoneoffset), sinceDate: self.nextSpawnTime)
+
+        let dateString = getFormatter().stringFromDate(d)
         return dateString
     }
     
