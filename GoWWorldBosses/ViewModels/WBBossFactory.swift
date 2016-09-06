@@ -13,55 +13,55 @@ class WBBossFactory: NSObject {
     static func creatBosses() -> [WBBoss] {
         // 2hrs
         let l1 = WBBoss(name: "Svanir Sharman Chief",
-                        firstSpawnTime: NSDate.dateByHoursAndMinutes(hours: 0, minutes: 15), spawnPattern: .Pattern2hrs)
+                        firstSpawnTime: (hours: 0, minutes: 15), spawnPattern: .Pattern2hrs)
         let l2 = WBBoss(name: "Fire Elemental",
-                        firstSpawnTime: NSDate.dateByHoursAndMinutes(hours: 0, minutes: 45), spawnPattern: .Pattern2hrs)
+                        firstSpawnTime: (hours: 0, minutes: 45), spawnPattern: .Pattern2hrs)
         let l3 = WBBoss(name: "Great Jungle Wurm",
-                        firstSpawnTime: NSDate.dateByHoursAndMinutes(hours: 1, minutes: 15), spawnPattern: .Pattern2hrs)
+                        firstSpawnTime: (hours: 1, minutes: 15), spawnPattern: .Pattern2hrs)
         let l4 = WBBoss(name: "Shadow Behemoth",
-                        firstSpawnTime: NSDate.dateByHoursAndMinutes(hours: 1, minutes: 45), spawnPattern: .Pattern2hrs)
+                        firstSpawnTime: (hours: 1, minutes: 45), spawnPattern: .Pattern2hrs)
         
         // 3hrs
         let m1 = WBBoss(name: "Admiral Taidha Covington",
-                        firstSpawnTime: NSDate.dateByHoursAndMinutes(hours: 0, minutes: 0), spawnPattern: .Pattern3hrs)
+                        firstSpawnTime: (hours: 0, minutes: 0), spawnPattern: .Pattern3hrs)
         let m2 = WBBoss(name: "Mega Destroyer",
-                        firstSpawnTime: NSDate.dateByHoursAndMinutes(hours: 0, minutes: 30), spawnPattern: .Pattern3hrs)
+                        firstSpawnTime: (hours: 0, minutes: 30), spawnPattern: .Pattern3hrs)
         let m3 = WBBoss(name: "The Shatterer",
-                        firstSpawnTime: NSDate.dateByHoursAndMinutes(hours: 1, minutes: 00), spawnPattern: .Pattern3hrs)
+                        firstSpawnTime: (hours: 1, minutes: 00), spawnPattern: .Pattern3hrs)
         let m4 = WBBoss(name: "Modniir Ulgoth",
-                        firstSpawnTime: NSDate.dateByHoursAndMinutes(hours: 1, minutes: 30), spawnPattern: .Pattern3hrs)
+                        firstSpawnTime: (hours: 1, minutes: 30), spawnPattern: .Pattern3hrs)
         let m5 = WBBoss(name: "Golem Mark II",
-                        firstSpawnTime: NSDate.dateByHoursAndMinutes(hours: 2, minutes: 00), spawnPattern: .Pattern3hrs)
+                        firstSpawnTime: (hours: 2, minutes: 00), spawnPattern: .Pattern3hrs)
         let m6 = WBBoss(name: "Claw of Jormag",
-                        firstSpawnTime: NSDate.dateByHoursAndMinutes(hours: 2, minutes: 30), spawnPattern: .Pattern3hrs)
+                        firstSpawnTime: (hours: 2, minutes: 30), spawnPattern: .Pattern3hrs)
         
         // high level bosses
         let h1 = WBHighLevelBoss(name: "Tequatl The Sunless",
                                  spawnTimes: [
-                                    NSDate.dateByHoursAndMinutes(hours: 0, minutes: 0),
-                                    NSDate.dateByHoursAndMinutes(hours: 3, minutes: 0),
-                                    NSDate.dateByHoursAndMinutes(hours: 7, minutes: 0),
-                                    NSDate.dateByHoursAndMinutes(hours: 11, minutes: 30),
-                                    NSDate.dateByHoursAndMinutes(hours: 16, minutes: 0),
-                                    NSDate.dateByHoursAndMinutes(hours: 19, minutes: 0)
+                                    (hours: 0, minutes: 0),
+                                    (hours: 3, minutes: 0),
+                                    (hours: 7, minutes: 0),
+                                    (hours: 11, minutes: 30),
+                                    (hours: 16, minutes: 0),
+                                    (hours: 19, minutes: 0)
             ])
         let h2 = WBHighLevelBoss(name: "Evolved Jungle Wurm",
                                  spawnTimes: [
-                                    NSDate.dateByHoursAndMinutes(hours: 1, minutes: 0),
-                                    NSDate.dateByHoursAndMinutes(hours: 4, minutes: 0),
-                                    NSDate.dateByHoursAndMinutes(hours: 8, minutes: 0),
-                                    NSDate.dateByHoursAndMinutes(hours: 12, minutes: 30),
-                                    NSDate.dateByHoursAndMinutes(hours: 17, minutes: 0),
-                                    NSDate.dateByHoursAndMinutes(hours: 20, minutes: 0)
+                                    (hours: 1, minutes: 0),
+                                    (hours: 4, minutes: 0),
+                                    (hours: 8, minutes: 0),
+                                    (hours: 12, minutes: 30),
+                                    (hours: 17, minutes: 0),
+                                    (hours: 20, minutes: 0)
             ])
         let h3 = WBHighLevelBoss(name: "Karka Queen",
                                  spawnTimes: [
-                                    NSDate.dateByHoursAndMinutes(hours: 2, minutes: 0),
-                                    NSDate.dateByHoursAndMinutes(hours: 6, minutes: 0),
-                                    NSDate.dateByHoursAndMinutes(hours: 10, minutes: 30),
-                                    NSDate.dateByHoursAndMinutes(hours: 15, minutes: 0),
-                                    NSDate.dateByHoursAndMinutes(hours: 18, minutes: 0),
-                                    NSDate.dateByHoursAndMinutes(hours: 23, minutes: 0)
+                                    (hours: 2, minutes: 0),
+                                    (hours: 6, minutes: 0),
+                                    (hours: 10, minutes: 30),
+                                    (hours: 15, minutes: 0),
+                                    (hours: 18, minutes: 0),
+                                    (hours: 23, minutes: 0)
             ])
         
         return [

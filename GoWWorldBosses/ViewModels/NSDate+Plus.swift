@@ -8,6 +8,11 @@
 
 import Foundation
 
+let wb1Minute: Int = 60
+let wb15Minutes: Int = 15 * 60
+let wb1Hour: Int = 60 * 60
+let wb1Day: Int = wb1Hour * 24
+
 extension NSDate {
     static func dateByHoursAndMinutes(hours hours:Int, minutes:Int, seconds: Int = 0) -> NSDate {
         let d: NSDate = NSDate(timeIntervalSince1970: 0)
@@ -18,11 +23,11 @@ extension NSDate {
         return date
     }
     
-    static var wbNow: NSDate {
+    static var wbNow: Int {
         let now = NSDate() // in utc timezone
         let hours = NSCalendar.currentCalendar().component(.Hour, fromDate: now)
         let minutes = NSCalendar.currentCalendar().component(.Minute, fromDate: now)
         let seconds = NSCalendar.currentCalendar().component(.Second, fromDate: now)
-        return NSDate.dateByHoursAndMinutes(hours: hours, minutes: minutes, seconds: seconds)
+        return (hours * wb1Hour + minutes * wb1Minute + seconds)
     }
 }

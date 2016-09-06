@@ -14,75 +14,76 @@ enum WBBossSpawnPattern: Int {
     case PatternIrregular = -1
 }
 
-class WBBoss: NSObject {
+protocol WBBossProtocol {
+    var isActive: Bool {get}
+    var latestSpawnTime: Int? {get}
+    var nextSpawnTime: Int {get}
+    func update(wbNow: Int)
+}
+
+class WBBoss: NSObject, WBBossProtocol {
     let name: String
-    let firstSpawnTime: NSDate
+    let firstSpawnTime: Int
     let spawnPattern: WBBossSpawnPattern
-    
-    init(name: String, firstSpawnTime: NSDate, spawnPattern: WBBossSpawnPattern) {
+    var _latestSpawnTime: Int?
+     
+    init(name: String, firstSpawnTime: (hours: Int, minutes: Int), spawnPattern: WBBossSpawnPattern) {
         self.name = name
-        self.firstSpawnTime = firstSpawnTime
+        self.firstSpawnTime = (firstSpawnTime.hours * wb1Hour + firstSpawnTime.minutes * wb1Minute)
         self.spawnPattern = spawnPattern
-        
+    }
+    
+    var latestSpawnTime: Int? {
+        return _latestSpawnTime
     }
     
     var isActive: Bool {
-        if let lst = lastSpawnTime {
-            let seconds = NSDate.wbNow.timeIntervalSinceDate(lst)
-            if seconds < 15 * 60 // 15 minutes 
-            {
-                return true
-            } else {
-                return false
-            }
+        if let l = self.latestSpawnTime where NSDate.wbNow < l + wb15Minutes {
+            return true
         } else {
             return false
         }
     }
-    
-    var lastSpawnTime: NSDate? {
-        var lst: NSDate? = nil
-        let interval = NSDate.wbNow.timeIntervalSinceDate(self.firstSpawnTime)
-        if interval > 0 {
-            let everyPatternHours = Int(interval) / self.spawnPattern.rawValue
-            lst = NSDate(timeInterval: Double(everyPatternHours * self.spawnPattern.rawValue), sinceDate: self.firstSpawnTime)
-        } else {
-            lst = self.firstSpawnTime
-        }
-        return lst
-    }
-    
-    var nextSpawnTime: NSDate {
-        if let lst = lastSpawnTime {
-            return NSDate(timeInterval: Double(self.spawnPattern.rawValue), sinceDate: lst)
+
+    var nextSpawnTime: Int {
+        if let l = self.latestSpawnTime {
+            return l + spawnPattern.rawValue
         } else {
             return self.firstSpawnTime
         }
     }
-}
-
-// global, to optimize
-let formatter = NSDateFormatter()
-func getFormatter() -> NSDateFormatter {
-    formatter.dateFormat = "hh:mma"
-    formatter.AMSymbol = "AM"
-    formatter.PMSymbol = "PM"
-    return formatter
+    
+    func update(wbNow: Int) {
+        if wbNow >= self.firstSpawnTime {
+            let spawnIndex = (wbNow - self.firstSpawnTime) / self.spawnPattern.rawValue
+            _latestSpawnTime = self.firstSpawnTime + spawnIndex * self.spawnPattern.rawValue
+        }
+    }
 }
 
 extension WBBoss {
     var nextSpawnTimeString: String {
-        // return time in local time zone
-        let timeZoneoffset: Int = NSTimeZone.localTimeZone().secondsFromGMT
-        let d = NSDate(timeInterval: Double(timeZoneoffset), sinceDate: self.nextSpawnTime)
-
-        let dateString = getFormatter().stringFromDate(d)
-        return dateString
+        let seconds = nextSpawnTime % 60
+        let minutes = (nextSpawnTime / 60) % 60
+        let hours = nextSpawnTime / (60 * 60)
+        var string = ""
+        if hours > 0 {
+            string = String(format: "%d:%02d:%02d", hours, minutes, seconds) //"\(hours):\(minutes):\(seconds)"
+        } else {
+            string = String(format: "%02d:%02d", minutes, seconds) // "\(minutes):\(seconds)"
+        }
+        
+        let postFix: String
+        if nextSpawnTime < 12 * wb1Hour {
+            postFix = " AM"
+        } else {
+            postFix = " PM"
+        }
+        return string + postFix
     }
     
-    func nextSpawnTimeCountDown(currentDate: NSDate) -> Int {
-        let totalSeconds: Int = Int(self.nextSpawnTime.timeIntervalSinceDate(currentDate))
-        return totalSeconds
+    func secondsTilNextSpawnTime() -> Int {
+        return self.nextSpawnTime - NSDate.wbNow
     }
 }
 

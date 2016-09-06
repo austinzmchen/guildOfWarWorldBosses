@@ -32,50 +32,51 @@ class WBMainViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         // set up timer
         self.timer1 = NSTimer(timeInterval: 0.9, target: self, selector: #selector(timerFiredPerSecond), userInfo: nil, repeats: true)
-        self.timer2 = NSTimer(timeInterval: 59, target: self, selector: #selector(timerFiredPerMinute), userInfo: nil, repeats: true)
         NSRunLoop.currentRunLoop().addTimer(self.timer1!, forMode: NSRunLoopCommonModes)
-        NSRunLoop.currentRunLoop().addTimer(self.timer2!, forMode: NSRunLoopCommonModes)
+        
+        self.updateBosses()
+        
+        // sorting
+        let n = NSDate.wbNow
+        self.bosses.sortInPlace{
+            if $0.isActive != $1.isActive { // when one of them is not active
+                return Int($0.isActive) > Int($1.isActive)
+            } else {
+                if $0.isActive == true,
+                    let lst1 = $0.latestSpawnTime,
+                    let lst2 = $1.latestSpawnTime {
+                    return n - lst1 > n - lst2
+                } else {
+                    return $0.secondsTilNextSpawnTime() < $1.secondsTilNextSpawnTime()
+                }
+            }
+        }
+    }
+    
+    func updateBosses() {
+        let n = NSDate.wbNow
+        for boss in bosses {
+            boss.update(n)
+        }
     }
     
     func timerFiredPerSecond() {
-        if let indexPaths = self.tableView.indexPathsForVisibleRows {
-            // self.tableView.reloadRowsAtIndexPaths(indexPaths, withRowAnimation: .None)
-            for ip in indexPaths {
-                let boss = self.bosses[ip.row]
-                // set count down
-                let cell = self.tableView.cellForRowAtIndexPath(ip) as! WBMainTableViewCell
-                if boss.isActive {
-                    cell.countDownLabel.textColor = UIColor(red: 117/255.0, green: 214/255.0, blue: 17/255.0, alpha: 1)
-                    cell.countDownLabel.text = "ACTIVE"
-                } else {
-                    let countDown = boss.nextSpawnTimeCountDown(NSDate.wbNow)
-                    if countDown < 15 * 60 // under 15 minutes
-                    {
-                        cell.countDownLabel.textColor = UIColor.redColor()
-                    } else {
-                        cell.countDownLabel.textColor = UIColor.whiteColor()
-                    }
-                    cell.countDownLabel.text = countDown.nextSpawnTimeCountDownStringFromDate()
-                }
-                cell.countDownLabel.setNeedsLayout()
+        if let l = self.bosses[0].latestSpawnTime where NSDate.wbNow > l + wb15Minutes {
+            let boss = self.bosses [0]
+            self.bosses.removeFirst()
+            self.bosses.append(boss)
+            
+            self.tableView.beginUpdates()
+            self.tableView.deleteRowsAtIndexPaths([NSIndexPath(forRow: 0, inSection: 0)], withRowAnimation: .Top)
+            self.tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: self.bosses.count - 1, inSection: 0)], withRowAnimation: .Bottom)
+            self.tableView.endUpdates()
+        } else {
+            if let indexPaths = self.tableView.indexPathsForVisibleRows {
+                self.updateBosses()
+                self.tableView.reloadRowsAtIndexPaths(indexPaths, withRowAnimation: .None)
             }
         }
     }
-    
-    func timerFiredPerMinute() {
-        if let indexPaths = self.tableView.indexPathsForVisibleRows {
-            for ip in indexPaths {
-                let boss = self.bosses[ip.row]
-                // set count down
-                let cell = self.tableView.cellForRowAtIndexPath(ip) as! WBMainTableViewCell
-                
-                // set next spawn time
-                cell.spawnTimeLabel.text = boss.nextSpawnTimeString
-                cell.spawnTimeLabel.setNeedsLayout()
-            }
-        }
-    }
-    
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -101,7 +102,7 @@ class WBMainViewController: UIViewController, UITableViewDelegate, UITableViewDa
             cell.countDownLabel.textColor = UIColor(red: 117/255.0, green: 214/255.0, blue: 17/255.0, alpha: 1)
             cell.countDownLabel.text = "ACTIVE"
         } else {
-            let countDown = boss.nextSpawnTimeCountDown(NSDate.wbNow)
+            let countDown = boss.secondsTilNextSpawnTime()
             if countDown < 15 * 60 // under 15 minutes
             {
                 cell.countDownLabel.textColor = UIColor.redColor()
