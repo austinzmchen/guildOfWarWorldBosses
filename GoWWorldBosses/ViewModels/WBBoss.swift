@@ -63,18 +63,14 @@ class WBBoss: NSObject, WBBossProtocol {
 
 extension WBBoss {
     var nextSpawnTimeString: String {
-        let seconds = nextSpawnTime % 60
-        let minutes = (nextSpawnTime / 60) % 60
-        let hours = nextSpawnTime / (60 * 60)
-        var string = ""
-        if hours > 0 {
-            string = String(format: "%d:%02d:%02d", hours, minutes, seconds) //"\(hours):\(minutes):\(seconds)"
-        } else {
-            string = String(format: "%02d:%02d", minutes, seconds) // "\(minutes):\(seconds)"
-        }
+        let nst = self.nextSpawnTime % wb1Day
+        let seconds = nst % 60
+        let minutes = (nst / 60) % 60
+        let hours = nst / (60 * 60)
+        let string = String(format: "%d:%02d:%02d", hours, minutes, seconds) //"\(hours):\(minutes):\(seconds)"
         
         let postFix: String
-        if nextSpawnTime < 12 * wb1Hour {
+        if nst < 12 * wb1Hour {
             postFix = " AM"
         } else {
             postFix = " PM"
