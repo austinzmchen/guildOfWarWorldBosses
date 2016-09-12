@@ -25,6 +25,7 @@ class WBBoss: NSObject, WBBossProtocol {
     let name: String
     let firstSpawnTime: Int
     let spawnPattern: WBBossSpawnPattern
+    var faved: Bool = false
     var _latestSpawnTime: Int?
      
     init(name: String, firstSpawnTime: (hours: Int, minutes: Int), spawnPattern: WBBossSpawnPattern) {
@@ -54,7 +55,11 @@ class WBBoss: NSObject, WBBossProtocol {
     }
     
     func update(wbNow: Int) {
-        if wbNow >= self.firstSpawnTime {
+        if wbNow < self.firstSpawnTime {
+            if _latestSpawnTime != nil {
+                _latestSpawnTime = self.firstSpawnTime + wb1Day - self.spawnPattern.rawValue
+            }
+        } else {
             let spawnIndex = (wbNow - self.firstSpawnTime) / self.spawnPattern.rawValue
             _latestSpawnTime = self.firstSpawnTime + spawnIndex * self.spawnPattern.rawValue
         }
@@ -67,7 +72,7 @@ extension WBBoss {
         let seconds = nst % 60
         let minutes = (nst / 60) % 60
         let hours = nst / (60 * 60)
-        let string = String(format: "%d:%02d:%02d", hours, minutes, seconds) //"\(hours):\(minutes):\(seconds)"
+        let string = String(format: "%d:%02d:%02d", hours, minutes, seconds) // "\(hours):\(minutes):\(seconds)"
         
         let postFix: String
         if nst < 12 * wb1Hour {

@@ -61,8 +61,10 @@ class WBMainViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func timerFiredPerSecond() {
-        if let l = self.bosses[0].latestSpawnTime where NSDate.wbNow > l + wb15Minutes {
-            let boss = self.bosses [0]
+        if let l = self.bosses[0].latestSpawnTime
+            where NSDate.wbNow > l + wb15Minutes
+        { // boss is active, and it is over spawn time for 15 mins
+            let boss = self.bosses[0]
             self.bosses.removeFirst()
             self.bosses.append(boss)
             
@@ -70,11 +72,11 @@ class WBMainViewController: UIViewController, UITableViewDelegate, UITableViewDa
             self.tableView.deleteRowsAtIndexPaths([NSIndexPath(forRow: 0, inSection: 0)], withRowAnimation: .Top)
             self.tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: self.bosses.count - 1, inSection: 0)], withRowAnimation: .Bottom)
             self.tableView.endUpdates()
-        } else {
-            if let indexPaths = self.tableView.indexPathsForVisibleRows {
-                self.updateBosses()
-                self.tableView.reloadRowsAtIndexPaths(indexPaths, withRowAnimation: .None)
-            }
+        }
+        
+        if let indexPaths = self.tableView.indexPathsForVisibleRows {
+            self.updateBosses()
+            self.tableView.reloadRowsAtIndexPaths(indexPaths, withRowAnimation: .None)
         }
     }
     
@@ -96,6 +98,8 @@ class WBMainViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let cell = cell as! WBMainTableViewCell
         cell.nameLabel.text = boss.name
         cell.bossImageView.image = UIImage(named: boss.name)
+        cell.favButton.selected = boss.faved
+        cell.delegate = self
         
         // set count down
         if boss.isActive {
@@ -119,3 +123,51 @@ class WBMainViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
 }
 
+
+let kLocalNotificationBossName = "kLocalNotificationUserBossName"
+
+extension WBMainViewController: WBMainTableViewCellDelegate {
+    func selectFavorite(isSelected selected: Bool, forBoss boss: String) {
+        if let index = self.bosses.map({$0.name}).indexOf(boss) {
+            print(index)
+            let boss = self.bosses[index]
+            boss.faved = selected
+            
+            if selected {
+                createNotification(alertBody: String(format: "%@ is becoming active!", boss.name),
+                                   bossName: boss.name, fireDateCountDown: boss.secondsTilNextSpawnTime())
+            } else {
+                cancelNotification(byBossName: boss.name)
+            }
+        }
+    }
+    
+    func createNotification(alertBody alertBody: String, bossName: String, fireDateCountDown: Int) {
+        let notification = UILocalNotification()
+        notification.fireDate = NSDate(timeIntervalSinceNow: Double(fireDateCountDown))
+        notification.alertBody = alertBody
+        notification.alertAction = "OK"
+        notification.soundName = UILocalNotificationDefaultSoundName
+        notification.userInfo = [kLocalNotificationBossName: bossName]
+        UIApplication.sharedApplication().scheduleLocalNotification(notification)
+    }
+    
+    func cancelNotification(byBossName bossName: String) {
+        for oneEvent in UIApplication.sharedApplication().scheduledLocalNotifications ?? [] {
+            guard let notification = oneEvent as? UILocalNotification else {
+                break
+            }
+            guard let userInfo = notification.userInfo,
+                let bName = userInfo[kLocalNotificationBossName] as? String else {
+                break
+            }
+            
+            if bName == bossName {
+                UIApplication.sharedApplication().cancelLocalNotification(notification)
+                return
+            }
+        }
+    }
+}
+
+ 
