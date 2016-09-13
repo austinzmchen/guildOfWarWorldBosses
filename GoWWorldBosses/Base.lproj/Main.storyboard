@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Main-->
@@ -32,13 +33,6 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="600" height="115"/>
                                                     <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 </imageView>
-                                                <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pwu-LB-iT5" userLabel="topHorizontalRule">
-                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="1"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="1" id="5O8-Gh-MH5"/>
-                                                    </constraints>
-                                                </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Claw of Jormag" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="37a-Or-YpF" userLabel="nameLabel">
                                                     <rect key="frame" x="15" y="28" width="114" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -81,22 +75,26 @@
                                                     <state key="normal" image="unheartIcon"/>
                                                     <state key="selected" image="heartIcon"/>
                                                 </button>
+                                                <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heartIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Mfe-Fy-7kJ" userLabel="favAnimImageView">
+                                                    <rect key="frame" x="579" y="18" width="2" height="2"/>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="Mfe-Fy-7kJ" firstAttribute="width" secondItem="aNF-Ed-OXi" secondAttribute="width" multiplier="0.1" id="8Pg-e2-EaB"/>
                                                 <constraint firstAttribute="trailing" secondItem="qbJ-PM-HzZ" secondAttribute="trailing" id="8gm-X0-hWv"/>
+                                                <constraint firstItem="Mfe-Fy-7kJ" firstAttribute="height" secondItem="aNF-Ed-OXi" secondAttribute="height" multiplier="0.1" id="APV-po-szF"/>
                                                 <constraint firstItem="8Gf-8y-ea6" firstAttribute="bottom" secondItem="beR-1z-S5Q" secondAttribute="bottom" constant="-35" id="D8x-Jn-cb3"/>
                                                 <constraint firstItem="qbJ-PM-HzZ" firstAttribute="top" secondItem="beR-1z-S5Q" secondAttribute="top" id="Fsu-CY-TCP"/>
                                                 <constraint firstItem="ZHq-bA-Waj" firstAttribute="leading" secondItem="e6d-ce-NMg" secondAttribute="trailing" constant="8" id="GDE-bN-DeI"/>
+                                                <constraint firstItem="Mfe-Fy-7kJ" firstAttribute="centerY" secondItem="aNF-Ed-OXi" secondAttribute="centerY" id="LUx-dM-zd9"/>
                                                 <constraint firstItem="qbJ-PM-HzZ" firstAttribute="leading" secondItem="beR-1z-S5Q" secondAttribute="leading" id="SAl-1I-MIn"/>
                                                 <constraint firstItem="8Gf-8y-ea6" firstAttribute="leading" secondItem="37a-Or-YpF" secondAttribute="leading" id="SbL-FO-HcF"/>
-                                                <constraint firstItem="pwu-LB-iT5" firstAttribute="width" secondItem="beR-1z-S5Q" secondAttribute="width" id="TSo-yf-n9K"/>
+                                                <constraint firstItem="Mfe-Fy-7kJ" firstAttribute="centerX" secondItem="aNF-Ed-OXi" secondAttribute="centerX" id="TmJ-f7-BS4"/>
                                                 <constraint firstItem="37a-Or-YpF" firstAttribute="leading" secondItem="beR-1z-S5Q" secondAttribute="leading" constant="15" id="U1T-3j-943"/>
                                                 <constraint firstItem="37a-Or-YpF" firstAttribute="top" secondItem="beR-1z-S5Q" secondAttribute="top" constant="28" id="UDf-MK-N9H"/>
                                                 <constraint firstItem="aNF-Ed-OXi" firstAttribute="top" secondItem="qbJ-PM-HzZ" secondAttribute="top" constant="10" id="Vlj-9C-HmI"/>
-                                                <constraint firstItem="pwu-LB-iT5" firstAttribute="leading" secondItem="beR-1z-S5Q" secondAttribute="leading" id="cWo-Kn-VoR"/>
                                                 <constraint firstItem="6d0-tJ-8Ju" firstAttribute="top" secondItem="37a-Or-YpF" secondAttribute="bottom" constant="1" id="e6w-Q5-RjH"/>
                                                 <constraint firstItem="8Gf-8y-ea6" firstAttribute="top" secondItem="e6d-ce-NMg" secondAttribute="bottom" constant="-20" id="g5V-IH-NhU"/>
-                                                <constraint firstItem="pwu-LB-iT5" firstAttribute="top" secondItem="beR-1z-S5Q" secondAttribute="top" id="hXe-Eh-vye"/>
                                                 <constraint firstItem="6d0-tJ-8Ju" firstAttribute="leading" secondItem="37a-Or-YpF" secondAttribute="leading" id="m0k-IC-j9d"/>
                                                 <constraint firstItem="aNF-Ed-OXi" firstAttribute="trailing" secondItem="qbJ-PM-HzZ" secondAttribute="trailing" constant="-10" id="nsg-uo-BkO"/>
                                                 <constraint firstItem="e6d-ce-NMg" firstAttribute="leading" secondItem="8Gf-8y-ea6" secondAttribute="leading" id="o4a-Vv-FWD"/>
@@ -107,6 +105,7 @@
                                         <connections>
                                             <outlet property="bossImageView" destination="qbJ-PM-HzZ" id="MOh-If-DwG"/>
                                             <outlet property="countDownLabel" destination="6d0-tJ-8Ju" id="NRb-gn-hNa"/>
+                                            <outlet property="favAnimImageView" destination="Mfe-Fy-7kJ" id="49S-sr-ZwT"/>
                                             <outlet property="favButton" destination="aNF-Ed-OXi" id="34A-4j-e3E"/>
                                             <outlet property="nameLabel" destination="37a-Or-YpF" id="UaZ-ma-JSp"/>
                                             <outlet property="spawnTimeLabel" destination="ZHq-bA-Waj" id="s2p-QX-Krc"/>

@@ -21,6 +21,11 @@ protocol WBBossProtocol {
     func update(wbNow: Int)
 }
 
+protocol WBBossLocalNotificationProtocol {
+    func createNotification(alertBody alertBody: String)
+    func cancelNotification()
+}
+
 class WBBoss: NSObject, WBBossProtocol {
     let name: String
     let firstSpawnTime: Int
@@ -69,6 +74,42 @@ class WBBoss: NSObject, WBBossProtocol {
     }
 }
 
+import UIKit
+
+extension WBBoss: WBBossLocalNotificationProtocol {
+    func createNotification(alertBody alertBody: String) {
+        let notification = UILocalNotification()
+        notification.repeatInterval = .Day
+        notification.alertBody = alertBody
+        notification.alertAction = "OK"
+        notification.soundName = UILocalNotificationDefaultSoundName
+        notification.userInfo = [kLocalNotificationBossName: self.name]
+        
+        let num = wb1Day / self.spawnPattern.rawValue
+        var i = 0
+        while i < num {
+            let sinceNow: Int = self.secondsTilNextSpawnTime() + i * self.spawnPattern.rawValue
+            notification.fireDate = NSDate(timeIntervalSinceNow: Double(sinceNow))
+            UIApplication.sharedApplication().scheduleLocalNotification(notification)
+            i += 1
+        }
+    }
+    
+    func cancelNotification() {
+        for notification in UIApplication.sharedApplication().scheduledLocalNotifications ?? [] {
+            guard let userInfo = notification.userInfo,
+                let bName = userInfo[kLocalNotificationBossName] as? String else {
+                    break
+            }
+            print(bName)
+            if bName == self.name {
+                UIApplication.sharedApplication().cancelLocalNotification(notification)
+                return
+            }
+        }
+    }
+}
+
 extension WBBoss {
     var nextSpawnTimeString: String {
         let nst = self.nextSpawnTime % wb1Day
@@ -83,7 +124,7 @@ extension WBBoss {
         } else {
             postFix = " PM"
         }
-        return string + postFix
+        return string// + postFix
     }
     
     func secondsTilNextSpawnTime() -> Int {

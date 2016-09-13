@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WBMainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class WBMainViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var bosses: [WBBoss] = WBBossFactory.creatBosses()
     var timer1: NSTimer?
@@ -88,30 +88,16 @@ class WBMainViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         if let indexPaths = self.tableView.indexPathsForVisibleRows {
             self.updateBosses()
-            self.tableView.reloadRowsAtIndexPaths(indexPaths, withRowAnimation: .None)
+            for indexPath in indexPaths {
+                let cell = tableView.cellForRowAtIndexPath(indexPath) as! WBMainTableViewCell
+                self.updateCell(cell, atIndexPath: indexPath)
+            }
+//            self.tableView.reloadRowsAtIndexPaths(indexPaths, withRowAnimation: .None)
         }
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.bosses.count
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("mainTableViewCell", forIndexPath: indexPath)
-        return cell
-    }
-    
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    func updateCell(cell:WBMainTableViewCell, atIndexPath indexPath:NSIndexPath) {
         let boss = self.bosses[indexPath.row]
-        let cell = cell as! WBMainTableViewCell
-        cell.nameLabel.text = boss.name
-        cell.bossImageView.image = UIImage(named: boss.name)
-        cell.favButton.selected = boss.faved
-        cell.delegate = self
         
         // set count down
         if boss.isActive {
@@ -132,52 +118,48 @@ class WBMainViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // set next spawn time
         cell.spawnTimeLabel.text = boss.nextSpawnTimeString
     }
-    
 }
 
+extension WBMainViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.bosses.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("mainTableViewCell", forIndexPath: indexPath)
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        let boss = self.bosses[indexPath.row]
+        let cell = cell as! WBMainTableViewCell
+        // bind dataSource
+        cell.boss = boss
+        // update property
+        cell.nameLabel.text = boss.name
+        cell.bossImageView.image = UIImage(named: boss.name)
+        cell.favButton.selected = boss.faved
+        cell.delegate = self
+        
+        self.updateCell(cell, atIndexPath: indexPath)
+    }
+}
 
 let kLocalNotificationBossName = "kLocalNotificationUserBossName"
 
 extension WBMainViewController: WBMainTableViewCellDelegate {
-    func selectFavorite(isSelected selected: Bool, forBoss boss: String) {
-        if let index = self.bosses.map({$0.name}).indexOf(boss) {
-            print(index)
-            let boss = self.bosses[index]
-            boss.faved = selected
-            
-            if selected {
-                createNotification(alertBody: String(format: "%@ is becoming active!", boss.name),
-                                   bossName: boss.name, fireDateCountDown: boss.secondsTilNextSpawnTime())
-            } else {
-                cancelNotification(byBossName: boss.name)
-            }
-        }
-    }
     
-    func createNotification(alertBody alertBody: String, bossName: String, fireDateCountDown: Int) {
-        let notification = UILocalNotification()
-        notification.fireDate = NSDate(timeIntervalSinceNow: Double(fireDateCountDown))
-        notification.alertBody = alertBody
-        notification.alertAction = "OK"
-        notification.soundName = UILocalNotificationDefaultSoundName
-        notification.userInfo = [kLocalNotificationBossName: bossName]
-        UIApplication.sharedApplication().scheduleLocalNotification(notification)
-    }
-    
-    func cancelNotification(byBossName bossName: String) {
-        for oneEvent in UIApplication.sharedApplication().scheduledLocalNotifications ?? [] {
-            guard let notification = oneEvent as? UILocalNotification else {
-                break
-            }
-            guard let userInfo = notification.userInfo,
-                let bName = userInfo[kLocalNotificationBossName] as? String else {
-                break
-            }
-            
-            if bName == bossName {
-                UIApplication.sharedApplication().cancelLocalNotification(notification)
-                return
-            }
+    func selectFavorite(isSelected selected: Bool, forBoss boss: WBBoss) {
+        boss.faved = selected
+        
+        if selected {
+            boss.createNotification(alertBody: String(format: "%@ is starting soon!", boss.name))
+        } else {
+            boss.cancelNotification()
         }
     }
 }

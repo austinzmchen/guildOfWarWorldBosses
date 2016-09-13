@@ -9,7 +9,7 @@
 import UIKit
 
 protocol WBMainTableViewCellDelegate: class {
-    func selectFavorite(isSelected selected: Bool, forBoss boss: String)
+    func selectFavorite(isSelected selected: Bool, forBoss boss: WBBoss)
 }
 
 class WBMainTableViewCell: UITableViewCell {
@@ -20,14 +20,31 @@ class WBMainTableViewCell: UITableViewCell {
     @IBOutlet weak var countDownLabel: UILabel!
     @IBOutlet weak var spawnTimeLabel: UILabel!
     @IBOutlet weak var favButton: UIButton!
+    @IBOutlet weak var favAnimImageView: UIImageView!
 
+    var boss: WBBoss?
     weak var delegate: WBMainTableViewCellDelegate?
     
     func favButtonTapped(sender: AnyObject) {
-        self.favButton.selected = !favButton.selected
-        
-        if let name = self.nameLabel.text {
-            self.delegate?.selectFavorite(isSelected: favButton.selected, forBoss: name)
+        if !self.favButton.selected {
+            self.favAnimImageView.alpha = 0
+            UIView.animateWithDuration(0.22, delay: 0, options: .CurveEaseOut, animations: {
+                self.favAnimImageView.transform = CGAffineTransformMakeScale(12.5, 11.25)
+                self.favAnimImageView.alpha = 1
+            }) { (completed) in
+                self.favButton.selected = !self.favButton.selected
+                self.favAnimImageView.alpha = 0
+                self.favAnimImageView.transform = CGAffineTransformMakeScale(1, 1)
+                
+                if let b = self.boss {
+                    self.delegate?.selectFavorite(isSelected: self.favButton.selected, forBoss: b)
+                }
+            }
+        } else {
+            self.favButton.selected = !self.favButton.selected
+            if let b = self.boss {
+                self.delegate?.selectFavorite(isSelected: self.favButton.selected, forBoss: b)
+            }
         }
     }
     
@@ -37,6 +54,7 @@ class WBMainTableViewCell: UITableViewCell {
         self.favButton.setImage(UIImage(named: "unheartIcon"), forState: .Normal)
         self.favButton.setImage(UIImage(named: "heartIcon"), forState: .Selected)
         favButton.addTarget(self, action: #selector(favButtonTapped(_:)), forControlEvents: .TouchUpInside)
+        self.favAnimImageView.alpha = 0
     }
     
     override func setSelected(selected: Bool, animated: Bool) {
@@ -47,5 +65,6 @@ class WBMainTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         self.favButton.selected = false
+        self.favAnimImageView.alpha = 0
     }
 }
