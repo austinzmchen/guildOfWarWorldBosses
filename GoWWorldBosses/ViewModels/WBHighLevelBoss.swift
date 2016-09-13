@@ -61,5 +61,7 @@ class WBHighLevelBoss: WBBoss {
                 lastestSpawnTimeIndex == 0
             }
         }
+        
+        self.updateIsActive()
     }
 }

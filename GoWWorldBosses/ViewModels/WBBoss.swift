@@ -27,7 +27,8 @@ class WBBoss: NSObject, WBBossProtocol {
     let spawnPattern: WBBossSpawnPattern
     var faved: Bool = false
     var _latestSpawnTime: Int?
-     
+    var isActive: Bool = false
+    
     init(name: String, firstSpawnTime: (hours: Int, minutes: Int), spawnPattern: WBBossSpawnPattern) {
         self.name = name
         self.firstSpawnTime = (firstSpawnTime.hours * wb1Hour + firstSpawnTime.minutes * wb1Minute)
@@ -36,14 +37,6 @@ class WBBoss: NSObject, WBBossProtocol {
     
     var latestSpawnTime: Int? {
         return _latestSpawnTime
-    }
-    
-    var isActive: Bool {
-        if let l = self.latestSpawnTime where NSDate.wbNow < l + wb15Minutes {
-            return true
-        } else {
-            return false
-        }
     }
 
     var nextSpawnTime: Int {
@@ -62,6 +55,16 @@ class WBBoss: NSObject, WBBossProtocol {
         } else {
             let spawnIndex = (wbNow - self.firstSpawnTime) / self.spawnPattern.rawValue
             _latestSpawnTime = self.firstSpawnTime + spawnIndex * self.spawnPattern.rawValue
+        }
+        
+        self.updateIsActive()
+    }
+    
+    func updateIsActive() {
+        if let l = self.latestSpawnTime where NSDate.wbNow < l + wb15Minutes {
+            isActive = true
+        } else {
+            isActive = false
         }
     }
 }

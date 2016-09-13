@@ -12,7 +12,6 @@ class WBMainViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var tableView: UITableView!
     var bosses: [WBBoss] = WBBossFactory.creatBosses()
     var timer1: NSTimer?
-    var timer2: NSTimer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,10 +29,19 @@ class WBMainViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
+        // set up coming back to foreground
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(initializeBosses), name: UIApplicationDidBecomeActiveNotification, object: nil)
+        // set up coming back to foreground
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(resignActive), name: UIApplicationWillResignActiveNotification, object: nil)
+        
+        self.initializeBosses()
+    }
+
+    func initializeBosses() {
         // set up timer
         self.timer1 = NSTimer(timeInterval: 0.9, target: self, selector: #selector(timerFiredPerSecond), userInfo: nil, repeats: true)
         NSRunLoop.currentRunLoop().addTimer(self.timer1!, forMode: NSRunLoopCommonModes)
-        
+
         self.updateBosses()
         
         // sorting
@@ -53,6 +61,10 @@ class WBMainViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
     
+    func resignActive() {
+        self.timer1?.invalidate()
+    }
+    
     func updateBosses() {
         let n = NSDate.wbNow
         for boss in bosses {
@@ -61,8 +73,8 @@ class WBMainViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func timerFiredPerSecond() {
-        if let l = self.bosses[0].latestSpawnTime
-            where NSDate.wbNow > l + wb15Minutes
+        while let l = self.bosses[0].latestSpawnTime
+            where self.bosses[0].isActive && NSDate.wbNow > l + wb15Minutes
         { // boss is active, and it is over spawn time for 15 mins
             let boss = self.bosses[0]
             self.bosses.removeFirst()
