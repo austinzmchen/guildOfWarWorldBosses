@@ -67,18 +67,17 @@ class WBHighLevelBoss: WBBoss {
     }
 
     override func createNotification(alertBody alertBody: String) {
-        let notification = UILocalNotification()
-        notification.repeatInterval = .Day
-        notification.alertBody = alertBody
-        notification.alertAction = "OK"
-        notification.soundName = UILocalNotificationDefaultSoundName
-        notification.userInfo = [kLocalNotificationBossName: self.name]
-        
         // eg: Karka Queen: 2 - 6 - 10:30 - 15:00 - 18:00 - 23:00
-        
         // add note for past spawn times, but for new days,
         var i = 0
         while i <= lastestSpawnTimeIndex {
+            let notification = UILocalNotification()
+            notification.repeatInterval = .Day
+            notification.alertBody = alertBody
+            notification.alertAction = "OK"
+            notification.soundName = UILocalNotificationDefaultSoundName
+            notification.userInfo = [kLocalNotificationBossName: self.name]
+            
             var sinceNow: Int = 0
             if lastestSpawnTimeIndex == spawnTimes.count - 1 {
                 sinceNow = spawnTimes[i] + wb1Day - (spawnTimes[0] + wb1Day) + self.secondsTilNextSpawnTime()
@@ -94,6 +93,13 @@ class WBHighLevelBoss: WBBoss {
         var sinceNow: Int = self.secondsTilNextSpawnTime()
         i = lastestSpawnTimeIndex + 1
         while i < spawnTimes.count {
+            let notification = UILocalNotification()
+            notification.repeatInterval = .Day
+            notification.alertBody = alertBody
+            notification.alertAction = "OK"
+            notification.soundName = UILocalNotificationDefaultSoundName
+            notification.userInfo = [kLocalNotificationBossName: self.name]
+            
             notification.fireDate = NSDate(timeIntervalSinceNow: Double(sinceNow))
             UIApplication.sharedApplication().scheduleLocalNotification(notification)
             

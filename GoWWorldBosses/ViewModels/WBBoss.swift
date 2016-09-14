@@ -78,16 +78,16 @@ import UIKit
 
 extension WBBoss: WBBossLocalNotificationProtocol {
     func createNotification(alertBody alertBody: String) {
-        let notification = UILocalNotification()
-        notification.repeatInterval = .Day
-        notification.alertBody = alertBody
-        notification.alertAction = "OK"
-        notification.soundName = UILocalNotificationDefaultSoundName
-        notification.userInfo = [kLocalNotificationBossName: self.name]
-        
         let num = wb1Day / self.spawnPattern.rawValue
         var i = 0
         while i < num {
+            let notification = UILocalNotification()
+            notification.repeatInterval = .Day
+            notification.alertBody = alertBody
+            notification.alertAction = "OK"
+            notification.soundName = UILocalNotificationDefaultSoundName
+            notification.userInfo = [kLocalNotificationBossName: self.name]
+            
             let sinceNow: Int = self.secondsTilNextSpawnTime() + i * self.spawnPattern.rawValue
             notification.fireDate = NSDate(timeIntervalSinceNow: Double(sinceNow))
             UIApplication.sharedApplication().scheduleLocalNotification(notification)
@@ -99,12 +99,11 @@ extension WBBoss: WBBossLocalNotificationProtocol {
         for notification in UIApplication.sharedApplication().scheduledLocalNotifications ?? [] {
             guard let userInfo = notification.userInfo,
                 let bName = userInfo[kLocalNotificationBossName] as? String else {
-                    break
+                    continue
             }
             print(bName)
             if bName == self.name {
                 UIApplication.sharedApplication().cancelLocalNotification(notification)
-                return
             }
         }
     }
