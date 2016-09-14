@@ -68,22 +68,23 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aNF-Ed-OXi" userLabel="favButton">
-                                                    <rect key="frame" x="570" y="10" width="20" height="18"/>
+                                                    <rect key="frame" x="559" y="0.0" width="40" height="38"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="18" id="QlS-uq-Jl9"/>
-                                                        <constraint firstAttribute="width" constant="20" id="xZh-LH-YSv"/>
+                                                        <constraint firstAttribute="height" constant="38" id="QlS-uq-Jl9"/>
+                                                        <constraint firstAttribute="width" constant="40" id="xZh-LH-YSv"/>
                                                     </constraints>
+                                                    <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                                     <state key="normal" image="unheartIcon"/>
                                                     <state key="selected" image="heartIcon"/>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heartIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Mfe-Fy-7kJ" userLabel="favAnimImageView">
-                                                    <rect key="frame" x="579" y="18" width="2" height="2"/>
+                                                    <rect key="frame" x="578" y="18" width="2" height="2"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Mfe-Fy-7kJ" firstAttribute="width" secondItem="aNF-Ed-OXi" secondAttribute="width" multiplier="0.1" id="8Pg-e2-EaB"/>
+                                                <constraint firstItem="Mfe-Fy-7kJ" firstAttribute="width" secondItem="aNF-Ed-OXi" secondAttribute="width" multiplier="0.05" id="8Pg-e2-EaB"/>
                                                 <constraint firstAttribute="trailing" secondItem="qbJ-PM-HzZ" secondAttribute="trailing" id="8gm-X0-hWv"/>
-                                                <constraint firstItem="Mfe-Fy-7kJ" firstAttribute="height" secondItem="aNF-Ed-OXi" secondAttribute="height" multiplier="0.1" id="APV-po-szF"/>
+                                                <constraint firstItem="Mfe-Fy-7kJ" firstAttribute="height" secondItem="aNF-Ed-OXi" secondAttribute="height" multiplier="0.05" id="APV-po-szF"/>
                                                 <constraint firstItem="8Gf-8y-ea6" firstAttribute="bottom" secondItem="beR-1z-S5Q" secondAttribute="bottom" constant="-35" id="D8x-Jn-cb3"/>
                                                 <constraint firstItem="qbJ-PM-HzZ" firstAttribute="top" secondItem="beR-1z-S5Q" secondAttribute="top" id="Fsu-CY-TCP"/>
                                                 <constraint firstItem="ZHq-bA-Waj" firstAttribute="leading" secondItem="e6d-ce-NMg" secondAttribute="trailing" constant="8" id="GDE-bN-DeI"/>
@@ -93,11 +94,11 @@
                                                 <constraint firstItem="Mfe-Fy-7kJ" firstAttribute="centerX" secondItem="aNF-Ed-OXi" secondAttribute="centerX" id="TmJ-f7-BS4"/>
                                                 <constraint firstItem="37a-Or-YpF" firstAttribute="leading" secondItem="beR-1z-S5Q" secondAttribute="leading" constant="15" id="U1T-3j-943"/>
                                                 <constraint firstItem="37a-Or-YpF" firstAttribute="top" secondItem="beR-1z-S5Q" secondAttribute="top" constant="28" id="UDf-MK-N9H"/>
-                                                <constraint firstItem="aNF-Ed-OXi" firstAttribute="top" secondItem="qbJ-PM-HzZ" secondAttribute="top" constant="10" id="Vlj-9C-HmI"/>
+                                                <constraint firstItem="aNF-Ed-OXi" firstAttribute="top" secondItem="qbJ-PM-HzZ" secondAttribute="top" id="Vlj-9C-HmI"/>
                                                 <constraint firstItem="6d0-tJ-8Ju" firstAttribute="top" secondItem="37a-Or-YpF" secondAttribute="bottom" constant="1" id="e6w-Q5-RjH"/>
                                                 <constraint firstItem="8Gf-8y-ea6" firstAttribute="top" secondItem="e6d-ce-NMg" secondAttribute="bottom" constant="-20" id="g5V-IH-NhU"/>
                                                 <constraint firstItem="6d0-tJ-8Ju" firstAttribute="leading" secondItem="37a-Or-YpF" secondAttribute="leading" id="m0k-IC-j9d"/>
-                                                <constraint firstItem="aNF-Ed-OXi" firstAttribute="trailing" secondItem="qbJ-PM-HzZ" secondAttribute="trailing" constant="-10" id="nsg-uo-BkO"/>
+                                                <constraint firstItem="aNF-Ed-OXi" firstAttribute="trailing" secondItem="qbJ-PM-HzZ" secondAttribute="trailing" constant="-1" id="nsg-uo-BkO"/>
                                                 <constraint firstItem="e6d-ce-NMg" firstAttribute="leading" secondItem="8Gf-8y-ea6" secondAttribute="leading" id="o4a-Vv-FWD"/>
                                                 <constraint firstAttribute="bottom" secondItem="qbJ-PM-HzZ" secondAttribute="bottom" id="q2M-P4-ozy"/>
                                                 <constraint firstItem="ZHq-bA-Waj" firstAttribute="centerY" secondItem="e6d-ce-NMg" secondAttribute="centerY" id="xIO-yF-Wo3"/>

@@ -92,7 +92,7 @@ class WBHighLevelBoss: WBBoss {
         // add note for spawn times left for today
         var sinceNow: Int = self.secondsTilNextSpawnTime()
         i = lastestSpawnTimeIndex + 1
-        while i < spawnTimes.count {
+        while i < spawnTimes.count - 1 {
             let notification = UILocalNotification()
             notification.repeatInterval = .Day
             notification.alertBody = alertBody
