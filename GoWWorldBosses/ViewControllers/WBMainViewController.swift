@@ -59,6 +59,7 @@ class WBMainViewController: UIViewController {
                 }
             }
         }
+        self.tableView.reloadData()
     }
     
     func resignActive() {
@@ -92,7 +93,6 @@ class WBMainViewController: UIViewController {
                 let cell = tableView.cellForRowAtIndexPath(indexPath) as! WBMainTableViewCell
                 self.updateCell(cell, atIndexPath: indexPath)
             }
-//            self.tableView.reloadRowsAtIndexPaths(indexPaths, withRowAnimation: .None)
         }
     }
     
