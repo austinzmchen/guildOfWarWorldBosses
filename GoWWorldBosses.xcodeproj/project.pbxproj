@@ -11,6 +11,9 @@
 		C41094A51D88FFCF00751A72 /* WBSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41094A41D88FFCF00751A72 /* WBSettingsViewController.swift */; };
 		C41094A71D89003D00751A72 /* WBAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41094A61D89003D00751A72 /* WBAboutViewController.swift */; };
 		C41E4E921D74D1850037E57F /* WBHighLevelBoss.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41E4E911D74D1850037E57F /* WBHighLevelBoss.swift */; };
+		C4341A801D89F5E2007D84CC /* WBSettingsNotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4341A7F1D89F5E2007D84CC /* WBSettingsNotificationTableViewCell.swift */; };
+		C4341A821D89F76D007D84CC /* UILocalNotificationPlus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4341A811D89F76D007D84CC /* UILocalNotificationPlus.swift */; };
+		C4341A841D89FA28007D84CC /* WBBossFactory+TestBosses.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4341A831D89FA28007D84CC /* WBBossFactory+TestBosses.swift */; };
 		C45B6C9E1D68BE5800F94060 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C45B6C9C1D68BE5800F94060 /* Main.storyboard */; };
 		C45B6CA11D68BE5800F94060 /* GoWWorldBosses.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C45B6C9F1D68BE5800F94060 /* GoWWorldBosses.xcdatamodeld */; };
 		C45B6CA31D68BE5800F94060 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C45B6CA21D68BE5800F94060 /* Assets.xcassets */; };
@@ -42,6 +45,9 @@
 		C41094A41D88FFCF00751A72 /* WBSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBSettingsViewController.swift; sourceTree = "<group>"; };
 		C41094A61D89003D00751A72 /* WBAboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBAboutViewController.swift; sourceTree = "<group>"; };
 		C41E4E911D74D1850037E57F /* WBHighLevelBoss.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBHighLevelBoss.swift; sourceTree = "<group>"; };
+		C4341A7F1D89F5E2007D84CC /* WBSettingsNotificationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBSettingsNotificationTableViewCell.swift; sourceTree = "<group>"; };
+		C4341A811D89F76D007D84CC /* UILocalNotificationPlus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILocalNotificationPlus.swift; sourceTree = "<group>"; };
+		C4341A831D89FA28007D84CC /* WBBossFactory+TestBosses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WBBossFactory+TestBosses.swift"; sourceTree = "<group>"; };
 		C45B6C951D68BE5800F94060 /* My GW2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My GW2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C45B6C9D1D68BE5800F94060 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C45B6CA01D68BE5800F94060 /* GoWWorldBosses.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GoWWorldBosses.xcdatamodel; sourceTree = "<group>"; };
@@ -106,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				C4A781821D68CFB200786488 /* AppDelegate.swift */,
+				C4341A811D89F76D007D84CC /* UILocalNotificationPlus.swift */,
 				C4A781831D68CFB200786488 /* ViewControllers */,
 				C4A781851D68CFB200786488 /* ViewModels */,
 				C4A781861D68CFB200786488 /* Views */,
@@ -141,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				C4A7818D1D6915E900786488 /* WBBossFactory.swift */,
+				C4341A831D89FA28007D84CC /* WBBossFactory+TestBosses.swift */,
 				C4A7818F1D69165B00786488 /* WBBoss.swift */,
 				C41E4E911D74D1850037E57F /* WBHighLevelBoss.swift */,
 				C4A781911D69227300786488 /* NSDate+Plus.swift */,
@@ -152,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				C4A781871D68CFB200786488 /* WBMainTableViewCell.swift */,
+				C4341A7F1D89F5E2007D84CC /* WBSettingsNotificationTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -391,6 +400,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4341A841D89FA28007D84CC /* WBBossFactory+TestBosses.swift in Sources */,
+				C4341A821D89F76D007D84CC /* UILocalNotificationPlus.swift in Sources */,
 				C41E4E921D74D1850037E57F /* WBHighLevelBoss.swift in Sources */,
 				C4A7818E1D6915E900786488 /* WBBossFactory.swift in Sources */,
 				C4A781881D68CFB200786488 /* AppDelegate.swift in Sources */,
@@ -400,6 +411,7 @@
 				C4A781891D68CFB200786488 /* WBMainViewController.swift in Sources */,
 				C41094A51D88FFCF00751A72 /* WBSettingsViewController.swift in Sources */,
 				C4A781901D69165B00786488 /* WBBoss.swift in Sources */,
+				C4341A801D89F5E2007D84CC /* WBSettingsNotificationTableViewCell.swift in Sources */,
 				C41094A71D89003D00751A72 /* WBAboutViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

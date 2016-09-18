@@ -10,8 +10,10 @@ import UIKit
 
 class WBMainViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-    var bosses: [WBBoss] = WBBossFactory.creatBosses()
+    
     var timer1: NSTimer?
+//    var bosses: [WBBoss] = WBBossFactory.creatBosses()
+    var bosses: [WBBoss] = WBBossFactory.creatTestBosses()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -105,7 +107,7 @@ class WBMainViewController: UIViewController {
             cell.countDownLabel.text = "ACTIVE"
         } else {
             let countDown = boss.secondsTilNextSpawnTime()
-            if countDown < 15 * 60 // under 15 minutes
+            if countDown < wb15Minutes // under 15 minutes
             {
                 cell.countDownLabel.textColor = UIColor.redColor()
             } else {

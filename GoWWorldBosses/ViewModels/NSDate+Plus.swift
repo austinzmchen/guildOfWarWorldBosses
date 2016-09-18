@@ -9,7 +9,8 @@
 import Foundation
 
 let wb1Minute: Int = 60
-let wb15Minutes: Int = 15 * 60
+//let wb15Minutes: Int = 15 * 60
+let wb15Minutes: Int = 1 * 60
 let wb1Hour: Int = 60 * 60
 let wb1Day: Int = wb1Hour * 24
 
