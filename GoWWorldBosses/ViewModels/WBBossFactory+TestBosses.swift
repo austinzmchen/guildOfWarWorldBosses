@@ -14,8 +14,8 @@ extension WBBossFactory {
         let now = NSDate() // in utc timezone
         let hours = NSCalendar.currentCalendar().component(.Hour, fromDate: now)
         let minutes = NSCalendar.currentCalendar().component(.Minute, fromDate: now)
-        let firstSpawnMinutes = minutes + 1
-        let secondSpawnMinutes = minutes + 2
+        let firstSpawnMinutes = minutes + 0
+        let secondSpawnMinutes = minutes + 1
         
         // 2hrs
         let l1 = WBBoss(name: "Svanir Sharman Chief",
@@ -28,7 +28,10 @@ extension WBBossFactory {
                         firstSpawnTime: (hours: hours, minutes: secondSpawnMinutes), spawnPattern: .Pattern2hrs)
         
         return [
-            l1,l2,l3,l4
+            l1,
+            l2,
+            l3,
+            l4
         ]
     }
 }

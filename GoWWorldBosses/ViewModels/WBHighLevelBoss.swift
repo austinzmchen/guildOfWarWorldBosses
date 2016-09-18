@@ -62,8 +62,6 @@ class WBHighLevelBoss: WBBoss {
                 lastestSpawnTimeIndex == 0
             }
         }
-        
-        self.updateIsActive()
     }
 
     override func createNotification(alertBody alertBody: String) {

@@ -32,14 +32,21 @@ class WBBoss: NSObject, WBBossProtocol {
     let spawnPattern: WBBossSpawnPattern
     var faved: Bool = false
     var _latestSpawnTime: Int?
-    var isActive: Bool = false
     
     init(name: String, firstSpawnTime: (hours: Int, minutes: Int), spawnPattern: WBBossSpawnPattern) {
         self.name = name
         self.firstSpawnTime = (firstSpawnTime.hours * wb1Hour + firstSpawnTime.minutes * wb1Minute)
         self.spawnPattern = spawnPattern
     }
-    
+
+    var isActive: Bool {
+        if let l = self.latestSpawnTime where NSDate.wbNow < l + wb15Minutes {
+            return true
+        } else {
+            return false
+        }
+    }
+
     var latestSpawnTime: Int? {
         return _latestSpawnTime
     }
@@ -60,16 +67,6 @@ class WBBoss: NSObject, WBBossProtocol {
         } else {
             let spawnIndex = (wbNow - self.firstSpawnTime) / self.spawnPattern.rawValue
             _latestSpawnTime = self.firstSpawnTime + spawnIndex * self.spawnPattern.rawValue
-        }
-        
-        self.updateIsActive()
-    }
-    
-    func updateIsActive() {
-        if let l = self.latestSpawnTime where NSDate.wbNow < l + wb15Minutes {
-            isActive = true
-        } else {
-            isActive = false
         }
     }
 }
@@ -112,17 +109,18 @@ extension WBBoss: WBBossLocalNotificationProtocol {
 extension WBBoss {
     var nextSpawnTimeString: String {
         let nst = self.nextSpawnTime % wb1Day
-        let seconds = nst % 60
+        //let seconds = nst % 60
         let minutes = (nst / 60) % 60
         let hours = nst / (60 * 60)
-        let string = String(format: "%d:%02d:%02d", hours, minutes, seconds) // "\(hours):\(minutes):\(seconds)"
+        let string = String(format: "%d:%02d", hours, minutes) // "\(hours):\(minutes):\(seconds)"
         
+        /*
         let postFix: String
         if nst < 12 * wb1Hour {
             postFix = " AM"
         } else {
             postFix = " PM"
-        }
+        }*/
         return string// + postFix
     }
     

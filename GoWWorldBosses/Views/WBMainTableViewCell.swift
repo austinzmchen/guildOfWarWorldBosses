@@ -12,6 +12,19 @@ protocol WBMainTableViewCellDelegate: class {
     func selectFavorite(isSelected selected: Bool, forBoss boss: WBBoss)
 }
 
+enum WBTableCellCountDownStyle {
+    case Active
+    case CountDown(countDown: Int)
+    case CountDownRed(countDown: Int)
+}
+
+func ==(lhs: WBTableCellCountDownStyle, rhs: WBTableCellCountDownStyle) -> Bool {
+    switch (lhs,rhs) {
+    case (.Active, .Active): return true
+    default: return false
+    }
+}
+
 class WBMainTableViewCell: UITableViewCell {
 
     @IBOutlet weak var bossImageView: UIImageView!
@@ -61,6 +74,25 @@ class WBMainTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         
         // Configure the view for the selected state
+    }
+    
+    var countDownStyle: WBTableCellCountDownStyle = .CountDown(countDown: 0) {
+        didSet {
+            switch countDownStyle {
+                case .Active:
+                    self.countDownLabel.textColor = UIColor(red: 117/255.0, green: 214/255.0, blue: 17/255.0, alpha: 1)
+                    self.countDownLabel.text = "ACTIVE"
+                    break
+                case .CountDown(let countDown):
+                    self.countDownLabel.textColor = UIColor.redColor()
+                    self.countDownLabel.text = countDown.nextSpawnTimeCountDownStringFromDate()
+                    break
+                case .CountDownRed(let countDown):
+                    self.countDownLabel.textColor = UIColor.whiteColor()
+                    self.countDownLabel.text = countDown.nextSpawnTimeCountDownStringFromDate()
+                    break
+            }
+        }
     }
     
     override func prepareForReuse() {

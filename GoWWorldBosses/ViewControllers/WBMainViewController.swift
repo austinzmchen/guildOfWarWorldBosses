@@ -18,14 +18,8 @@ class WBMainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        // set navigation bar
-        let titleImageView = UIImageView(image: UIImage(named: "dragon"))
-        titleImageView.contentMode = .ScaleAspectFit
-        var f = titleImageView.frame
-        f.size = CGSize(width: 38.0, height: 38.0)
-        titleImageView.frame = f
-        self.navigationItem.titleView = titleImageView
+        self.addBlurEffect()
+        self.setNavTitleView()
         
         // set up table
         self.tableView.delegate = self
@@ -76,8 +70,31 @@ class WBMainViewController: UIViewController {
     }
     
     func timerFiredPerSecond() {
-        while let l = self.bosses[0].latestSpawnTime
-            where self.bosses[0].isActive && NSDate.wbNow > l + wb15Minutes
+        self.updateBosses()
+        
+        // sorting
+        let n = NSDate.wbNow
+        self.bosses.sortInPlace{
+            if $0.isActive != $1.isActive { // when one of them is not active
+                return Int($0.isActive) > Int($1.isActive)
+            } else {
+                if $0.isActive == true,
+                    let lst1 = $0.latestSpawnTime,
+                    let lst2 = $1.latestSpawnTime {
+                    return n - lst1 > n - lst2
+                } else {
+                    return $0.secondsTilNextSpawnTime() < $1.secondsTilNextSpawnTime()
+                }
+            }
+        }
+        self.tableView.reloadData()
+        
+        /* problem - inifit looping
+        let l = self.bosses[0].latestSpawnTime
+        let cell = self.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) as? WBMainTableViewCell
+        while let l = l,
+            let cell = cell where
+            NSDate.wbNow >= l + wb15Minutes - 1 && cell.countDownStyle == WBTableCellCountDownStyle.Active
         { // boss is active, and it is over spawn time for 15 mins
             let boss = self.bosses[0]
             self.bosses.removeFirst()
@@ -96,6 +113,7 @@ class WBMainViewController: UIViewController {
                 self.updateCell(cell, atIndexPath: indexPath)
             }
         }
+        */
     }
     
     func updateCell(cell:WBMainTableViewCell, atIndexPath indexPath:NSIndexPath) {
@@ -103,17 +121,15 @@ class WBMainViewController: UIViewController {
         
         // set count down
         if boss.isActive {
-            cell.countDownLabel.textColor = UIColor(red: 117/255.0, green: 214/255.0, blue: 17/255.0, alpha: 1)
-            cell.countDownLabel.text = "ACTIVE"
+            cell.countDownStyle = .Active
         } else {
-            let countDown = boss.secondsTilNextSpawnTime()
-            if countDown < wb15Minutes // under 15 minutes
+            let cd = boss.secondsTilNextSpawnTime()
+            if cd < wb15Minutes // under 15 minutes
             {
-                cell.countDownLabel.textColor = UIColor.redColor()
+                cell.countDownStyle = .CountDownRed(countDown: cd)
             } else {
-                cell.countDownLabel.textColor = UIColor.whiteColor()
+                cell.countDownStyle = .CountDown(countDown: cd)
             }
-            cell.countDownLabel.text = countDown.nextSpawnTimeCountDownStringFromDate()
         }
         cell.countDownLabel.setNeedsLayout()
         
