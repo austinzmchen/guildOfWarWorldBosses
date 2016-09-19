@@ -10,11 +10,9 @@ import UIKit
 
 class WBSettingsNotificationTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var toggleSwitch: UISwitch!
+    
     @IBAction func switchToggled(sender: AnyObject) {
-        if let s = sender as? UISwitch where s.on {
-            UIApplication.turnOnLocalNotification()
-        } else {
-            UIApplication.turnOffLocalNotification()
-        }
+        // interaction turned off
     }
 }

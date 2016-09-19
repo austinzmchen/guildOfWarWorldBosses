@@ -28,7 +28,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // add local notification feature
         let notificationSettings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
         UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
-        UIApplication.sharedApplication().cancelAllLocalNotifications()
         
         return true
     }

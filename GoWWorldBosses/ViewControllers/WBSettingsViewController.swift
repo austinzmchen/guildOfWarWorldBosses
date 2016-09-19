@@ -15,14 +15,29 @@ class WBSettingsViewController: UIViewController {
         self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    var isNotificationTurnedOnInSettings = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(appDidBecomeActive), name: UIApplicationWillEnterForegroundNotification, object: nil)
     }
 
+    func appDidBecomeActive() {
+        guard let settings = UIApplication.sharedApplication().currentUserNotificationSettings()
+            where settings.types != .None else
+        {
+            isNotificationTurnedOnInSettings = false
+            self.tableView.reloadData()
+            return
+        }
+        isNotificationTurnedOnInSettings = true
+        self.tableView.reloadData()
+    }
 }
 
 extension WBSettingsViewController: UITableViewDelegate, UITableViewDataSource {
@@ -44,14 +59,18 @@ extension WBSettingsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
-            return tableView.dequeueReusableCellWithIdentifier("noteCell")!
+            let noteCell = tableView.dequeueReusableCellWithIdentifier("noteCell") as! WBSettingsNotificationTableViewCell
+            noteCell.toggleSwitch.on = isNotificationTurnedOnInSettings
+            return noteCell
         } else {
             return tableView.dequeueReusableCellWithIdentifier("aboutCell")!
         }
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.row == 1 {
+        if indexPath.row == 0 {
+            UIApplication.sharedApplication().openURL(NSURL(string: UIApplicationOpenSettingsURLString)!)
+        } else if indexPath.row == 1 {
             self.performSegueWithIdentifier("pushToAboutVC", sender: nil)
         }
         tableView.deselectRowAtIndexPath(indexPath, animated: true)

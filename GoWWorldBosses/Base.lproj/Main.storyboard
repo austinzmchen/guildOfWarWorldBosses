@@ -211,7 +211,7 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="smf-ms-1z4">
+                                                <switch opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="smf-ms-1z4">
                                                     <rect key="frame" x="535" y="20" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="switchToggled:" destination="7eW-UT-V08" eventType="valueChanged" id="ggf-ck-ClC"/>
@@ -236,6 +236,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="toggleSwitch" destination="smf-ms-1z4" id="O3Z-VR-qDb"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="aboutCell" textLabel="Sfn-SG-1S7" detailTextLabel="yTt-8B-7lw" rowHeight="50" style="IBUITableViewCellStyleValue1" id="Z2t-nW-YQF" userLabel="LegalAboutCell">
                                         <rect key="frame" x="0.0" y="99" width="600" height="50"/>

@@ -8,12 +8,15 @@ def addCommonDependancies
     # UI
     pod 'KYDrawerController'
     
+    # Misc
+    pod 'Locksmith'
+    
     pod 'Fabric'
     pod 'Crashlytics'
 end
 
 
-target 'GoWWorldBosses' do
+target 'My GW2' do
     addCommonDependancies
 end
 

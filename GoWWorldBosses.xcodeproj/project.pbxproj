@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C0F4D24F582A5A203C1E505 /* Pods_My_GW2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDAB989264C7276BDFCE3D46 /* Pods_My_GW2.framework */; };
 		161DBD38910A1D608A170B8F /* Pods_GoWWorldBossesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EB20CCACEE9948E9477B6C9 /* Pods_GoWWorldBossesTests.framework */; };
 		C41094A51D88FFCF00751A72 /* WBSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41094A41D88FFCF00751A72 /* WBSettingsViewController.swift */; };
 		C41094A71D89003D00751A72 /* WBAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41094A61D89003D00751A72 /* WBAboutViewController.swift */; };
 		C41E4E921D74D1850037E57F /* WBHighLevelBoss.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41E4E911D74D1850037E57F /* WBHighLevelBoss.swift */; };
 		C4341A801D89F5E2007D84CC /* WBSettingsNotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4341A7F1D89F5E2007D84CC /* WBSettingsNotificationTableViewCell.swift */; };
-		C4341A821D89F76D007D84CC /* UILocalNotificationPlus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4341A811D89F76D007D84CC /* UILocalNotificationPlus.swift */; };
 		C4341A841D89FA28007D84CC /* WBBossFactory+TestBosses.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4341A831D89FA28007D84CC /* WBBossFactory+TestBosses.swift */; };
+		C4341F161D8EE73F007D84CC /* WBMainViewController+NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4341F151D8EE73F007D84CC /* WBMainViewController+NavigationBar.swift */; };
+		C4341F181D8F1027007D84CC /* WBKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4341F171D8F1027007D84CC /* WBKeyStore.swift */; };
 		C45B6C9E1D68BE5800F94060 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C45B6C9C1D68BE5800F94060 /* Main.storyboard */; };
 		C45B6CA11D68BE5800F94060 /* GoWWorldBosses.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C45B6C9F1D68BE5800F94060 /* GoWWorldBosses.xcdatamodeld */; };
 		C45B6CA31D68BE5800F94060 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C45B6CA21D68BE5800F94060 /* Assets.xcassets */; };
@@ -40,14 +42,17 @@
 
 /* Begin PBXFileReference section */
 		3865BF67528F5244C12D4F6D /* Pods-GoWWorldBossesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoWWorldBossesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoWWorldBossesTests/Pods-GoWWorldBossesTests.debug.xcconfig"; sourceTree = "<group>"; };
+		700CB389B3F6416388F45C84 /* Pods-My GW2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My GW2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-My GW2/Pods-My GW2.debug.xcconfig"; sourceTree = "<group>"; };
 		7EB20CCACEE9948E9477B6C9 /* Pods_GoWWorldBossesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoWWorldBossesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9212AE45394A87BA0CC5B5F7 /* Pods-GoWWorldBosses.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoWWorldBosses.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoWWorldBosses/Pods-GoWWorldBosses.release.xcconfig"; sourceTree = "<group>"; };
+		9B91DDA2549D4F8A907D32DA /* Pods-My GW2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My GW2.release.xcconfig"; path = "Pods/Target Support Files/Pods-My GW2/Pods-My GW2.release.xcconfig"; sourceTree = "<group>"; };
 		C41094A41D88FFCF00751A72 /* WBSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBSettingsViewController.swift; sourceTree = "<group>"; };
 		C41094A61D89003D00751A72 /* WBAboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBAboutViewController.swift; sourceTree = "<group>"; };
 		C41E4E911D74D1850037E57F /* WBHighLevelBoss.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBHighLevelBoss.swift; sourceTree = "<group>"; };
 		C4341A7F1D89F5E2007D84CC /* WBSettingsNotificationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBSettingsNotificationTableViewCell.swift; sourceTree = "<group>"; };
-		C4341A811D89F76D007D84CC /* UILocalNotificationPlus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILocalNotificationPlus.swift; sourceTree = "<group>"; };
 		C4341A831D89FA28007D84CC /* WBBossFactory+TestBosses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WBBossFactory+TestBosses.swift"; sourceTree = "<group>"; };
+		C4341F151D8EE73F007D84CC /* WBMainViewController+NavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WBMainViewController+NavigationBar.swift"; sourceTree = "<group>"; };
+		C4341F171D8F1027007D84CC /* WBKeyStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBKeyStore.swift; sourceTree = "<group>"; };
 		C45B6C951D68BE5800F94060 /* My GW2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My GW2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C45B6C9D1D68BE5800F94060 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C45B6CA01D68BE5800F94060 /* GoWWorldBosses.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GoWWorldBosses.xcdatamodel; sourceTree = "<group>"; };
@@ -66,6 +71,7 @@
 		DBC9EA2A064114E4100C7FB1 /* Pods-GoWWorldBossesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoWWorldBossesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoWWorldBossesTests/Pods-GoWWorldBossesTests.release.xcconfig"; sourceTree = "<group>"; };
 		EA84700B364AA4445FA5CB07 /* Pods-GoWWorldBosses.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoWWorldBosses.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoWWorldBosses/Pods-GoWWorldBosses.debug.xcconfig"; sourceTree = "<group>"; };
 		F55442F3DB8D49ACCDB9BF38 /* Pods_GoWWorldBosses.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoWWorldBosses.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDAB989264C7276BDFCE3D46 /* Pods_My_GW2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_My_GW2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +80,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8EDC5C29F28059ED1EE9EA5 /* Pods_GoWWorldBosses.framework in Frameworks */,
+				0C0F4D24F582A5A203C1E505 /* Pods_My_GW2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,7 +119,6 @@
 			isa = PBXGroup;
 			children = (
 				C4A781821D68CFB200786488 /* AppDelegate.swift */,
-				C4341A811D89F76D007D84CC /* UILocalNotificationPlus.swift */,
 				C4A781831D68CFB200786488 /* ViewControllers */,
 				C4A781851D68CFB200786488 /* ViewModels */,
 				C4A781861D68CFB200786488 /* Views */,
@@ -138,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				C4A781841D68CFB200786488 /* WBMainViewController.swift */,
+				C4341F151D8EE73F007D84CC /* WBMainViewController+NavigationBar.swift */,
 				C41094A41D88FFCF00751A72 /* WBSettingsViewController.swift */,
 				C41094A61D89003D00751A72 /* WBAboutViewController.swift */,
 			);
@@ -152,6 +159,7 @@
 				C4A7818F1D69165B00786488 /* WBBoss.swift */,
 				C41E4E911D74D1850037E57F /* WBHighLevelBoss.swift */,
 				C4A781911D69227300786488 /* NSDate+Plus.swift */,
+				C4341F171D8F1027007D84CC /* WBKeyStore.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -170,6 +178,7 @@
 			children = (
 				F55442F3DB8D49ACCDB9BF38 /* Pods_GoWWorldBosses.framework */,
 				7EB20CCACEE9948E9477B6C9 /* Pods_GoWWorldBossesTests.framework */,
+				FDAB989264C7276BDFCE3D46 /* Pods_My_GW2.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -181,6 +190,8 @@
 				9212AE45394A87BA0CC5B5F7 /* Pods-GoWWorldBosses.release.xcconfig */,
 				3865BF67528F5244C12D4F6D /* Pods-GoWWorldBossesTests.debug.xcconfig */,
 				DBC9EA2A064114E4100C7FB1 /* Pods-GoWWorldBossesTests.release.xcconfig */,
+				700CB389B3F6416388F45C84 /* Pods-My GW2.debug.xcconfig */,
+				9B91DDA2549D4F8A907D32DA /* Pods-My GW2.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -362,7 +373,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GoWWorldBosses/Pods-GoWWorldBosses-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-My GW2/Pods-My GW2-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B1440FB1E09F8D8397E7F933 /* [CP] Embed Pods Frameworks */ = {
@@ -377,7 +388,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GoWWorldBosses/Pods-GoWWorldBosses-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-My GW2/Pods-My GW2-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C446B4F91D6FBC1700975AAE /* ShellScript */ = {
@@ -401,17 +412,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4341A841D89FA28007D84CC /* WBBossFactory+TestBosses.swift in Sources */,
-				C4341A821D89F76D007D84CC /* UILocalNotificationPlus.swift in Sources */,
 				C41E4E921D74D1850037E57F /* WBHighLevelBoss.swift in Sources */,
 				C4A7818E1D6915E900786488 /* WBBossFactory.swift in Sources */,
 				C4A781881D68CFB200786488 /* AppDelegate.swift in Sources */,
 				C4A7818A1D68CFB200786488 /* WBMainTableViewCell.swift in Sources */,
+				C4341F181D8F1027007D84CC /* WBKeyStore.swift in Sources */,
 				C4A781921D69227300786488 /* NSDate+Plus.swift in Sources */,
 				C45B6CA11D68BE5800F94060 /* GoWWorldBosses.xcdatamodeld in Sources */,
 				C4A781891D68CFB200786488 /* WBMainViewController.swift in Sources */,
 				C41094A51D88FFCF00751A72 /* WBSettingsViewController.swift in Sources */,
 				C4A781901D69165B00786488 /* WBBoss.swift in Sources */,
 				C4341A801D89F5E2007D84CC /* WBSettingsNotificationTableViewCell.swift in Sources */,
+				C4341F161D8EE73F007D84CC /* WBMainViewController+NavigationBar.swift in Sources */,
 				C41094A71D89003D00751A72 /* WBAboutViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -541,7 +553,7 @@
 		};
 		C45B6CB61D68BE5900F94060 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EA84700B364AA4445FA5CB07 /* Pods-GoWWorldBosses.debug.xcconfig */;
+			baseConfigurationReference = 700CB389B3F6416388F45C84 /* Pods-My GW2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -559,7 +571,7 @@
 		};
 		C45B6CB71D68BE5900F94060 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9212AE45394A87BA0CC5B5F7 /* Pods-GoWWorldBosses.release.xcconfig */;
+			baseConfigurationReference = 9B91DDA2549D4F8A907D32DA /* Pods-My GW2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

@@ -135,6 +135,12 @@ class WBMainViewController: UIViewController {
         
         // set next spawn time
         cell.spawnTimeLabel.text = boss.nextSpawnTimeString
+        
+        if let bossNames = WBKeyStore.keyStoreItem?.likedBosses {
+            if bossNames.contains(boss.name) {
+                cell.favButton.selected = true
+            }
+        }
     }
 }
 
@@ -176,8 +182,20 @@ extension WBMainViewController: WBMainTableViewCellDelegate {
         
         if selected {
             boss.createNotification(alertBody: String(format: "%@ is starting soon!", boss.name))
+            
+            var lBosses = WBKeyStore.keyStoreItem?.likedBosses ?? Set<String>()
+            if !lBosses.contains(boss.name) {
+                lBosses.insert(boss.name)
+            }
+            WBKeyStore.keyStoreItem = WBKeyStoreItem(likedBosses: lBosses)
         } else {
             boss.cancelNotification()
+            
+            var lBosses = WBKeyStore.keyStoreItem?.likedBosses ?? Set<String>()
+            if lBosses.contains(boss.name) {
+                lBosses.remove(boss.name)
+            }
+            WBKeyStore.keyStoreItem = WBKeyStoreItem(likedBosses: lBosses)
         }
     }
 }

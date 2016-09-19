@@ -3,17 +3,20 @@ PODS:
     - Fabric (~> 1.6.3)
   - Fabric (1.6.8)
   - KYDrawerController (1.1.5)
+  - Locksmith (2.0.8)
 
 DEPENDENCIES:
   - Crashlytics
   - Fabric
   - KYDrawerController
+  - Locksmith
 
 SPEC CHECKSUMS:
   Crashlytics: 76f6beaff70acf226139582c09c78461597c2b98
   Fabric: 5755268d0171435ab167e3d0878a28a777deaf10
   KYDrawerController: 98eb8f8c53164de1098b3ca5c6789f3d8aa86c3e
+  Locksmith: a8ed41ac4c06506ea8cb199d8ec8a8d3d108eb2a
 
-PODFILE CHECKSUM: e0af56780dde53e61741f9a9178f46b07c057fd3
+PODFILE CHECKSUM: c1955b90287696eaab6bc9363b1f7dd5acfe8be7
 
 COCOAPODS: 1.0.1
