@@ -15,10 +15,15 @@ class WBHighLevelBoss: WBBoss {
     
     init(name: String, spawnTimes: [(hours: Int, minutes: Int)]) {
         var sTimes: [Int] = []
+        let timeZoneoffset: Int = NSTimeZone.localTimeZone().secondsFromGMT
+        
         for hourMinute in spawnTimes {
-            sTimes.append(hourMinute.hours * wb1Hour + hourMinute.minutes * wb1Minute)
+            let spawnTimeUTC = hourMinute.hours * wb1Hour + hourMinute.minutes * wb1Minute
+            let sp = Int(spawnTimeUTC + timeZoneoffset + wb1Day) % Int(wb1Day)
+//            print("first spawn time - \(name):\(sp)")
+            sTimes.append(sp)
         }
-        self.spawnTimes = sTimes
+        self.spawnTimes = sTimes.sort({ $0 < $1 })
         
         let n = NSDate.wbNow
         for (i, s) in self.spawnTimes.enumerate() {
@@ -31,7 +36,7 @@ class WBHighLevelBoss: WBBoss {
             }
         }
         
-        super.init(name: name, firstSpawnTime: spawnTimes[0], spawnPattern: .PatternIrregular)
+        super.init(name: name, firstSpt: self.spawnTimes[0], spawnPattern: .PatternIrregular)
     }
     
     override var latestSpawnTime: Int? {

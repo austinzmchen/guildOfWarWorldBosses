@@ -12,8 +12,8 @@ class WBMainViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var timer1: NSTimer?
-//    var bosses: [WBBoss] = WBBossFactory.creatBosses()
-    var bosses: [WBBoss] = WBBossFactory.creatTestBosses()
+    var bosses: [WBBoss] = WBBossFactory.creatBosses()
+//    var bosses: [WBBoss] = WBBossFactory.creatTestBosses()
     
     override func viewDidLoad() {
         super.viewDidLoad()
