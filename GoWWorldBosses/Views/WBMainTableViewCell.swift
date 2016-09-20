@@ -83,11 +83,11 @@ class WBMainTableViewCell: UITableViewCell {
                     self.countDownLabel.textColor = UIColor(red: 117/255.0, green: 214/255.0, blue: 17/255.0, alpha: 1)
                     self.countDownLabel.text = "ACTIVE"
                     break
-                case .CountDown(let countDown):
+                case .CountDownRed(let countDown):
                     self.countDownLabel.textColor = UIColor.redColor()
                     self.countDownLabel.text = countDown.nextSpawnTimeCountDownStringFromDate()
                     break
-                case .CountDownRed(let countDown):
+                case .CountDown(let countDown):
                     self.countDownLabel.textColor = UIColor.whiteColor()
                     self.countDownLabel.text = countDown.nextSpawnTimeCountDownStringFromDate()
                     break

@@ -137,7 +137,7 @@
                         </variation>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Settings" id="ijq-31-xpF">
+                    <navigationItem key="navigationItem" id="ijq-31-xpF">
                         <barButtonItem key="rightBarButtonItem" image="icSettings" style="plain" id="Y0n-It-ay1">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
                             <connections>
@@ -159,10 +159,9 @@
         <scene sceneID="1sC-bi-rt3">
             <objects>
                 <navigationController id="PmF-aC-6Aw" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EFk-Dw-pov">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="EFk-Dw-pov">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>
