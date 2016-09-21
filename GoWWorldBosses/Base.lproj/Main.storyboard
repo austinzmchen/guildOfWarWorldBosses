@@ -363,10 +363,50 @@
                                     <constraint firstAttribute="height" constant="22" id="kLW-R1-jDT"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rj5-He-FZ8">
+                                <rect key="frame" x="240" y="553" width="120" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="gRL-3U-MjD"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="design: ">
+                                        <attributes>
+                                            <color key="NSColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <font key="NSFont" size="11" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Carlos Angeles">
+                                        <attributes>
+                                            <color key="NSColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <font key="NSFont" size="11" name="HelveticaNeue-Bold"/>
+                                            <font key="NSOriginalFont" size="11" name="HelveticaNeue-Medium"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" code: ">
+                                        <attributes>
+                                            <color key="NSColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <font key="NSFont" size="11" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Austin Chen">
+                                        <attributes>
+                                            <color key="NSColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <font key="NSFont" size="11" name="HelveticaNeue-Bold"/>
+                                            <font key="NSOriginalFont" size="11" name="HelveticaNeue-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="TRP-6H-3jc" firstAttribute="centerX" secondItem="reY-2D-rOR" secondAttribute="centerX" id="2PC-dh-cLg"/>
+                            <constraint firstItem="pt5-Yu-1ce" firstAttribute="top" secondItem="rj5-He-FZ8" secondAttribute="bottom" constant="20" id="9Au-4M-LbV"/>
                             <constraint firstItem="WVU-FD-LaA" firstAttribute="centerX" secondItem="RFb-nX-Nbf" secondAttribute="centerX" id="Ddf-hE-TnS"/>
                             <constraint firstItem="WVU-FD-LaA" firstAttribute="top" secondItem="RFb-nX-Nbf" secondAttribute="bottom" constant="30" id="Mv5-Mq-615"/>
                             <constraint firstItem="lJN-Rk-pfM" firstAttribute="width" secondItem="reY-2D-rOR" secondAttribute="width" id="NCg-TS-jkY"/>
@@ -378,6 +418,7 @@
                             <constraint firstItem="RFb-nX-Nbf" firstAttribute="centerX" secondItem="reY-2D-rOR" secondAttribute="centerX" id="eSU-ve-MOL"/>
                             <constraint firstItem="lJN-Rk-pfM" firstAttribute="leading" secondItem="reY-2D-rOR" secondAttribute="leading" id="haG-ia-eiT"/>
                             <constraint firstItem="RFb-nX-Nbf" firstAttribute="centerX" secondItem="reY-2D-rOR" secondAttribute="centerX" id="mDN-2e-RjO"/>
+                            <constraint firstItem="rj5-He-FZ8" firstAttribute="centerX" secondItem="reY-2D-rOR" secondAttribute="centerX" id="unc-dr-LwB"/>
                             <constraint firstItem="JCa-Bf-cSM" firstAttribute="centerX" secondItem="RFb-nX-Nbf" secondAttribute="centerX" id="vmP-Q4-WHk"/>
                             <constraint firstItem="RFb-nX-Nbf" firstAttribute="top" secondItem="Jvf-g4-3hy" secondAttribute="bottom" constant="32" id="xLR-SL-HdF"/>
                             <constraint firstItem="TRP-6H-3jc" firstAttribute="top" secondItem="JCa-Bf-cSM" secondAttribute="bottom" constant="25" id="ze3-wj-H1A"/>

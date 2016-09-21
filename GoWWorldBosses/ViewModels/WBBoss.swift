@@ -96,7 +96,7 @@ extension WBBoss: WBBossLocalNotificationProtocol {
             notification.soundName = UILocalNotificationDefaultSoundName
             notification.userInfo = [kLocalNotificationBossName: self.name]
             
-            let sinceNow: Int = self.secondsTilNextSpawnTime() + i * self.spawnPattern.rawValue
+            let sinceNow: Int = self.secondsTilNextSpawnTime() + i * self.spawnPattern.rawValue - wb5Minutes // notify 5 mins before spawning
             notification.fireDate = NSDate(timeIntervalSinceNow: Double(sinceNow))
             UIApplication.sharedApplication().scheduleLocalNotification(notification)
             i += 1

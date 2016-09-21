@@ -87,6 +87,7 @@ class WBHighLevelBoss: WBBoss {
             } else {
                 sinceNow = spawnTimes[i] + wb1Day - spawnTimes[lastestSpawnTimeIndex+1] + self.secondsTilNextSpawnTime()
             }
+            sinceNow -= wb5Minutes // notify 5 mins before spawning
             notification.fireDate = NSDate(timeIntervalSinceNow: Double(sinceNow))
             UIApplication.sharedApplication().scheduleLocalNotification(notification)
             i += 1
@@ -103,6 +104,7 @@ class WBHighLevelBoss: WBBoss {
             notification.soundName = UILocalNotificationDefaultSoundName
             notification.userInfo = [kLocalNotificationBossName: self.name]
             
+            sinceNow -= wb5Minutes // notify 5 mins before spawning
             notification.fireDate = NSDate(timeIntervalSinceNow: Double(sinceNow))
             UIApplication.sharedApplication().scheduleLocalNotification(notification)
             
