@@ -25,18 +25,16 @@ class WBMainViewController: UIViewController {
         self.tableView.dataSource = self
         
         // set up coming back to foreground
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(initializeBosses), name: UIApplicationDidBecomeActiveNotification, object: nil)
-        // set up coming back to foreground
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(resignActive), name: UIApplicationWillResignActiveNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(initializeBosses), name: UIApplicationWillEnterForegroundNotification, object: nil)
+        
+        // set up timer
+        self.timer1 = NSTimer(timeInterval: 0.9, target: self, selector: #selector(timerFiredPerSecond), userInfo: nil, repeats: true)
+        NSRunLoop.currentRunLoop().addTimer(self.timer1!, forMode: NSRunLoopCommonModes)
         
         self.initializeBosses()
     }
 
     func initializeBosses() {
-        // set up timer
-        self.timer1 = NSTimer(timeInterval: 0.9, target: self, selector: #selector(timerFiredPerSecond), userInfo: nil, repeats: true)
-        NSRunLoop.currentRunLoop().addTimer(self.timer1!, forMode: NSRunLoopCommonModes)
-
         self.updateBosses()
         
         // sorting
@@ -55,10 +53,6 @@ class WBMainViewController: UIViewController {
             }
         }
         self.tableView.reloadData()
-    }
-    
-    func resignActive() {
-        self.timer1?.invalidate()
     }
     
     func updateBosses() {

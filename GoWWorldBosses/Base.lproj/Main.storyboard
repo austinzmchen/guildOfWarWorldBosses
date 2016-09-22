@@ -162,6 +162,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="EFk-Dw-pov">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>
@@ -280,6 +281,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="0C8-EA-bI3">
+                        <barButtonItem key="backBarButtonItem" title=" " id="vOo-Lr-EVu"/>
                         <barButtonItem key="rightBarButtonItem" title="Done" style="plain" id="iez-SZ-nMd">
                             <color key="tintColor" red="0.56078431370000004" green="0.86666666670000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -432,14 +434,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="About" id="drD-SZ-L9e">
-                        <barButtonItem key="leftBarButtonItem" image="backArrow" style="plain" id="DLg-6x-QD8">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <action selector="backButtonTapped:" destination="1GM-Ca-Coq" id="8BF-jj-58R"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="About" id="drD-SZ-L9e"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QKq-6H-sXw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -468,7 +463,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="backArrow" width="12" height="20"/>
         <image name="clockIcon" width="30" height="30"/>
         <image name="heartIcon" width="40" height="37"/>
         <image name="icSettings" width="20" height="20"/>
