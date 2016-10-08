@@ -53,7 +53,7 @@
 		C4341A831D89FA28007D84CC /* WBBossFactory+TestBosses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WBBossFactory+TestBosses.swift"; sourceTree = "<group>"; };
 		C4341F151D8EE73F007D84CC /* WBMainViewController+NavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WBMainViewController+NavigationBar.swift"; sourceTree = "<group>"; };
 		C4341F171D8F1027007D84CC /* WBKeyStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBKeyStore.swift; sourceTree = "<group>"; };
-		C45B6C951D68BE5800F94060 /* My GW2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My GW2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C45B6C951D68BE5800F94060 /* My Tyria.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Tyria.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C45B6C9D1D68BE5800F94060 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C45B6CA01D68BE5800F94060 /* GoWWorldBosses.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GoWWorldBosses.xcdatamodel; sourceTree = "<group>"; };
 		C45B6CA21D68BE5800F94060 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -107,7 +107,7 @@
 		C45B6C961D68BE5800F94060 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C45B6C951D68BE5800F94060 /* My GW2.app */,
+				C45B6C951D68BE5800F94060 /* My Tyria.app */,
 				C45B6CAC1D68BE5900F94060 /* GoWWorldBossesTests.xctest */,
 			);
 			name = Products;
@@ -197,9 +197,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C45B6C941D68BE5800F94060 /* My GW2 */ = {
+		C45B6C941D68BE5800F94060 /* My Tyria */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C45B6CB51D68BE5900F94060 /* Build configuration list for PBXNativeTarget "My GW2" */;
+			buildConfigurationList = C45B6CB51D68BE5900F94060 /* Build configuration list for PBXNativeTarget "My Tyria" */;
 			buildPhases = (
 				AFB8883A8513954F8306A5C0 /* [CP] Check Pods Manifest.lock */,
 				C45B6C911D68BE5800F94060 /* Sources */,
@@ -213,9 +213,9 @@
 			);
 			dependencies = (
 			);
-			name = "My GW2";
+			name = "My Tyria";
 			productName = GoWWorldBosses;
-			productReference = C45B6C951D68BE5800F94060 /* My GW2.app */;
+			productReference = C45B6C951D68BE5800F94060 /* My Tyria.app */;
 			productType = "com.apple.product-type.application";
 		};
 		C45B6CAB1D68BE5900F94060 /* GoWWorldBossesTests */ = {
@@ -272,7 +272,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C45B6C941D68BE5800F94060 /* My GW2 */,
+				C45B6C941D68BE5800F94060 /* My Tyria */,
 				C45B6CAB1D68BE5900F94060 /* GoWWorldBossesTests */,
 			);
 		};
@@ -439,7 +439,7 @@
 /* Begin PBXTargetDependency section */
 		C45B6CAE1D68BE5900F94060 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C45B6C941D68BE5800F94060 /* My GW2 */;
+			target = C45B6C941D68BE5800F94060 /* My Tyria */;
 			targetProxy = C45B6CAD1D68BE5900F94060 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -622,7 +622,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C45B6CB51D68BE5900F94060 /* Build configuration list for PBXNativeTarget "My GW2" */ = {
+		C45B6CB51D68BE5900F94060 /* Build configuration list for PBXNativeTarget "My Tyria" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C45B6CB61D68BE5900F94060 /* Debug */,

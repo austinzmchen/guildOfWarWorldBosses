@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -17,14 +17,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchScreen" translatesAutoresizingMaskIntoConstraints="NO" id="FVq-xS-PCb">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchScreen2" translatesAutoresizingMaskIntoConstraints="NO" id="FVq-xS-PCb">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loadingLogo" translatesAutoresizingMaskIntoConstraints="NO" id="gCx-OS-mVH">
+                                <rect key="frame" x="223" y="223" width="155" height="155"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="155" id="Zfz-Fn-whw"/>
+                                    <constraint firstAttribute="height" constant="155" id="pvs-nF-YaE"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="FVq-xS-PCb" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="EOo-Tk-5fF"/>
                             <constraint firstAttribute="trailing" secondItem="FVq-xS-PCb" secondAttribute="trailing" id="XY3-qf-r1A"/>
+                            <constraint firstItem="gCx-OS-mVH" firstAttribute="centerX" secondItem="FVq-xS-PCb" secondAttribute="centerX" id="oKK-Wv-qp5"/>
+                            <constraint firstItem="gCx-OS-mVH" firstAttribute="centerY" secondItem="FVq-xS-PCb" secondAttribute="centerY" id="qc2-Jy-eRf"/>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="FVq-xS-PCb" secondAttribute="bottom" id="yYY-AO-9u2"/>
                             <constraint firstItem="FVq-xS-PCb" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" id="z2e-88-hW8"/>
                         </constraints>
@@ -37,6 +46,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="launchScreen" width="750" height="1334"/>
+        <image name="launchScreen2" width="375" height="667"/>
+        <image name="loadingLogo" width="155" height="155"/>
     </resources>
 </document>
