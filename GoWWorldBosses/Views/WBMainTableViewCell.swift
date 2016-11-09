@@ -13,14 +13,14 @@ protocol WBMainTableViewCellDelegate: class {
 }
 
 enum WBTableCellCountDownStyle {
-    case Active
-    case CountDown(countDown: Int)
-    case CountDownRed(countDown: Int)
+    case active
+    case countDown(countDown: Int)
+    case countDownRed(countDown: Int)
 }
 
 func ==(lhs: WBTableCellCountDownStyle, rhs: WBTableCellCountDownStyle) -> Bool {
     switch (lhs,rhs) {
-    case (.Active, .Active): return true
+    case (.active, .active): return true
     default: return false
     }
 }
@@ -38,25 +38,25 @@ class WBMainTableViewCell: UITableViewCell {
     var boss: WBBoss?
     weak var delegate: WBMainTableViewCellDelegate?
     
-    func favButtonTapped(sender: AnyObject) {
-        if !self.favButton.selected {
+    func favButtonTapped(_ sender: AnyObject) {
+        if !self.favButton.isSelected {
             self.favAnimImageView.alpha = 0
-            UIView.animateWithDuration(0.22, delay: 0, options: .CurveEaseOut, animations: {
-                self.favAnimImageView.transform = CGAffineTransformMakeScale(12.5, 11.25)
+            UIView.animate(withDuration: 0.22, delay: 0, options: .curveEaseOut, animations: {
+                self.favAnimImageView.transform = CGAffineTransform(scaleX: 12.5, y: 11.25)
                 self.favAnimImageView.alpha = 1
             }) { (completed) in
-                self.favButton.selected = !self.favButton.selected
+                self.favButton.isSelected = !self.favButton.isSelected
                 self.favAnimImageView.alpha = 0
-                self.favAnimImageView.transform = CGAffineTransformMakeScale(1, 1)
+                self.favAnimImageView.transform = CGAffineTransform(scaleX: 1, y: 1)
                 
                 if let b = self.boss {
-                    self.delegate?.selectFavorite(isSelected: self.favButton.selected, forBoss: b)
+                    self.delegate?.selectFavorite(isSelected: self.favButton.isSelected, forBoss: b)
                 }
             }
         } else {
-            self.favButton.selected = !self.favButton.selected
+            self.favButton.isSelected = !self.favButton.isSelected
             if let b = self.boss {
-                self.delegate?.selectFavorite(isSelected: self.favButton.selected, forBoss: b)
+                self.delegate?.selectFavorite(isSelected: self.favButton.isSelected, forBoss: b)
             }
         }
     }
@@ -64,31 +64,31 @@ class WBMainTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        self.favButton.setImage(UIImage(named: "unheartIcon"), forState: .Normal)
-        self.favButton.setImage(UIImage(named: "heartIcon"), forState: .Selected)
-        favButton.addTarget(self, action: #selector(favButtonTapped(_:)), forControlEvents: .TouchUpInside)
+        self.favButton.setImage(UIImage(named: "unheartIcon"), for: UIControlState())
+        self.favButton.setImage(UIImage(named: "heartIcon"), for: .selected)
+        favButton.addTarget(self, action: #selector(favButtonTapped(_:)), for: .touchUpInside)
         self.favAnimImageView.alpha = 0
     }
     
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
         // Configure the view for the selected state
     }
     
-    var countDownStyle: WBTableCellCountDownStyle = .CountDown(countDown: 0) {
+    var countDownStyle: WBTableCellCountDownStyle = .countDown(countDown: 0) {
         didSet {
             switch countDownStyle {
-                case .Active:
+                case .active:
                     self.countDownLabel.textColor = UIColor(red: 117/255.0, green: 214/255.0, blue: 17/255.0, alpha: 1)
                     self.countDownLabel.text = "ACTIVE"
                     break
-                case .CountDownRed(let countDown):
-                    self.countDownLabel.textColor = UIColor.redColor()
+                case .countDownRed(let countDown):
+                    self.countDownLabel.textColor = UIColor.red
                     self.countDownLabel.text = countDown.nextSpawnTimeCountDownStringFromDate()
                     break
-                case .CountDown(let countDown):
-                    self.countDownLabel.textColor = UIColor.whiteColor()
+                case .countDown(let countDown):
+                    self.countDownLabel.textColor = UIColor.white
                     self.countDownLabel.text = countDown.nextSpawnTimeCountDownStringFromDate()
                     break
             }
@@ -96,7 +96,7 @@ class WBMainTableViewCell: UITableViewCell {
     }
     
     override func prepareForReuse() {
-        self.favButton.selected = false
+        self.favButton.isSelected = false
         self.favAnimImageView.alpha = 0
     }
 }

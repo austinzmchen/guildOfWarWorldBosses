@@ -11,8 +11,8 @@ import UIKit
 class WBSettingsViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    @IBAction func doneButtonTapped(sender: AnyObject) {
-        self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func doneButtonTapped(_ sender: AnyObject) {
+        self.navigationController?.dismiss(animated: true, completion: nil)
     }
     
     var isNotificationTurnedOnInSettings = true
@@ -24,12 +24,11 @@ class WBSettingsViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(appDidBecomeActive), name: UIApplicationWillEnterForegroundNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(appDidBecomeActive), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
     }
 
     func appDidBecomeActive() {
-        guard let settings = UIApplication.sharedApplication().currentUserNotificationSettings()
-            where settings.types != .None else
+        guard let settings = UIApplication.shared.currentUserNotificationSettings, settings.types != UIUserNotificationType() else
         {
             isNotificationTurnedOnInSettings = false
             self.tableView.reloadData()
@@ -41,15 +40,15 @@ class WBSettingsViewController: UIViewController {
 }
 
 extension WBSettingsViewController: UITableViewDelegate, UITableViewDataSource {
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 2
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {
             return 71.5
         } else {
@@ -57,22 +56,22 @@ extension WBSettingsViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
-            let noteCell = tableView.dequeueReusableCellWithIdentifier("noteCell") as! WBSettingsNotificationTableViewCell
-            noteCell.toggleSwitch.on = isNotificationTurnedOnInSettings
+            let noteCell = tableView.dequeueReusableCell(withIdentifier: "noteCell") as! WBSettingsNotificationTableViewCell
+            noteCell.toggleSwitch.isOn = isNotificationTurnedOnInSettings
             return noteCell
         } else {
-            return tableView.dequeueReusableCellWithIdentifier("aboutCell")!
+            return tableView.dequeueReusableCell(withIdentifier: "aboutCell")!
         }
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
-            UIApplication.sharedApplication().openURL(NSURL(string: UIApplicationOpenSettingsURLString)!)
+            UIApplication.shared.openURL(URL(string: UIApplicationOpenSettingsURLString)!)
         } else if indexPath.row == 1 {
-            self.performSegueWithIdentifier("pushToAboutVC", sender: nil)
+            self.performSegue(withIdentifier: "pushToAboutVC", sender: nil)
         }
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

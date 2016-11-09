@@ -10,11 +10,11 @@ import UIKit
 
 class WBAboutViewController: UIViewController {
 
-    @IBAction func backButtonTapped(sender: AnyObject) {
-        self.navigationController?.popViewControllerAnimated(true)
+    @IBAction func backButtonTapped(_ sender: AnyObject) {
+        _ = self.navigationController?.popViewController(animated: true)
     }
-    @IBAction func doneButtonTapped(sender: AnyObject) {
-        self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func doneButtonTapped(_ sender: AnyObject) {
+        self.navigationController?.dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLoad() {

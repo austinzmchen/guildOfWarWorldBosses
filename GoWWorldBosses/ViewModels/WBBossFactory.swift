@@ -13,27 +13,27 @@ class WBBossFactory: NSObject {
     static func creatBosses() -> [WBBoss] {
         // 2hrs
         let l1 = WBBoss(name: "Svanir Sharman Chief",
-                        firstSpawnTime: (hours: 0, minutes: 15), spawnPattern: .Pattern2hrs)
+                        firstSpawnTime: (hours: 0, minutes: 15), spawnPattern: .pattern2hrs)
         let l2 = WBBoss(name: "Fire Elemental",
-                        firstSpawnTime: (hours: 0, minutes: 45), spawnPattern: .Pattern2hrs)
+                        firstSpawnTime: (hours: 0, minutes: 45), spawnPattern: .pattern2hrs)
         let l3 = WBBoss(name: "Great Jungle Wurm",
-                        firstSpawnTime: (hours: 1, minutes: 15), spawnPattern: .Pattern2hrs)
+                        firstSpawnTime: (hours: 1, minutes: 15), spawnPattern: .pattern2hrs)
         let l4 = WBBoss(name: "Shadow Behemoth",
-                        firstSpawnTime: (hours: 1, minutes: 45), spawnPattern: .Pattern2hrs)
+                        firstSpawnTime: (hours: 1, minutes: 45), spawnPattern: .pattern2hrs)
         
         // 3hrs
         let m1 = WBBoss(name: "Admiral Taidha Covington",
-                        firstSpawnTime: (hours: 0, minutes: 0), spawnPattern: .Pattern3hrs)
+                        firstSpawnTime: (hours: 0, minutes: 0), spawnPattern: .pattern3hrs)
         let m2 = WBBoss(name: "Mega Destroyer",
-                        firstSpawnTime: (hours: 0, minutes: 30), spawnPattern: .Pattern3hrs)
+                        firstSpawnTime: (hours: 0, minutes: 30), spawnPattern: .pattern3hrs)
         let m3 = WBBoss(name: "The Shatterer",
-                        firstSpawnTime: (hours: 1, minutes: 00), spawnPattern: .Pattern3hrs)
+                        firstSpawnTime: (hours: 1, minutes: 00), spawnPattern: .pattern3hrs)
         let m4 = WBBoss(name: "Modniir Ulgoth",
-                        firstSpawnTime: (hours: 1, minutes: 30), spawnPattern: .Pattern3hrs)
+                        firstSpawnTime: (hours: 1, minutes: 30), spawnPattern: .pattern3hrs)
         let m5 = WBBoss(name: "Golem Mark II",
-                        firstSpawnTime: (hours: 2, minutes: 00), spawnPattern: .Pattern3hrs)
+                        firstSpawnTime: (hours: 2, minutes: 00), spawnPattern: .pattern3hrs)
         let m6 = WBBoss(name: "Claw of Jormag",
-                        firstSpawnTime: (hours: 2, minutes: 30), spawnPattern: .Pattern3hrs)
+                        firstSpawnTime: (hours: 2, minutes: 30), spawnPattern: .pattern3hrs)
         
         // high level bosses
         let h1 = WBHighLevelBoss(name: "Tequatl The Sunless",

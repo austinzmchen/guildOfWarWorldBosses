@@ -12,7 +12,7 @@ class WBSettingsNotificationTableViewCell: UITableViewCell {
 
     @IBOutlet weak var toggleSwitch: UISwitch!
     
-    @IBAction func switchToggled(sender: AnyObject) {
+    @IBAction func switchToggled(_ sender: AnyObject) {
         // interaction turned off
     }
 }

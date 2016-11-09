@@ -15,21 +15,21 @@ let wb15Minutes: Int = 15 * 60
 let wb1Hour: Int = 60 * 60
 let wb1Day: Int = wb1Hour * 24
 
-extension NSDate {
-    static func dateByHoursAndMinutes(hours hours:Int, minutes:Int, seconds: Int = 0) -> NSDate {
-        let d: NSDate = NSDate(timeIntervalSince1970: 0)
-        let cal: NSCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
+extension Date {
+    static func dateByHoursAndMinutes(hours:Int, minutes:Int, seconds: Int = 0) -> Date {
+        let d: Date = Date(timeIntervalSince1970: 0)
+        let cal: Calendar = Calendar(identifier: Calendar.Identifier.gregorian)
         
-        let date: NSDate = cal.dateBySettingHour(hours, minute: minutes, second: seconds, ofDate: d, options: NSCalendarOptions())!
+        let date: Date = (cal as NSCalendar).date(bySettingHour: hours, minute: minutes, second: seconds, of: d, options: NSCalendar.Options())!
         
         return date
     }
     
     static var wbNow: Int {
-        let now = NSDate() // in utc timezone
-        let hours = NSCalendar.currentCalendar().component(.Hour, fromDate: now)
-        let minutes = NSCalendar.currentCalendar().component(.Minute, fromDate: now)
-        let seconds = NSCalendar.currentCalendar().component(.Second, fromDate: now)
+        let now = Date() // in utc timezone
+        let hours = (Calendar.current as NSCalendar).component(.hour, from: now)
+        let minutes = (Calendar.current as NSCalendar).component(.minute, from: now)
+        let seconds = (Calendar.current as NSCalendar).component(.second, from: now)
         return (hours * wb1Hour + minutes * wb1Minute + seconds)
     }
 }

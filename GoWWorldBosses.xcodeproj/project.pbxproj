@@ -27,6 +27,7 @@
 		C4A7818E1D6915E900786488 /* WBBossFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A7818D1D6915E900786488 /* WBBossFactory.swift */; };
 		C4A781901D69165B00786488 /* WBBoss.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A7818F1D69165B00786488 /* WBBoss.swift */; };
 		C4A781921D69227300786488 /* NSDate+Plus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A781911D69227300786488 /* NSDate+Plus.swift */; };
+		D0ECD9EE3EC51FB7877B59B4 /* Pods_WorldBosses.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6D812AC02446D7C39386E19 /* Pods_WorldBosses.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02A9040D489312C722156EC9 /* Pods-WorldBosses.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorldBosses.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WorldBosses/Pods-WorldBosses.debug.xcconfig"; sourceTree = "<group>"; };
+		1E513F50CFF16B521B3D76B2 /* Pods-WorldBosses.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorldBosses.release.xcconfig"; path = "Pods/Target Support Files/Pods-WorldBosses/Pods-WorldBosses.release.xcconfig"; sourceTree = "<group>"; };
 		3865BF67528F5244C12D4F6D /* Pods-GoWWorldBossesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoWWorldBossesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoWWorldBossesTests/Pods-GoWWorldBossesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6ABF2B7A95EB4E3C7EFA2ECF /* Pods_My_GW2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_My_GW2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		700CB389B3F6416388F45C84 /* Pods-My GW2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My GW2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-My GW2/Pods-My GW2.debug.xcconfig"; sourceTree = "<group>"; };
@@ -69,6 +72,7 @@
 		C4A7818F1D69165B00786488 /* WBBoss.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBBoss.swift; sourceTree = "<group>"; };
 		C4A781911D69227300786488 /* NSDate+Plus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Plus.swift"; sourceTree = "<group>"; };
 		DBC9EA2A064114E4100C7FB1 /* Pods-GoWWorldBossesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoWWorldBossesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoWWorldBossesTests/Pods-GoWWorldBossesTests.release.xcconfig"; sourceTree = "<group>"; };
+		E6D812AC02446D7C39386E19 /* Pods_WorldBosses.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WorldBosses.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA84700B364AA4445FA5CB07 /* Pods-GoWWorldBosses.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoWWorldBosses.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoWWorldBosses/Pods-GoWWorldBosses.debug.xcconfig"; sourceTree = "<group>"; };
 		F55442F3DB8D49ACCDB9BF38 /* Pods_GoWWorldBosses.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoWWorldBosses.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -79,6 +83,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2624AFBB9B376052D975041F /* Pods_My_GW2.framework in Frameworks */,
+				D0ECD9EE3EC51FB7877B59B4 /* Pods_WorldBosses.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +182,7 @@
 				F55442F3DB8D49ACCDB9BF38 /* Pods_GoWWorldBosses.framework */,
 				7EB20CCACEE9948E9477B6C9 /* Pods_GoWWorldBossesTests.framework */,
 				6ABF2B7A95EB4E3C7EFA2ECF /* Pods_My_GW2.framework */,
+				E6D812AC02446D7C39386E19 /* Pods_WorldBosses.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -190,6 +196,8 @@
 				DBC9EA2A064114E4100C7FB1 /* Pods-GoWWorldBossesTests.release.xcconfig */,
 				700CB389B3F6416388F45C84 /* Pods-My GW2.debug.xcconfig */,
 				9B91DDA2549D4F8A907D32DA /* Pods-My GW2.release.xcconfig */,
+				02A9040D489312C722156EC9 /* Pods-WorldBosses.debug.xcconfig */,
+				1E513F50CFF16B521B3D76B2 /* Pods-WorldBosses.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -252,6 +260,7 @@
 					C45B6C941D68BE5800F94060 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = JF6RD64R9G;
+						LastSwiftMigration = 0810;
 					};
 					C45B6CAB1D68BE5900F94060 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -371,7 +380,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-My GW2/Pods-My GW2-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WorldBosses/Pods-WorldBosses-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B1440FB1E09F8D8397E7F933 /* [CP] Embed Pods Frameworks */ = {
@@ -386,7 +395,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-My GW2/Pods-My GW2-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WorldBosses/Pods-WorldBosses-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C446B4F91D6FBC1700975AAE /* ShellScript */ = {
@@ -506,6 +515,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0.1;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -544,6 +554,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 3.0.1;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -551,7 +562,7 @@
 		};
 		C45B6CB61D68BE5900F94060 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 700CB389B3F6416388F45C84 /* Pods-My GW2.debug.xcconfig */;
+			baseConfigurationReference = 02A9040D489312C722156EC9 /* Pods-WorldBosses.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -563,14 +574,14 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0.1;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		C45B6CB71D68BE5900F94060 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9B91DDA2549D4F8A907D32DA /* Pods-My GW2.release.xcconfig */;
+			baseConfigurationReference = 1E513F50CFF16B521B3D76B2 /* Pods-WorldBosses.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -581,7 +592,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.accodeworks.GoWWorldBosses;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0.1;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

@@ -11,7 +11,7 @@ import UIKit
 class WBMainViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
-    var timer1: NSTimer?
+    var timer1: Timer?
     var bosses: [WBBoss] = WBBossFactory.creatBosses()
 //    var bosses: [WBBoss] = WBBossFactory.creatTestBosses()
     
@@ -25,11 +25,11 @@ class WBMainViewController: UIViewController {
         self.tableView.dataSource = self
         
         // set up coming back to foreground
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(initializeBosses), name: UIApplicationWillEnterForegroundNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(initializeBosses), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
         
         // set up timer
-        self.timer1 = NSTimer(timeInterval: 0.9, target: self, selector: #selector(timerFiredPerSecond), userInfo: nil, repeats: true)
-        NSRunLoop.currentRunLoop().addTimer(self.timer1!, forMode: NSRunLoopCommonModes)
+        self.timer1 = Timer(timeInterval: 0.9, target: self, selector: #selector(timerFiredPerSecond), userInfo: nil, repeats: true)
+        RunLoop.current.add(self.timer1!, forMode: RunLoopMode.commonModes)
         
         self.initializeBosses()
     }
@@ -38,10 +38,10 @@ class WBMainViewController: UIViewController {
         self.updateBosses()
         
         // sorting
-        let n = NSDate.wbNow
-        self.bosses.sortInPlace{
+        let n = Date.wbNow
+        self.bosses.sort{
             if $0.isActive != $1.isActive { // when one of them is not active
-                return Int($0.isActive) > Int($1.isActive)
+                return ($0.isActive ? 1 : 0) > ($1.isActive ? 1 : 0)
             } else {
                 if $0.isActive == true,
                     let lst1 = $0.latestSpawnTime,
@@ -56,7 +56,7 @@ class WBMainViewController: UIViewController {
     }
     
     func updateBosses() {
-        let n = NSDate.wbNow
+        let n = Date.wbNow
         for boss in bosses {
             boss.update(n)
         }
@@ -66,10 +66,10 @@ class WBMainViewController: UIViewController {
         self.updateBosses()
         
         // sorting
-        let n = NSDate.wbNow
-        self.bosses.sortInPlace{
+        let n = Date.wbNow
+        self.bosses.sort{
             if $0.isActive != $1.isActive { // when one of them is not active
-                return Int($0.isActive) > Int($1.isActive)
+                return ($0.isActive ? 1 : 0) > ($1.isActive ? 1 : 0)
             } else {
                 if $0.isActive == true,
                     let lst1 = $0.latestSpawnTime,
@@ -109,19 +109,19 @@ class WBMainViewController: UIViewController {
         */
     }
     
-    func updateCell(cell:WBMainTableViewCell, atIndexPath indexPath:NSIndexPath) {
+    func updateCell(_ cell:WBMainTableViewCell, atIndexPath indexPath:IndexPath) {
         let boss = self.bosses[indexPath.row]
         
         // set count down
         if boss.isActive {
-            cell.countDownStyle = .Active
+            cell.countDownStyle = .active
         } else {
             let cd = boss.secondsTilNextSpawnTime()
             if cd < wb15Minutes // under 15 minutes
             {
-                cell.countDownStyle = .CountDownRed(countDown: cd)
+                cell.countDownStyle = .countDownRed(countDown: cd)
             } else {
-                cell.countDownStyle = .CountDown(countDown: cd)
+                cell.countDownStyle = .countDown(countDown: cd)
             }
         }
         cell.countDownLabel.setNeedsLayout()
@@ -131,27 +131,27 @@ class WBMainViewController: UIViewController {
         
         if let bossNames = WBKeyStore.keyStoreItem?.likedBosses {
             if bossNames.contains(boss.name) {
-                cell.favButton.selected = true
+                cell.favButton.isSelected = true
             }
         }
     }
 }
 
 extension WBMainViewController: UITableViewDelegate, UITableViewDataSource {
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.bosses.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("mainTableViewCell", forIndexPath: indexPath)
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "mainTableViewCell", for: indexPath)
         return cell
     }
     
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let boss = self.bosses[indexPath.row]
         let cell = cell as! WBMainTableViewCell
         // bind dataSource
@@ -159,7 +159,7 @@ extension WBMainViewController: UITableViewDelegate, UITableViewDataSource {
         // update property
         cell.nameLabel.text = boss.name
         cell.bossImageView.image = UIImage(named: boss.name)
-        cell.favButton.selected = boss.faved
+        cell.favButton.isSelected = boss.faved
         cell.delegate = self
         
         self.updateCell(cell, atIndexPath: indexPath)

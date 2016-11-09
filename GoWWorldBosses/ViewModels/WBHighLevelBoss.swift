@@ -15,7 +15,7 @@ class WBHighLevelBoss: WBBoss {
     
     init(name: String, spawnTimes: [(hours: Int, minutes: Int)]) {
         var sTimes: [Int] = []
-        let timeZoneoffset: Int = NSTimeZone.localTimeZone().secondsFromGMT
+        let timeZoneoffset: Int = NSTimeZone.local.secondsFromGMT()
         
         for hourMinute in spawnTimes {
             let spawnTimeUTC = hourMinute.hours * wb1Hour + hourMinute.minutes * wb1Minute
@@ -23,10 +23,10 @@ class WBHighLevelBoss: WBBoss {
 //            print("first spawn time - \(name):\(sp)")
             sTimes.append(sp)
         }
-        self.spawnTimes = sTimes.sort({ $0 < $1 })
+        self.spawnTimes = sTimes.sorted(by: { $0 < $1 })
         
-        let n = NSDate.wbNow
-        for (i, s) in self.spawnTimes.enumerate() {
+        let n = Date.wbNow
+        for (i, s) in self.spawnTimes.enumerated() {
             if s > n {
                 lastestSpawnTimeIndex = i - 1
                 break
@@ -36,7 +36,7 @@ class WBHighLevelBoss: WBBoss {
             }
         }
         
-        super.init(name: name, firstSpt: self.spawnTimes[0], spawnPattern: .PatternIrregular)
+        super.init(name: name, firstSpt: self.spawnTimes[0], spawnPattern: .patternIrregular)
     }
     
     override var latestSpawnTime: Int? {
@@ -57,25 +57,25 @@ class WBHighLevelBoss: WBBoss {
         }
     }
     
-    override func update(wbNow: Int) {
+    override func update(_ wbNow: Int) {
         if lastestSpawnTimeIndex + 1 < spawnTimes.count {
             if wbNow > spawnTimes[lastestSpawnTimeIndex + 1] {
                 lastestSpawnTimeIndex += 1
             }
         } else {
             if wbNow > spawnTimes[0] + wb1Day {
-                lastestSpawnTimeIndex == 0
+                lastestSpawnTimeIndex = 0
             }
         }
     }
 
-    override func createNotification(alertBody alertBody: String) {
+    override func createNotification(alertBody: String) {
         // eg: Karka Queen: 2 - 6 - 10:30 - 15:00 - 18:00 - 23:00
         // add note for past spawn times, but for new days,
         var i = 0
         while i <= lastestSpawnTimeIndex {
             let notification = UILocalNotification()
-            notification.repeatInterval = .Day
+            notification.repeatInterval = .day
             notification.alertBody = alertBody
             notification.alertAction = "OK"
             notification.soundName = UILocalNotificationDefaultSoundName
@@ -88,8 +88,8 @@ class WBHighLevelBoss: WBBoss {
                 sinceNow = spawnTimes[i] + wb1Day - spawnTimes[lastestSpawnTimeIndex+1] + self.secondsTilNextSpawnTime()
             }
             sinceNow -= wb5Minutes // notify 5 mins before spawning
-            notification.fireDate = NSDate(timeIntervalSinceNow: Double(sinceNow))
-            UIApplication.sharedApplication().scheduleLocalNotification(notification)
+            notification.fireDate = Date(timeIntervalSinceNow: Double(sinceNow))
+            UIApplication.shared.scheduleLocalNotification(notification)
             i += 1
         }
         
@@ -98,15 +98,15 @@ class WBHighLevelBoss: WBBoss {
         i = lastestSpawnTimeIndex + 1
         while i < spawnTimes.count - 1 {
             let notification = UILocalNotification()
-            notification.repeatInterval = .Day
+            notification.repeatInterval = .day
             notification.alertBody = alertBody
             notification.alertAction = "OK"
             notification.soundName = UILocalNotificationDefaultSoundName
             notification.userInfo = [kLocalNotificationBossName: self.name]
             
             sinceNow -= wb5Minutes // notify 5 mins before spawning
-            notification.fireDate = NSDate(timeIntervalSinceNow: Double(sinceNow))
-            UIApplication.sharedApplication().scheduleLocalNotification(notification)
+            notification.fireDate = Date(timeIntervalSinceNow: Double(sinceNow))
+            UIApplication.shared.scheduleLocalNotification(notification)
             
             sinceNow += spawnTimes[i+1] - spawnTimes[i]
             i += 1

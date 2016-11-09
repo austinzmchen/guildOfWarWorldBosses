@@ -11,21 +11,21 @@ import Foundation
 extension WBBossFactory {
     static func creatTestBosses() -> [WBBoss] {
         
-        let now = NSDate() // in utc timezone
-        let hours = NSCalendar.currentCalendar().component(.Hour, fromDate: now)
-        let minutes = NSCalendar.currentCalendar().component(.Minute, fromDate: now)
+        let now = Date() // in utc timezone
+        let hours = (Calendar.current as NSCalendar).component(.hour, from: now)
+        let minutes = (Calendar.current as NSCalendar).component(.minute, from: now)
         let firstSpawnMinutes = minutes + 0
         let secondSpawnMinutes = minutes + 1
         
         // 2hrs
         let l1 = WBBoss(name: "Svanir Sharman Chief",
-                        firstSpawnTime: (hours: hours, minutes: firstSpawnMinutes), spawnPattern: .Pattern2hrs)
+                        firstSpawnTime: (hours: hours, minutes: firstSpawnMinutes), spawnPattern: .pattern2hrs)
         let l2 = WBBoss(name: "Fire Elemental",
-                        firstSpawnTime: (hours: hours, minutes: firstSpawnMinutes), spawnPattern: .Pattern2hrs)
+                        firstSpawnTime: (hours: hours, minutes: firstSpawnMinutes), spawnPattern: .pattern2hrs)
         let l3 = WBBoss(name: "Great Jungle Wurm",
-                        firstSpawnTime: (hours: hours, minutes: secondSpawnMinutes), spawnPattern: .Pattern2hrs)
+                        firstSpawnTime: (hours: hours, minutes: secondSpawnMinutes), spawnPattern: .pattern2hrs)
         let l4 = WBBoss(name: "Shadow Behemoth",
-                        firstSpawnTime: (hours: hours, minutes: secondSpawnMinutes), spawnPattern: .Pattern2hrs)
+                        firstSpawnTime: (hours: hours, minutes: secondSpawnMinutes), spawnPattern: .pattern2hrs)
         
         return [
             l1,

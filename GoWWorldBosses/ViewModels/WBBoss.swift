@@ -9,20 +9,20 @@
 import Foundation
 
 enum WBBossSpawnPattern: Int {
-    case Pattern2hrs = 7200 // 2 * 60 * 60
-    case Pattern3hrs = 10800 // 3 * 60 * 60
-    case PatternIrregular = -1
+    case pattern2hrs = 7200 // 2 * 60 * 60
+    case pattern3hrs = 10800 // 3 * 60 * 60
+    case patternIrregular = -1
 }
 
 protocol WBBossProtocol {
     var isActive: Bool {get}
     var latestSpawnTime: Int? {get}
     var nextSpawnTime: Int {get}
-    func update(wbNow: Int)
+    func update(_ wbNow: Int)
 }
 
 protocol WBBossLocalNotificationProtocol {
-    func createNotification(alertBody alertBody: String)
+    func createNotification(alertBody: String)
     func cancelNotification()
 }
 
@@ -44,14 +44,14 @@ class WBBoss: NSObject, WBBossProtocol {
         self.spawnPattern = spawnPattern
         
         // return time in local time zone
-        let timeZoneoffset: Int = NSTimeZone.localTimeZone().secondsFromGMT
+        let timeZoneoffset: Int = NSTimeZone.local.secondsFromGMT()
         let spawnTimeUTC = (firstSpawnTime.hours * wb1Hour + firstSpawnTime.minutes * wb1Minute)
         self.firstSpawnTime = Int(spawnTimeUTC + timeZoneoffset + wb1Day) % Int(spawnPattern.rawValue)
 //        print("first spawn time -\(name):\(self.firstSpawnTime / 60)")
     }
 
     var isActive: Bool {
-        if let l = self.latestSpawnTime where NSDate.wbNow < l + wb15Minutes {
+        if let l = self.latestSpawnTime, Date.wbNow < l + wb15Minutes {
             return true
         } else {
             return false
@@ -70,7 +70,7 @@ class WBBoss: NSObject, WBBossProtocol {
         }
     }
     
-    func update(wbNow: Int) {
+    func update(_ wbNow: Int) {
         if wbNow < self.firstSpawnTime {
             if _latestSpawnTime != nil {
                 _latestSpawnTime = self.firstSpawnTime + wb1Day - self.spawnPattern.rawValue
@@ -85,33 +85,33 @@ class WBBoss: NSObject, WBBossProtocol {
 import UIKit
 
 extension WBBoss: WBBossLocalNotificationProtocol {
-    func createNotification(alertBody alertBody: String) {
+    func createNotification(alertBody: String) {
         let num = wb1Day / self.spawnPattern.rawValue
         var i = 0
         while i < num {
             let notification = UILocalNotification()
-            notification.repeatInterval = .Day
+            notification.repeatInterval = .day
             notification.alertBody = alertBody
             notification.alertAction = "OK"
             notification.soundName = UILocalNotificationDefaultSoundName
             notification.userInfo = [kLocalNotificationBossName: self.name]
             
             let sinceNow: Int = self.secondsTilNextSpawnTime() + i * self.spawnPattern.rawValue - wb5Minutes // notify 5 mins before spawning
-            notification.fireDate = NSDate(timeIntervalSinceNow: Double(sinceNow))
-            UIApplication.sharedApplication().scheduleLocalNotification(notification)
+            notification.fireDate = Date(timeIntervalSinceNow: Double(sinceNow))
+            UIApplication.shared.scheduleLocalNotification(notification)
             i += 1
         }
     }
     
     func cancelNotification() {
-        for notification in UIApplication.sharedApplication().scheduledLocalNotifications ?? [] {
+        for notification in UIApplication.shared.scheduledLocalNotifications ?? [] {
             guard let userInfo = notification.userInfo,
                 let bName = userInfo[kLocalNotificationBossName] as? String else {
                     continue
             }
             print(bName)
             if bName == self.name {
-                UIApplication.sharedApplication().cancelLocalNotification(notification)
+                UIApplication.shared.cancelLocalNotification(notification)
             }
         }
     }
@@ -136,7 +136,7 @@ extension WBBoss {
     }
     
     func secondsTilNextSpawnTime() -> Int {
-        return self.nextSpawnTime - NSDate.wbNow
+        return self.nextSpawnTime - Date.wbNow
     }
 }
 
