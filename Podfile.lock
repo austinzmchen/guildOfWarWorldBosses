@@ -1,22 +1,45 @@
 PODS:
+  - Alamofire (3.5.1)
+  - AlamofireObjectMapper (3.0.2):
+    - Alamofire (~> 3.2)
+    - ObjectMapper (~> 1.0)
   - Crashlytics (3.8.3):
     - Fabric (~> 1.6.3)
   - Fabric (1.6.11)
   - KYDrawerController (2.0.1)
   - Locksmith (3.0.0)
+  - ObjectMapper (1.5.0)
+  - Realm (2.0.3):
+    - Realm/Headers (= 2.0.3)
+  - Realm/Headers (2.0.3)
+  - RealmSwift (2.0.3):
+    - Realm (= 2.0.3)
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
 
 DEPENDENCIES:
+  - Alamofire
+  - AlamofireObjectMapper
   - Crashlytics
   - Fabric
   - KYDrawerController
   - Locksmith
+  - RealmSwift
+  - SDWebImage
 
 SPEC CHECKSUMS:
+  Alamofire: 0dfba1184a543e2aa160f4e39cac4e8aba48d223
+  AlamofireObjectMapper: 70f97cbf45c01c48d26aa07a1a7059a60ed7411d
   Crashlytics: 2b6dbe138a42395577cfa73dfa1aa7248cadf39e
   Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
   KYDrawerController: b716cfa5730dc2133a67efcfc28b3b5a2cff6101
   Locksmith: 310b4cc5031af5728bf4db5d4de547a5100c6a3b
+  ObjectMapper: 386645adca9d9d23b95eda43090b09d66444cf14
+  Realm: 5f008bfe3c8c47142eddfc30b8c1584cde22db24
+  RealmSwift: 5afb451f65b682242f272dbb52d5c6f6e343c980
+  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
 
-PODFILE CHECKSUM: f059116529b6877fc00899d60752c9a49c5437bc
+PODFILE CHECKSUM: 5355405d13e3a36ed1cd12ff5657680428dc00d3
 
 COCOAPODS: 1.0.1

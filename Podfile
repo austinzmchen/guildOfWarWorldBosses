@@ -6,7 +6,15 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 def addCommonDependancies
     # UI
+    pod 'SDWebImage'
     pod 'KYDrawerController'
+    
+    # Model
+    pod 'RealmSwift'
+    
+    # Networking
+    pod 'Alamofire'
+    pod 'AlamofireObjectMapper'
     
     # Misc
     pod 'Locksmith'
