@@ -155,6 +155,43 @@
 			path = GoWWorldBossesTests;
 			sourceTree = "<group>";
 		};
+		C47D5B131DE6970C00082CFD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C47D5B191DE69F0E00082CFD /* APIs */,
+				C47D5B1C1DE69F0E00082CFD /* Data */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C47D5B191DE69F0E00082CFD /* APIs */ = {
+			isa = PBXGroup;
+			children = (
+				C47D5B1A1DE69F0E00082CFD /* JSONModels */,
+				C47D5B1B1DE69F0E00082CFD /* Remote */,
+			);
+			path = APIs;
+			sourceTree = "<group>";
+		};
+		C47D5B1A1DE69F0E00082CFD /* JSONModels */ = {
+			isa = PBXGroup;
+			children = (
+				C47D5B221DE69F3000082CFD /* WBJsonCurrency.swift */,
+				C47D5B241DE69F5100082CFD /* WBJsonBankItem.swift */,
+			);
+			path = JSONModels;
+			sourceTree = "<group>";
+		};
+		C47D5B1B1DE69F0E00082CFD /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				C47D5B271DE6A01900082CFD /* WBBankRemote.swift */,
+				C47D5B281DE6A01900082CFD /* WBRemote.swift */,
+				C47D5B2C1DE6A23500082CFD /* WBRemoteSession.swift */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
 		C47D5B1C1DE69F0E00082CFD /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -442,16 +479,21 @@
 				C4341A841D89FA28007D84CC /* WBBossFactory+TestBosses.swift in Sources */,
 				C41E4E921D74D1850037E57F /* WBHighLevelBoss.swift in Sources */,
 				C4A7818E1D6915E900786488 /* WBBossFactory.swift in Sources */,
+				C47D5B2D1DE6A23500082CFD /* WBRemoteSession.swift in Sources */,
+				C47D5B2A1DE6A01900082CFD /* WBBankRemote.swift in Sources */,
 				C4A781881D68CFB200786488 /* AppDelegate.swift in Sources */,
 				C47D5B201DE69F0E00082CFD /* Entities.swift in Sources */,
 				C4A7818A1D68CFB200786488 /* WBMainTableViewCell.swift in Sources */,
 				C4341F181D8F1027007D84CC /* WBKeyStore.swift in Sources */,
 				C47D5B211DE69F0E00082CFD /* GoWWorldBosses.xcdatamodeld in Sources */,
+				C47D5B2B1DE6A01900082CFD /* WBRemote.swift in Sources */,
 				C4A781921D69227300786488 /* NSDate+Plus.swift in Sources */,
 				C4A781891D68CFB200786488 /* WBMainViewController.swift in Sources */,
+				C47D5B251DE69F5100082CFD /* WBJsonBankItem.swift in Sources */,
 				C41094A51D88FFCF00751A72 /* WBSettingsViewController.swift in Sources */,
 				C4A781901D69165B00786488 /* WBBoss.swift in Sources */,
 				C4341A801D89F5E2007D84CC /* WBSettingsNotificationTableViewCell.swift in Sources */,
+				C47D5B231DE69F3000082CFD /* WBJsonCurrency.swift in Sources */,
 				C4341F161D8EE73F007D84CC /* WBMainViewController+NavigationBar.swift in Sources */,
 				C41094A71D89003D00751A72 /* WBAboutViewController.swift in Sources */,
 			);
@@ -597,6 +639,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = GoWWorldBosses/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.accodeworks.GoWWorldBosses;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -617,6 +660,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = GoWWorldBosses/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.accodeworks.GoWWorldBosses;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -1,4 +1,4 @@
-platform :ios, '8.0'
+platform :ios, '9.0'
 
 use_frameworks!
 
@@ -14,7 +14,7 @@ def addCommonDependancies
     
     # Networking
     pod 'Alamofire'
-    pod 'AlamofireObjectMapper'
+    pod 'AlamofireObjectMapper', '~> 4.0'
     
     # Misc
     pod 'Locksmith'
