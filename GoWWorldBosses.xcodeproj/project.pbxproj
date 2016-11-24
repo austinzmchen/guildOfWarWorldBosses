@@ -17,10 +17,16 @@
 		C4341F161D8EE73F007D84CC /* WBMainViewController+NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4341F151D8EE73F007D84CC /* WBMainViewController+NavigationBar.swift */; };
 		C4341F181D8F1027007D84CC /* WBKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4341F171D8F1027007D84CC /* WBKeyStore.swift */; };
 		C45B6C9E1D68BE5800F94060 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C45B6C9C1D68BE5800F94060 /* Main.storyboard */; };
-		C45B6CA11D68BE5800F94060 /* GoWWorldBosses.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C45B6C9F1D68BE5800F94060 /* GoWWorldBosses.xcdatamodeld */; };
 		C45B6CA31D68BE5800F94060 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C45B6CA21D68BE5800F94060 /* Assets.xcassets */; };
 		C45B6CA61D68BE5800F94060 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C45B6CA41D68BE5800F94060 /* LaunchScreen.storyboard */; };
 		C45B6CB11D68BE5900F94060 /* GoWWorldBossesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45B6CB01D68BE5900F94060 /* GoWWorldBossesTests.swift */; };
+		C47D5B201DE69F0E00082CFD /* Entities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D5B1D1DE69F0E00082CFD /* Entities.swift */; };
+		C47D5B211DE69F0E00082CFD /* GoWWorldBosses.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C47D5B1E1DE69F0E00082CFD /* GoWWorldBosses.xcdatamodeld */; };
+		C47D5B231DE69F3000082CFD /* WBJsonCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D5B221DE69F3000082CFD /* WBJsonCurrency.swift */; };
+		C47D5B251DE69F5100082CFD /* WBJsonBankItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D5B241DE69F5100082CFD /* WBJsonBankItem.swift */; };
+		C47D5B2A1DE6A01900082CFD /* WBBankRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D5B271DE6A01900082CFD /* WBBankRemote.swift */; };
+		C47D5B2B1DE6A01900082CFD /* WBRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D5B281DE6A01900082CFD /* WBRemote.swift */; };
+		C47D5B2D1DE6A23500082CFD /* WBRemoteSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D5B2C1DE6A23500082CFD /* WBRemoteSession.swift */; };
 		C4A781881D68CFB200786488 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A781821D68CFB200786488 /* AppDelegate.swift */; };
 		C4A781891D68CFB200786488 /* WBMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A781841D68CFB200786488 /* WBMainViewController.swift */; };
 		C4A7818A1D68CFB200786488 /* WBMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A781871D68CFB200786488 /* WBMainTableViewCell.swift */; };
@@ -58,13 +64,19 @@
 		C4341F171D8F1027007D84CC /* WBKeyStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBKeyStore.swift; sourceTree = "<group>"; };
 		C45B6C951D68BE5800F94060 /* WorldBosses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldBosses.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C45B6C9D1D68BE5800F94060 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C45B6CA01D68BE5800F94060 /* GoWWorldBosses.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GoWWorldBosses.xcdatamodel; sourceTree = "<group>"; };
 		C45B6CA21D68BE5800F94060 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C45B6CA51D68BE5800F94060 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C45B6CA71D68BE5800F94060 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C45B6CAC1D68BE5900F94060 /* GoWWorldBossesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoWWorldBossesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C45B6CB01D68BE5900F94060 /* GoWWorldBossesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoWWorldBossesTests.swift; sourceTree = "<group>"; };
 		C45B6CB21D68BE5900F94060 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C47D5B1D1DE69F0E00082CFD /* Entities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entities.swift; sourceTree = "<group>"; };
+		C47D5B1F1DE69F0E00082CFD /* GoWWorldBosses.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GoWWorldBosses.xcdatamodel; sourceTree = "<group>"; };
+		C47D5B221DE69F3000082CFD /* WBJsonCurrency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBJsonCurrency.swift; sourceTree = "<group>"; };
+		C47D5B241DE69F5100082CFD /* WBJsonBankItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBJsonBankItem.swift; sourceTree = "<group>"; };
+		C47D5B271DE6A01900082CFD /* WBBankRemote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBBankRemote.swift; sourceTree = "<group>"; };
+		C47D5B281DE6A01900082CFD /* WBRemote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBRemote.swift; sourceTree = "<group>"; };
+		C47D5B2C1DE6A23500082CFD /* WBRemoteSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBRemoteSession.swift; sourceTree = "<group>"; };
 		C4A781821D68CFB200786488 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4A781841D68CFB200786488 /* WBMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBMainViewController.swift; sourceTree = "<group>"; };
 		C4A781871D68CFB200786488 /* WBMainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBMainTableViewCell.swift; sourceTree = "<group>"; };
@@ -125,11 +137,11 @@
 				C4A781831D68CFB200786488 /* ViewControllers */,
 				C4A781851D68CFB200786488 /* ViewModels */,
 				C4A781861D68CFB200786488 /* Views */,
+				C47D5B131DE6970C00082CFD /* Models */,
 				C45B6C9C1D68BE5800F94060 /* Main.storyboard */,
 				C45B6CA21D68BE5800F94060 /* Assets.xcassets */,
 				C45B6CA41D68BE5800F94060 /* LaunchScreen.storyboard */,
 				C45B6CA71D68BE5800F94060 /* Info.plist */,
-				C45B6C9F1D68BE5800F94060 /* GoWWorldBosses.xcdatamodeld */,
 			);
 			path = GoWWorldBosses;
 			sourceTree = "<group>";
@@ -141,6 +153,15 @@
 				C45B6CB21D68BE5900F94060 /* Info.plist */,
 			);
 			path = GoWWorldBossesTests;
+			sourceTree = "<group>";
+		};
+		C47D5B1C1DE69F0E00082CFD /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				C47D5B1D1DE69F0E00082CFD /* Entities.swift */,
+				C47D5B1E1DE69F0E00082CFD /* GoWWorldBosses.xcdatamodeld */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		C4A781831D68CFB200786488 /* ViewControllers */ = {
@@ -422,10 +443,11 @@
 				C41E4E921D74D1850037E57F /* WBHighLevelBoss.swift in Sources */,
 				C4A7818E1D6915E900786488 /* WBBossFactory.swift in Sources */,
 				C4A781881D68CFB200786488 /* AppDelegate.swift in Sources */,
+				C47D5B201DE69F0E00082CFD /* Entities.swift in Sources */,
 				C4A7818A1D68CFB200786488 /* WBMainTableViewCell.swift in Sources */,
 				C4341F181D8F1027007D84CC /* WBKeyStore.swift in Sources */,
+				C47D5B211DE69F0E00082CFD /* GoWWorldBosses.xcdatamodeld in Sources */,
 				C4A781921D69227300786488 /* NSDate+Plus.swift in Sources */,
-				C45B6CA11D68BE5800F94060 /* GoWWorldBosses.xcdatamodeld in Sources */,
 				C4A781891D68CFB200786488 /* WBMainViewController.swift in Sources */,
 				C41094A51D88FFCF00751A72 /* WBSettingsViewController.swift in Sources */,
 				C4A781901D69165B00786488 /* WBBoss.swift in Sources */,
@@ -665,12 +687,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		C45B6C9F1D68BE5800F94060 /* GoWWorldBosses.xcdatamodeld */ = {
+		C47D5B1E1DE69F0E00082CFD /* GoWWorldBosses.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				C45B6CA01D68BE5800F94060 /* GoWWorldBosses.xcdatamodel */,
+				C47D5B1F1DE69F0E00082CFD /* GoWWorldBosses.xcdatamodel */,
 			);
-			currentVersion = C45B6CA01D68BE5800F94060 /* GoWWorldBosses.xcdatamodel */;
+			currentVersion = C47D5B1F1DE69F0E00082CFD /* GoWWorldBosses.xcdatamodel */;
 			path = GoWWorldBosses.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

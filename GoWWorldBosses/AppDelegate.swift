@@ -11,6 +11,7 @@ import Fabric
 import Crashlytics
 
 import CoreData
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -28,6 +29,65 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // add local notification feature
         let notificationSettings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
         UIApplication.shared.registerUserNotificationSettings(notificationSettings)
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        // test
+        
+        // Realms are used to group data together
+        let realm = try! Realm() // Create realm pointing to default file
+        
+        // Link objects
+        let bankItem = WBBankItem()
+        bankItem.id = 20006
+        bankItem.name = "Magic Find Booster"
+        bankItem.descriptionText = "Double-click to gain an enhancement that gives an additional 50% Magic Find for one hour."
+        bankItem.level = 0
+        
+        let bankItem1 = WBBankItem()
+        bankItem1.id = 43485
+        bankItem1.name = "WXP Mini-Booster"
+        bankItem1.level = 0
+        
+        try! realm.write {
+            realm.add(bankItem)
+            realm.add(bankItem1)
+        }
+        
+        // Query
+        let results = realm.objects(WBBankItem.self).filter(NSPredicate(format: "name contains 'WX'"))
+        
+        // Queries are chainable!
+        let results2 = results.filter("level >= 0")
+        print("Number of bankItem: \(results.count)")
+        print("bankItem level greater than 0: \(results2.count)")
+        
+        
+        
+        // Link objects
+        let currency = WBCurrency()
+        currency.id = 1
+        currency.name = "Coin"
+        currency.descriptionText = "The primary currency of Tyria. Spent at vendors throughout the world."
+        
+        try! realm.write {
+            realm.add(currency)
+        }
+
+        // Query
+        let newResults = realm.objects(WBCurrency.self).filter(NSPredicate(format: "name contains 'in'"))
+        
+        
+        print("Number of currency: \(newResults.count)")
+        
+        
+        
         
         return true
     }
