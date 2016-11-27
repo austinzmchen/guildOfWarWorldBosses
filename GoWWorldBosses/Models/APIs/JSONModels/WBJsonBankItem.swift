@@ -10,9 +10,30 @@ import Foundation
 import ObjectMapper
 import AlamofireObjectMapper
 
-class WBJsonBankItem: Mappable {
-    required init?(map: Map) {}
+class WBJsonBank: WBJsonBase {
+    var count: Int?
+    var binding: String?
     
-    func mapping(map: Map) {
+    override func mapping(map: Map) {
+        count <- map["count"]
+        binding <- map["binding"]
+    }
+}
+
+class WBJsonBankItem: WBJsonBase {
+    var name: String?
+    var description: String?
+    var icon: String?
+    var type: String?
+    var level: Int?
+    var rarity: String?
+    
+    override func mapping(map: Map) {
+        name <- map["name"]
+        description <- map["description"]
+        type <- map["type"]
+        icon <- map["icon"]
+        level <- map["order"]
+        rarity <- map["rarity"]
     }
 }

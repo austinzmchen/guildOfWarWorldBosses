@@ -1,6 +1,0 @@
-framework module Pods_GoWWorldBossesTests {
-  umbrella header "Pods-GoWWorldBossesTests-umbrella.h"
-
-  export *
-  module * { export * }
-}

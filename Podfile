@@ -28,10 +28,6 @@ target 'WorldBosses' do
     addCommonDependancies
 end
 
-target 'GoWWorldBossesTests' do
-    addCommonDependancies
-end
-
 addCommonDependancies
 
 # set the pod to be not user legacy swift version

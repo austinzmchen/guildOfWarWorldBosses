@@ -23,8 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Fabric.with([Crashlytics.self])
 
         // Override point for customization after application launch.
-        UIApplication.shared.setStatusBarStyle(.lightContent, animated: true)
-        UIApplication.shared.setStatusBarHidden(false, with: .fade)
+        UIApplication.shared.statusBarStyle = .lightContent
+        UIApplication.shared.isStatusBarHidden = false
         
         // add local notification feature
         let notificationSettings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
@@ -37,7 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         
-        
+        /*
         // test
         
         // Realms are used to group data together
@@ -86,7 +86,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         print("Number of currency: \(newResults.count)")
         
-        
+        */
         
         
         return true

@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -35,7 +34,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qbJ-PM-HzZ" userLabel="bossImageView">
-                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="115"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="115"/>
                                                     <color key="backgroundColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Claw of Jormag" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="37a-Or-YpF" userLabel="nameLabel">
@@ -72,7 +71,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aNF-Ed-OXi" userLabel="favButton">
-                                                    <rect key="frame" x="559" y="0.0" width="40" height="38"/>
+                                                    <rect key="frame" x="373" y="0.0" width="40" height="38"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="38" id="QlS-uq-Jl9"/>
                                                         <constraint firstAttribute="width" constant="40" id="xZh-LH-YSv"/>
@@ -82,7 +81,7 @@
                                                     <state key="selected" image="heartIcon"/>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heartIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Mfe-Fy-7kJ" userLabel="favAnimImageView">
-                                                    <rect key="frame" x="578" y="18" width="2" height="2"/>
+                                                    <rect key="frame" x="392" y="18" width="2" height="2"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
@@ -142,6 +141,9 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="ijq-31-xpF">
+                        <barButtonItem key="leftBarButtonItem" image="icBurger" id="B0H-tw-EeY">
+                            <color key="tintColor" red="1" green="0.57254901960000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="icSettings" style="plain" id="Y0n-It-ay1">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
@@ -470,6 +472,7 @@
     <resources>
         <image name="clockIcon" width="30" height="30"/>
         <image name="heartIcon" width="20" height="18"/>
+        <image name="icBurger" width="25" height="15"/>
         <image name="icSettings" width="20" height="20"/>
         <image name="icThanks" width="24" height="22"/>
         <image name="settingsBackground" width="375" height="350"/>

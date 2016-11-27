@@ -1,20 +1,21 @@
 //
-//  WBTripRemote.swift
+//  WBWalletRemote.swift
 //  GoWWorldBosses
 //
-//  Created by Austin Chen on 2016-11-23.
+//  Created by Austin Chen on 2016-11-27.
+//  Copyright © 2016 Austin Chen. All rights reserved.
 //
 
 import Foundation
 import Alamofire
 
-protocol WBBankRemoteType {
-    func fetchBankItems(_ completion: @escaping (_ success: Bool, _ currencies: [WBJsonCurrency]?) -> ())
+protocol WBWalletRemoteType {
+    func fetchCurrencies(_ completion: @escaping (_ success: Bool, _ currencies: [WBJsonCurrency]?) -> ())
 }
 
-class WBBankRemote: WBRemote, WBBankRemoteType {
+class WBWalletRemote: WBRemote, WBWalletRemoteType {
     
-    func fetchBankItems(_ completion: @escaping (_ success: Bool, _ currencies: [WBJsonCurrency]?) -> ()) {
+    func fetchCurrencies(_ completion: @escaping (_ success: Bool, _ currencies: [WBJsonCurrency]?) -> ()) {
         // pass empty dict to trigger custom encoding routines
         let domain: String = self.remoteSession?.domain ?? ""
         
