@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="LZO-fJ-tDE">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Drawer Master View Controller-->
+        <scene sceneID="Oyx-tE-mRH">
+            <objects>
+                <viewController id="LZO-fJ-tDE" customClass="WBDrawerMasterViewController" customModule="WorldBosses" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0fp-UB-zKg"/>
+                        <viewControllerLayoutGuide type="bottom" id="5X1-BC-qkm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Sc0-vW-Jh7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="mainSegueIdentifier" value="main"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="uUF-1w-9PS" kind="custom" identifier="main" customClass="KYEmbedMainControllerSegue" customModule="KYDrawerController" id="NEv-M2-w4j"/>
+                        <segue destination="9hZ-3a-334" kind="custom" identifier="" customClass="KYEmbedDrawerControllerSegue" customModule="KYDrawerController" id="Jge-fh-bsP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5MK-Cc-RbT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-201" y="143"/>
+        </scene>
+        <!--Drawer View Controller-->
+        <scene sceneID="wc1-AZ-29L">
+            <objects>
+                <viewController id="rZF-sR-I6Z" customClass="WBDrawerViewController" customModule="WorldBosses" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JgD-fp-zuf"/>
+                        <viewControllerLayoutGuide type="bottom" id="gPF-Cn-bSS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JiK-6w-M34">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="2Ev-31-aVX">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="drawerTableCell" id="CpN-wv-wJN" customClass="WBDrawerTableViewCell" customModule="WorldBosses" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="1" width="375" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CpN-wv-wJN" id="aON-8I-kht">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icTimers" translatesAutoresizingMaskIntoConstraints="NO" id="JcA-gm-43h">
+                                                    <rect key="frame" x="25" y="11.5" width="25" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="pJT-qO-gnV"/>
+                                                        <constraint firstAttribute="width" constant="25" id="x56-Pv-Fdw"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Boss Timers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rQ8-dE-jee">
+                                                    <rect key="frame" x="60" y="12.5" width="115" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="rQ8-dE-jee" firstAttribute="centerY" secondItem="JcA-gm-43h" secondAttribute="centerY" id="PUE-ot-jys"/>
+                                                <constraint firstItem="JcA-gm-43h" firstAttribute="centerY" secondItem="aON-8I-kht" secondAttribute="centerY" id="e2F-dY-0BE"/>
+                                                <constraint firstItem="rQ8-dE-jee" firstAttribute="leading" secondItem="JcA-gm-43h" secondAttribute="trailing" constant="10" id="ozE-ZD-0oh"/>
+                                                <constraint firstItem="JcA-gm-43h" firstAttribute="leading" secondItem="aON-8I-kht" secondAttribute="leading" constant="25" id="tWN-0I-49T"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="leftImageView" destination="JcA-gm-43h" id="Jno-Tv-lrr"/>
+                                            <outlet property="mainTitleLabel" destination="rQ8-dE-jee" id="FLs-y6-Pms"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.80000000000000004" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="2Ev-31-aVX" secondAttribute="trailing" id="9tD-Bd-SVH"/>
+                            <constraint firstItem="2Ev-31-aVX" firstAttribute="top" secondItem="JgD-fp-zuf" secondAttribute="bottom" id="JsX-DC-LBe"/>
+                            <constraint firstItem="gPF-Cn-bSS" firstAttribute="top" secondItem="2Ev-31-aVX" secondAttribute="bottom" id="XzI-wh-vDJ"/>
+                            <constraint firstItem="2Ev-31-aVX" firstAttribute="leading" secondItem="JiK-6w-M34" secondAttribute="leading" id="x0E-tn-j3f"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="hjw-Iw-fAD">
+                        <barButtonItem key="leftBarButtonItem" image="icClose" id="XBf-za-LVN"/>
+                        <barButtonItem key="rightBarButtonItem" image="icSettings" id="22R-WC-skE"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="2Ev-31-aVX" id="2Tv-jo-eSz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O8l-ZI-LoX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1554" y="-27"/>
+        </scene>
+        <!--Timer-->
+        <scene sceneID="twt-9m-iUG">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Timer" id="uUF-1w-9PS" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="28a-9X-H7h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="551" y="430"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="qP6-KJ-Q5G">
+            <objects>
+                <navigationController storyboardIdentifier="drawerNavVC" automaticallyAdjustsScrollViewInsets="NO" id="9hZ-3a-334" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="Yei-p1-qO0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="rZF-sR-I6Z" kind="relationship" relationship="rootViewController" id="h29-gA-Pyw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Co2-SQ-HcZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="799" y="-27"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icClose" width="20" height="20"/>
+        <image name="icSettings" width="20" height="20"/>
+        <image name="icTimers" width="25" height="25"/>
+    </resources>
+</document>
