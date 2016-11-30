@@ -17,7 +17,7 @@ import RealmSwift
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var syncCoordinator: WBSyncCoordinator?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         Fabric.with([Crashlytics.self])
@@ -35,6 +35,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         
+        syncCoordinator = WBSyncCoordinator(remoteSession: WBRemoteSession(domain: "https://api.guildwars2.com/v2", bearer: "51891488-0A13-EB45-9852-A98A08D45B092F3570C8-4F23-496B-A0F3-5E2B9FAF07B9"))
+        syncCoordinator?.syncAll({ (success, error) in
+            print("reach\(success)")
+        })
         
         
         /*

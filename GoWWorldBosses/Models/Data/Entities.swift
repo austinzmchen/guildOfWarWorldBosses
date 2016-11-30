@@ -9,19 +9,31 @@
 import Foundation
 import RealmSwift
 
-class WBCurrency: Object {
-    dynamic var id: Int64 = -1
-    dynamic var name = ""
-    dynamic var descriptionText = ""
-    dynamic var icon = ""
-    dynamic var order = 0
+class WBCurrency: WBObject {
+    dynamic var name: String?
+    dynamic var descriptionText: String?
+    dynamic var icon: String?
+//    dynamic var order: Int
+    
+    override func saveSyncableProperties(fromSyncable syncable: WBRemoteRecordSyncableType) {
+        guard let rRecord = syncable as? WBJsonCurrency else {
+            return
+        }
+        
+        self.name = rRecord.name
+        self.descriptionText = rRecord.descriptionText
+        self.icon = rRecord.icon
+//        self.order = rRecord.order
+    }
 }
 
-class WBBankItem: Object {
-    dynamic var id: Int64 = -1
+class WBBankItem: WBObject {
     dynamic var name = ""
     dynamic var descriptionText = ""
     dynamic var icon = ""
     dynamic var type = ""
     dynamic var level = 0
+    
+    override func saveSyncableProperties(fromSyncable syncable: WBRemoteRecordSyncableType) {
+    }
 }

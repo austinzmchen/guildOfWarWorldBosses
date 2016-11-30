@@ -10,16 +10,31 @@ import Foundation
 import Alamofire
 
 protocol WBWalletRemoteType {
-    func fetchCurrencies(_ completion: @escaping (_ success: Bool, _ currencies: [WBJsonCurrency]?) -> ())
+    func fetchWalletItems(_ completion: @escaping (_ success: Bool, _ walletItems: [WBJsonWalletItem]?) -> ())
+    func fetchCurrencies(byIds ids: [Int64], completion: @escaping (_ success: Bool, _ currencies: [WBJsonCurrency]?) -> ())
 }
 
 class WBWalletRemote: WBRemote, WBWalletRemoteType {
     
-    func fetchCurrencies(_ completion: @escaping (_ success: Bool, _ currencies: [WBJsonCurrency]?) -> ()) {
+    func fetchWalletItems(_ completion: @escaping (_ success: Bool, _ walletItems: [WBJsonWalletItem]?) -> ()) {
         // pass empty dict to trigger custom encoding routines
         let domain: String = self.remoteSession?.domain ?? ""
         
-        let request = self.alamoFireManager.request(domain + "/trip-manager/history/passenger?passengerId=", headers: nil)
+        let request = self.alamoFireManager.request(domain + "/account/wallet", headers: self.remoteSession?.headers)
+        request.responseArray(queue: WBRemoteSettings.concurrentQueue) { (response: DataResponse<[WBJsonWalletItem]>) in
+            completion(response.result.isSuccess, response.result.value)
+        }
+    }
+    
+    func fetchCurrencies(byIds ids: [Int64], completion: @escaping (_ success: Bool, _ currencies: [WBJsonCurrency]?) -> ()) {
+        
+        let idsString = ids.map{ String($0) }.joined(separator: ",")
+        let parameters = "?ids=\(idsString)"
+        
+        // pass empty dict to trigger custom encoding routines
+        let domain: String = self.remoteSession?.domain ?? ""
+        
+        let request = self.alamoFireManager.request(domain + "/currencies" + parameters, headers: self.remoteSession?.headers)
         request.responseArray(queue: WBRemoteSettings.concurrentQueue) { (response: DataResponse<[WBJsonCurrency]>) in
             completion(response.result.isSuccess, response.result.value)
         }

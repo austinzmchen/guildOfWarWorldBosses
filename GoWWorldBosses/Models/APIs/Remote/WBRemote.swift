@@ -6,41 +6,42 @@
 //
 
 import Foundation
+import RealmSwift
 
 protocol WBRemoteRecordSyncableType {
-    var itemID: String { get }
+    var id: Int64 { get }
 }
 
-//enum WBRemoteRecordChange<T: WBRemoteRecordSyncableType> {
-//    case found(T, NSManagedObjectID)
-//    case inserted(T, NSManagedObjectID)
-//    case removed
-//    
-//    var isInserted: Bool {
-//        switch self {
-//        case .inserted:
-//            return true
-//        default:
-//            return false
-//        }
-//    }
-//    var isFound: Bool {
-//        switch self {
-//        case .found:
-//            return true
-//        default:
-//            return false
-//        }
-//    }
-//    var isRemoved: Bool {
-//        switch self {
-//        case .removed:
-//            return true
-//        default:
-//            return false
-//        }
-//    }
-//}
+enum WBRemoteRecordChange<T: WBRemoteRecordSyncableType, S: WBObject> {
+    case found(T, S)
+    case inserted(T, S)
+    case removed
+    
+    var isInserted: Bool {
+        switch self {
+        case .inserted:
+            return true
+        default:
+            return false
+        }
+    }
+    var isFound: Bool {
+        switch self {
+        case .found:
+            return true
+        default:
+            return false
+        }
+    }
+    var isRemoved: Bool {
+        switch self {
+        case .removed:
+            return true
+        default:
+            return false
+        }
+    }
+}
 
 import Alamofire
 

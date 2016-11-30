@@ -15,6 +15,8 @@ class WBJsonBank: WBJsonBase {
     var binding: String?
     
     override func mapping(map: Map) {
+        super.mapping(map: map)
+        
         count <- map["count"]
         binding <- map["binding"]
     }
@@ -29,6 +31,8 @@ class WBJsonBankItem: WBJsonBase {
     var rarity: String?
     
     override func mapping(map: Map) {
+        super.mapping(map: map)
+        
         name <- map["name"]
         description <- map["description"]
         type <- map["type"]

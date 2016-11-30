@@ -10,7 +10,7 @@ import Foundation
 import ObjectMapper
 import AlamofireObjectMapper
 
-class WBJsonWallet: WBJsonBase {
+class WBJsonWalletItem: WBJsonBase {
     var value: Int64? // The amount of this currency.
     
     override func mapping(map: Map) {
@@ -27,6 +27,8 @@ class WBJsonCurrency: WBJsonBase {
     var order: Int?
     
     override func mapping(map: Map) {
+        super.mapping(map: map)
+        
         name <- map["name"]
         descriptionText <- map["description"]
         icon <- map["icon"]

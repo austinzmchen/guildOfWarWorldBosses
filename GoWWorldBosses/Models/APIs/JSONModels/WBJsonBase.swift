@@ -10,8 +10,8 @@ import Foundation
 import ObjectMapper
 import AlamofireObjectMapper
 
-class WBJsonBase: Mappable {
-    var id: Int64? // currency id
+class WBJsonBase: Mappable, WBRemoteRecordSyncableType {
+    var id: Int64 = -1 // currency id
     
     required init?(map: Map) {}
     
