@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WBMainViewController: UIViewController {
+class WBMainViewController: UIViewController, WBDrawerItemViewControllerType {
     
     @IBAction func leftBarButtonTapped(_ sender: Any) {
         viewDelegate?.toggleDrawerView()

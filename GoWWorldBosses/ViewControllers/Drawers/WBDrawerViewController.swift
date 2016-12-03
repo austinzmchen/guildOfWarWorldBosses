@@ -29,6 +29,8 @@ class WBDrawerViewController: UIViewController {
     }
     
     @IBAction func rightBarButtonTapped(_ sender: Any) {
+        let settingsNavVC = WBStoryboardFactory.settingsStoryboard.instantiateViewController(withIdentifier: "settingsNavVC")
+        self.present(settingsNavVC, animated: true, completion: nil)
     }
     
     weak var delegate: WBDrawerViewControllerDelegate?
@@ -65,5 +67,7 @@ extension WBDrawerViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = drawerItems[indexPath.row]
         self.delegate?.didSelect(drawerItem: item, atIndex: indexPath.row)
+        
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

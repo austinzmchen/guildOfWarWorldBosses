@@ -24,6 +24,7 @@
 		C45B6CA31D68BE5800F94060 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C45B6CA21D68BE5800F94060 /* Assets.xcassets */; };
 		C45B6CA61D68BE5800F94060 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C45B6CA41D68BE5800F94060 /* LaunchScreen.storyboard */; };
 		C45BAE291DF2550200C6FB5A /* WBAPIKeyEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45BAE281DF2550200C6FB5A /* WBAPIKeyEntryViewController.swift */; };
+		C45BAE2C1DF27F1800C6FB5A /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C45BAE2A1DF27F1800C6FB5A /* Settings.storyboard */; };
 		C45D343D1DEB5A1A001C47F9 /* WBWalletRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D343C1DEB5A1A001C47F9 /* WBWalletRemote.swift */; };
 		C45D343F1DEB5A9E001C47F9 /* WBJsonCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D343E1DEB5A9E001C47F9 /* WBJsonCharacter.swift */; };
 		C45D34411DEB5ABF001C47F9 /* WBCharacterRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D34401DEB5ABF001C47F9 /* WBCharacterRemote.swift */; };
@@ -80,6 +81,7 @@
 		C45B6CB01D68BE5900F94060 /* GoWWorldBossesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoWWorldBossesTests.swift; sourceTree = "<group>"; };
 		C45B6CB21D68BE5900F94060 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C45BAE281DF2550200C6FB5A /* WBAPIKeyEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBAPIKeyEntryViewController.swift; sourceTree = "<group>"; };
+		C45BAE2B1DF27F1800C6FB5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
 		C45D343C1DEB5A1A001C47F9 /* WBWalletRemote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBWalletRemote.swift; sourceTree = "<group>"; };
 		C45D343E1DEB5A9E001C47F9 /* WBJsonCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBJsonCharacter.swift; sourceTree = "<group>"; };
 		C45D34401DEB5ABF001C47F9 /* WBCharacterRemote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBCharacterRemote.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				C45D34471DEB7A66001C47F9 /* Drawer.storyboard */,
 				C45B6C9C1D68BE5800F94060 /* Timer.storyboard */,
 				C45D34441DEB6D53001C47F9 /* Storage.storyboard */,
+				C45BAE2A1DF27F1800C6FB5A /* Settings.storyboard */,
 				C45B6CA41D68BE5800F94060 /* LaunchScreen.storyboard */,
 				C45B6CA21D68BE5800F94060 /* Assets.xcassets */,
 				C45B6CA71D68BE5800F94060 /* Info.plist */,
@@ -416,6 +419,7 @@
 				C45D34461DEB6D53001C47F9 /* Storage.storyboard in Resources */,
 				C47E30CD1DF24F8F00B91996 /* APIKeyEntry.storyboard in Resources */,
 				C45B6C9E1D68BE5800F94060 /* Timer.storyboard in Resources */,
+				C45BAE2C1DF27F1800C6FB5A /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -548,6 +552,14 @@
 				C45B6CA51D68BE5800F94060 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		C45BAE2A1DF27F1800C6FB5A /* Settings.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C45BAE2B1DF27F1800C6FB5A /* Base */,
+			);
+			name = Settings.storyboard;
 			sourceTree = "<group>";
 		};
 		C45D34441DEB6D53001C47F9 /* Storage.storyboard */ = {

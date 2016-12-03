@@ -8,8 +8,14 @@
 
 import UIKit
 
-class WBStorageMainViewController: UIViewController {
-
+class WBStorageMainViewController: UIViewController, WBDrawerItemViewControllerType {
+    
+    @IBAction func leftBarButtonTapped(_ sender: Any) {
+        viewDelegate?.toggleDrawerView()
+    }
+    
+    weak var viewDelegate: WBDrawerMasterViewControllerDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

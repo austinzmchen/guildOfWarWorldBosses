@@ -9,6 +9,10 @@
 import UIKit
 import KYDrawerController
 
+protocol WBDrawerItemViewControllerType: class {
+    var viewDelegate: WBDrawerMasterViewControllerDelegate? {get set}
+}
+
 protocol WBDrawerMasterViewControllerDelegate: class {
     func toggleDrawerView()
 }
@@ -41,8 +45,27 @@ class WBDrawerMasterViewController: KYDrawerController {
 
 extension WBDrawerMasterViewController: WBDrawerViewControllerDelegate {
     func didSelect(drawerItem: WBDrawerItem, atIndex index: Int) {
-        let vc = WBStoryboardFactory.storageStoryboard.instantiateViewController(withIdentifier: "storageNavVC")
-        self.mainViewController = vc
+        var vc: UIViewController? = nil
+        
+        switch index {
+        case 0:
+            vc = WBStoryboardFactory.timerStoryboard.instantiateViewController(withIdentifier: "timerNavVC")
+            break
+        case 1:
+            vc = WBStoryboardFactory.storageStoryboard.instantiateViewController(withIdentifier: "storageNavVC")
+            break
+        default:
+            break
+        }
+        
+        if let navVC = vc as? UINavigationController,
+            let rootVC = navVC.viewControllers.first,
+            let drawerItemVC = rootVC as? WBDrawerItemViewControllerType
+        {
+            drawerItemVC.viewDelegate = self
+            self.mainViewController = navVC
+        }
+        
         self.setDrawerState(.closed, animated: true)
     }
 }

@@ -25,4 +25,8 @@ class WBStoryboardFactory: NSObject {
     static var storageStoryboard: UIStoryboard {
         return UIStoryboard(name: "Storage", bundle: nil)
     }
+    
+    static var settingsStoryboard: UIStoryboard {
+        return UIStoryboard(name: "Settings", bundle: nil)
+    }
 }
