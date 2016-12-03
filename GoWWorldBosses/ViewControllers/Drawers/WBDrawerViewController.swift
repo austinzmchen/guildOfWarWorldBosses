@@ -24,7 +24,15 @@ class WBDrawerViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
 
+    @IBAction func leftBarButtonTapped(_ sender: Any) {
+        viewDelegate?.toggleDrawerView()
+    }
+    
+    @IBAction func rightBarButtonTapped(_ sender: Any) {
+    }
+    
     weak var delegate: WBDrawerViewControllerDelegate?
+    weak var viewDelegate: WBDrawerMasterViewControllerDelegate?
     
     fileprivate var drawerItems: [WBDrawerItem] = {
         return [
@@ -39,6 +47,7 @@ class WBDrawerViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        self.tableView.reloadData()
     }
 }
 
@@ -48,7 +57,7 @@ extension WBDrawerViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: "drawerTableCell") as! WBDrawerTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "drawerTableCell") as! WBDrawerTableViewCell
         cell.mainTitleLabel.text = drawerItems[indexPath.row].title
         return cell
     }

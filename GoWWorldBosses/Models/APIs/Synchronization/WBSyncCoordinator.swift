@@ -30,9 +30,38 @@ class WBSyncCoordinator: NSObject {
         return WBWalletProcessor(context: self.syncContext)
     }()
     
+    lazy var bankProcessor: WBBankProcessor = {
+        return WBBankProcessor(context: self.syncContext)
+    }()
+    
+    lazy var characterProcessor: WBCharacterProcessor = {
+        return WBCharacterProcessor(context: self.syncContext)
+    }()
+    
     func syncAll(_ completion: @escaping (_ success: Bool, _ error: NSError?) -> ()) {
+        var allSuccess = true
+        
+        let dispatchGroup = DispatchGroup()
+        
+        dispatchGroup.enter()
         self.walletProcessor.sync { (success, syncedObjects, error) in
-            NotificationCenter.default.post(name: Notification.Name(rawValue: WBSyncAllCompletedNotification), object: nil)
+            allSuccess = allSuccess && success
+            dispatchGroup.leave()
         }
+        
+//        dispatchGroup.enter()
+//        self.bankProcessor.sync { (success, syncedObjects, error) in
+//            dispatchGroup.leave()
+//        }
+//        
+//        dispatchGroup.enter()
+//        self.characterProcessor.sync { (success, syncedObjects, error) in
+//            dispatchGroup.leave()
+//        }
+        
+        dispatchGroup.notify(queue: DispatchQueue.main, execute: {
+            NotificationCenter.default.post(name: Notification.Name(rawValue: WBSyncAllCompletedNotification), object: nil)
+            completion(allSuccess, nil)
+        })
     }
 }

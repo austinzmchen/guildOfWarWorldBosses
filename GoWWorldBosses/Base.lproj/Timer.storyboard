@@ -13,7 +13,7 @@
         <!--Main-->
         <scene sceneID="ZEf-Ed-Trm">
             <objects>
-                <viewController storyboardIdentifier="TripHistoryViewController" id="i3K-KC-L0H" userLabel="Main" customClass="WBMainViewController" customModule="WorldBosses" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="timerVC" id="i3K-KC-L0H" userLabel="Main" customClass="WBMainViewController" customModule="WorldBosses" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xeQ-Lf-6Xl"/>
                         <viewControllerLayoutGuide type="bottom" id="K4M-M2-9QL"/>
@@ -143,6 +143,9 @@
                     <navigationItem key="navigationItem" id="ijq-31-xpF">
                         <barButtonItem key="leftBarButtonItem" image="icBurger" id="B0H-tw-EeY">
                             <color key="tintColor" red="1" green="0.57254901960000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="leftBarButtonTapped:" destination="i3K-KC-L0H" id="zNz-LB-eSm"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="icSettings" style="plain" id="Y0n-It-ay1">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
@@ -451,7 +454,7 @@
         <!--Navigation Controller-->
         <scene sceneID="AfT-6J-Wc4">
             <objects>
-                <navigationController id="qsg-yQ-Hqg" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="timerNavVC" id="qsg-yQ-Hqg" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="pl0-rj-jrU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

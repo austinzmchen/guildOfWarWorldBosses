@@ -9,6 +9,7 @@ PODS:
   - KYDrawerController (2.0.1)
   - Locksmith (3.0.0)
   - ObjectMapper (2.2.1)
+  - QRCodeReader.swift (7.2.0)
   - Realm (2.1.0):
     - Realm/Headers (= 2.1.0)
   - Realm/Headers (2.1.0)
@@ -25,6 +26,7 @@ DEPENDENCIES:
   - Fabric
   - KYDrawerController
   - Locksmith
+  - QRCodeReader.swift
   - RealmSwift
   - SDWebImage
 
@@ -36,10 +38,11 @@ SPEC CHECKSUMS:
   KYDrawerController: b716cfa5730dc2133a67efcfc28b3b5a2cff6101
   Locksmith: 310b4cc5031af5728bf4db5d4de547a5100c6a3b
   ObjectMapper: 41e43e1a89f8060ef5ea5d04ba852e269a621d68
+  QRCodeReader.swift: 2ddf74993243106dd2be5cf9f6e13c7a3e9a2d00
   Realm: bc829ad0ef3d4eea70c34cfcc3b1704d18d50df1
   RealmSwift: a4d4abbf0088c337cab5b738054395842e4b3052
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
 
-PODFILE CHECKSUM: a3236197ec9f5d3471aff5dc6d170897d9d0b72d
+PODFILE CHECKSUM: 3dbf8bf0f308ea189080cf816683534deea16909
 
 COCOAPODS: 1.0.1

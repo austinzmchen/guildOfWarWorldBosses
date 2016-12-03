@@ -9,19 +9,33 @@
 import UIKit
 import KYDrawerController
 
+protocol WBDrawerMasterViewControllerDelegate: class {
+    func toggleDrawerView()
+}
+
 class WBDrawerMasterViewController: KYDrawerController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        // set up drawer
         let drawerNavVC = WBStoryboardFactory.drawerStoryboard.instantiateViewController(withIdentifier: "drawerNavVC") as! UINavigationController
         let drawerRootVC = drawerNavVC.viewControllers.first as! WBDrawerViewController
         drawerRootVC.delegate = self
+        drawerRootVC.viewDelegate = self
         
         self.drawerViewController = drawerNavVC
         self.drawerViewController?.view.setNeedsLayout() // hack - to preload table items
         self.drawerWidth = UIScreen.main.bounds.width
+        
+        // set up main
+        let timerNavVC = WBStoryboardFactory.timerStoryboard.instantiateViewController(withIdentifier: "timerNavVC") as! UINavigationController
+        let timerVC = timerNavVC.viewControllers.first as! WBMainViewController
+        timerVC.viewDelegate = self
+        
+        self.mainViewController = timerNavVC
     }
 }
 
@@ -30,5 +44,18 @@ extension WBDrawerMasterViewController: WBDrawerViewControllerDelegate {
         let vc = WBStoryboardFactory.storageStoryboard.instantiateViewController(withIdentifier: "storageNavVC")
         self.mainViewController = vc
         self.setDrawerState(.closed, animated: true)
+    }
+}
+
+extension WBDrawerMasterViewController: WBDrawerMasterViewControllerDelegate {
+    func toggleDrawerView() {
+        var state = DrawerState.opened
+        switch self.drawerState {
+        case .opened:
+            state = .closed
+        case .closed:
+            state = .opened
+        }
+        self.setDrawerState(state, animated: true)
     }
 }

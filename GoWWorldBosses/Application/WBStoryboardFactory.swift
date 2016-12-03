@@ -10,6 +10,10 @@ import UIKit
 
 class WBStoryboardFactory: NSObject {
     
+    static var apiKeyEntryStoryboard: UIStoryboard {
+        return UIStoryboard(name: "APIKeyEntry", bundle: nil)
+    }
+    
     static var drawerStoryboard: UIStoryboard {
         return UIStoryboard(name: "Drawer", bundle: nil)
     }

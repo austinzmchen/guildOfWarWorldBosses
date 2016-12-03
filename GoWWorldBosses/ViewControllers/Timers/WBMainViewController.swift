@@ -9,11 +9,17 @@
 import UIKit
 
 class WBMainViewController: UIViewController {
+    
+    @IBAction func leftBarButtonTapped(_ sender: Any) {
+        viewDelegate?.toggleDrawerView()
+    }
+    
     @IBOutlet weak var tableView: UITableView!
     
     var timer1: Timer?
     var bosses: [WBBoss] = WBBossFactory.creatBosses()
 //    var bosses: [WBBoss] = WBBossFactory.creatTestBosses()
+    weak var viewDelegate: WBDrawerMasterViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -8,6 +8,7 @@ def addCommonDependancies
     # UI
     pod 'SDWebImage'
     pod 'KYDrawerController'
+    pod 'QRCodeReader.swift'
     
     # Model
     pod 'RealmSwift'
