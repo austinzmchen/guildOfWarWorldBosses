@@ -38,8 +38,8 @@ class WBDrawerViewController: UIViewController {
     
     fileprivate var drawerItems: [WBDrawerItem] = {
         return [
-            WBDrawerItem(normalImageName: "", selectedImageName: "", title: "Boss Timers", storyboardFileName: "", storyboardID: ""),
-            WBDrawerItem(normalImageName: "", selectedImageName: "", title: "Storage", storyboardFileName: "", storyboardID: "")
+            WBDrawerItem(normalImageName: "icTimers", selectedImageName: "", title: "Boss Timers", storyboardFileName: "", storyboardID: ""),
+            WBDrawerItem(normalImageName: "icStorage", selectedImageName: "", title: "Storage", storyboardFileName: "", storyboardID: "")
             ]
     }()
     
@@ -60,7 +60,9 @@ extension WBDrawerViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "drawerTableCell") as! WBDrawerTableViewCell
-        cell.mainTitleLabel.text = drawerItems[indexPath.row].title
+        let item = drawerItems[indexPath.row]
+        cell.leftImageView.image = UIImage(named: item.normalImageName)
+        cell.mainTitleLabel.text = item.title
         return cell
     }
     

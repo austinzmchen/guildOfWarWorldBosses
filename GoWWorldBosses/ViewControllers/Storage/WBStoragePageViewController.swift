@@ -35,10 +35,10 @@ class WBStoragePageViewController: UIPageViewController {
     fileprivate(set) lazy var orderedViewControllers: [UIViewController] = {
         // The view controllers will be shown in this order
         let walletTableVC = WBStoryboardFactory.storageStoryboard.instantiateViewController(withIdentifier: "storageGeneralTableVC")
-        let bankTableVC = WBStoryboardFactory.storageStoryboard.instantiateViewController(withIdentifier: "storageGeneralTableVC")
-        let materialsTableVC = WBStoryboardFactory.storageStoryboard.instantiateViewController(withIdentifier: "storageGeneralTableVC")
+        let bankTableVC = WBStoryboardFactory.storageStoryboard.instantiateViewController(withIdentifier: "storageBankTableVC")
+//        let materialsTableVC = WBStoryboardFactory.storageStoryboard.instantiateViewController(withIdentifier: "storageGeneralTableVC")
         
-        return [walletTableVC, bankTableVC, materialsTableVC]
+        return [walletTableVC, bankTableVC]
     }()
     
     override func viewDidLoad() {
@@ -51,6 +51,16 @@ class WBStoragePageViewController: UIPageViewController {
             scrollToViewController(initialViewController)
         }
         wbDelegate?.didUpdate(pageCount: orderedViewControllers.count, viewController: self)
+    }
+    
+    func pageIndex() -> Int {
+        if let firstViewController = viewControllers?.first,
+            let index = orderedViewControllers.index(of: firstViewController)
+        {
+            return index
+        } else {
+            return -1
+        }
     }
     
     /**

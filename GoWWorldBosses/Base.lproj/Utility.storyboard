@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Loader-->
+        <scene sceneID="hEU-uh-XSi">
+            <objects>
+                <viewController storyboardIdentifier="loaderVC" id="Is2-EE-VIW" userLabel="Loader" customClass="WBLoaderViewController" customModule="WorldBosses" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Egg-B3-Lco"/>
+                        <viewControllerLayoutGuide type="bottom" id="h5O-Tt-tlH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ayp-bm-l0W">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XXz-hl-mlA" userLabel="BackgroundView">
+                                <rect key="frame" x="0.0" y="-20" width="375" height="687"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="XHm-Us-UYC">
+                                        <rect key="frame" x="178" y="334" width="20" height="20"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="XHm-Us-UYC" firstAttribute="centerX" secondItem="XXz-hl-mlA" secondAttribute="centerX" id="3jE-zg-luY"/>
+                                    <constraint firstItem="XHm-Us-UYC" firstAttribute="centerY" secondItem="XXz-hl-mlA" secondAttribute="centerY" id="iDH-PS-1Gr"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="XXz-hl-mlA" firstAttribute="top" secondItem="Egg-B3-Lco" secondAttribute="bottom" constant="-20" id="KyC-xx-k8n"/>
+                            <constraint firstItem="h5O-Tt-tlH" firstAttribute="top" secondItem="XXz-hl-mlA" secondAttribute="bottom" id="QKL-wp-uWT"/>
+                            <constraint firstItem="XXz-hl-mlA" firstAttribute="leading" secondItem="ayp-bm-l0W" secondAttribute="leading" id="lfK-rd-QMM"/>
+                            <constraint firstAttribute="trailing" secondItem="XXz-hl-mlA" secondAttribute="trailing" id="oa7-HS-6TG"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="loadingIndicator" destination="XHm-Us-UYC" id="CV0-d6-Lm6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sL1-Kt-WCm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="822" y="144"/>
+        </scene>
+    </scenes>
+</document>

@@ -14,6 +14,7 @@ class WBCurrency: WBObject {
     dynamic var descriptionText: String?
     dynamic var icon: String?
     dynamic var order: Int = -1
+    dynamic var count: Int = -1
     
     override func saveSyncableProperties(fromSyncable syncable: WBRemoteRecordSyncableType) {
         guard let rRecord = syncable as? WBJsonCurrency else {
@@ -33,6 +34,7 @@ class WBBankItem: WBObject {
     dynamic var icon: String?
     dynamic var type: String?
     dynamic var level: Int = -1
+    dynamic var count: Int = -1
     
     override func saveSyncableProperties(fromSyncable syncable: WBRemoteRecordSyncableType) {
         guard let rRecord = syncable as? WBJsonBankItem else {

@@ -49,11 +49,12 @@ class WBSyncCoordinator: NSObject {
             dispatchGroup.leave()
         }
         
-//        dispatchGroup.enter()
-//        self.bankProcessor.sync { (success, syncedObjects, error) in
-//            dispatchGroup.leave()
-//        }
-//        
+        dispatchGroup.enter()
+        self.bankProcessor.sync { (success, syncedObjects, error) in
+            allSuccess = allSuccess && success
+            dispatchGroup.leave()
+        }
+
 //        dispatchGroup.enter()
 //        self.characterProcessor.sync { (success, syncedObjects, error) in
 //            dispatchGroup.leave()

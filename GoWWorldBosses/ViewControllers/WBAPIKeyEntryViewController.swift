@@ -9,6 +9,7 @@
 import UIKit
 import QRCodeReader
 import AVFoundation
+import RealmSwift
 
 class WBAPIKeyEntryViewController: UIViewController, QRCodeReaderViewControllerDelegate {
 
@@ -63,14 +64,36 @@ class WBAPIKeyEntryViewController: UIViewController, QRCodeReaderViewControllerD
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        let a = WBStoryboardFactory.utilityStoryboard.instantiateViewController(withIdentifier: "loaderVC") as! WBLoaderViewController
+        self.present(a, animated: true, completion: nil)
+        
+//        UIApplication.showLoader()
+//        
+//        // Do any additional setup after loading the view.
+//        if let keyItem = WBKeyStore.keyStoreItem,
+//            !(keyItem.accountAPIKey == "")
+//        {
+//            self.authenticate(apiKey: keyItem.accountAPIKey)
+//        } else {
+//            UIApplication.hideLoader()
+//        }
     }
     
     func authenticate(apiKey: String) {
+        // FIXME:
+        let realm = try! Realm()
+        try! realm.write {
+            realm.deleteAll()
+        }
+        
+        
         let key = apiKey.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         self.syncCoordinator = WBSyncCoordinator(remoteSession: WBRemoteSession(domain: "https://api.guildwars2.com/v2", bearer: key))
         self.syncCoordinator?.syncAll({ (success, error) in
             if success {
+                let keyItem = WBKeyStore.keyStoreItem
+                WBKeyStore.keyStoreItem = WBKeyStoreItem(likedBosses: (keyItem?.likedBosses ?? Set<String>()), accountAPIKey: key)
+                
                 let drawerMasterVC = WBStoryboardFactory.drawerStoryboard.instantiateViewController(withIdentifier: "drawerMasterVC")
                 self.present(drawerMasterVC, animated: true, completion: {
                     
@@ -85,6 +108,7 @@ class WBAPIKeyEntryViewController: UIViewController, QRCodeReaderViewControllerD
                 
                 self.present(alert, animated: true, completion: nil)
             }
+            UIApplication.hideLoader()
         })
     }
     

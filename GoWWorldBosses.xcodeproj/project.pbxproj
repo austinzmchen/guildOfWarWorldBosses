@@ -25,6 +25,7 @@
 		C45B6CA61D68BE5800F94060 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C45B6CA41D68BE5800F94060 /* LaunchScreen.storyboard */; };
 		C45BAE291DF2550200C6FB5A /* WBAPIKeyEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45BAE281DF2550200C6FB5A /* WBAPIKeyEntryViewController.swift */; };
 		C45BAE2C1DF27F1800C6FB5A /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C45BAE2A1DF27F1800C6FB5A /* Settings.storyboard */; };
+		C45BAE2E1DF4E17D00C6FB5A /* WBStorageBankTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45BAE2D1DF4E17D00C6FB5A /* WBStorageBankTableViewController.swift */; };
 		C45D343D1DEB5A1A001C47F9 /* WBWalletRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D343C1DEB5A1A001C47F9 /* WBWalletRemote.swift */; };
 		C45D343F1DEB5A9E001C47F9 /* WBJsonCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D343E1DEB5A9E001C47F9 /* WBJsonCharacter.swift */; };
 		C45D34411DEB5ABF001C47F9 /* WBCharacterRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D34401DEB5ABF001C47F9 /* WBCharacterRemote.swift */; };
@@ -56,6 +57,9 @@
 		C4A7818E1D6915E900786488 /* WBBossFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A7818D1D6915E900786488 /* WBBossFactory.swift */; };
 		C4A781901D69165B00786488 /* WBBoss.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A7818F1D69165B00786488 /* WBBoss.swift */; };
 		C4A781921D69227300786488 /* NSDate+Plus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A781911D69227300786488 /* NSDate+Plus.swift */; };
+		C4C799E91DF503D100A8B5F4 /* Utility.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4C799E71DF503D000A8B5F4 /* Utility.storyboard */; };
+		C4C799EB1DF5044000A8B5F4 /* WBLoaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C799EA1DF5044000A8B5F4 /* WBLoaderViewController.swift */; };
+		C4C799ED1DF505BD00A8B5F4 /* UIApplication+Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C799EC1DF505BD00A8B5F4 /* UIApplication+Loader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +86,7 @@
 		C45B6CB21D68BE5900F94060 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C45BAE281DF2550200C6FB5A /* WBAPIKeyEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBAPIKeyEntryViewController.swift; sourceTree = "<group>"; };
 		C45BAE2B1DF27F1800C6FB5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
+		C45BAE2D1DF4E17D00C6FB5A /* WBStorageBankTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WBStorageBankTableViewController.swift; path = ../ViewControllers/Storage/WBStorageBankTableViewController.swift; sourceTree = "<group>"; };
 		C45D343C1DEB5A1A001C47F9 /* WBWalletRemote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBWalletRemote.swift; sourceTree = "<group>"; };
 		C45D343E1DEB5A9E001C47F9 /* WBJsonCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBJsonCharacter.swift; sourceTree = "<group>"; };
 		C45D34401DEB5ABF001C47F9 /* WBCharacterRemote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBCharacterRemote.swift; sourceTree = "<group>"; };
@@ -113,6 +118,9 @@
 		C4A7818D1D6915E900786488 /* WBBossFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBBossFactory.swift; sourceTree = "<group>"; };
 		C4A7818F1D69165B00786488 /* WBBoss.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBBoss.swift; sourceTree = "<group>"; };
 		C4A781911D69227300786488 /* NSDate+Plus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Plus.swift"; sourceTree = "<group>"; };
+		C4C799E81DF503D100A8B5F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Utility.storyboard; sourceTree = "<group>"; };
+		C4C799EA1DF5044000A8B5F4 /* WBLoaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBLoaderViewController.swift; sourceTree = "<group>"; };
+		C4C799EC1DF505BD00A8B5F4 /* UIApplication+Loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+Loader.swift"; sourceTree = "<group>"; };
 		E8EEB5B9C2FEDBFFEEF747BA /* Pods_WorldBosses.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WorldBosses.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -171,6 +179,7 @@
 				C45D34441DEB6D53001C47F9 /* Storage.storyboard */,
 				C45BAE2A1DF27F1800C6FB5A /* Settings.storyboard */,
 				C45B6CA41D68BE5800F94060 /* LaunchScreen.storyboard */,
+				C4C799E71DF503D000A8B5F4 /* Utility.storyboard */,
 				C45B6CA21D68BE5800F94060 /* Assets.xcassets */,
 				C45B6CA71D68BE5800F94060 /* Info.plist */,
 			);
@@ -228,6 +237,7 @@
 			children = (
 				C45D34611DECDB42001C47F9 /* AppDelegate.swift */,
 				C45D34631DECDBBC001C47F9 /* WBStoryboardFactory.swift */,
+				C4C799EC1DF505BD00A8B5F4 /* UIApplication+Loader.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -305,6 +315,7 @@
 				C45D34591DECD7D6001C47F9 /* Timers */,
 				C41094A41D88FFCF00751A72 /* WBSettingsViewController.swift */,
 				C41094A61D89003D00751A72 /* WBAboutViewController.swift */,
+				C4C799EA1DF5044000A8B5F4 /* WBLoaderViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -325,6 +336,7 @@
 		C4A781861D68CFB200786488 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C45BAE2D1DF4E17D00C6FB5A /* WBStorageBankTableViewController.swift */,
 				C45D34511DEB8658001C47F9 /* Cells */,
 				C4A781871D68CFB200786488 /* WBMainTableViewCell.swift */,
 				C4341A7F1D89F5E2007D84CC /* WBSettingsNotificationTableViewCell.swift */,
@@ -418,6 +430,7 @@
 				C45D34491DEB7A66001C47F9 /* Drawer.storyboard in Resources */,
 				C45D34461DEB6D53001C47F9 /* Storage.storyboard in Resources */,
 				C47E30CD1DF24F8F00B91996 /* APIKeyEntry.storyboard in Resources */,
+				C4C799E91DF503D100A8B5F4 /* Utility.storyboard in Resources */,
 				C45B6C9E1D68BE5800F94060 /* Timer.storyboard in Resources */,
 				C45BAE2C1DF27F1800C6FB5A /* Settings.storyboard in Resources */,
 			);
@@ -496,6 +509,7 @@
 				C45D346F1DED0E4A001C47F9 /* RealmPlus.swift in Sources */,
 				C4341A841D89FA28007D84CC /* WBBossFactory+TestBosses.swift in Sources */,
 				C45D34431DEB5CC2001C47F9 /* WBJsonBase.swift in Sources */,
+				C4C799ED1DF505BD00A8B5F4 /* UIApplication+Loader.swift in Sources */,
 				C45D34551DEB8766001C47F9 /* WBStorageItemTableViewCell.swift in Sources */,
 				C41E4E921D74D1850037E57F /* WBHighLevelBoss.swift in Sources */,
 				C45D34661DECDD73001C47F9 /* WBStorageGeneralTableViewController.swift in Sources */,
@@ -505,6 +519,7 @@
 				C47D5B2A1DE6A01900082CFD /* WBBankRemote.swift in Sources */,
 				C4026EB31DEE33C00097FFC1 /* WBSyncCoordinator.swift in Sources */,
 				C45D34681DECDEE1001C47F9 /* WBStorageMainViewController.swift in Sources */,
+				C45BAE2E1DF4E17D00C6FB5A /* WBStorageBankTableViewController.swift in Sources */,
 				C47D5B201DE69F0E00082CFD /* Entities.swift in Sources */,
 				C4026EB11DEE2B840097FFC1 /* WBSyncContext.swift in Sources */,
 				C4A7818A1D68CFB200786488 /* WBMainTableViewCell.swift in Sources */,
@@ -525,6 +540,7 @@
 				C45D343F1DEB5A9E001C47F9 /* WBJsonCharacter.swift in Sources */,
 				C413001D1DEF7BDC00D2A92F /* WBBankProcessor.swift in Sources */,
 				C4A781901D69165B00786488 /* WBBoss.swift in Sources */,
+				C4C799EB1DF5044000A8B5F4 /* WBLoaderViewController.swift in Sources */,
 				C45D345D1DECD7D6001C47F9 /* WBMainViewController.swift in Sources */,
 				C45D346D1DECEA41001C47F9 /* WBObject.swift in Sources */,
 				C45D34501DEB8417001C47F9 /* WBDrawerViewController.swift in Sources */,
@@ -584,6 +600,14 @@
 				C47E30CC1DF24F8F00B91996 /* Base */,
 			);
 			name = APIKeyEntry.storyboard;
+			sourceTree = "<group>";
+		};
+		C4C799E71DF503D000A8B5F4 /* Utility.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C4C799E81DF503D100A8B5F4 /* Base */,
+			);
+			name = Utility.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

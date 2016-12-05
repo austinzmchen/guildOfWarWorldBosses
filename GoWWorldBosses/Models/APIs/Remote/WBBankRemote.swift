@@ -9,13 +9,13 @@ import Foundation
 import Alamofire
 
 protocol WBBankRemoteType {
-    func fetchBanks(completion: @escaping (_ success: Bool, _ elements: [WBJsonBankElement]?) -> ())
+    func fetchBanks(completion: @escaping (_ success: Bool, _ elements: [Int64]?) -> ())
     func fetchBankItems(byIds ids: [Int64],  completion: @escaping (_ success: Bool, _ currencies: [WBJsonBankItem]?) -> ())
 }
 
 class WBBankRemote: WBRemote, WBBankRemoteType {
     
-    func fetchBanks(completion: @escaping (_ success: Bool, _ elements: [WBJsonBankElement]?) -> ()) {
+    func fetchBanks(completion: @escaping (_ success: Bool, _ elements: [Int64]?) -> ()) {
         // pass empty dict to trigger custom encoding routines
         let domain: String = self.remoteSession?.domain ?? ""
         
@@ -24,8 +24,15 @@ class WBBankRemote: WBRemote, WBBankRemoteType {
             if response.result.isSuccess,
                 let elements = response.result.value as? [AnyObject]
             {
-                let bankElements: [WBJsonBankElement] = MapHelper2.mapArrayWithNullElements(elements: elements)
-                completion(true, bankElements)
+                var resultValues: [Int64] = []
+                for value in elements {
+                    if !(value is NSNull),
+                        let v = value["id"] as? Int64
+                    {
+                        resultValues.append(v)
+                    }
+                }
+                completion(false, resultValues)
             } else {
                 completion(false, nil)
             }

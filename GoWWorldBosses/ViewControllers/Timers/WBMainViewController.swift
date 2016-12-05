@@ -186,7 +186,8 @@ extension WBMainViewController: WBMainTableViewCellDelegate {
             if !lBosses.contains(boss.name) {
                 lBosses.insert(boss.name)
             }
-            WBKeyStore.keyStoreItem = WBKeyStoreItem(likedBosses: lBosses)
+            let keyItem = WBKeyStore.keyStoreItem
+            WBKeyStore.keyStoreItem = WBKeyStoreItem(likedBosses: lBosses, accountAPIKey: keyItem?.accountAPIKey ?? "")
         } else {
             boss.cancelNotification()
             
@@ -194,7 +195,8 @@ extension WBMainViewController: WBMainTableViewCellDelegate {
             if lBosses.contains(boss.name) {
                 lBosses.remove(boss.name)
             }
-            WBKeyStore.keyStoreItem = WBKeyStoreItem(likedBosses: lBosses)
+            let keyItem = WBKeyStore.keyStoreItem
+            WBKeyStore.keyStoreItem = WBKeyStoreItem(likedBosses: lBosses, accountAPIKey: keyItem?.accountAPIKey ?? "")
         }
     }
 }

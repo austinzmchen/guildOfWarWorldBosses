@@ -17,6 +17,7 @@ let kKeychainItemKey = "kGoWKeychainItemKey" // Pro: secure.
 
 struct WBKeyStoreItem {
     var likedBosses: Set<String> = Set<String>()
+    var accountAPIKey: String = ""
 }
 
 class WBKeyStore: NSObject {
@@ -28,8 +29,9 @@ class WBKeyStore: NSObject {
                 return nil // app is either never installed, or deleted
             }
             if let dict = Locksmith.loadDataForUserAccount(userAccount: kLocksmithUserAccountName) {
-                if let bosses = dict["likedBosses"] as? Set<String> {
-                    return WBKeyStoreItem(likedBosses: bosses)
+                if let bosses = dict["likedBosses"] as? Set<String>,
+                    let apiKey = dict["apiKey"] as? String {
+                    return WBKeyStoreItem(likedBosses: bosses, accountAPIKey: apiKey)
                 } else {
                     return nil
                 }
@@ -40,7 +42,8 @@ class WBKeyStore: NSObject {
         }
         set {
             if let item = newValue {
-                let dict = ["likedBosses": item.likedBosses as NSSet]
+                let dict: [String : Any] = ["likedBosses": item.likedBosses as NSSet,
+                            "apiKey": item.accountAPIKey]
                 do {
                     if let _ = Locksmith.loadDataForUserAccount(userAccount: kLocksmithUserAccountName) {
                         try Locksmith.updateData(data: dict, forUserAccount: kLocksmithUserAccountName)

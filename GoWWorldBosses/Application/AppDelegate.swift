@@ -31,16 +31,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.shared.registerUserNotificationSettings(notificationSettings)
         
         
-        
-        
-        
-        
-        syncCoordinator = WBSyncCoordinator(remoteSession: WBRemoteSession(domain: "https://api.guildwars2.com/v2", bearer: "51891488-0A13-EB45-9852-A98A08D45B092F3570C8-4F23-496B-A0F3-5E2B9FAF07B9"))
-        syncCoordinator?.syncAll({ (success, error) in
-            print("reach\(success)")
-        })
-        
-        
         /*
         // test
         

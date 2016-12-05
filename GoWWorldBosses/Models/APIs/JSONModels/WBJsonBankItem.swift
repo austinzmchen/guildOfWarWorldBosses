@@ -11,22 +11,33 @@ import ObjectMapper
 import AlamofireObjectMapper
 
 class WBJsonBank: Mappable {
+    let map: Map
+    
     var bankElements: [WBJsonBankElement?]?
     
-    required init?(map: Map) {}
+    required init?(map: Map) {
+        self.map = map
+    }
     
     func mapping(map: Map) {
         
-         bankElements = MapHelper<WBJsonBankElement>(map: map).mapArrayOfOptionals(field: "items")
+        bankElements = MapHelper<WBJsonBankElement>(map: map).mapArrayOfOptionals(field: "items")
     }
 }
 
-class WBJsonBankElement: WBJsonBase {
+class WBJsonBankElement: Mappable {
+    let map: Map
+    
     var count: Int?
     var binding: String?
     
-    override func mapping(map: Map) {
-        super.mapping(map: map)
+    required init?(map: Map) {
+        self.map = map
+//        super.init(map: map)
+    }
+    
+    func mapping(map: Map) {
+//        super.mapping(map: map)
         
         count <- map["count"]
         binding <- map["binding"]
