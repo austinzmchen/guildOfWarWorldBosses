@@ -17,6 +17,8 @@
 		C413001F1DEF88A200D2A92F /* WBCharacterProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C413001E1DEF88A200D2A92F /* WBCharacterProcessor.swift */; };
 		C41300211DF0873C00D2A92F /* MapHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41300201DF0873C00D2A92F /* MapHelper.swift */; };
 		C41E4E921D74D1850037E57F /* WBHighLevelBoss.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41E4E911D74D1850037E57F /* WBHighLevelBoss.swift */; };
+		C426FBB61DF623C200E83761 /* TechNotes.md in Sources */ = {isa = PBXBuildFile; fileRef = C426FBA61DF623C200E83761 /* TechNotes.md */; };
+		C426FBC01DF623E200E83761 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = C426FBBF1DF623E200E83761 /* README.md */; };
 		C4341A801D89F5E2007D84CC /* WBSettingsNotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4341A7F1D89F5E2007D84CC /* WBSettingsNotificationTableViewCell.swift */; };
 		C4341A841D89FA28007D84CC /* WBBossFactory+TestBosses.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4341A831D89FA28007D84CC /* WBBossFactory+TestBosses.swift */; };
 		C4341F181D8F1027007D84CC /* WBKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4341F171D8F1027007D84CC /* WBKeyStore.swift */; };
@@ -74,6 +76,8 @@
 		C413001E1DEF88A200D2A92F /* WBCharacterProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBCharacterProcessor.swift; sourceTree = "<group>"; };
 		C41300201DF0873C00D2A92F /* MapHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapHelper.swift; sourceTree = "<group>"; };
 		C41E4E911D74D1850037E57F /* WBHighLevelBoss.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBHighLevelBoss.swift; sourceTree = "<group>"; };
+		C426FBA61DF623C200E83761 /* TechNotes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = TechNotes.md; sourceTree = "<group>"; };
+		C426FBBF1DF623E200E83761 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C4341A7F1D89F5E2007D84CC /* WBSettingsNotificationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBSettingsNotificationTableViewCell.swift; sourceTree = "<group>"; };
 		C4341A831D89FA28007D84CC /* WBBossFactory+TestBosses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WBBossFactory+TestBosses.swift"; sourceTree = "<group>"; };
 		C4341F171D8F1027007D84CC /* WBKeyStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBKeyStore.swift; sourceTree = "<group>"; };
@@ -146,14 +150,24 @@
 			path = Processor;
 			sourceTree = "<group>";
 		};
+		C426FBA01DF623C200E83761 /* Doc */ = {
+			isa = PBXGroup;
+			children = (
+				C426FBA61DF623C200E83761 /* TechNotes.md */,
+			);
+			path = Doc;
+			sourceTree = "<group>";
+		};
 		C45B6C8C1D68BE5800F94060 = {
 			isa = PBXGroup;
 			children = (
 				C45B6C971D68BE5800F94060 /* GoWWorldBosses */,
+				C426FBA01DF623C200E83761 /* Doc */,
 				C45B6CAF1D68BE5900F94060 /* GoWWorldBossesTests */,
 				C45B6C961D68BE5800F94060 /* Products */,
 				EA216089FBB4F8F0B269A8C9 /* Pods */,
 				D6F30776B3EBFC5A5699A11C /* Frameworks */,
+				C426FBBF1DF623E200E83761 /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -512,6 +526,7 @@
 				C4C799ED1DF505BD00A8B5F4 /* UIApplication+Loader.swift in Sources */,
 				C45D34551DEB8766001C47F9 /* WBStorageItemTableViewCell.swift in Sources */,
 				C41E4E921D74D1850037E57F /* WBHighLevelBoss.swift in Sources */,
+				C426FBC01DF623E200E83761 /* README.md in Sources */,
 				C45D34661DECDD73001C47F9 /* WBStorageGeneralTableViewController.swift in Sources */,
 				C45D34621DECDB42001C47F9 /* AppDelegate.swift in Sources */,
 				C4A7818E1D6915E900786488 /* WBBossFactory.swift in Sources */,
@@ -534,6 +549,7 @@
 				C47D5B251DE69F5100082CFD /* WBJsonBankItem.swift in Sources */,
 				C45D344E1DEB82AB001C47F9 /* WBDrawerMasterViewController.swift in Sources */,
 				C45D343D1DEB5A1A001C47F9 /* WBWalletRemote.swift in Sources */,
+				C426FBB61DF623C200E83761 /* TechNotes.md in Sources */,
 				C41094A51D88FFCF00751A72 /* WBSettingsViewController.swift in Sources */,
 				C413001F1DEF88A200D2A92F /* WBCharacterProcessor.swift in Sources */,
 				C45BAE291DF2550200C6FB5A /* WBAPIKeyEntryViewController.swift in Sources */,
