@@ -63,20 +63,17 @@ class WBAPIKeyEntryViewController: UIViewController, QRCodeReaderViewControllerD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let a = WBStoryboardFactory.utilityStoryboard.instantiateViewController(withIdentifier: "loaderVC") as! WBLoaderViewController
-        self.present(a, animated: true, completion: nil)
         
-//        UIApplication.showLoader()
-//        
-//        // Do any additional setup after loading the view.
-//        if let keyItem = WBKeyStore.keyStoreItem,
-//            !(keyItem.accountAPIKey == "")
-//        {
-//            self.authenticate(apiKey: keyItem.accountAPIKey)
-//        } else {
-//            UIApplication.hideLoader()
-//        }
+        UIApplication.showLoader()
+
+        // Do any additional setup after loading the view.
+        if let keyItem = WBKeyStore.keyStoreItem,
+            !(keyItem.accountAPIKey == "")
+        {
+            self.authenticate(apiKey: keyItem.accountAPIKey)
+        } else {
+            UIApplication.hideLoader()
+        }
     }
     
     func authenticate(apiKey: String) {

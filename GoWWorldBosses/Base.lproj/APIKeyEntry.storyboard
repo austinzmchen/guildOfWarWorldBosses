@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="rMz-GC-2a7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GaB-Rz-zF4">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -25,7 +25,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8cw-bn-Pb0">
-                                <rect key="frame" x="321" y="34" width="34" height="33"/>
+                                <rect key="frame" x="321" y="78" width="34" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Skip">
                                     <color key="titleColor" red="1" green="0.5725490196078431" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -118,6 +118,7 @@
                             <constraint firstItem="iz4-WT-OXV" firstAttribute="top" secondItem="dYn-jz-qsa" secondAttribute="bottom" constant="30" id="zOb-qv-vaT"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="3Iw-0s-GSG"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="qrCodeButton" destination="Ki8-rD-AXm" id="5gW-bw-NTA"/>
@@ -127,7 +128,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jPB-YM-S9D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-591" y="155"/>
+            <point key="canvasLocation" x="348" y="154.27286356821591"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="knE-ZT-scw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="GaB-Rz-zF4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="IzV-is-sxa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="rMz-GC-2a7" kind="relationship" relationship="rootViewController" id="0Tp-4v-63u"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CGW-SG-rqx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-591.20000000000005" y="154.27286356821591"/>
         </scene>
     </scenes>
     <resources>
