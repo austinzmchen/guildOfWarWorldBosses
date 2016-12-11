@@ -44,8 +44,8 @@ class WBCurrency: WBObject {
 }
 
 class WBBankElement: WBObject {
-    var count: Int?
-    var binding: String?
+    dynamic var count: Int = -1
+    dynamic var binding: String?
     dynamic var bankItem: WBBankItem?
     
     override func saveSyncableProperties(fromSyncable syncable: WBRemoteRecordSyncableType) {

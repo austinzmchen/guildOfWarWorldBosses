@@ -21,47 +21,86 @@ class WBBankProcessor: NSObject {
     }()
     
     func sync(completion: @escaping (_ success: Bool, _ syncedObjects: [AnyObject]?, _ error: NSError?) -> ()) {
+        self.syncBankElements { (success, elements, error) in
+            guard success,
+                let elements = elements else
+            {
+                completion(false, nil, nil)
+                return
+            }
+            
+            let ids = elements.map{ $0.id }
+            self.syncBankItems(byIds: ids, completion: { (success, syncedObjects, error) in
+                completion(success, syncedObjects, nil)
+            })
+        }
+    }
+    
+    func syncBankElements(completion: @escaping (_ success: Bool, _ elements: [WBJsonBankElement]?, _ error: NSError?) -> ()) {
         self.bankRemote.fetchBanks { (success, bankElements) in
             guard let elements = bankElements else {
                 completion(false, nil, nil)
                 return
             }
             
-            let ids = elements.map{ $0.id }
-            self.bankRemote.fetchBankItems(byIds: ids, completion: { (success, bankItems) in
-                guard success,
-                    let items = bankItems else
-                {
-                    completion(false, nil, nil)
-                    return
-                }
-                
-                let realm = try! Realm()
-                let changes: [WBRemoteRecordChange<WBJsonBankItem, WBBankItem>] = realm.findOrInsert(items)
-                
-                try! realm.write {
-                    for change in changes {
-                        switch change {
-                        case .found(let remoteRecord, let localObject):
-                            localObject.saveSyncableProperties(fromSyncable: remoteRecord)
-                            realm.add(localObject, update: true)
-                            
-                            localObject.addToOneRelationship(WBBankElement.self, relationshipName: "bankElement", inverseRelationshipName: "bankItem", foreignKey: localObject.id, realm: realm)
-                            break
-                        case .inserted(let remoteRecord, let localObject):
-                            localObject.saveSyncableProperties(fromSyncable: remoteRecord)
-                            realm.add(localObject)
-                            
-                            localObject.addToOneRelationship(WBBankElement.self, relationshipName: "bankElement", inverseRelationshipName: "bankItem", foreignKey: localObject.id, realm: realm)
-                            break
-                        default:
-                            break
-                        }
+            let realm = try! Realm()
+            let changes: [WBRemoteRecordChange<WBJsonBankElement, WBBankElement>] = realm.findOrInsert(elements)
+            
+            try! realm.write {
+                for change in changes {
+                    switch change {
+                    case .found(let remoteRecord, let localObject):
+                        localObject.saveSyncableProperties(fromSyncable: remoteRecord)
+                        realm.add(localObject, update: true)
+                        break
+                    case .inserted(let remoteRecord, let localObject):
+                        localObject.saveSyncableProperties(fromSyncable: remoteRecord)
+                        realm.add(localObject)
+                        break
+                    default:
+                        break
                     }
                 }
-            
-                completion(true, items as [AnyObject]?, nil)
-            })
+            }
+            completion(true, bankElements, nil)
         }
+    }
+    
+    func syncBankItems(byIds ids:[Int64], completion: @escaping (_ success: Bool, _ elements: [WBJsonBankItem]?, _ error: NSError?) -> ())
+    {
+        self.bankRemote.fetchBankItems(byIds: ids, completion: { (success, bankItems) in
+            guard success,
+                let items = bankItems else
+            {
+                completion(false, nil, nil)
+                return
+            }
+            
+            let realm = try! Realm()
+            let changes: [WBRemoteRecordChange<WBJsonBankItem, WBBankItem>] = realm.findOrInsert(items)
+            
+            try! realm.write {
+                for change in changes {
+                    switch change {
+                    case .found(let remoteRecord, let localObject):
+                        localObject.saveSyncableProperties(fromSyncable: remoteRecord)
+                        realm.add(localObject, update: true)
+                        
+                        localObject.addToOneRelationship(WBBankElement.self, relationshipName: "bankElement", inverseRelationshipName: "bankItem", foreignKey: localObject.id, realm: realm)
+                        break
+                    case .inserted(let remoteRecord, let localObject):
+                        localObject.saveSyncableProperties(fromSyncable: remoteRecord)
+                        realm.add(localObject)
+                        
+                        localObject.addToOneRelationship(WBBankElement.self, relationshipName: "bankElement", inverseRelationshipName: "bankItem", foreignKey: localObject.id, realm: realm)
+                        break
+                    default:
+                        break
+                    }
+                }
+            }
+            
+            completion(true, items, nil)
+        })
     }
 }

@@ -34,9 +34,16 @@ class WBStoragePageViewController: UIPageViewController {
     
     fileprivate(set) lazy var orderedViewControllers: [UIViewController] = {
         // The view controllers will be shown in this order
-        let walletTableVC = WBStoryboardFactory.storageStoryboard.instantiateViewController(withIdentifier: "storageGeneralTableVC")
-        let bankTableVC = WBStoryboardFactory.storageStoryboard.instantiateViewController(withIdentifier: "storageBankTableVC")
+        let walletTableVC = WBStoryboardFactory.storageStoryboard
+            .instantiateViewController(withIdentifier: "storageGeneralTableVC") as! WBStorageGeneralTableViewController
+        walletTableVC.viewModel = WBStorageWalletViewModel()
+        
+        let bankTableVC = WBStoryboardFactory.storageStoryboard
+            .instantiateViewController(withIdentifier: "storageGeneralTableVC") as! WBStorageGeneralTableViewController
+        bankTableVC.viewModel = WBStorageBankViewModel()
+        
 //        let materialsTableVC = WBStoryboardFactory.storageStoryboard.instantiateViewController(withIdentifier: "storageGeneralTableVC")
+//        walletTableVC.viewModel = WBStorageWalletViewModel()
         
         return [walletTableVC, bankTableVC]
     }()

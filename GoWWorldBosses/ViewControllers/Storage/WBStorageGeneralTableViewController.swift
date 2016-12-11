@@ -12,43 +12,29 @@ import SDWebImage
 
 class WBStorageGeneralTableViewController: UITableViewController {
     
-    var walletElements: [WBWalletElement] = []
+    var viewModel: WBStorageTableViewModelType?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
-        let realm = try! Realm()
-        
-        // Query
-        let results = realm.objects(WBWalletElement.self)
-        self.walletElements = Array(results)
     }
     
 
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return walletElements.count
+        return self.viewModel?.itemsCount() ?? 0
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "storageItemTableCell", for: indexPath) as! WBStorageItemTableViewCell
 
         // Configure the cell...
-        let walletElement = self.walletElements[indexPath.row]
-        if let currency = walletElement.currency
-        {
-            cell.mainTitleLabel.text = currency.name
-            cell.subTitleLabel.text = String(format: "%d", walletElement.value)
-            cell.leftImageView.sd_setImage(with: URL(string: currency.icon!))
+        cell.mainTitleLabel.text = self.viewModel?.mainTitleForItem(atIndex: indexPath.row)
+        cell.subTitleLabel.text = self.viewModel?.subTitleForItem(atIndex: indexPath.row)
+        if let imageUrlString = self.viewModel?.imageUrlStringForItem(atIndex: indexPath.row) {
+            cell.leftImageView.sd_setImage(with: URL(string: imageUrlString))
         }
-
+        
         return cell
     }
 
