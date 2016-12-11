@@ -9,12 +9,27 @@
 import Foundation
 import RealmSwift
 
+class WBWalletElement: WBObject {
+    dynamic var value: Int = -1
+    dynamic var currency: WBCurrency?
+    
+    override func saveSyncableProperties(fromSyncable syncable: WBRemoteRecordSyncableType) {
+        guard let rRecord = syncable as? WBJsonWalletElement else {
+            return
+        }
+        
+        self.value = rRecord.value ?? -1
+    }
+}
+
+
 class WBCurrency: WBObject {
     dynamic var name: String?
     dynamic var descriptionText: String?
     dynamic var icon: String?
     dynamic var order: Int = -1
     dynamic var count: Int = -1
+    dynamic var walletElement: WBWalletElement?
     
     override func saveSyncableProperties(fromSyncable syncable: WBRemoteRecordSyncableType) {
         guard let rRecord = syncable as? WBJsonCurrency else {
@@ -28,6 +43,21 @@ class WBCurrency: WBObject {
     }
 }
 
+class WBBankElement: WBObject {
+    var count: Int?
+    var binding: String?
+    dynamic var bankItem: WBBankItem?
+    
+    override func saveSyncableProperties(fromSyncable syncable: WBRemoteRecordSyncableType) {
+        guard let rRecord = syncable as? WBJsonBankElement else {
+            return
+        }
+        
+        self.count = rRecord.count ?? -1
+        self.binding = rRecord.binding
+    }
+}
+
 class WBBankItem: WBObject {
     dynamic var name: String?
     dynamic var descriptionText: String?
@@ -35,6 +65,7 @@ class WBBankItem: WBObject {
     dynamic var type: String?
     dynamic var level: Int = -1
     dynamic var count: Int = -1
+    dynamic var bankElement: WBBankElement?
     
     override func saveSyncableProperties(fromSyncable syncable: WBRemoteRecordSyncableType) {
         guard let rRecord = syncable as? WBJsonBankItem else {

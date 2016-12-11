@@ -21,13 +21,13 @@ class WBBankProcessor: NSObject {
     }()
     
     func sync(completion: @escaping (_ success: Bool, _ syncedObjects: [AnyObject]?, _ error: NSError?) -> ()) {
-        self.bankRemote.fetchBanks { (success, bankIds) in
-            guard let ids = bankIds else {
+        self.bankRemote.fetchBanks { (success, bankElements) in
+            guard let elements = bankElements else {
                 completion(false, nil, nil)
                 return
             }
             
-//            let ids = banks.map{ $0.id }
+            let ids = elements.map{ $0.id }
             self.bankRemote.fetchBankItems(byIds: ids, completion: { (success, bankItems) in
                 guard success,
                     let items = bankItems else
@@ -45,10 +45,14 @@ class WBBankProcessor: NSObject {
                         case .found(let remoteRecord, let localObject):
                             localObject.saveSyncableProperties(fromSyncable: remoteRecord)
                             realm.add(localObject, update: true)
+                            
+                            localObject.addToOneRelationship(WBBankElement.self, relationshipName: "bankElement", inverseRelationshipName: "bankItem", foreignKey: localObject.id, realm: realm)
                             break
                         case .inserted(let remoteRecord, let localObject):
                             localObject.saveSyncableProperties(fromSyncable: remoteRecord)
                             realm.add(localObject)
+                            
+                            localObject.addToOneRelationship(WBBankElement.self, relationshipName: "bankElement", inverseRelationshipName: "bankItem", foreignKey: localObject.id, realm: realm)
                             break
                         default:
                             break

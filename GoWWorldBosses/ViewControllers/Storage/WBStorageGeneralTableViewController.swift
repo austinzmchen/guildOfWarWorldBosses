@@ -12,7 +12,7 @@ import SDWebImage
 
 class WBStorageGeneralTableViewController: UITableViewController {
     
-    var currencies: [WBCurrency] = []
+    var walletElements: [WBWalletElement] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,24 +26,28 @@ class WBStorageGeneralTableViewController: UITableViewController {
         let realm = try! Realm()
         
         // Query
-        let results = realm.objects(WBCurrency.self)
-        self.currencies = Array(results)
+        let results = realm.objects(WBWalletElement.self)
+        self.walletElements = Array(results)
     }
     
 
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return currencies.count
+        return walletElements.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "storageItemTableCell", for: indexPath) as! WBStorageItemTableViewCell
 
         // Configure the cell...
-        let currency = self.currencies[indexPath.row]
-        cell.mainTitleLabel.text = currency.name
-        cell.leftImageView.sd_setImage(with: URL(string: currency.icon!))
+        let walletElement = self.walletElements[indexPath.row]
+        if let currency = walletElement.currency
+        {
+            cell.mainTitleLabel.text = currency.name
+            cell.subTitleLabel.text = String(format: "%d", walletElement.value)
+            cell.leftImageView.sd_setImage(with: URL(string: currency.icon!))
+        }
 
         return cell
     }

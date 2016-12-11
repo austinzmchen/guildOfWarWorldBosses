@@ -10,18 +10,18 @@ import Foundation
 import Alamofire
 
 protocol WBWalletRemoteType {
-    func fetchWalletItems(_ completion: @escaping (_ success: Bool, _ walletItems: [WBJsonWalletItem]?) -> ())
+    func fetchWalletElements(_ completion: @escaping (_ success: Bool, _ walletElements: [WBJsonWalletElement]?) -> ())
     func fetchCurrencies(byIds ids: [Int64], completion: @escaping (_ success: Bool, _ currencies: [WBJsonCurrency]?) -> ())
 }
 
 class WBWalletRemote: WBRemote, WBWalletRemoteType {
     
-    func fetchWalletItems(_ completion: @escaping (_ success: Bool, _ walletItems: [WBJsonWalletItem]?) -> ()) {
+    func fetchWalletElements(_ completion: @escaping (_ success: Bool, _ walletElements: [WBJsonWalletElement]?) -> ()) {
         // pass empty dict to trigger custom encoding routines
         let domain: String = self.remoteSession?.domain ?? ""
         
         let request = self.alamoFireManager.request(domain + "/account/wallet", headers: self.remoteSession?.headers)
-        request.responseArray(queue: WBRemoteSettings.concurrentQueue) { (response: DataResponse<[WBJsonWalletItem]>) in
+        request.responseArray(queue: WBRemoteSettings.concurrentQueue) { (response: DataResponse<[WBJsonWalletElement]>) in
             completion(response.result.isSuccess, response.result.value)
         }
     }

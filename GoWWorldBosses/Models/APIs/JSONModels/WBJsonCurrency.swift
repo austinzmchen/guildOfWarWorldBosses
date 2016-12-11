@@ -10,8 +10,8 @@ import Foundation
 import ObjectMapper
 import AlamofireObjectMapper
 
-class WBJsonWalletItem: WBJsonBase {
-    var value: Int64? // The amount of this currency.
+class WBJsonWalletElement: WBJsonBase {
+    var value: Int? // The amount of this currency.
     
     override func mapping(map: Map) {
         super.mapping(map: map)
