@@ -42,10 +42,11 @@ class WBStoragePageViewController: UIPageViewController {
             .instantiateViewController(withIdentifier: "storageGeneralTableVC") as! WBStorageGeneralTableViewController
         bankTableVC.viewModel = WBStorageBankViewModel()
         
-//        let materialsTableVC = WBStoryboardFactory.storageStoryboard.instantiateViewController(withIdentifier: "storageGeneralTableVC")
-//        walletTableVC.viewModel = WBStorageWalletViewModel()
+        let materialsTableVC = WBStoryboardFactory.storageStoryboard
+            .instantiateViewController(withIdentifier: "storageGeneralTableVC") as! WBStorageGeneralTableViewController
+        materialsTableVC.viewModel = WBStorageMaterialViewModel()
         
-        return [walletTableVC, bankTableVC]
+        return [walletTableVC, bankTableVC, materialsTableVC]
     }()
     
     override func viewDidLoad() {

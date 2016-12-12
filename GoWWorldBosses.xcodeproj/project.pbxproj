@@ -23,6 +23,8 @@
 		C41E4E921D74D1850037E57F /* WBHighLevelBoss.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41E4E911D74D1850037E57F /* WBHighLevelBoss.swift */; };
 		C426FBB61DF623C200E83761 /* TechNotes.md in Sources */ = {isa = PBXBuildFile; fileRef = C426FBA61DF623C200E83761 /* TechNotes.md */; };
 		C426FBC01DF623E200E83761 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = C426FBBF1DF623E200E83761 /* README.md */; };
+		C42B94611DFE1DCE0019CB3D /* WBMaterialElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42B94601DFE1DCE0019CB3D /* WBMaterialElement.swift */; };
+		C42B94641DFE2A130019CB3D /* ArrayPlus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42B94631DFE2A130019CB3D /* ArrayPlus.swift */; };
 		C4341A801D89F5E2007D84CC /* WBSettingsNotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4341A7F1D89F5E2007D84CC /* WBSettingsNotificationTableViewCell.swift */; };
 		C4341A841D89FA28007D84CC /* WBBossFactory+TestBosses.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4341A831D89FA28007D84CC /* WBBossFactory+TestBosses.swift */; };
 		C4341F181D8F1027007D84CC /* WBKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4341F171D8F1027007D84CC /* WBKeyStore.swift */; };
@@ -31,7 +33,6 @@
 		C45B6CA61D68BE5800F94060 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C45B6CA41D68BE5800F94060 /* LaunchScreen.storyboard */; };
 		C45BAE291DF2550200C6FB5A /* WBAPIKeyEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45BAE281DF2550200C6FB5A /* WBAPIKeyEntryViewController.swift */; };
 		C45BAE2C1DF27F1800C6FB5A /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C45BAE2A1DF27F1800C6FB5A /* Settings.storyboard */; };
-		C45BAE2E1DF4E17D00C6FB5A /* WBStorageBankTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45BAE2D1DF4E17D00C6FB5A /* WBStorageBankTableViewController.swift */; };
 		C45D343D1DEB5A1A001C47F9 /* WBWalletRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D343C1DEB5A1A001C47F9 /* WBWalletRemote.swift */; };
 		C45D343F1DEB5A9E001C47F9 /* WBJsonCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D343E1DEB5A9E001C47F9 /* WBJsonCharacter.swift */; };
 		C45D34411DEB5ABF001C47F9 /* WBCharacterRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D34401DEB5ABF001C47F9 /* WBCharacterRemote.swift */; };
@@ -59,6 +60,12 @@
 		C47D5B2B1DE6A01900082CFD /* WBRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D5B281DE6A01900082CFD /* WBRemote.swift */; };
 		C47D5B2D1DE6A23500082CFD /* WBRemoteSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D5B2C1DE6A23500082CFD /* WBRemoteSession.swift */; };
 		C47E30CD1DF24F8F00B91996 /* APIKeyEntry.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C47E30CB1DF24F8F00B91996 /* APIKeyEntry.storyboard */; };
+		C48D84E41DFE15F800585E61 /* WBJsonMaterialElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48D84E31DFE15F800585E61 /* WBJsonMaterialElement.swift */; };
+		C48D84E61DFE160E00585E61 /* WBJsonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48D84E51DFE160E00585E61 /* WBJsonItem.swift */; };
+		C48D84E81DFE16DC00585E61 /* WBMaterialRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48D84E71DFE16DC00585E61 /* WBMaterialRemote.swift */; };
+		C48D84EA1DFE17C500585E61 /* WBItemRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48D84E91DFE17C500585E61 /* WBItemRemote.swift */; };
+		C48D84EC1DFE186100585E61 /* WBMaterialProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48D84EB1DFE186100585E61 /* WBMaterialProcessor.swift */; };
+		C48D84EE1DFE189A00585E61 /* WBItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48D84ED1DFE189A00585E61 /* WBItem.swift */; };
 		C4A7818A1D68CFB200786488 /* WBMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A781871D68CFB200786488 /* WBMainTableViewCell.swift */; };
 		C4A7818E1D6915E900786488 /* WBBossFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A7818D1D6915E900786488 /* WBBossFactory.swift */; };
 		C4A781901D69165B00786488 /* WBBoss.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A7818F1D69165B00786488 /* WBBoss.swift */; };
@@ -86,6 +93,8 @@
 		C41E4E911D74D1850037E57F /* WBHighLevelBoss.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBHighLevelBoss.swift; sourceTree = "<group>"; };
 		C426FBA61DF623C200E83761 /* TechNotes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = TechNotes.md; sourceTree = "<group>"; };
 		C426FBBF1DF623E200E83761 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		C42B94601DFE1DCE0019CB3D /* WBMaterialElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBMaterialElement.swift; sourceTree = "<group>"; };
+		C42B94631DFE2A130019CB3D /* ArrayPlus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayPlus.swift; sourceTree = "<group>"; };
 		C4341A7F1D89F5E2007D84CC /* WBSettingsNotificationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBSettingsNotificationTableViewCell.swift; sourceTree = "<group>"; };
 		C4341A831D89FA28007D84CC /* WBBossFactory+TestBosses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WBBossFactory+TestBosses.swift"; sourceTree = "<group>"; };
 		C4341F171D8F1027007D84CC /* WBKeyStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBKeyStore.swift; sourceTree = "<group>"; };
@@ -98,7 +107,6 @@
 		C45B6CB21D68BE5900F94060 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C45BAE281DF2550200C6FB5A /* WBAPIKeyEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBAPIKeyEntryViewController.swift; sourceTree = "<group>"; };
 		C45BAE2B1DF27F1800C6FB5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
-		C45BAE2D1DF4E17D00C6FB5A /* WBStorageBankTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WBStorageBankTableViewController.swift; path = ../ViewControllers/Storage/WBStorageBankTableViewController.swift; sourceTree = "<group>"; };
 		C45D343C1DEB5A1A001C47F9 /* WBWalletRemote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBWalletRemote.swift; sourceTree = "<group>"; };
 		C45D343E1DEB5A9E001C47F9 /* WBJsonCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBJsonCharacter.swift; sourceTree = "<group>"; };
 		C45D34401DEB5ABF001C47F9 /* WBCharacterRemote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBCharacterRemote.swift; sourceTree = "<group>"; };
@@ -126,6 +134,12 @@
 		C47D5B281DE6A01900082CFD /* WBRemote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBRemote.swift; sourceTree = "<group>"; };
 		C47D5B2C1DE6A23500082CFD /* WBRemoteSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBRemoteSession.swift; sourceTree = "<group>"; };
 		C47E30CC1DF24F8F00B91996 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/APIKeyEntry.storyboard; sourceTree = "<group>"; };
+		C48D84E31DFE15F800585E61 /* WBJsonMaterialElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBJsonMaterialElement.swift; sourceTree = "<group>"; };
+		C48D84E51DFE160E00585E61 /* WBJsonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBJsonItem.swift; sourceTree = "<group>"; };
+		C48D84E71DFE16DC00585E61 /* WBMaterialRemote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBMaterialRemote.swift; sourceTree = "<group>"; };
+		C48D84E91DFE17C500585E61 /* WBItemRemote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBItemRemote.swift; sourceTree = "<group>"; };
+		C48D84EB1DFE186100585E61 /* WBMaterialProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBMaterialProcessor.swift; sourceTree = "<group>"; };
+		C48D84ED1DFE189A00585E61 /* WBItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBItem.swift; sourceTree = "<group>"; };
 		C4A781871D68CFB200786488 /* WBMainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBMainTableViewCell.swift; sourceTree = "<group>"; };
 		C4A7818D1D6915E900786488 /* WBBossFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBBossFactory.swift; sourceTree = "<group>"; };
 		C4A7818F1D69165B00786488 /* WBBoss.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBBoss.swift; sourceTree = "<group>"; };
@@ -153,6 +167,7 @@
 			children = (
 				C4026EAE1DEE2A1A0097FFC1 /* WBWalletProcessor.swift */,
 				C413001C1DEF7BDC00D2A92F /* WBBankProcessor.swift */,
+				C48D84EB1DFE186100585E61 /* WBMaterialProcessor.swift */,
 				C413001E1DEF88A200D2A92F /* WBCharacterProcessor.swift */,
 			);
 			path = Processor;
@@ -175,6 +190,14 @@
 				C426FBA61DF623C200E83761 /* TechNotes.md */,
 			);
 			path = Doc;
+			sourceTree = "<group>";
+		};
+		C42B94621DFE2A020019CB3D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C42B94631DFE2A130019CB3D /* ArrayPlus.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		C45B6C8C1D68BE5800F94060 = {
@@ -206,6 +229,7 @@
 				C4A781851D68CFB200786488 /* ViewModels */,
 				C4A781861D68CFB200786488 /* Views */,
 				C47D5B131DE6970C00082CFD /* Models */,
+				C42B94621DFE2A020019CB3D /* Extensions */,
 				C47E30CB1DF24F8F00B91996 /* APIKeyEntry.storyboard */,
 				C45D34471DEB7A66001C47F9 /* Drawer.storyboard */,
 				C45B6C9C1D68BE5800F94060 /* Timer.storyboard */,
@@ -309,8 +333,10 @@
 			isa = PBXGroup;
 			children = (
 				C45D34421DEB5CC2001C47F9 /* WBJsonBase.swift */,
+				C48D84E51DFE160E00585E61 /* WBJsonItem.swift */,
 				C47D5B221DE69F3000082CFD /* WBJsonCurrency.swift */,
 				C47D5B241DE69F5100082CFD /* WBJsonBankItem.swift */,
+				C48D84E31DFE15F800585E61 /* WBJsonMaterialElement.swift */,
 				C45D343E1DEB5A9E001C47F9 /* WBJsonCharacter.swift */,
 				C41300201DF0873C00D2A92F /* MapHelper.swift */,
 			);
@@ -322,7 +348,9 @@
 			children = (
 				C45D343C1DEB5A1A001C47F9 /* WBWalletRemote.swift */,
 				C47D5B271DE6A01900082CFD /* WBBankRemote.swift */,
+				C48D84E71DFE16DC00585E61 /* WBMaterialRemote.swift */,
 				C45D34401DEB5ABF001C47F9 /* WBCharacterRemote.swift */,
+				C48D84E91DFE17C500585E61 /* WBItemRemote.swift */,
 				C47D5B281DE6A01900082CFD /* WBRemote.swift */,
 				C47D5B2C1DE6A23500082CFD /* WBRemoteSession.swift */,
 			);
@@ -334,6 +362,8 @@
 			children = (
 				C45D346C1DECEA41001C47F9 /* WBObject.swift */,
 				C47D5B1D1DE69F0E00082CFD /* Entities.swift */,
+				C48D84ED1DFE189A00585E61 /* WBItem.swift */,
+				C42B94601DFE1DCE0019CB3D /* WBMaterialElement.swift */,
 				C47D5B1E1DE69F0E00082CFD /* GoWWorldBosses.xcdatamodeld */,
 			);
 			path = Data;
@@ -370,7 +400,6 @@
 		C4A781861D68CFB200786488 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				C45BAE2D1DF4E17D00C6FB5A /* WBStorageBankTableViewController.swift */,
 				C45D34511DEB8658001C47F9 /* Cells */,
 				C4A781871D68CFB200786488 /* WBMainTableViewCell.swift */,
 				C4341A7F1D89F5E2007D84CC /* WBSettingsNotificationTableViewCell.swift */,
@@ -543,11 +572,14 @@
 				C45D346F1DED0E4A001C47F9 /* RealmPlus.swift in Sources */,
 				C4341A841D89FA28007D84CC /* WBBossFactory+TestBosses.swift in Sources */,
 				C45D34431DEB5CC2001C47F9 /* WBJsonBase.swift in Sources */,
+				C48D84EC1DFE186100585E61 /* WBMaterialProcessor.swift in Sources */,
 				C4C799ED1DF505BD00A8B5F4 /* UIApplication+Loader.swift in Sources */,
 				C45D34551DEB8766001C47F9 /* WBStorageItemTableViewCell.swift in Sources */,
 				C41E4E921D74D1850037E57F /* WBHighLevelBoss.swift in Sources */,
 				C426FBC01DF623E200E83761 /* README.md in Sources */,
 				C45D34661DECDD73001C47F9 /* WBStorageGeneralTableViewController.swift in Sources */,
+				C42B94641DFE2A130019CB3D /* ArrayPlus.swift in Sources */,
+				C42B94611DFE1DCE0019CB3D /* WBMaterialElement.swift in Sources */,
 				C45D34621DECDB42001C47F9 /* AppDelegate.swift in Sources */,
 				C4A7818E1D6915E900786488 /* WBBossFactory.swift in Sources */,
 				C47D5B2D1DE6A23500082CFD /* WBRemoteSession.swift in Sources */,
@@ -555,7 +587,6 @@
 				C47D5B2A1DE6A01900082CFD /* WBBankRemote.swift in Sources */,
 				C4026EB31DEE33C00097FFC1 /* WBSyncCoordinator.swift in Sources */,
 				C45D34681DECDEE1001C47F9 /* WBStorageMainViewController.swift in Sources */,
-				C45BAE2E1DF4E17D00C6FB5A /* WBStorageBankTableViewController.swift in Sources */,
 				C47D5B201DE69F0E00082CFD /* Entities.swift in Sources */,
 				C4026EB11DEE2B840097FFC1 /* WBSyncContext.swift in Sources */,
 				C4A7818A1D68CFB200786488 /* WBMainTableViewCell.swift in Sources */,
@@ -563,6 +594,7 @@
 				C411FAEB1DFDF84E0038337F /* WBStorageTableViewModelType.swift in Sources */,
 				C45D345C1DECD7D6001C47F9 /* WBMainViewController+NavigationBar.swift in Sources */,
 				C45D345F1DECD865001C47F9 /* WBStoragePageViewController.swift in Sources */,
+				C48D84EA1DFE17C500585E61 /* WBItemRemote.swift in Sources */,
 				C4026EAF1DEE2A1A0097FFC1 /* WBWalletProcessor.swift in Sources */,
 				C4341F181D8F1027007D84CC /* WBKeyStore.swift in Sources */,
 				C411FAE91DFDF8110038337F /* WBStorageMaterialViewModel.swift in Sources */,
@@ -574,6 +606,7 @@
 				C45D343D1DEB5A1A001C47F9 /* WBWalletRemote.swift in Sources */,
 				C426FBB61DF623C200E83761 /* TechNotes.md in Sources */,
 				C41094A51D88FFCF00751A72 /* WBSettingsViewController.swift in Sources */,
+				C48D84E41DFE15F800585E61 /* WBJsonMaterialElement.swift in Sources */,
 				C413001F1DEF88A200D2A92F /* WBCharacterProcessor.swift in Sources */,
 				C45BAE291DF2550200C6FB5A /* WBAPIKeyEntryViewController.swift in Sources */,
 				C45D343F1DEB5A9E001C47F9 /* WBJsonCharacter.swift in Sources */,
@@ -581,13 +614,16 @@
 				C4A781901D69165B00786488 /* WBBoss.swift in Sources */,
 				C4C799EB1DF5044000A8B5F4 /* WBLoaderViewController.swift in Sources */,
 				C45D345D1DECD7D6001C47F9 /* WBMainViewController.swift in Sources */,
+				C48D84E81DFE16DC00585E61 /* WBMaterialRemote.swift in Sources */,
 				C45D346D1DECEA41001C47F9 /* WBObject.swift in Sources */,
 				C45D34501DEB8417001C47F9 /* WBDrawerViewController.swift in Sources */,
 				C4341A801D89F5E2007D84CC /* WBSettingsNotificationTableViewCell.swift in Sources */,
 				C47D5B231DE69F3000082CFD /* WBJsonCurrency.swift in Sources */,
 				C411FAE71DFDF7FA0038337F /* WBStorageBankViewModel.swift in Sources */,
+				C48D84E61DFE160E00585E61 /* WBJsonItem.swift in Sources */,
 				C45D34411DEB5ABF001C47F9 /* WBCharacterRemote.swift in Sources */,
 				C41094A71D89003D00751A72 /* WBAboutViewController.swift in Sources */,
+				C48D84EE1DFE189A00585E61 /* WBItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

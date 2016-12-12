@@ -91,18 +91,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // Set the block which will be called automatically when opening a Realm with
             // a schema version lower than the one set above
             migrationBlock: { migration, oldSchemaVersion in
-                // We haven’t migrated anything yet, so oldSchemaVersion == 0
-                if oldSchemaVersion < 1 {
-                    migration.enumerateObjects(ofType: WBCurrency.className()) { oldObject, newObject in                            newObject!["walletElement"] = nil
-                    }
-                    
-                    migration.enumerateObjects(ofType: WBBankItem.className()) { oldObject, newObject in                            newObject!["bankElement"] = nil
-                    }
-                } else if oldSchemaVersion < 2 {
-                    migration.enumerateObjects(ofType: WBBankElement.className()) { oldObject, newObject in                            newObject!["count"] = -1
-                        newObject!["binding"] = nil
-                    }
-                }
+                
             }
         )
         

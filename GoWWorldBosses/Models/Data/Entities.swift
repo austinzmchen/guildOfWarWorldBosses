@@ -46,7 +46,7 @@ class WBCurrency: WBObject {
 class WBBankElement: WBObject {
     dynamic var count: Int = -1
     dynamic var binding: String?
-    dynamic var bankItem: WBBankItem?
+    dynamic var item: WBItem?
     
     override func saveSyncableProperties(fromSyncable syncable: WBRemoteRecordSyncableType) {
         guard let rRecord = syncable as? WBJsonBankElement else {
@@ -55,28 +55,6 @@ class WBBankElement: WBObject {
         
         self.count = rRecord.count ?? -1
         self.binding = rRecord.binding
-    }
-}
-
-class WBBankItem: WBObject {
-    dynamic var name: String?
-    dynamic var descriptionText: String?
-    dynamic var icon: String?
-    dynamic var type: String?
-    dynamic var level: Int = -1
-    dynamic var count: Int = -1
-    dynamic var bankElement: WBBankElement?
-    
-    override func saveSyncableProperties(fromSyncable syncable: WBRemoteRecordSyncableType) {
-        guard let rRecord = syncable as? WBJsonBankItem else {
-            return
-        }
-        
-        self.name = rRecord.name
-        self.descriptionText = rRecord.descriptionText
-        self.icon = rRecord.icon
-        self.type = rRecord.type
-        self.level = rRecord.level ?? -1
     }
 }
 

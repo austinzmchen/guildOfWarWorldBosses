@@ -1,33 +1,33 @@
 //
-//  WBTripRemote.swift
+//  WBMaterialRemote.swift
 //  GoWWorldBosses
 //
-//  Created by Austin Chen on 2016-11-23.
+//  Created by Austin Chen on 2016-12-11.
+//  Copyright © 2016 Austin Chen. All rights reserved.
 //
 
 import Foundation
 import Alamofire
 
-protocol WBBankRemoteType {
-    func fetchBanks(completion: @escaping (_ success: Bool, _ elements: [WBJsonBankElement]?) -> ())
+protocol WBMaterialRemoteType {
+    func fetchMaterialElements(completion: @escaping (_ success: Bool, _ elements: [WBJsonMaterialElement]?) -> ())
 }
 
-class WBBankRemote: WBRemote, WBBankRemoteType {
-    
-    func fetchBanks(completion: @escaping (_ success: Bool, _ elements: [WBJsonBankElement]?) -> ()) {
+class WBMaterialRemote: WBRemote, WBMaterialRemoteType {
+    func fetchMaterialElements(completion: @escaping (_ success: Bool, _ elements: [WBJsonMaterialElement]?) -> ()) {
         // pass empty dict to trigger custom encoding routines
         let domain: String = self.remoteSession?.domain ?? ""
         
-        let request = self.alamoFireManager.request(domain + "/account/bank", headers: self.remoteSession?.headers)
+        let request = self.alamoFireManager.request(domain + "/account/materials", headers: self.remoteSession?.headers)
         request.responseJSON { (response: DataResponse<Any>) in
             if response.result.isSuccess,
                 let elements = response.result.value as? [AnyObject]
             {
-                var resultElements: [WBJsonBankElement] = []
+                var resultElements: [WBJsonMaterialElement] = []
                 for e in elements {
                     if !(e is NSNull),
                         let ej = e as? [String : Any],
-                        let bankElement = WBJsonBankElement(JSON: ej)
+                        let bankElement = WBJsonMaterialElement(JSON: ej)
                     {
                         resultElements.append(bankElement)
                     }

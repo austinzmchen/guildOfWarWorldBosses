@@ -20,6 +20,10 @@ class WBBankProcessor: NSObject {
         return WBBankRemote(remoteSession: self.context.remoteSession)
     }()
     
+    lazy var itemRemote: WBItemRemote = {
+        return WBItemRemote(remoteSession: self.context.remoteSession)
+    }()
+    
     func sync(completion: @escaping (_ success: Bool, _ syncedObjects: [AnyObject]?, _ error: NSError?) -> ()) {
         self.syncBankElements { (success, elements, error) in
             guard success,
@@ -66,18 +70,18 @@ class WBBankProcessor: NSObject {
         }
     }
     
-    func syncBankItems(byIds ids:[Int64], completion: @escaping (_ success: Bool, _ elements: [WBJsonBankItem]?, _ error: NSError?) -> ())
+    func syncBankItems(byIds ids:[Int64], completion: @escaping (_ success: Bool, _ elements: [WBJsonItem]?, _ error: NSError?) -> ())
     {
-        self.bankRemote.fetchBankItems(byIds: ids, completion: { (success, bankItems) in
+        self.itemRemote.fetchItems(byIds: ids, completion: { (success, items) in
             guard success,
-                let items = bankItems else
+                let items = items else
             {
                 completion(false, nil, nil)
                 return
             }
             
             let realm = try! Realm()
-            let changes: [WBRemoteRecordChange<WBJsonBankItem, WBBankItem>] = realm.findOrInsert(items)
+            let changes: [WBRemoteRecordChange<WBJsonItem, WBItem>] = realm.findOrInsert(items)
             
             try! realm.write {
                 for change in changes {
@@ -86,13 +90,13 @@ class WBBankProcessor: NSObject {
                         localObject.saveSyncableProperties(fromSyncable: remoteRecord)
                         realm.add(localObject, update: true)
                         
-                        localObject.addToOneRelationship(WBBankElement.self, relationshipName: "bankElement", inverseRelationshipName: "bankItem", foreignKey: localObject.id, realm: realm)
+                        localObject.addToOneRelationship(WBBankElement.self, inverseRelationshipName: "item", foreignKey: localObject.id, realm: realm)
                         break
                     case .inserted(let remoteRecord, let localObject):
                         localObject.saveSyncableProperties(fromSyncable: remoteRecord)
                         realm.add(localObject)
                         
-                        localObject.addToOneRelationship(WBBankElement.self, relationshipName: "bankElement", inverseRelationshipName: "bankItem", foreignKey: localObject.id, realm: realm)
+                        localObject.addToOneRelationship(WBBankElement.self, inverseRelationshipName: "item", foreignKey: localObject.id, realm: realm)
                         break
                     default:
                         break

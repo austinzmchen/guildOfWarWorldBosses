@@ -27,7 +27,7 @@ class WBStorageBankViewModel: WBStorageTableViewModelType {
     
     func mainTitleForItem(atIndex index: Int) -> String {
         if let item = self.items?[index] as? WBBankElement,
-            let bankItem = item.bankItem
+            let bankItem = item.item
         {
             return bankItem.name ?? ""
         } else {
@@ -46,7 +46,7 @@ class WBStorageBankViewModel: WBStorageTableViewModelType {
     
     func imageUrlStringForItem(atIndex index: Int) -> String {
         if let item = self.items?[index] as? WBBankElement,
-            let currency = item.bankItem
+            let currency = item.item
         {
             return currency.icon ?? ""
         } else {

@@ -28,14 +28,16 @@ class WBObject: Object {
 extension WBObject {
     
     func addToOneRelationship<S: WBObject>(_ relationshipEntityType: S.Type,
-                              relationshipName: String, inverseRelationshipName: String? = nil,
+                              relationshipName: String? = nil, inverseRelationshipName: String? = nil,
                               foreignKeyName: String = "id", foreignKey: Int64, realm: Realm)
     {
         let localObjects: Results<S> = realm.objects(S.self)
             .filter(NSPredicate(format: "\(foreignKeyName) = \(foreignKey)"))
         
         if let object = localObjects.first {
-            self[relationshipName] = object
+            if let rn = relationshipName {
+                self[rn] = object
+            }
             
             // if defined
             if let irn = inverseRelationshipName {

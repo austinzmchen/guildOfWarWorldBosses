@@ -34,6 +34,10 @@ class WBSyncCoordinator: NSObject {
         return WBBankProcessor(context: self.syncContext)
     }()
     
+    lazy var materialProcessor: WBMaterialProcessor = {
+        return WBMaterialProcessor(context: self.syncContext)
+    }()
+    
     lazy var characterProcessor: WBCharacterProcessor = {
         return WBCharacterProcessor(context: self.syncContext)
     }()
@@ -55,10 +59,11 @@ class WBSyncCoordinator: NSObject {
             dispatchGroup.leave()
         }
 
-//        dispatchGroup.enter()
-//        self.characterProcessor.sync { (success, syncedObjects, error) in
-//            dispatchGroup.leave()
-//        }
+        dispatchGroup.enter()
+        self.materialProcessor.sync { (success, syncedObjects, error) in
+            allSuccess = allSuccess && success
+            dispatchGroup.leave()
+        }
         
         dispatchGroup.notify(queue: DispatchQueue.main, execute: {
             NotificationCenter.default.post(name: Notification.Name(rawValue: WBSyncAllCompletedNotification), object: nil)
