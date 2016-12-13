@@ -11,7 +11,7 @@ import Alamofire
 
 protocol WBWalletRemoteType {
     func fetchWalletElements(_ completion: @escaping (_ success: Bool, _ walletElements: [WBJsonWalletElement]?) -> ())
-    func fetchCurrencies(byIds ids: [Int64], completion: @escaping (_ success: Bool, _ currencies: [WBJsonCurrency]?) -> ())
+    func fetchCurrencies(byIds ids: [String], completion: @escaping (_ success: Bool, _ currencies: [WBJsonCurrency]?) -> ())
 }
 
 class WBWalletRemote: WBRemote, WBWalletRemoteType {
@@ -26,9 +26,9 @@ class WBWalletRemote: WBRemote, WBWalletRemoteType {
         }
     }
     
-    func fetchCurrencies(byIds ids: [Int64], completion: @escaping (_ success: Bool, _ currencies: [WBJsonCurrency]?) -> ()) {
+    func fetchCurrencies(byIds ids: [String], completion: @escaping (_ success: Bool, _ currencies: [WBJsonCurrency]?) -> ()) {
         
-        let idsString = ids.map{ String($0) }.joined(separator: ",")
+        let idsString = ids.map{ $0 }.joined(separator: ",")
         let parameters = "?ids=\(idsString)"
         
         // pass empty dict to trigger custom encoding routines

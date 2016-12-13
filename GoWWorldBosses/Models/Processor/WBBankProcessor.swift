@@ -70,7 +70,7 @@ class WBBankProcessor: NSObject {
         }
     }
     
-    func syncBankItems(byIds ids:[Int64], completion: @escaping (_ success: Bool, _ elements: [WBJsonItem]?, _ error: NSError?) -> ())
+    func syncBankItems(byIds ids:[String], completion: @escaping (_ success: Bool, _ elements: [WBJsonItem]?, _ error: NSError?) -> ())
     {
         self.itemRemote.fetchItems(byIds: ids, completion: { (success, items) in
             guard success,

@@ -38,8 +38,10 @@ class WBDrawerViewController: UIViewController {
     
     fileprivate var drawerItems: [WBDrawerItem] = {
         return [
-            WBDrawerItem(normalImageName: "icTimers", selectedImageName: "", title: "Boss Timers", storyboardFileName: "", storyboardID: ""),
-            WBDrawerItem(normalImageName: "icStorage", selectedImageName: "", title: "Storage", storyboardFileName: "", storyboardID: "")
+            WBDrawerItem(normalImageName: "icTimers", selectedImageName: "", title: "Boss Timers", storyboardFileName: "Timer", storyboardID: "timerNavVC"),
+            WBDrawerItem(normalImageName: "icCharacters", selectedImageName: "", title: "My Characters", storyboardFileName: "Characters", storyboardID: "charactersNavVC"),
+            WBDrawerItem(normalImageName: "icStorage", selectedImageName: "", title: "Storage",
+                         storyboardFileName: "Storage", storyboardID: "storageNavVC")
             ]
     }()
     

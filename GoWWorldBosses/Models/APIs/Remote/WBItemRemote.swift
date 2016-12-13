@@ -10,9 +10,9 @@ import Foundation
 import Alamofire
 
 class WBItemRemote: WBRemote {
-    func fetchItems(byIds ids: [Int64], completion: @escaping (_ success: Bool, _ currencies: [WBJsonItem]?) -> ()) {
+    func fetchItems(byIds ids: [String], completion: @escaping (_ success: Bool, _ currencies: [WBJsonItem]?) -> ()) {
         
-        let idsString = ids.map{ String($0) }.joined(separator: ",")
+        let idsString = ids.map{ $0 }.joined(separator: ",")
         let parameters = "?ids=\(idsString)"
         
         // pass empty dict to trigger custom encoding routines

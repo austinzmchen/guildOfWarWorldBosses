@@ -71,7 +71,7 @@ class WBMaterialProcessor: NSObject {
         }
     }
     
-    func syncMaterialItems(byIds ids:[Int64], completion: @escaping (_ success: Bool, _ elements: [WBJsonItem]?, _ error: NSError?) -> ())
+    func syncMaterialItems(byIds ids:[String], completion: @escaping (_ success: Bool, _ elements: [WBJsonItem]?, _ error: NSError?) -> ())
     {
         let chunkSize = 150
         let chunks = stride(from: 0, to: ids.count, by: chunkSize).map {

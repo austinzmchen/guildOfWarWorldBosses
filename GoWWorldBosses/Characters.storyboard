@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="pqd-Z6-ztt">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Characters Table View Controller-->
+        <scene sceneID="0ud-oL-Fpc">
+            <objects>
+                <tableViewController storyboardIdentifier="charactersTableVC" id="UXN-Oj-5XW" userLabel="Characters Table View Controller" customClass="WBCharactersTableViewController" customModule="WorldBosses" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" id="HLq-DE-KPu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="charactersTableCell" id="MHd-su-zTU" customClass="WBCharactersTableViewCell" customModule="WorldBosses" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="65"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MHd-su-zTU" id="x9q-nH-bhw">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icWalletCoin" translatesAutoresizingMaskIntoConstraints="NO" id="V9p-yF-Mf0" userLabel="leftImageView">
+                                            <rect key="frame" x="10" y="18" width="30" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="30" id="rkV-Zj-V1e"/>
+                                                <constraint firstAttribute="height" constant="30" id="tJL-Sm-p3Z"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item Booster" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v3J-ts-APy" userLabel="mainLabel">
+                                            <rect key="frame" x="55" y="24" width="90" height="18"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="udX-xW-zfy" userLabel="subLabel">
+                                            <rect key="frame" x="345" y="24" width="10" height="17"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                            <color key="textColor" red="0.64313725489999995" green="0.64313725489999995" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tvi-AT-FZw" userLabel="Separator">
+                                            <rect key="frame" x="0.0" y="64" width="375" height="1"/>
+                                            <color key="backgroundColor" red="0.1176470588" green="0.1176470588" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="1" id="p2O-vS-jwP"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="v3J-ts-APy" firstAttribute="leading" secondItem="V9p-yF-Mf0" secondAttribute="trailing" constant="15" id="7Gl-Ge-LGc"/>
+                                        <constraint firstAttribute="trailing" secondItem="tvi-AT-FZw" secondAttribute="trailing" id="SrW-AN-y2h"/>
+                                        <constraint firstItem="V9p-yF-Mf0" firstAttribute="leading" secondItem="x9q-nH-bhw" secondAttribute="leading" constant="10" id="UDe-zr-U8s"/>
+                                        <constraint firstItem="v3J-ts-APy" firstAttribute="centerY" secondItem="V9p-yF-Mf0" secondAttribute="centerY" id="com-lX-TFo"/>
+                                        <constraint firstAttribute="trailing" secondItem="udX-xW-zfy" secondAttribute="trailing" constant="20" id="exJ-rE-6U6"/>
+                                        <constraint firstItem="tvi-AT-FZw" firstAttribute="leading" secondItem="x9q-nH-bhw" secondAttribute="leading" id="fte-Zi-NAT"/>
+                                        <constraint firstItem="udX-xW-zfy" firstAttribute="centerY" secondItem="V9p-yF-Mf0" secondAttribute="centerY" id="qPa-uc-rO2"/>
+                                        <constraint firstAttribute="bottom" secondItem="tvi-AT-FZw" secondAttribute="bottom" id="uPE-Gl-yb0"/>
+                                        <constraint firstItem="V9p-yF-Mf0" firstAttribute="centerY" secondItem="x9q-nH-bhw" secondAttribute="centerY" id="zdb-zg-b0h"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="leftImageView" destination="V9p-yF-Mf0" id="LNd-e0-ufA"/>
+                                    <outlet property="mainLabel" destination="v3J-ts-APy" id="MjQ-wt-uRP"/>
+                                    <outlet property="subLabel" destination="udX-xW-zfy" id="yuL-Ca-HO2"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="UXN-Oj-5XW" id="YUz-3e-VWq"/>
+                            <outlet property="delegate" destination="UXN-Oj-5XW" id="H6p-Uc-h3f"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="VVG-Re-nzo"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uJ3-Eo-sEf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3180" y="131.78410794602701"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="IyN-WQ-PzB">
+            <objects>
+                <navigationController storyboardIdentifier="charactersNavVC" automaticallyAdjustsScrollViewInsets="NO" id="pqd-Z6-ztt" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6Ng-Wt-RXQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="UXN-Oj-5XW" kind="relationship" relationship="rootViewController" id="Sfh-KT-Yjn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QLh-Op-fog" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2410" y="132"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icWalletCoin" width="29" height="20"/>
+    </resources>
+</document>

@@ -44,19 +44,9 @@ class WBDrawerMasterViewController: KYDrawerController {
 }
 
 extension WBDrawerMasterViewController: WBDrawerViewControllerDelegate {
+    
     func didSelect(drawerItem: WBDrawerItem, atIndex index: Int) {
-        var vc: UIViewController? = nil
-        
-        switch index {
-        case 0:
-            vc = WBStoryboardFactory.timerStoryboard.instantiateViewController(withIdentifier: "timerNavVC")
-            break
-        case 1:
-            vc = WBStoryboardFactory.storageStoryboard.instantiateViewController(withIdentifier: "storageNavVC")
-            break
-        default:
-            break
-        }
+        let vc = WBStoryboardFactory.storyboard(byFileName: drawerItem.storyboardFileName)?.instantiateViewController(withIdentifier: drawerItem.storyboardID)
         
         if let navVC = vc as? UINavigationController,
             let rootVC = navVC.viewControllers.first,

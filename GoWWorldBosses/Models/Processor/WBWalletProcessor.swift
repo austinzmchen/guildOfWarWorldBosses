@@ -66,7 +66,7 @@ class WBWalletProcessor: NSObject {
         }
     }
     
-    func syncCurrencies(byIds ids: [Int64], completion: @escaping (_ success: Bool, _ syncedObjects: [WBJsonCurrency]?, _ error: NSError?) -> ())
+    func syncCurrencies(byIds ids: [String], completion: @escaping (_ success: Bool, _ syncedObjects: [WBJsonCurrency]?, _ error: NSError?) -> ())
     {
         self.walletRemote.fetchCurrencies(byIds: ids, completion: { (success, currencies) in
             guard success,

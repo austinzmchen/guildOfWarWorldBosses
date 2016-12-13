@@ -10,7 +10,8 @@ import Foundation
 import ObjectMapper
 import AlamofireObjectMapper
 
-class WBJsonCharacter: Mappable {
+class WBJsonCharacter: Mappable, WBRemoteRecordSyncableType {
+    var id: String = ""
     var name: String?
     var race: String?
     var gender: String?
@@ -25,6 +26,8 @@ class WBJsonCharacter: Mappable {
     
     func mapping(map: Map) {
         name <- map["name"]
+        id = name ?? "" // use name as id
+        
         race <- map["race"]
         gender <- map["gender"]
         profession <- map["profession"]

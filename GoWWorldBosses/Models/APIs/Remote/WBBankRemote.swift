@@ -32,7 +32,7 @@ class WBBankRemote: WBRemote, WBBankRemoteType {
                         resultElements.append(bankElement)
                     }
                 }
-                completion(false, resultElements)
+                completion(true, resultElements)
             } else {
                 completion(false, nil)
             }

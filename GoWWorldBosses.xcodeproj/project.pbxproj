@@ -66,6 +66,9 @@
 		C48D84EA1DFE17C500585E61 /* WBItemRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48D84E91DFE17C500585E61 /* WBItemRemote.swift */; };
 		C48D84EC1DFE186100585E61 /* WBMaterialProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48D84EB1DFE186100585E61 /* WBMaterialProcessor.swift */; };
 		C48D84EE1DFE189A00585E61 /* WBItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48D84ED1DFE189A00585E61 /* WBItem.swift */; };
+		C4903BF51E00678F004F3345 /* Characters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4903BF41E00678F004F3345 /* Characters.storyboard */; };
+		C4903BF81E006828004F3345 /* WBCharactersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4903BF71E006828004F3345 /* WBCharactersTableViewController.swift */; };
+		C4903BFA1E006859004F3345 /* WBCharactersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4903BF91E006859004F3345 /* WBCharactersTableViewCell.swift */; };
 		C4A7818A1D68CFB200786488 /* WBMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A781871D68CFB200786488 /* WBMainTableViewCell.swift */; };
 		C4A7818E1D6915E900786488 /* WBBossFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A7818D1D6915E900786488 /* WBBossFactory.swift */; };
 		C4A781901D69165B00786488 /* WBBoss.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A7818F1D69165B00786488 /* WBBoss.swift */; };
@@ -140,6 +143,9 @@
 		C48D84E91DFE17C500585E61 /* WBItemRemote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBItemRemote.swift; sourceTree = "<group>"; };
 		C48D84EB1DFE186100585E61 /* WBMaterialProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBMaterialProcessor.swift; sourceTree = "<group>"; };
 		C48D84ED1DFE189A00585E61 /* WBItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBItem.swift; sourceTree = "<group>"; };
+		C4903BF41E00678F004F3345 /* Characters.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Characters.storyboard; sourceTree = "<group>"; };
+		C4903BF71E006828004F3345 /* WBCharactersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBCharactersTableViewController.swift; sourceTree = "<group>"; };
+		C4903BF91E006859004F3345 /* WBCharactersTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBCharactersTableViewCell.swift; sourceTree = "<group>"; };
 		C4A781871D68CFB200786488 /* WBMainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBMainTableViewCell.swift; sourceTree = "<group>"; };
 		C4A7818D1D6915E900786488 /* WBBossFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBBossFactory.swift; sourceTree = "<group>"; };
 		C4A7818F1D69165B00786488 /* WBBoss.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBBoss.swift; sourceTree = "<group>"; };
@@ -233,6 +239,7 @@
 				C47E30CB1DF24F8F00B91996 /* APIKeyEntry.storyboard */,
 				C45D34471DEB7A66001C47F9 /* Drawer.storyboard */,
 				C45B6C9C1D68BE5800F94060 /* Timer.storyboard */,
+				C4903BF41E00678F004F3345 /* Characters.storyboard */,
 				C45D34441DEB6D53001C47F9 /* Storage.storyboard */,
 				C45BAE2A1DF27F1800C6FB5A /* Settings.storyboard */,
 				C45B6CA41D68BE5800F94060 /* LaunchScreen.storyboard */,
@@ -265,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				C45D34521DEB8691001C47F9 /* WBDrawerTableViewCell.swift */,
+				C4903BF91E006859004F3345 /* WBCharactersTableViewCell.swift */,
 				C45D34541DEB8766001C47F9 /* WBStorageItemTableViewCell.swift */,
 			);
 			path = Cells;
@@ -369,11 +377,20 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		C4903BF61E006810004F3345 /* Characters */ = {
+			isa = PBXGroup;
+			children = (
+				C4903BF71E006828004F3345 /* WBCharactersTableViewController.swift */,
+			);
+			path = Characters;
+			sourceTree = "<group>";
+		};
 		C4A781831D68CFB200786488 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				C45BAE281DF2550200C6FB5A /* WBAPIKeyEntryViewController.swift */,
 				C45D344C1DEB8265001C47F9 /* Drawers */,
+				C4903BF61E006810004F3345 /* Characters */,
 				C45D34581DECD7D6001C47F9 /* Storage */,
 				C45D34591DECD7D6001C47F9 /* Timers */,
 				C41094A41D88FFCF00751A72 /* WBSettingsViewController.swift */,
@@ -489,6 +506,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C45B6CA61D68BE5800F94060 /* LaunchScreen.storyboard in Resources */,
+				C4903BF51E00678F004F3345 /* Characters.storyboard in Resources */,
 				C45B6CA31D68BE5800F94060 /* Assets.xcassets in Resources */,
 				C45D34491DEB7A66001C47F9 /* Drawer.storyboard in Resources */,
 				C45D34461DEB6D53001C47F9 /* Storage.storyboard in Resources */,
@@ -603,9 +621,11 @@
 				C4A781921D69227300786488 /* NSDate+Plus.swift in Sources */,
 				C47D5B251DE69F5100082CFD /* WBJsonBankItem.swift in Sources */,
 				C45D344E1DEB82AB001C47F9 /* WBDrawerMasterViewController.swift in Sources */,
+				C4903BF81E006828004F3345 /* WBCharactersTableViewController.swift in Sources */,
 				C45D343D1DEB5A1A001C47F9 /* WBWalletRemote.swift in Sources */,
 				C426FBB61DF623C200E83761 /* TechNotes.md in Sources */,
 				C41094A51D88FFCF00751A72 /* WBSettingsViewController.swift in Sources */,
+				C4903BFA1E006859004F3345 /* WBCharactersTableViewCell.swift in Sources */,
 				C48D84E41DFE15F800585E61 /* WBJsonMaterialElement.swift in Sources */,
 				C413001F1DEF88A200D2A92F /* WBCharacterProcessor.swift in Sources */,
 				C45BAE291DF2550200C6FB5A /* WBAPIKeyEntryViewController.swift in Sources */,

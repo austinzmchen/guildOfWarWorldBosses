@@ -35,25 +35,25 @@ class WBCharacterProcessor: NSObject {
                     return
                 }
                 
-//                let realm = try! Realm()
-//                let changes: [WBRemoteRecordChange<WBJsonCharacter, WBCharacter>] = realm.findOrInsert(cs)
-//                
-//                try! realm.write {
-//                    for change in changes {
-//                        switch change {
-//                        case .found(let remoteRecord, let localObject):
-//                            localObject.saveSyncableProperties(fromSyncable: remoteRecord)
-//                            realm.add(localObject, update: true)
-//                            break
-//                        case .inserted(let remoteRecord, let localObject):
-//                            localObject.saveSyncableProperties(fromSyncable: remoteRecord)
-//                            realm.add(localObject)
-//                            break
-//                        default:
-//                            break
-//                        }
-//                    }
-//                }
+                let realm = try! Realm()
+                let changes: [WBRemoteRecordChange<WBJsonCharacter, WBCharacter>] = realm.findOrInsert(cs)
+                
+                try! realm.write {
+                    for change in changes {
+                        switch change {
+                        case .found(let remoteRecord, let localObject):
+                            localObject.saveSyncableProperties(fromSyncable: remoteRecord)
+                            realm.add(localObject, update: true)
+                            break
+                        case .inserted(let remoteRecord, let localObject):
+                            localObject.saveSyncableProperties(fromSyncable: remoteRecord)
+                            realm.add(localObject)
+                            break
+                        default:
+                            break
+                        }
+                    }
+                }
                 
                 completion(true, cs as [AnyObject]?, nil)
             })

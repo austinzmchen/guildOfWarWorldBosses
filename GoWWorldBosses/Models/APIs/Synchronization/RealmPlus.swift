@@ -13,7 +13,7 @@ import RealmSwift
 
 extension Realm {
     // Insert code here to add functionality to your managed object subclass
-    func insertItem<S: WBObject>(byId id: Int64) -> S {
+    func insertItem<S: WBObject>(byId id: String) -> S {
         let item = S()
         item.id = id
         try! self.write {
@@ -64,7 +64,7 @@ extension Realm {
             let key2 = item2.id
             return key1 < key2
         })
-        let sortedRRIds: [Int64] = sortedRemoteRecords.map({$0.id})
+        let sortedRRIds: [String] = sortedRemoteRecords.map({$0.id})
         
         //
         let localObjects: Results<S> = self.objects(S.self)
@@ -81,7 +81,7 @@ extension Realm {
             let itemKey = remoteRecord.id
             
             if (localIndex < localObjects.count) {
-                guard let localItemKey = localObjects[localIndex].value(forKey: uniqueKey) as? Int64 else {
+                guard let localItemKey = localObjects[localIndex].value(forKey: uniqueKey) as? String else {
                     print ("error: local item does not have key")
                     continue
                 }

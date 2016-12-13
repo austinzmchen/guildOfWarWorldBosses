@@ -48,6 +48,12 @@ class WBSyncCoordinator: NSObject {
         let dispatchGroup = DispatchGroup()
         
         dispatchGroup.enter()
+        self.characterProcessor.sync { (success, syncedObjects, error) in
+            allSuccess = allSuccess && success
+            dispatchGroup.leave()
+        }
+        
+        dispatchGroup.enter()
         self.walletProcessor.sync { (success, syncedObjects, error) in
             allSuccess = allSuccess && success
             dispatchGroup.leave()

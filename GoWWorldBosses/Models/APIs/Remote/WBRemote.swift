@@ -9,7 +9,7 @@ import Foundation
 import RealmSwift
 
 protocol WBRemoteRecordSyncableType {
-    var id: Int64 { get }
+    var id: String { get }
 }
 
 enum WBRemoteRecordChange<T: WBRemoteRecordSyncableType, S: WBObject> {

@@ -10,6 +10,10 @@ import UIKit
 
 class WBStoryboardFactory: NSObject {
     
+    static func storyboard(byFileName fileName: String) -> UIStoryboard? {
+        return UIStoryboard(name: fileName, bundle: nil)
+    }
+    
     static var apiKeyEntryStoryboard: UIStoryboard {
         return UIStoryboard(name: "APIKeyEntry", bundle: nil)
     }
@@ -20,6 +24,10 @@ class WBStoryboardFactory: NSObject {
     
     static var timerStoryboard: UIStoryboard {
         return UIStoryboard(name: "Timer", bundle: nil)
+    }
+    
+    static var charactersStoryboard: UIStoryboard {
+        return UIStoryboard(name: "Characters", bundle: nil)
     }
     
     static var storageStoryboard: UIStoryboard {

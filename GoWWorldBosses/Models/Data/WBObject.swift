@@ -10,9 +10,9 @@ import Foundation
 import RealmSwift
 
 class WBObject: Object {
-    dynamic var id: Int64 = -1
+    dynamic var id: String = "wbNull"
     
-    convenience init(primaryKey: Int64) {
+    convenience init(primaryKey: String) {
         self.init()
         self.id = primaryKey
     }
@@ -29,10 +29,10 @@ extension WBObject {
     
     func addToOneRelationship<S: WBObject>(_ relationshipEntityType: S.Type,
                               relationshipName: String? = nil, inverseRelationshipName: String? = nil,
-                              foreignKeyName: String = "id", foreignKey: Int64, realm: Realm)
+                              foreignKeyName: String = "id", foreignKey: String, realm: Realm)
     {
         let localObjects: Results<S> = realm.objects(S.self)
-            .filter(NSPredicate(format: "\(foreignKeyName) = \(foreignKey)"))
+            .filter(NSPredicate(format: "\(foreignKeyName) = %@", foreignKey))
         
         if let object = localObjects.first {
             if let rn = relationshipName {

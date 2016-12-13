@@ -11,11 +11,17 @@ import ObjectMapper
 import AlamofireObjectMapper
 
 class WBJsonBase: Mappable, WBRemoteRecordSyncableType {
-    var id: Int64 = -1 // currency id
+    var id: String = ""
     
     required init?(map: Map) {}
     
     func mapping(map: Map) {
-        id <- map["id"]
+        var idInt: Int?
+        idInt <- map["id"]
+        
+        // use String as identifier type, no matter what type it is converted from
+        if let i = idInt  {
+            self.id = String(format:"%ld",i)
+        }
     }
 }
