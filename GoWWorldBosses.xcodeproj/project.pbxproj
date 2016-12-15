@@ -25,7 +25,6 @@
 		C426FBC01DF623E200E83761 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = C426FBBF1DF623E200E83761 /* README.md */; };
 		C42B94611DFE1DCE0019CB3D /* WBMaterialElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42B94601DFE1DCE0019CB3D /* WBMaterialElement.swift */; };
 		C42B94641DFE2A130019CB3D /* ArrayPlus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42B94631DFE2A130019CB3D /* ArrayPlus.swift */; };
-		C4341A801D89F5E2007D84CC /* WBSettingsNotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4341A7F1D89F5E2007D84CC /* WBSettingsNotificationTableViewCell.swift */; };
 		C4341A841D89FA28007D84CC /* WBBossFactory+TestBosses.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4341A831D89FA28007D84CC /* WBBossFactory+TestBosses.swift */; };
 		C4341F181D8F1027007D84CC /* WBKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4341F171D8F1027007D84CC /* WBKeyStore.swift */; };
 		C45B6C9E1D68BE5800F94060 /* Timer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C45B6C9C1D68BE5800F94060 /* Timer.storyboard */; };
@@ -69,7 +68,16 @@
 		C4903BF51E00678F004F3345 /* Characters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4903BF41E00678F004F3345 /* Characters.storyboard */; };
 		C4903BF81E006828004F3345 /* WBCharactersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4903BF71E006828004F3345 /* WBCharactersTableViewController.swift */; };
 		C4903BFA1E006859004F3345 /* WBCharactersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4903BF91E006859004F3345 /* WBCharactersTableViewCell.swift */; };
-		C4A7818A1D68CFB200786488 /* WBMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A781871D68CFB200786488 /* WBMainTableViewCell.swift */; };
+		C4A409411E01E11600130C85 /* WBSettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A409401E01E11600130C85 /* WBSettingsTableViewCell.swift */; };
+		C4A409441E01E2B200130C85 /* WBMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A409421E01E2B200130C85 /* WBMainTableViewCell.swift */; };
+		C4A409451E01E2B200130C85 /* WBSettingsNotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A409431E01E2B200130C85 /* WBSettingsNotificationTableViewCell.swift */; };
+		C4A409471E01E3E100130C85 /* WBAPIKeyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A409461E01E3E100130C85 /* WBAPIKeyViewController.swift */; };
+		C4A409491E01EA1A00130C85 /* WBAPIKeyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A409481E01EA1A00130C85 /* WBAPIKeyTableViewCell.swift */; };
+		C4A4094B1E01ED2400130C85 /* WBAccountRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A4094A1E01ED2400130C85 /* WBAccountRemote.swift */; };
+		C4A4094D1E01F0AA00130C85 /* WBJsonAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A4094C1E01F0AA00130C85 /* WBJsonAccount.swift */; };
+		C4A4094F1E01FF4E00130C85 /* WBAccountProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A4094E1E01FF4E00130C85 /* WBAccountProcessor.swift */; };
+		C4A409511E03279A00130C85 /* WBAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A409501E03279A00130C85 /* WBAccount.swift */; };
+		C4A409531E033B2500130C85 /* WBAPIKeyEntryViewController+QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A409521E033B2500130C85 /* WBAPIKeyEntryViewController+QRCode.swift */; };
 		C4A7818E1D6915E900786488 /* WBBossFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A7818D1D6915E900786488 /* WBBossFactory.swift */; };
 		C4A781901D69165B00786488 /* WBBoss.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A7818F1D69165B00786488 /* WBBoss.swift */; };
 		C4A781921D69227300786488 /* NSDate+Plus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A781911D69227300786488 /* NSDate+Plus.swift */; };
@@ -98,7 +106,6 @@
 		C426FBBF1DF623E200E83761 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C42B94601DFE1DCE0019CB3D /* WBMaterialElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBMaterialElement.swift; sourceTree = "<group>"; };
 		C42B94631DFE2A130019CB3D /* ArrayPlus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayPlus.swift; sourceTree = "<group>"; };
-		C4341A7F1D89F5E2007D84CC /* WBSettingsNotificationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBSettingsNotificationTableViewCell.swift; sourceTree = "<group>"; };
 		C4341A831D89FA28007D84CC /* WBBossFactory+TestBosses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WBBossFactory+TestBosses.swift"; sourceTree = "<group>"; };
 		C4341F171D8F1027007D84CC /* WBKeyStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBKeyStore.swift; sourceTree = "<group>"; };
 		C45B6C951D68BE5800F94060 /* WorldBosses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldBosses.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,7 +153,16 @@
 		C4903BF41E00678F004F3345 /* Characters.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Characters.storyboard; sourceTree = "<group>"; };
 		C4903BF71E006828004F3345 /* WBCharactersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBCharactersTableViewController.swift; sourceTree = "<group>"; };
 		C4903BF91E006859004F3345 /* WBCharactersTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBCharactersTableViewCell.swift; sourceTree = "<group>"; };
-		C4A781871D68CFB200786488 /* WBMainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBMainTableViewCell.swift; sourceTree = "<group>"; };
+		C4A409401E01E11600130C85 /* WBSettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBSettingsTableViewCell.swift; sourceTree = "<group>"; };
+		C4A409421E01E2B200130C85 /* WBMainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBMainTableViewCell.swift; sourceTree = "<group>"; };
+		C4A409431E01E2B200130C85 /* WBSettingsNotificationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBSettingsNotificationTableViewCell.swift; sourceTree = "<group>"; };
+		C4A409461E01E3E100130C85 /* WBAPIKeyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBAPIKeyViewController.swift; sourceTree = "<group>"; };
+		C4A409481E01EA1A00130C85 /* WBAPIKeyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBAPIKeyTableViewCell.swift; sourceTree = "<group>"; };
+		C4A4094A1E01ED2400130C85 /* WBAccountRemote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBAccountRemote.swift; sourceTree = "<group>"; };
+		C4A4094C1E01F0AA00130C85 /* WBJsonAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBJsonAccount.swift; sourceTree = "<group>"; };
+		C4A4094E1E01FF4E00130C85 /* WBAccountProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBAccountProcessor.swift; sourceTree = "<group>"; };
+		C4A409501E03279A00130C85 /* WBAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBAccount.swift; sourceTree = "<group>"; };
+		C4A409521E033B2500130C85 /* WBAPIKeyEntryViewController+QRCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WBAPIKeyEntryViewController+QRCode.swift"; sourceTree = "<group>"; };
 		C4A7818D1D6915E900786488 /* WBBossFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBBossFactory.swift; sourceTree = "<group>"; };
 		C4A7818F1D69165B00786488 /* WBBoss.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBBoss.swift; sourceTree = "<group>"; };
 		C4A781911D69227300786488 /* NSDate+Plus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Plus.swift"; sourceTree = "<group>"; };
@@ -171,6 +187,7 @@
 		C4026EAD1DEE29E30097FFC1 /* Processor */ = {
 			isa = PBXGroup;
 			children = (
+				C4A4094E1E01FF4E00130C85 /* WBAccountProcessor.swift */,
 				C4026EAE1DEE2A1A0097FFC1 /* WBWalletProcessor.swift */,
 				C413001C1DEF7BDC00D2A92F /* WBBankProcessor.swift */,
 				C48D84EB1DFE186100585E61 /* WBMaterialProcessor.swift */,
@@ -271,9 +288,13 @@
 		C45D34511DEB8658001C47F9 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				C4A409421E01E2B200130C85 /* WBMainTableViewCell.swift */,
+				C4A409431E01E2B200130C85 /* WBSettingsNotificationTableViewCell.swift */,
 				C45D34521DEB8691001C47F9 /* WBDrawerTableViewCell.swift */,
 				C4903BF91E006859004F3345 /* WBCharactersTableViewCell.swift */,
 				C45D34541DEB8766001C47F9 /* WBStorageItemTableViewCell.swift */,
+				C4A409401E01E11600130C85 /* WBSettingsTableViewCell.swift */,
+				C4A409481E01EA1A00130C85 /* WBAPIKeyTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -341,6 +362,7 @@
 			isa = PBXGroup;
 			children = (
 				C45D34421DEB5CC2001C47F9 /* WBJsonBase.swift */,
+				C4A4094C1E01F0AA00130C85 /* WBJsonAccount.swift */,
 				C48D84E51DFE160E00585E61 /* WBJsonItem.swift */,
 				C47D5B221DE69F3000082CFD /* WBJsonCurrency.swift */,
 				C47D5B241DE69F5100082CFD /* WBJsonBankItem.swift */,
@@ -354,6 +376,7 @@
 		C47D5B1B1DE69F0E00082CFD /* Remote */ = {
 			isa = PBXGroup;
 			children = (
+				C4A4094A1E01ED2400130C85 /* WBAccountRemote.swift */,
 				C45D343C1DEB5A1A001C47F9 /* WBWalletRemote.swift */,
 				C47D5B271DE6A01900082CFD /* WBBankRemote.swift */,
 				C48D84E71DFE16DC00585E61 /* WBMaterialRemote.swift */,
@@ -372,6 +395,7 @@
 				C47D5B1D1DE69F0E00082CFD /* Entities.swift */,
 				C48D84ED1DFE189A00585E61 /* WBItem.swift */,
 				C42B94601DFE1DCE0019CB3D /* WBMaterialElement.swift */,
+				C4A409501E03279A00130C85 /* WBAccount.swift */,
 				C47D5B1E1DE69F0E00082CFD /* GoWWorldBosses.xcdatamodeld */,
 			);
 			path = Data;
@@ -389,6 +413,8 @@
 			isa = PBXGroup;
 			children = (
 				C45BAE281DF2550200C6FB5A /* WBAPIKeyEntryViewController.swift */,
+				C4A409521E033B2500130C85 /* WBAPIKeyEntryViewController+QRCode.swift */,
+				C4A409461E01E3E100130C85 /* WBAPIKeyViewController.swift */,
 				C45D344C1DEB8265001C47F9 /* Drawers */,
 				C4903BF61E006810004F3345 /* Characters */,
 				C45D34581DECD7D6001C47F9 /* Storage */,
@@ -418,8 +444,6 @@
 			isa = PBXGroup;
 			children = (
 				C45D34511DEB8658001C47F9 /* Cells */,
-				C4A781871D68CFB200786488 /* WBMainTableViewCell.swift */,
-				C4341A7F1D89F5E2007D84CC /* WBSettingsNotificationTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -588,15 +612,20 @@
 				C41300211DF0873C00D2A92F /* MapHelper.swift in Sources */,
 				C45D34641DECDBBC001C47F9 /* WBStoryboardFactory.swift in Sources */,
 				C45D346F1DED0E4A001C47F9 /* RealmPlus.swift in Sources */,
+				C4A409491E01EA1A00130C85 /* WBAPIKeyTableViewCell.swift in Sources */,
 				C4341A841D89FA28007D84CC /* WBBossFactory+TestBosses.swift in Sources */,
+				C4A409451E01E2B200130C85 /* WBSettingsNotificationTableViewCell.swift in Sources */,
 				C45D34431DEB5CC2001C47F9 /* WBJsonBase.swift in Sources */,
 				C48D84EC1DFE186100585E61 /* WBMaterialProcessor.swift in Sources */,
+				C4A409471E01E3E100130C85 /* WBAPIKeyViewController.swift in Sources */,
 				C4C799ED1DF505BD00A8B5F4 /* UIApplication+Loader.swift in Sources */,
 				C45D34551DEB8766001C47F9 /* WBStorageItemTableViewCell.swift in Sources */,
 				C41E4E921D74D1850037E57F /* WBHighLevelBoss.swift in Sources */,
+				C4A409511E03279A00130C85 /* WBAccount.swift in Sources */,
 				C426FBC01DF623E200E83761 /* README.md in Sources */,
 				C45D34661DECDD73001C47F9 /* WBStorageGeneralTableViewController.swift in Sources */,
 				C42B94641DFE2A130019CB3D /* ArrayPlus.swift in Sources */,
+				C4A4094B1E01ED2400130C85 /* WBAccountRemote.swift in Sources */,
 				C42B94611DFE1DCE0019CB3D /* WBMaterialElement.swift in Sources */,
 				C45D34621DECDB42001C47F9 /* AppDelegate.swift in Sources */,
 				C4A7818E1D6915E900786488 /* WBBossFactory.swift in Sources */,
@@ -607,9 +636,9 @@
 				C45D34681DECDEE1001C47F9 /* WBStorageMainViewController.swift in Sources */,
 				C47D5B201DE69F0E00082CFD /* Entities.swift in Sources */,
 				C4026EB11DEE2B840097FFC1 /* WBSyncContext.swift in Sources */,
-				C4A7818A1D68CFB200786488 /* WBMainTableViewCell.swift in Sources */,
 				C45D34531DEB8691001C47F9 /* WBDrawerTableViewCell.swift in Sources */,
 				C411FAEB1DFDF84E0038337F /* WBStorageTableViewModelType.swift in Sources */,
+				C4A409411E01E11600130C85 /* WBSettingsTableViewCell.swift in Sources */,
 				C45D345C1DECD7D6001C47F9 /* WBMainViewController+NavigationBar.swift in Sources */,
 				C45D345F1DECD865001C47F9 /* WBStoragePageViewController.swift in Sources */,
 				C48D84EA1DFE17C500585E61 /* WBItemRemote.swift in Sources */,
@@ -619,14 +648,18 @@
 				C47D5B211DE69F0E00082CFD /* GoWWorldBosses.xcdatamodeld in Sources */,
 				C47D5B2B1DE6A01900082CFD /* WBRemote.swift in Sources */,
 				C4A781921D69227300786488 /* NSDate+Plus.swift in Sources */,
+				C4A409531E033B2500130C85 /* WBAPIKeyEntryViewController+QRCode.swift in Sources */,
 				C47D5B251DE69F5100082CFD /* WBJsonBankItem.swift in Sources */,
 				C45D344E1DEB82AB001C47F9 /* WBDrawerMasterViewController.swift in Sources */,
 				C4903BF81E006828004F3345 /* WBCharactersTableViewController.swift in Sources */,
 				C45D343D1DEB5A1A001C47F9 /* WBWalletRemote.swift in Sources */,
 				C426FBB61DF623C200E83761 /* TechNotes.md in Sources */,
+				C4A409441E01E2B200130C85 /* WBMainTableViewCell.swift in Sources */,
 				C41094A51D88FFCF00751A72 /* WBSettingsViewController.swift in Sources */,
 				C4903BFA1E006859004F3345 /* WBCharactersTableViewCell.swift in Sources */,
+				C4A4094D1E01F0AA00130C85 /* WBJsonAccount.swift in Sources */,
 				C48D84E41DFE15F800585E61 /* WBJsonMaterialElement.swift in Sources */,
+				C4A4094F1E01FF4E00130C85 /* WBAccountProcessor.swift in Sources */,
 				C413001F1DEF88A200D2A92F /* WBCharacterProcessor.swift in Sources */,
 				C45BAE291DF2550200C6FB5A /* WBAPIKeyEntryViewController.swift in Sources */,
 				C45D343F1DEB5A9E001C47F9 /* WBJsonCharacter.swift in Sources */,
@@ -637,7 +670,6 @@
 				C48D84E81DFE16DC00585E61 /* WBMaterialRemote.swift in Sources */,
 				C45D346D1DECEA41001C47F9 /* WBObject.swift in Sources */,
 				C45D34501DEB8417001C47F9 /* WBDrawerViewController.swift in Sources */,
-				C4341A801D89F5E2007D84CC /* WBSettingsNotificationTableViewCell.swift in Sources */,
 				C47D5B231DE69F3000082CFD /* WBJsonCurrency.swift in Sources */,
 				C411FAE71DFDF7FA0038337F /* WBStorageBankViewModel.swift in Sources */,
 				C48D84E61DFE160E00585E61 /* WBJsonItem.swift in Sources */,

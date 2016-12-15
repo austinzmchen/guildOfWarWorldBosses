@@ -15,10 +15,13 @@ protocol WBDrawerItemViewControllerType: class {
 
 protocol WBDrawerMasterViewControllerDelegate: class {
     func toggleDrawerView()
+    func drawerItemVCShouldChange()
 }
 
 class WBDrawerMasterViewController: KYDrawerController {
-
+    
+    fileprivate var selectedDrawerItem: WBDrawerItem?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -46,6 +49,21 @@ class WBDrawerMasterViewController: KYDrawerController {
 extension WBDrawerMasterViewController: WBDrawerViewControllerDelegate {
     
     func didSelect(drawerItem: WBDrawerItem, atIndex index: Int) {
+        selectedDrawerItem = drawerItem
+        
+        if WBKeyStore.keyStoreItem?.accountAPIKey == nil &&
+            drawerItem.title != "Boss Timers"
+        {
+            let navVC = WBStoryboardFactory.apiKeyEntryStoryboard.instantiateInitialViewController() as! UINavigationController
+            if let rootVC = navVC.viewControllers.first as? WBAPIKeyEntryViewController {
+                rootVC.isShownFullscreen = false
+                rootVC.viewDelegate = self
+                self.mainViewController = navVC
+                self.setDrawerState(.closed, animated: true)
+            }
+            return
+        }
+        
         let vc = WBStoryboardFactory.storyboard(byFileName: drawerItem.storyboardFileName)?.instantiateViewController(withIdentifier: drawerItem.storyboardID)
         
         if let navVC = vc as? UINavigationController,
@@ -70,5 +88,21 @@ extension WBDrawerMasterViewController: WBDrawerMasterViewControllerDelegate {
             state = .opened
         }
         self.setDrawerState(state, animated: true)
+    }
+    
+    func drawerItemVCShouldChange() {
+        guard let drawerItem = selectedDrawerItem else {
+            return
+        }
+        
+        let vc = WBStoryboardFactory.storyboard(byFileName: drawerItem.storyboardFileName)?.instantiateViewController(withIdentifier: drawerItem.storyboardID)
+        
+        if let navVC = vc as? UINavigationController,
+            let rootVC = navVC.viewControllers.first,
+            let drawerItemVC = rootVC as? WBDrawerItemViewControllerType
+        {
+            drawerItemVC.viewDelegate = self
+            self.mainViewController = navVC
+        }
     }
 }

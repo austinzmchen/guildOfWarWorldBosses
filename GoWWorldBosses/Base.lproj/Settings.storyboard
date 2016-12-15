@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -96,7 +97,7 @@
                                             <outlet property="toggleSwitch" destination="smf-ms-1z4" id="O3Z-VR-qDb"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="aboutCell" textLabel="Sfn-SG-1S7" detailTextLabel="yTt-8B-7lw" rowHeight="50" style="IBUITableViewCellStyleValue1" id="Z2t-nW-YQF" userLabel="LegalAboutCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="settingsCell" textLabel="Sfn-SG-1S7" detailTextLabel="yTt-8B-7lw" rowHeight="50" style="IBUITableViewCellStyleValue1" id="Z2t-nW-YQF" customClass="WBSettingsTableViewCell" customModule="WorldBosses" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="99" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Z2t-nW-YQF" id="rwr-lp-BJQ">
@@ -111,7 +112,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="V1.1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yTt-8B-7lw">
-                                                    <rect key="frame" x="314" y="17" width="26" height="17"/>
+                                                    <rect key="frame" x="314.5" y="17" width="25.5" height="17"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.64313725489999995" green="0.64313725489999995" blue="0.64313725489999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -120,6 +121,10 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="mainLabel" destination="Sfn-SG-1S7" id="4eK-6M-ap9"/>
+                                            <outlet property="subLabel" destination="yTt-8B-7lw" id="SNc-ES-g3m"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>
@@ -148,11 +153,22 @@
                     <connections>
                         <outlet property="tableView" destination="quU-Bq-yG9" id="fHU-Qs-JfS"/>
                         <segue destination="1GM-Ca-Coq" kind="push" identifier="pushToAboutVC" id="gQG-4b-fgG"/>
+                        <segue destination="5UR-At-pfC" kind="push" identifier="pushToAPIKeyVC" id="un0-ad-6Ha"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tQU-pR-fqi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="929" y="384"/>
+        </scene>
+        <!--apiKeyVC-->
+        <scene sceneID="bg6-Yz-QhA">
+            <objects>
+                <viewControllerPlaceholder storyboardName="APIKeyEntry" referencedIdentifier="apiKeyVC" id="5UR-At-pfC" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="j0h-9Z-sbe"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ydk-7H-kzN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1580" y="-120"/>
         </scene>
         <!--About View Controller-->
         <scene sceneID="tg1-LJ-yam">
@@ -169,7 +185,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settingsBackground" translatesAutoresizingMaskIntoConstraints="NO" id="lJN-Rk-pfM">
                                 <rect key="frame" x="0.0" y="253" width="375" height="350"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="350" id="jGH-92-6Vv"/>
+                                    <constraint firstAttribute="width" secondItem="lJN-Rk-pfM" secondAttribute="height" multiplier="15:14" id="1NZ-Yf-1nG"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RFb-nX-Nbf">

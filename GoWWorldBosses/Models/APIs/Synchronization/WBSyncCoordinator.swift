@@ -26,6 +26,10 @@ class WBSyncCoordinator: NSObject {
     
     // MARK - instance methods
     
+    lazy var accountProcessor: WBAccountProcessor = {
+        return WBAccountProcessor(context: self.syncContext)
+    }()
+    
     lazy var walletProcessor: WBWalletProcessor = {
         return WBWalletProcessor(context: self.syncContext)
     }()
@@ -46,6 +50,12 @@ class WBSyncCoordinator: NSObject {
         var allSuccess = true
         
         let dispatchGroup = DispatchGroup()
+        
+        dispatchGroup.enter()
+        self.accountProcessor.sync { (success, syncedObjects, error) in
+            allSuccess = allSuccess && success
+            dispatchGroup.leave()
+        }
         
         dispatchGroup.enter()
         self.characterProcessor.sync { (success, syncedObjects, error) in

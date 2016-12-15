@@ -54,22 +54,25 @@ struct WBRemoteSettings {
 
 /// All Remote subclasses fetch remote data ASYNCHRONOUSLY, so be aware the completion block is NOT executed on main thread
 
-class WBRemote: NSObject {
+class WBSimpleRemote: NSObject {
     // domains
-    static let domain = "api2.libre-dev.com"
-    
+    static let domain = "https://api.guildwars2.com/v2"
     var alamoFireManager: SessionManager
-    let remoteSession: WBRemoteSessionType?
     
-    init(remoteSession: WBRemoteSession?) {
-        self.remoteSession = remoteSession
-        
+    override init() {
         let serverTrustPolicies: [String: ServerTrustPolicy] = [
             type(of: self).domain: .disableEvaluation
         ]
         alamoFireManager = SessionManager(configuration: URLSessionConfiguration.default,
                                           serverTrustPolicyManager: ServerTrustPolicyManager(policies: serverTrustPolicies))
-        
+    }
+}
+
+class WBRemote: WBSimpleRemote {
+    let remoteSession: WBRemoteSessionType?
+    
+    init(remoteSession: WBRemoteSession?) {
+        self.remoteSession = remoteSession
         super.init()
     }
 }

@@ -8,6 +8,11 @@
 
 import UIKit
 
+private struct WBSettingsItem {
+    var title: String
+    var segueId: String
+}
+
 class WBSettingsViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
@@ -16,10 +21,17 @@ class WBSettingsViewController: UIViewController {
     }
     
     var isNotificationTurnedOnInSettings = true
+    fileprivate var settingItems: [WBSettingsItem] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        settingItems = [WBSettingsItem(title: "Notifications", segueId: ""),
+                        WBSettingsItem(title: "About", segueId: "pushToAboutVC")]
+        if WBKeyStore.keyStoreItem != nil {
+            settingItems.insert(WBSettingsItem(title: "API Key", segueId: "pushToAPIKeyVC"), at: 1)
+        }
+        
         // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
@@ -37,19 +49,23 @@ class WBSettingsViewController: UIViewController {
         isNotificationTurnedOnInSettings = true
         self.tableView.reloadData()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "pushToAPIKeyVC" {
+            let vc = segue.destination
+            vc.title = "API Key"
+        }
+    }
 }
 
 extension WBSettingsViewController: UITableViewDelegate, UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return settingItems.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 0 {
+        if settingItems[indexPath.row].title == "Notifications"  {
             return 71.5
         } else {
             return 50.0
@@ -62,15 +78,19 @@ extension WBSettingsViewController: UITableViewDelegate, UITableViewDataSource {
             noteCell.toggleSwitch.isOn = isNotificationTurnedOnInSettings
             return noteCell
         } else {
-            return tableView.dequeueReusableCell(withIdentifier: "aboutCell")!
+            let cell = tableView.dequeueReusableCell(withIdentifier: "settingsCell") as! WBSettingsTableViewCell
+            let settingsitem = settingItems[indexPath.row]
+            cell.mainLabel.text = settingsitem.title
+            return cell
         }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
             UIApplication.shared.openURL(URL(string: UIApplicationOpenSettingsURLString)!)
-        } else if indexPath.row == 1 {
-            self.performSegue(withIdentifier: "pushToAboutVC", sender: nil)
+        } else {
+            let settingsitem = settingItems[indexPath.row]
+            self.performSegue(withIdentifier: settingsitem.segueId, sender: nil)
         }
         tableView.deselectRow(at: indexPath, animated: true)
     }
