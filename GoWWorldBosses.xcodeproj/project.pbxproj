@@ -21,8 +21,6 @@
 		C413001F1DEF88A200D2A92F /* WBCharacterProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C413001E1DEF88A200D2A92F /* WBCharacterProcessor.swift */; };
 		C41300211DF0873C00D2A92F /* MapHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41300201DF0873C00D2A92F /* MapHelper.swift */; };
 		C41E4E921D74D1850037E57F /* WBHighLevelBoss.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41E4E911D74D1850037E57F /* WBHighLevelBoss.swift */; };
-		C426FBB61DF623C200E83761 /* TechNotes.md in Sources */ = {isa = PBXBuildFile; fileRef = C426FBA61DF623C200E83761 /* TechNotes.md */; };
-		C426FBC01DF623E200E83761 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = C426FBBF1DF623E200E83761 /* README.md */; };
 		C42B94611DFE1DCE0019CB3D /* WBMaterialElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42B94601DFE1DCE0019CB3D /* WBMaterialElement.swift */; };
 		C42B94641DFE2A130019CB3D /* ArrayPlus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42B94631DFE2A130019CB3D /* ArrayPlus.swift */; };
 		C4341A841D89FA28007D84CC /* WBBossFactory+TestBosses.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4341A831D89FA28007D84CC /* WBBossFactory+TestBosses.swift */; };
@@ -102,8 +100,6 @@
 		C413001E1DEF88A200D2A92F /* WBCharacterProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBCharacterProcessor.swift; sourceTree = "<group>"; };
 		C41300201DF0873C00D2A92F /* MapHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapHelper.swift; sourceTree = "<group>"; };
 		C41E4E911D74D1850037E57F /* WBHighLevelBoss.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBHighLevelBoss.swift; sourceTree = "<group>"; };
-		C426FBA61DF623C200E83761 /* TechNotes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = TechNotes.md; sourceTree = "<group>"; };
-		C426FBBF1DF623E200E83761 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C42B94601DFE1DCE0019CB3D /* WBMaterialElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBMaterialElement.swift; sourceTree = "<group>"; };
 		C42B94631DFE2A130019CB3D /* ArrayPlus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayPlus.swift; sourceTree = "<group>"; };
 		C4341A831D89FA28007D84CC /* WBBossFactory+TestBosses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WBBossFactory+TestBosses.swift"; sourceTree = "<group>"; };
@@ -207,14 +203,6 @@
 			path = Storage;
 			sourceTree = "<group>";
 		};
-		C426FBA01DF623C200E83761 /* Doc */ = {
-			isa = PBXGroup;
-			children = (
-				C426FBA61DF623C200E83761 /* TechNotes.md */,
-			);
-			path = Doc;
-			sourceTree = "<group>";
-		};
 		C42B94621DFE2A020019CB3D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -227,12 +215,10 @@
 			isa = PBXGroup;
 			children = (
 				C45B6C971D68BE5800F94060 /* GoWWorldBosses */,
-				C426FBA01DF623C200E83761 /* Doc */,
 				C45B6CAF1D68BE5900F94060 /* GoWWorldBossesTests */,
 				C45B6C961D68BE5800F94060 /* Products */,
 				EA216089FBB4F8F0B269A8C9 /* Pods */,
 				D6F30776B3EBFC5A5699A11C /* Frameworks */,
-				C426FBBF1DF623E200E83761 /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -496,7 +482,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Austin Chen";
 				TargetAttributes = {
 					C45B6C941D68BE5800F94060 = {
@@ -556,7 +542,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		B0B0EDF9B1E08D019965315B /* [CP] Copy Pods Resources */ = {
@@ -622,7 +608,6 @@
 				C45D34551DEB8766001C47F9 /* WBStorageItemTableViewCell.swift in Sources */,
 				C41E4E921D74D1850037E57F /* WBHighLevelBoss.swift in Sources */,
 				C4A409511E03279A00130C85 /* WBAccount.swift in Sources */,
-				C426FBC01DF623E200E83761 /* README.md in Sources */,
 				C45D34661DECDD73001C47F9 /* WBStorageGeneralTableViewController.swift in Sources */,
 				C42B94641DFE2A130019CB3D /* ArrayPlus.swift in Sources */,
 				C4A4094B1E01ED2400130C85 /* WBAccountRemote.swift in Sources */,
@@ -653,7 +638,6 @@
 				C45D344E1DEB82AB001C47F9 /* WBDrawerMasterViewController.swift in Sources */,
 				C4903BF81E006828004F3345 /* WBCharactersTableViewController.swift in Sources */,
 				C45D343D1DEB5A1A001C47F9 /* WBWalletRemote.swift in Sources */,
-				C426FBB61DF623C200E83761 /* TechNotes.md in Sources */,
 				C4A409441E01E2B200130C85 /* WBMainTableViewCell.swift in Sources */,
 				C41094A51D88FFCF00751A72 /* WBSettingsViewController.swift in Sources */,
 				C4903BFA1E006859004F3345 /* WBCharactersTableViewCell.swift in Sources */,
@@ -744,6 +728,7 @@
 		C45B6CB31D68BE5900F94060 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -780,7 +765,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -793,6 +778,7 @@
 		C45B6CB41D68BE5900F94060 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -823,7 +809,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -849,7 +835,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0.1;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -869,7 +855,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.accodeworks.GoWWorldBosses;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_VERSION = 3.0.1;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

@@ -15,7 +15,7 @@ def addCommonDependancies
     
     # Networking
     pod 'Alamofire'
-    pod 'AlamofireObjectMapper', '~> 4.0'
+    pod 'AlamofireObjectMapper'
     
     # Misc
     pod 'Locksmith'
