@@ -47,6 +47,7 @@ extension WBAPIKeyViewController: UITableViewDataSource {
 }
 
 extension WBAPIKeyViewController: UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let alertVC = UIAlertController(title: "Remove API Key", message: "Are you sure you want to remove your API Key?", preferredStyle: UIAlertControllerStyle.alert)
         alertVC.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
@@ -59,6 +60,7 @@ extension WBAPIKeyViewController: UITableViewDelegate {
             self.accounts = []
             
             self.tableView.deleteRows(at: [IndexPath(row: 0, section: 0)], with: .automatic) // FIXME:
+            _ = self.navigationController?.popViewController(animated: true)
         }))
         self.present(alertVC, animated: true, completion: nil)
         

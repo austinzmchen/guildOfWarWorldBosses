@@ -66,15 +66,11 @@ class WBAPIKeyEntryViewController: UIViewController, WBDrawerItemViewControllerT
         let tapGR = UITapGestureRecognizer(target: self, action: #selector(tappingOffKeyboard))
         view.addGestureRecognizer(tapGR)
         
-        UIApplication.showLoader()
-
         // Do any additional setup after loading the view.
         if let keyItem = WBKeyStore.keyStoreItem,
             !(keyItem.accountAPIKey == "")
         {
             self.authenticate(apiKey: keyItem.accountAPIKey)
-        } else {
-            UIApplication.hideLoader()
         }
     }
     
@@ -87,42 +83,59 @@ class WBAPIKeyEntryViewController: UIViewController, WBDrawerItemViewControllerT
     }()
     
     func authenticate(apiKey: String) {
-        // FIXME:
-        let realm = try! Realm()
-        try! realm.write {
-            realm.deleteAll()
-        }
+        UIApplication.showLoader()
         
         let key = apiKey.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
-        self.accountRemote.fetchAccount(byAPIKey: key, completion: { (success, account) in
+        self.accountRemote.authenticate(byApiKey: key) { (success) in
             DispatchQueue.main.async {
                 if success {
+                    // FIXME:
+                    let realm = try! Realm()
+                    try! realm.write {
+                        realm.deleteAll()
+                    }
+                    
+                    let keyItem = WBKeyStore.keyStoreItem
+                    WBKeyStore.keyStoreItem = WBKeyStoreItem(likedBosses: (keyItem?.likedBosses ?? Set<String>()), accountAPIKey: key)
+                    
                     self.syncCoordinator = WBSyncCoordinator(remoteSession: WBRemoteSession(domain: WBRemote.domain, bearer: key))
                     self.syncCoordinator?.syncAll({ (success, error) in
-                        let keyItem = WBKeyStore.keyStoreItem
-                        WBKeyStore.keyStoreItem = WBKeyStoreItem(likedBosses: (keyItem?.likedBosses ?? Set<String>()), accountAPIKey: key)
-                        
-                        if self.isShownFullscreen {
-                            let drawerMasterVC = WBStoryboardFactory.drawerStoryboard.instantiateViewController(withIdentifier: "drawerMasterVC")
-                            self.present(drawerMasterVC, animated: true) {}
-                        } else {
-                            self.viewDelegate?.drawerItemVCShouldChange()
-                        }
+                        self.presentLandingView(completion: { 
+                            UIApplication.hideLoader()
+                        })
                     })
                 } else {
-                    let alert = UIAlertController(
-                        title: "My Tyria",
-                        message: String (format:"APIKey failed: %@", apiKey),
-                        preferredStyle: .alert
-                    )
-                    alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-                    
-                    self.present(alert, animated: true, completion: nil)
+                    self.presentErrorView()
+                    UIApplication.hideLoader()
                 }
-                UIApplication.hideLoader()
             }
-        })
+        }
         
     }
     
+}
+
+extension WBAPIKeyEntryViewController {
+    func presentLandingView(completion: @escaping () -> () ) {
+        if self.isShownFullscreen {
+            let drawerMasterVC = WBStoryboardFactory.drawerStoryboard.instantiateViewController(withIdentifier: "drawerMasterVC")
+            self.present(drawerMasterVC, animated: true) {
+                completion()
+            }
+        } else {
+            self.viewDelegate?.drawerItemVCShouldChange()
+            completion()
+        }
+    }
+    
+    func presentErrorView() {
+        let alert = UIAlertController(
+            title: "My Tyria",
+            message: String (format:"API Key authentication failed."),
+            preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
 }

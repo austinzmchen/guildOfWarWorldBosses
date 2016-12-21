@@ -49,6 +49,7 @@
 		C45D34681DECDEE1001C47F9 /* WBStorageMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D34671DECDEE1001C47F9 /* WBStorageMainViewController.swift */; };
 		C45D346D1DECEA41001C47F9 /* WBObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D346C1DECEA41001C47F9 /* WBObject.swift */; };
 		C45D346F1DED0E4A001C47F9 /* RealmPlus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D346E1DED0E4A001C47F9 /* RealmPlus.swift */; };
+		C47B01261E088CEE0057F475 /* AppConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47B01251E088CEE0057F475 /* AppConfigurator.swift */; };
 		C47D5B201DE69F0E00082CFD /* Entities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D5B1D1DE69F0E00082CFD /* Entities.swift */; };
 		C47D5B211DE69F0E00082CFD /* GoWWorldBosses.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C47D5B1E1DE69F0E00082CFD /* GoWWorldBosses.xcdatamodeld */; };
 		C47D5B231DE69F3000082CFD /* WBJsonCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D5B221DE69F3000082CFD /* WBJsonCurrency.swift */; };
@@ -82,6 +83,11 @@
 		C4C799E91DF503D100A8B5F4 /* Utility.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4C799E71DF503D000A8B5F4 /* Utility.storyboard */; };
 		C4C799EB1DF5044000A8B5F4 /* WBLoaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C799EA1DF5044000A8B5F4 /* WBLoaderViewController.swift */; };
 		C4C799ED1DF505BD00A8B5F4 /* UIApplication+Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C799EC1DF505BD00A8B5F4 /* UIApplication+Loader.swift */; };
+		C4E310F21E09EC7B0095EEB4 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = C4E310F11E09EC7B0095EEB4 /* README.md */; };
+		C4E311091E09EC8C0095EEB4 /* TechNotes.md in Sources */ = {isa = PBXBuildFile; fileRef = C4E310F91E09EC8C0095EEB4 /* TechNotes.md */; };
+		C4E311131E09EFBB0095EEB4 /* ACBorderedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E311121E09EFBB0095EEB4 /* ACBorderedButton.swift */; };
+		C4E311171E09F03D0095EEB4 /* ACBorderedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E311161E09F03D0095EEB4 /* ACBorderedTextField.swift */; };
+		C4E311191E09F17A0095EEB4 /* UIBarButtonPlus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E311181E09F17A0095EEB4 /* UIBarButtonPlus.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -132,6 +138,7 @@
 		C45D34671DECDEE1001C47F9 /* WBStorageMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStorageMainViewController.swift; sourceTree = "<group>"; };
 		C45D346C1DECEA41001C47F9 /* WBObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBObject.swift; sourceTree = "<group>"; };
 		C45D346E1DED0E4A001C47F9 /* RealmPlus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmPlus.swift; sourceTree = "<group>"; };
+		C47B01251E088CEE0057F475 /* AppConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfigurator.swift; sourceTree = "<group>"; };
 		C47D5B1D1DE69F0E00082CFD /* Entities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entities.swift; sourceTree = "<group>"; };
 		C47D5B1F1DE69F0E00082CFD /* GoWWorldBosses.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GoWWorldBosses.xcdatamodel; sourceTree = "<group>"; };
 		C47D5B221DE69F3000082CFD /* WBJsonCurrency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBJsonCurrency.swift; sourceTree = "<group>"; };
@@ -165,6 +172,11 @@
 		C4C799E81DF503D100A8B5F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Utility.storyboard; sourceTree = "<group>"; };
 		C4C799EA1DF5044000A8B5F4 /* WBLoaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBLoaderViewController.swift; sourceTree = "<group>"; };
 		C4C799EC1DF505BD00A8B5F4 /* UIApplication+Loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+Loader.swift"; sourceTree = "<group>"; };
+		C4E310F11E09EC7B0095EEB4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		C4E310F91E09EC8C0095EEB4 /* TechNotes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = TechNotes.md; sourceTree = "<group>"; };
+		C4E311121E09EFBB0095EEB4 /* ACBorderedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACBorderedButton.swift; sourceTree = "<group>"; };
+		C4E311161E09F03D0095EEB4 /* ACBorderedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACBorderedTextField.swift; sourceTree = "<group>"; };
+		C4E311181E09F17A0095EEB4 /* UIBarButtonPlus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBarButtonPlus.swift; sourceTree = "<group>"; };
 		E8EEB5B9C2FEDBFFEEF747BA /* Pods_WorldBosses.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WorldBosses.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -215,10 +227,12 @@
 			isa = PBXGroup;
 			children = (
 				C45B6C971D68BE5800F94060 /* GoWWorldBosses */,
+				C4E310F31E09EC8C0095EEB4 /* Doc */,
 				C45B6CAF1D68BE5900F94060 /* GoWWorldBossesTests */,
 				C45B6C961D68BE5800F94060 /* Products */,
 				EA216089FBB4F8F0B269A8C9 /* Pods */,
 				D6F30776B3EBFC5A5699A11C /* Frameworks */,
+				C4E310F11E09EC7B0095EEB4 /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -310,6 +324,7 @@
 				C45D34611DECDB42001C47F9 /* AppDelegate.swift */,
 				C45D34631DECDBBC001C47F9 /* WBStoryboardFactory.swift */,
 				C4C799EC1DF505BD00A8B5F4 /* UIApplication+Loader.swift */,
+				C47B01251E088CEE0057F475 /* AppConfigurator.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -430,8 +445,19 @@
 			isa = PBXGroup;
 			children = (
 				C45D34511DEB8658001C47F9 /* Cells */,
+				C4E311121E09EFBB0095EEB4 /* ACBorderedButton.swift */,
+				C4E311161E09F03D0095EEB4 /* ACBorderedTextField.swift */,
+				C4E311181E09F17A0095EEB4 /* UIBarButtonPlus.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		C4E310F31E09EC8C0095EEB4 /* Doc */ = {
+			isa = PBXGroup;
+			children = (
+				C4E310F91E09EC8C0095EEB4 /* TechNotes.md */,
+			);
+			path = Doc;
 			sourceTree = "<group>";
 		};
 		D6F30776B3EBFC5A5699A11C /* Frameworks */ = {
@@ -601,6 +627,7 @@
 				C4A409491E01EA1A00130C85 /* WBAPIKeyTableViewCell.swift in Sources */,
 				C4341A841D89FA28007D84CC /* WBBossFactory+TestBosses.swift in Sources */,
 				C4A409451E01E2B200130C85 /* WBSettingsNotificationTableViewCell.swift in Sources */,
+				C4E311191E09F17A0095EEB4 /* UIBarButtonPlus.swift in Sources */,
 				C45D34431DEB5CC2001C47F9 /* WBJsonBase.swift in Sources */,
 				C48D84EC1DFE186100585E61 /* WBMaterialProcessor.swift in Sources */,
 				C4A409471E01E3E100130C85 /* WBAPIKeyViewController.swift in Sources */,
@@ -615,12 +642,15 @@
 				C45D34621DECDB42001C47F9 /* AppDelegate.swift in Sources */,
 				C4A7818E1D6915E900786488 /* WBBossFactory.swift in Sources */,
 				C47D5B2D1DE6A23500082CFD /* WBRemoteSession.swift in Sources */,
+				C4E311091E09EC8C0095EEB4 /* TechNotes.md in Sources */,
 				C411FAE51DFDF7D90038337F /* WBStorageWalletViewModel.swift in Sources */,
 				C47D5B2A1DE6A01900082CFD /* WBBankRemote.swift in Sources */,
 				C4026EB31DEE33C00097FFC1 /* WBSyncCoordinator.swift in Sources */,
+				C4E311131E09EFBB0095EEB4 /* ACBorderedButton.swift in Sources */,
 				C45D34681DECDEE1001C47F9 /* WBStorageMainViewController.swift in Sources */,
 				C47D5B201DE69F0E00082CFD /* Entities.swift in Sources */,
 				C4026EB11DEE2B840097FFC1 /* WBSyncContext.swift in Sources */,
+				C4E311171E09F03D0095EEB4 /* ACBorderedTextField.swift in Sources */,
 				C45D34531DEB8691001C47F9 /* WBDrawerTableViewCell.swift in Sources */,
 				C411FAEB1DFDF84E0038337F /* WBStorageTableViewModelType.swift in Sources */,
 				C4A409411E01E11600130C85 /* WBSettingsTableViewCell.swift in Sources */,
@@ -655,9 +685,11 @@
 				C45D346D1DECEA41001C47F9 /* WBObject.swift in Sources */,
 				C45D34501DEB8417001C47F9 /* WBDrawerViewController.swift in Sources */,
 				C47D5B231DE69F3000082CFD /* WBJsonCurrency.swift in Sources */,
+				C47B01261E088CEE0057F475 /* AppConfigurator.swift in Sources */,
 				C411FAE71DFDF7FA0038337F /* WBStorageBankViewModel.swift in Sources */,
 				C48D84E61DFE160E00585E61 /* WBJsonItem.swift in Sources */,
 				C45D34411DEB5ABF001C47F9 /* WBCharacterRemote.swift in Sources */,
+				C4E310F21E09EC7B0095EEB4 /* README.md in Sources */,
 				C41094A71D89003D00751A72 /* WBAboutViewController.swift in Sources */,
 				C48D84EE1DFE189A00585E61 /* WBItem.swift in Sources */,
 			);

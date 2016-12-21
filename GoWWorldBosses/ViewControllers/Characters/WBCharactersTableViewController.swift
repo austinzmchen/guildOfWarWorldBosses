@@ -11,6 +11,11 @@ import RealmSwift
 
 class WBCharactersTableViewController: UITableViewController, WBDrawerItemViewControllerType {
     
+    @IBOutlet weak var leftBarButton: UIBarButtonItem!
+    @IBAction func leftBarButtonTapped(_ sender: Any) {
+        self.viewDelegate?.toggleDrawerView()
+    }
+    
     var characters: [WBCharacter]?
     weak var viewDelegate: WBDrawerMasterViewControllerDelegate?
     
@@ -18,6 +23,13 @@ class WBCharactersTableViewController: UITableViewController, WBDrawerItemViewCo
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let leftBarButtonItem = UIBarButtonItem.barButtonItem(withImageName:"icBurger",
+                                                              title: "My Characters",
+                                                              forTarget: self,
+                                                              action: #selector(leftBarButtonTapped(_:)) )
+        self.navigationItem.setLeftBarButton(leftBarButtonItem, animated: true)
+        
+        
         let realm = try! Realm()
         let results = realm.objects(WBCharacter.self)
         self.characters = Array(results)
@@ -37,8 +49,18 @@ class WBCharactersTableViewController: UITableViewController, WBDrawerItemViewCo
             indexPath.row < chars.count
         {
             let char = chars[indexPath.row]
+//            cell.leftImageView.sd_setImage(with: URL(string: char.icon))
+            cell.mainLabel.text = char.race?.uppercased()
+            cell.subLabel.text = char.name?.uppercased()
+            cell.rightLabel.text = "lvl \(char.level)"
             
-            cell.mainLabel.text = char.name
+            if (indexPath.row % 2) > 0 {
+                // odd number
+                cell.contentView.backgroundColor = UIColor(red: 10/255.0, green: 10/255.0, blue: 10/255.0, alpha: 1)
+            } else {
+                // even number
+                cell.contentView.backgroundColor = UIColor.black
+            }
         }
         
         return cell

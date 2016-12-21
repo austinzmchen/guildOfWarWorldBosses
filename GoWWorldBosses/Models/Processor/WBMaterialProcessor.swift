@@ -44,7 +44,9 @@ class WBMaterialProcessor: NSObject {
     func syncMaterialElements(completion: @escaping (_ success: Bool, _ elements: [WBJsonMaterialElement]?, _ error: NSError?) -> ()) {
         self.materialRemote.fetchMaterialElements { (success, elements) in
             guard let elements = elements else {
-                completion(false, nil, nil)
+                DispatchQueue.main.async {
+                    completion(false, nil, nil)
+                }
                 return
             }
             
@@ -67,7 +69,9 @@ class WBMaterialProcessor: NSObject {
                     }
                 }
             }
-            completion(true, elements, nil)
+            DispatchQueue.main.async {
+                completion(true, elements, nil)
+            }
         }
     }
     

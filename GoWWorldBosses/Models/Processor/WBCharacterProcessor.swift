@@ -23,7 +23,9 @@ class WBCharacterProcessor: NSObject {
     func sync(completion: @escaping (_ success: Bool, _ syncedObjects: [AnyObject]?, _ error: NSError?) -> ()) {
         self.characterRemote.fetchCharacterNames { (success, names) in
             guard let ns = names else {
-                completion(false, nil, nil)
+                DispatchQueue.main.async {
+                    completion(false, nil, nil)
+                }
                 return
             }
             
@@ -31,7 +33,9 @@ class WBCharacterProcessor: NSObject {
                 guard success,
                     let cs = characters else
                 {
-                    completion(false, nil, nil)
+                    DispatchQueue.main.async {
+                        completion(false, nil, nil)
+                    }
                     return
                 }
                 
@@ -55,7 +59,9 @@ class WBCharacterProcessor: NSObject {
                     }
                 }
                 
-                completion(true, cs as [AnyObject]?, nil)
+                DispatchQueue.main.async {
+                    completion(true, cs as [AnyObject]?, nil)
+                }
             })
         }
     }

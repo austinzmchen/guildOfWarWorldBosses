@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GaB-Rz-zF4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GaB-Rz-zF4">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -62,7 +62,7 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your API Key…" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iz4-WT-OXV">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your API Key…" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iz4-WT-OXV" customClass="ACBorderedTextField" customModule="WorldBosses" customModuleProvider="target">
                                 <rect key="frame" x="38.5" y="279" width="300" height="45"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -72,6 +72,14 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="go"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="rect" keyPath="textInsets">
+                                        <rect key="value" x="0.0" y="10" width="0.0" height="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="textFieldGoButtonTapped:" destination="rMz-GC-2a7" eventType="editingDidEndOnExit" id="W7Z-8N-L4h"/>
                                 </connections>
@@ -88,10 +96,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ki8-rD-AXm">
-                                <rect key="frame" x="172" y="533" width="30" height="30"/>
+                                <rect key="frame" x="157" y="523" width="60" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Skv-KX-lsL"/>
-                                    <constraint firstAttribute="width" constant="30" id="zyF-nM-M6G"/>
+                                    <constraint firstAttribute="height" constant="60" id="Skv-KX-lsL"/>
+                                    <constraint firstAttribute="width" constant="60" id="zyF-nM-M6G"/>
                                 </constraints>
                                 <state key="normal" image="icQr"/>
                                 <connections>
@@ -115,7 +123,7 @@
                             <constraint firstItem="Ki8-rD-AXm" firstAttribute="centerX" secondItem="pjP-ag-QZb" secondAttribute="centerX" id="kyW-lN-AVH"/>
                             <constraint firstItem="xvR-1m-YcV" firstAttribute="centerX" secondItem="pjP-ag-QZb" secondAttribute="centerX" id="nPU-kv-nV6"/>
                             <constraint firstItem="8cw-bn-Pb0" firstAttribute="top" secondItem="ltJ-J5-NmZ" secondAttribute="bottom" constant="34" id="nzp-dc-89G"/>
-                            <constraint firstItem="JgQ-tf-RfY" firstAttribute="top" secondItem="Ki8-rD-AXm" secondAttribute="bottom" constant="40" id="p4j-hb-hXX"/>
+                            <constraint firstItem="JgQ-tf-RfY" firstAttribute="top" secondItem="Ki8-rD-AXm" secondAttribute="bottom" constant="20" id="p4j-hb-hXX"/>
                             <constraint firstItem="iz4-WT-OXV" firstAttribute="top" secondItem="dYn-jz-qsa" secondAttribute="bottom" constant="30" id="zOb-qv-vaT"/>
                         </constraints>
                     </view>
@@ -181,11 +189,11 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="51********-A98**************A***************9" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vfu-A8-VVX" userLabel="bodyLabel">
-                                                    <rect key="frame" x="20" y="58" width="216.5" height="40"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="51********-A98**************A***************9" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vfu-A8-VVX" userLabel="bodyLabel">
+                                                    <rect key="frame" x="20" y="53" width="291.5" height="50"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="Vfu-A8-VVX" secondAttribute="height" multiplier="195:36" id="8TE-Vr-Wz1"/>
-                                                        <constraint firstAttribute="height" constant="40" id="sgn-Tr-cRH"/>
+                                                        <constraint firstAttribute="width" secondItem="Vfu-A8-VVX" secondAttribute="height" multiplier="210:36" id="8TE-Vr-Wz1"/>
+                                                        <constraint firstAttribute="height" constant="50" id="sgn-Tr-cRH"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
                                                     <color key="textColor" red="0.64313725490196072" green="0.64313725490196072" blue="0.64313725490196072" alpha="1" colorSpace="calibratedRGB"/>
@@ -200,9 +208,9 @@
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Vfu-A8-VVX" firstAttribute="top" secondItem="e79-fX-ykG" secondAttribute="bottom" constant="5" id="0rX-if-SMF"/>
+                                                <constraint firstItem="Vfu-A8-VVX" firstAttribute="top" secondItem="e79-fX-ykG" secondAttribute="bottom" id="0rX-if-SMF"/>
                                                 <constraint firstItem="e79-fX-ykG" firstAttribute="leading" secondItem="t7s-M5-85E" secondAttribute="leading" id="8Ip-gc-pZ1"/>
-                                                <constraint firstItem="e79-fX-ykG" firstAttribute="top" secondItem="t7s-M5-85E" secondAttribute="bottom" constant="3.5" id="C5w-ba-oPb"/>
+                                                <constraint firstItem="e79-fX-ykG" firstAttribute="top" secondItem="t7s-M5-85E" secondAttribute="bottom" constant="3" id="C5w-ba-oPb"/>
                                                 <constraint firstItem="Vfu-A8-VVX" firstAttribute="leading" secondItem="e79-fX-ykG" secondAttribute="leading" id="IC6-BR-skG"/>
                                                 <constraint firstItem="fni-mG-NVU" firstAttribute="leading" secondItem="q8n-El-C8J" secondAttribute="leading" id="SMi-xZ-ux5"/>
                                                 <constraint firstItem="t7s-M5-85E" firstAttribute="leading" secondItem="q8n-El-C8J" secondAttribute="leading" constant="20" id="ZHr-17-d6a"/>

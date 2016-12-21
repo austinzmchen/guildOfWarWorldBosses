@@ -24,7 +24,12 @@ class WBMainViewController: UIViewController, WBDrawerItemViewControllerType {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.setNavTitleView()
+        // self.setNavTitleView()
+        let leftBarButtonItem = UIBarButtonItem.barButtonItem(withImageName:"icBurger",
+                                                              title: "Boss Timers",
+                                                              forTarget: self,
+                                                              action: #selector(leftBarButtonTapped(_:)) )
+        self.navigationItem.setLeftBarButton(leftBarButtonItem, animated: true)
         
         // set up table
         self.tableView.delegate = self

@@ -44,6 +44,20 @@ class WBDrawerMasterViewController: KYDrawerController {
         
         self.mainViewController = timerNavVC
     }
+    
+    func presentDrawerItemViewController(drawerItem: WBDrawerItem) {
+        let vc = WBStoryboardFactory.storyboard(byFileName: drawerItem.storyboardFileName)?.instantiateViewController(withIdentifier: drawerItem.storyboardID)
+        
+        if let navVC = vc as? UINavigationController,
+            let rootVC = navVC.viewControllers.first,
+            let drawerItemVC = rootVC as? WBDrawerItemViewControllerType
+        {
+            drawerItemVC.viewDelegate = self
+            self.mainViewController = navVC
+        }
+        
+        self.setDrawerState(.closed, animated: true)
+    }
 }
 
 extension WBDrawerMasterViewController: WBDrawerViewControllerDelegate {
@@ -64,17 +78,7 @@ extension WBDrawerMasterViewController: WBDrawerViewControllerDelegate {
             return
         }
         
-        let vc = WBStoryboardFactory.storyboard(byFileName: drawerItem.storyboardFileName)?.instantiateViewController(withIdentifier: drawerItem.storyboardID)
-        
-        if let navVC = vc as? UINavigationController,
-            let rootVC = navVC.viewControllers.first,
-            let drawerItemVC = rootVC as? WBDrawerItemViewControllerType
-        {
-            drawerItemVC.viewDelegate = self
-            self.mainViewController = navVC
-        }
-        
-        self.setDrawerState(.closed, animated: true)
+        self.presentDrawerItemViewController(drawerItem: drawerItem)
     }
 }
 
@@ -95,14 +99,6 @@ extension WBDrawerMasterViewController: WBDrawerMasterViewControllerDelegate {
             return
         }
         
-        let vc = WBStoryboardFactory.storyboard(byFileName: drawerItem.storyboardFileName)?.instantiateViewController(withIdentifier: drawerItem.storyboardID)
-        
-        if let navVC = vc as? UINavigationController,
-            let rootVC = navVC.viewControllers.first,
-            let drawerItemVC = rootVC as? WBDrawerItemViewControllerType
-        {
-            drawerItemVC.viewDelegate = self
-            self.mainViewController = navVC
-        }
+        self.presentDrawerItemViewController(drawerItem: drawerItem)
     }
 }

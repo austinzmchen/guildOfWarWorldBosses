@@ -39,7 +39,9 @@ class WBWalletProcessor: NSObject {
     func syncWalletElements(completion: @escaping (_ success: Bool, _ elements: [WBJsonWalletElement]?, _ error: NSError?) -> ()) {
         self.walletRemote.fetchWalletElements { (success, walletElements) in
             guard let we = walletElements else {
-                completion(false, nil, nil)
+                DispatchQueue.main.async {
+                    completion(false, nil, nil)
+                }
                 return
             }
             
@@ -62,7 +64,9 @@ class WBWalletProcessor: NSObject {
                     }
                 }
             }
-            completion(true, walletElements, nil)
+            DispatchQueue.main.async {
+                completion(true, walletElements, nil)
+            }
         }
     }
     
@@ -72,7 +76,9 @@ class WBWalletProcessor: NSObject {
             guard success,
                 let currencies = currencies else
             {
-                completion(false, nil, nil)
+                DispatchQueue.main.async {
+                    completion(false, nil, nil)
+                }
                 return
             }
             
@@ -100,7 +106,9 @@ class WBWalletProcessor: NSObject {
                 }
             }
             
-            completion(true, currencies, nil)
+            DispatchQueue.main.async {
+                completion(true, currencies, nil)
+            }
         })
     }
 }

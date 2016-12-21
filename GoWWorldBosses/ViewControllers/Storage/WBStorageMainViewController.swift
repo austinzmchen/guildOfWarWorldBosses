@@ -39,6 +39,11 @@ class WBStorageMainViewController: UIViewController, WBDrawerItemViewControllerT
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let leftBarButtonItem = UIBarButtonItem.barButtonItem(withImageName:"icBurger",
+                                                              title: "Storage",
+                                                              forTarget: self,
+                                                              action: #selector(leftBarButtonTapped(_:)) )
+        self.navigationItem.setLeftBarButton(leftBarButtonItem, animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

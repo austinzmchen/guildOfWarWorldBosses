@@ -13,6 +13,7 @@ class WBCharactersTableViewCell: UITableViewCell {
     @IBOutlet weak var leftImageView: UIImageView!
     @IBOutlet weak var mainLabel: UILabel!
     @IBOutlet weak var subLabel: UILabel!
+    @IBOutlet weak var rightLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

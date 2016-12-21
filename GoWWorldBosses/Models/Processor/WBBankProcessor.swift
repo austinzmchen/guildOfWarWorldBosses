@@ -43,7 +43,9 @@ class WBBankProcessor: NSObject {
     func syncBankElements(completion: @escaping (_ success: Bool, _ elements: [WBJsonBankElement]?, _ error: NSError?) -> ()) {
         self.bankRemote.fetchBanks { (success, bankElements) in
             guard let elements = bankElements else {
-                completion(false, nil, nil)
+                DispatchQueue.main.async {
+                    completion(false, nil, nil)
+                }
                 return
             }
             
@@ -66,7 +68,9 @@ class WBBankProcessor: NSObject {
                     }
                 }
             }
-            completion(true, bankElements, nil)
+            DispatchQueue.main.async {
+                completion(true, bankElements, nil)
+            }
         }
     }
     
@@ -76,7 +80,9 @@ class WBBankProcessor: NSObject {
             guard success,
                 let items = items else
             {
-                completion(false, nil, nil)
+                DispatchQueue.main.async {
+                    completion(false, nil, nil)
+                }
                 return
             }
             
@@ -104,7 +110,9 @@ class WBBankProcessor: NSObject {
                 }
             }
             
-            completion(true, items, nil)
+            DispatchQueue.main.async {
+                completion(true, items, nil)
+            }
         })
     }
 }

@@ -35,6 +35,14 @@ class WBStorageGeneralTableViewController: UITableViewController {
             cell.leftImageView.sd_setImage(with: URL(string: imageUrlString))
         }
         
+        if (indexPath.row % 2) > 0 {
+            // odd number
+            cell.contentView.backgroundColor = UIColor(red: 10/255.0, green: 10/255.0, blue: 10/255.0, alpha: 1)
+        } else {
+            // even number
+            cell.contentView.backgroundColor = UIColor.black
+        }
+        
         return cell
     }
 

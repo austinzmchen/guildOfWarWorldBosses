@@ -26,11 +26,13 @@ class WBAccountProcessor: NSObject {
             return
         }
         
-        self.accountRemote.fetchAccount(byAPIKey: apiKey, completion: { (success, account) in
+        self.accountRemote.fetchAccount(byApiKey: apiKey, completion: { (success, account) in
             guard success,
                 let acc = account else
             {
-                completion(false, nil, nil)
+                DispatchQueue.main.async {
+                    completion(false, nil, nil)
+                }
                 return
             }
             
@@ -53,7 +55,9 @@ class WBAccountProcessor: NSObject {
                     }
                 }
             }
-            completion(true, [acc], nil)
+            DispatchQueue.main.async {
+                completion(true, [acc], nil)
+            }
         })
     }
 }

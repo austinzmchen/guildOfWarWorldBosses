@@ -12,6 +12,8 @@ class WBSettingsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var mainLabel: UILabel!
     @IBOutlet weak var subLabel: UILabel!
+    @IBOutlet weak var arrowImageView: UIImageView!
+    @IBOutlet weak var separaterView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
