@@ -22,6 +22,16 @@ class WBStorageWalletViewModel: WBStorageTableViewModelType {
         self.items = Array(results)
     }
     
+    func identifierForSuitableCell(atIndex index: Int) -> String {
+        if let item = self.items?[index] as? WBWalletElement,
+            let currency = item.currency,
+            currency.name?.lowercased() == "coin"
+        {
+            return "walletCoinTableCell"
+        }
+        return "storageItemTableCell"
+    }
+    
     func itemsCount() -> Int {
         return self.items?.count ?? 0
     }
@@ -53,5 +63,19 @@ class WBStorageWalletViewModel: WBStorageTableViewModelType {
         } else {
             return ""
         }
+    }
+    
+    
+    // FIXME: to be removed
+    
+    func coinValueForItem(atIndex index: Int) -> Int
+    {
+        if let item = self.items?[index] as? WBWalletElement,
+            let currency = item.currency,
+            currency.name?.lowercased() == "coin"
+        {
+            return item.value
+        }
+        return -1
     }
 }

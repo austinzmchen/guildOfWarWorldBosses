@@ -58,6 +58,8 @@
 		C47D5B2B1DE6A01900082CFD /* WBRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D5B281DE6A01900082CFD /* WBRemote.swift */; };
 		C47D5B2D1DE6A23500082CFD /* WBRemoteSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D5B2C1DE6A23500082CFD /* WBRemoteSession.swift */; };
 		C47E30CD1DF24F8F00B91996 /* APIKeyEntry.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C47E30CB1DF24F8F00B91996 /* APIKeyEntry.storyboard */; };
+		C4873F9B1E0D855E002E742D /* UIColorPlus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4873F9A1E0D855E002E742D /* UIColorPlus.swift */; };
+		C4873F9D1E0D93E7002E742D /* WBStorageWalletCoinTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4873F9C1E0D93E7002E742D /* WBStorageWalletCoinTableViewCell.swift */; };
 		C48D84E41DFE15F800585E61 /* WBJsonMaterialElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48D84E31DFE15F800585E61 /* WBJsonMaterialElement.swift */; };
 		C48D84E61DFE160E00585E61 /* WBJsonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48D84E51DFE160E00585E61 /* WBJsonItem.swift */; };
 		C48D84E81DFE16DC00585E61 /* WBMaterialRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48D84E71DFE16DC00585E61 /* WBMaterialRemote.swift */; };
@@ -147,6 +149,8 @@
 		C47D5B281DE6A01900082CFD /* WBRemote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBRemote.swift; sourceTree = "<group>"; };
 		C47D5B2C1DE6A23500082CFD /* WBRemoteSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBRemoteSession.swift; sourceTree = "<group>"; };
 		C47E30CC1DF24F8F00B91996 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/APIKeyEntry.storyboard; sourceTree = "<group>"; };
+		C4873F9A1E0D855E002E742D /* UIColorPlus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorPlus.swift; sourceTree = "<group>"; };
+		C4873F9C1E0D93E7002E742D /* WBStorageWalletCoinTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStorageWalletCoinTableViewCell.swift; sourceTree = "<group>"; };
 		C48D84E31DFE15F800585E61 /* WBJsonMaterialElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBJsonMaterialElement.swift; sourceTree = "<group>"; };
 		C48D84E51DFE160E00585E61 /* WBJsonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBJsonItem.swift; sourceTree = "<group>"; };
 		C48D84E71DFE16DC00585E61 /* WBMaterialRemote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBMaterialRemote.swift; sourceTree = "<group>"; };
@@ -219,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				C42B94631DFE2A130019CB3D /* ArrayPlus.swift */,
+				C4873F9A1E0D855E002E742D /* UIColorPlus.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -293,6 +298,7 @@
 				C45D34521DEB8691001C47F9 /* WBDrawerTableViewCell.swift */,
 				C4903BF91E006859004F3345 /* WBCharactersTableViewCell.swift */,
 				C45D34541DEB8766001C47F9 /* WBStorageItemTableViewCell.swift */,
+				C4873F9C1E0D93E7002E742D /* WBStorageWalletCoinTableViewCell.swift */,
 				C4A409401E01E11600130C85 /* WBSettingsTableViewCell.swift */,
 				C4A409481E01EA1A00130C85 /* WBAPIKeyTableViewCell.swift */,
 			);
@@ -634,6 +640,7 @@
 				C4C799ED1DF505BD00A8B5F4 /* UIApplication+Loader.swift in Sources */,
 				C45D34551DEB8766001C47F9 /* WBStorageItemTableViewCell.swift in Sources */,
 				C41E4E921D74D1850037E57F /* WBHighLevelBoss.swift in Sources */,
+				C4873F9B1E0D855E002E742D /* UIColorPlus.swift in Sources */,
 				C4A409511E03279A00130C85 /* WBAccount.swift in Sources */,
 				C45D34661DECDD73001C47F9 /* WBStorageGeneralTableViewController.swift in Sources */,
 				C42B94641DFE2A130019CB3D /* ArrayPlus.swift in Sources */,
@@ -692,6 +699,7 @@
 				C4E310F21E09EC7B0095EEB4 /* README.md in Sources */,
 				C41094A71D89003D00751A72 /* WBAboutViewController.swift in Sources */,
 				C48D84EE1DFE189A00585E61 /* WBItem.swift in Sources */,
+				C4873F9D1E0D93E7002E742D /* WBStorageWalletCoinTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

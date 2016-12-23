@@ -33,8 +33,8 @@ class WBDrawerMasterViewController: KYDrawerController {
         drawerRootVC.delegate = self
         drawerRootVC.viewDelegate = self
         
-        self.drawerViewController = drawerNavVC
         self.drawerViewController?.view.setNeedsLayout() // hack - to preload table items
+        self.drawerViewController = drawerNavVC
         self.drawerWidth = UIScreen.main.bounds.width
         
         // set up main
@@ -64,6 +64,11 @@ extension WBDrawerMasterViewController: WBDrawerViewControllerDelegate {
     
     func didSelect(drawerItem: WBDrawerItem, atIndex index: Int) {
         selectedDrawerItem = drawerItem
+        
+        // set drawer selected state
+        let drawerVC = (self.drawerViewController as! UINavigationController).viewControllers.first as! WBDrawerViewController
+        drawerVC.selectedDrawerItem = self.selectedDrawerItem
+        drawerVC.tableView.reloadData()
         
         if WBKeyStore.keyStoreItem?.accountAPIKey == nil &&
             drawerItem.title != "Boss Timers"

@@ -49,10 +49,11 @@ class WBCharactersTableViewController: UITableViewController, WBDrawerItemViewCo
             indexPath.row < chars.count
         {
             let char = chars[indexPath.row]
-//            cell.leftImageView.sd_setImage(with: URL(string: char.icon))
+            cell.leftImageView.image = char.iconImage
             cell.mainLabel.text = char.race?.uppercased()
+            cell.mainLabel.textColor = char.raceFontColor
             cell.subLabel.text = char.name?.uppercased()
-            cell.rightLabel.text = "lvl \(char.level)"
+            cell.rightLabel.text = "\(char.level)"
             
             if (indexPath.row % 2) > 0 {
                 // odd number
@@ -66,4 +67,36 @@ class WBCharactersTableViewController: UITableViewController, WBDrawerItemViewCo
         return cell
     }
 
+}
+
+extension WBCharacter {
+    var iconImage: UIImage? {
+        // local icon file name is eg, "icGuardian"
+        let imgName = String(format: "ic%@", self.profession?.capitalized ?? "")
+        return UIImage(named: imgName)
+    }
+    
+    var raceFontColor: UIColor { // race title color depends on profession, not race itself. just be mindful
+        var color = UIColor.clear
+        if self.profession?.lowercased() == "elementalist" {
+            color = UIColor(netHex:0xFF1881)
+        } else if self.profession?.lowercased() == "engineer" {
+            color = UIColor(netHex:0xC0908E)
+        } else if self.profession?.lowercased() == "guardian" {
+            color = UIColor(netHex:0x2CB3FF)
+        } else if self.profession?.lowercased() == "mesmer" {
+            color = UIColor(netHex:0xD01FFF)
+        } else if self.profession?.lowercased() == "necromancer" {
+            color = UIColor(netHex:0x72D15D)
+        } else if self.profession?.lowercased() == "ranger" {
+            color = UIColor(netHex:0xABD104)
+        } else if self.profession?.lowercased() == "revenant" {
+            color = UIColor(netHex:0xDC1313)
+        } else if self.profession?.lowercased() == "thief" {
+            color = UIColor(netHex:0xDE6155)
+        } else if self.profession?.lowercased() == "warrior" {
+            color = UIColor(netHex:0xFF7400)
+        }
+        return color
+    }
 }

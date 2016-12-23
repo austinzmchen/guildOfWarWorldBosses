@@ -26,13 +26,23 @@ class WBStorageGeneralTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "storageItemTableCell", for: indexPath) as! WBStorageItemTableViewCell
-
-        // Configure the cell...
-        cell.mainTitleLabel.text = self.viewModel?.mainTitleForItem(atIndex: indexPath.row)
-        cell.subTitleLabel.text = self.viewModel?.subTitleForItem(atIndex: indexPath.row)
-        if let imageUrlString = self.viewModel?.imageUrlStringForItem(atIndex: indexPath.row) {
-            cell.leftImageView.sd_setImage(with: URL(string: imageUrlString))
+        let cellId = self.viewModel!.identifierForSuitableCell(atIndex: indexPath.row)
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! WBStorageItemTableViewCell
+        
+        if let c = cell as? WBStorageWalletCoinTableViewCell,
+            let vm = self.viewModel as? WBStorageWalletViewModel
+        {
+           let coinValue = vm.coinValueForItem(atIndex: indexPath.row)
+            c.goldLabel.text = String(format: "%d", coinValue / 10000 )
+            c.silverLabel.text = String(format: "%d", (coinValue / 100) % 100 )
+            c.bronzeLabel.text = String(format: "%d", coinValue % 100)
+        } else {
+            // Configure the cell...
+            cell.mainTitleLabel.text = self.viewModel?.mainTitleForItem(atIndex: indexPath.row)
+            cell.subTitleLabel.text = self.viewModel?.subTitleForItem(atIndex: indexPath.row)
+            if let imageUrlString = self.viewModel?.imageUrlStringForItem(atIndex: indexPath.row) {
+                cell.leftImageView.sd_setImage(with: URL(string: imageUrlString))
+            }
         }
         
         if (indexPath.row % 2) > 0 {

@@ -24,34 +24,35 @@ class WBDrawerViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
 
-    @IBAction func leftBarButtonTapped(_ sender: Any) {
+    @IBAction func closeButtonTapped(_ sender: Any) {
         viewDelegate?.toggleDrawerView()
     }
     
-    @IBAction func rightBarButtonTapped(_ sender: Any) {
+    @IBAction func settingsButtonTapped(_ sender: Any) {
         let settingsNavVC = WBStoryboardFactory.settingsStoryboard.instantiateViewController(withIdentifier: "settingsNavVC")
         self.present(settingsNavVC, animated: true, completion: nil)
     }
     
     weak var delegate: WBDrawerViewControllerDelegate?
     weak var viewDelegate: WBDrawerMasterViewControllerDelegate?
+    var selectedDrawerItem: WBDrawerItem?
     
     fileprivate var drawerItems: [WBDrawerItem] = {
         return [
             WBDrawerItem(normalImageName: "icTimers",
-                         selectedImageName: "",
+                         selectedImageName: "icTimersOn",
                          title: "Boss Timers",
                          storyboardFileName: "Timer",
                          storyboardID: "timerNavVC"),
             
             WBDrawerItem(normalImageName: "icCharacters",
-                         selectedImageName: "",
+                         selectedImageName: "icCharactersOn",
                          title: "My Characters",
                          storyboardFileName: "Characters",
                          storyboardID: "charactersNavVC"),
             
             WBDrawerItem(normalImageName: "icStorage",
-                         selectedImageName: "",
+                         selectedImageName: "icStorageOn",
                          title: "Storage",
                          storyboardFileName: "Storage",
                          storyboardID: "storageNavVC")
@@ -62,8 +63,11 @@ class WBDrawerViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.navigationController?.isNavigationBarHidden = true // use custom view to replace nav bar for style reason
+        
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        self.selectedDrawerItem = drawerItems.first // select timers as default
         self.tableView.reloadData()
     }
 }
@@ -76,7 +80,11 @@ extension WBDrawerViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "drawerTableCell") as! WBDrawerTableViewCell
         let item = drawerItems[indexPath.row]
-        cell.leftImageView.image = UIImage(named: item.normalImageName)
+        if item.title == selectedDrawerItem?.title {
+            cell.leftImageView.image = UIImage(named: item.selectedImageName)
+        } else {
+            cell.leftImageView.image = UIImage(named: item.normalImageName)
+        }
         cell.mainTitleLabel.text = item.title
         return cell
     }
