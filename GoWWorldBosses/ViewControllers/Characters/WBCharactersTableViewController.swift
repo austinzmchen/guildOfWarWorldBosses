@@ -52,7 +52,7 @@ class WBCharactersTableViewController: UITableViewController, WBDrawerItemViewCo
             cell.leftImageView.image = char.iconImage
             cell.mainLabel.text = char.race?.uppercased()
             cell.mainLabel.textColor = char.raceFontColor
-            cell.subLabel.text = char.name?.uppercased()
+            cell.subLabel.text = char.name?.capitalized
             cell.rightLabel.text = "\(char.level)"
             
             if (indexPath.row % 2) > 0 {

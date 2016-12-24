@@ -21,7 +21,7 @@ extension UIBarButtonItem {
         leftButton.setTitle(title, for: .normal)
         leftButton.titleLabel?.text = title
         leftButton.titleLabel?.font = UIFont.systemFont(ofSize: 19, weight: UIFontWeightBold)
-        leftButton.imageEdgeInsets = UIEdgeInsetsMake(0, -20, 0, 0)
+        leftButton.imageEdgeInsets = UIEdgeInsetsMake(0, -15, 0, 0)
         
         var f = leftButton.bounds
         f = CGRect(x: 0, y: 0, width: leftButton.intrinsicContentSize.width, height: img!.size.height)
