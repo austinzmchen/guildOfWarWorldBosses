@@ -96,7 +96,7 @@
                                             <outlet property="toggleSwitch" destination="smf-ms-1z4" id="O3Z-VR-qDb"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="settingsCell" id="xmS-pI-Cyq" userLabel="settingsCell" customClass="WBSettingsTableViewCell" customModule="WorldBosses" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="settingsCell" id="xmS-pI-Cyq" userLabel="settingsCell" customClass="WBSettingsTableViewCell" customModule="WorldBosses" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="99" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xmS-pI-Cyq" id="3Hc-zR-xQ4">
