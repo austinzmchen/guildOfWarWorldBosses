@@ -13,8 +13,6 @@ import Locksmith
  */
 let kUserDefaultKey = "kGoWUserDefaultKey" // Pro: removed when app uninstalls, prefect for the case checking whether user should be auto signed in, Con: plain text
 
-let kKeychainItemKey = "kGoWKeychainItemKey" // Pro: secure.
-
 struct WBKeyStoreItem {
     var likedBosses: Set<String> = Set<String>()
     var accountAPIKey: String = ""

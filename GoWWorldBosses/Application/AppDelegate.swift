@@ -30,6 +30,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let notificationSettings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
         UIApplication.shared.registerUserNotificationSettings(notificationSettings)
         
+        // if app is deleted, remvoe all notification
+        if UserDefaults.standard.object(forKey: kUserDefaultKey) == nil {
+            UIApplication.shared.cancelAllLocalNotifications()
+        }
         
         /*
         // test

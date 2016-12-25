@@ -18,45 +18,57 @@ protocol WBDrawerMasterViewControllerDelegate: class {
     func drawerItemVCShouldChange()
 }
 
-class WBDrawerMasterViewController: KYDrawerController {
+fileprivate enum DrawerOpeningState {
+    case closed
+    case open
+}
+
+class WBDrawerMasterViewController: UINavigationController {
     
     fileprivate var selectedDrawerItem: WBDrawerItem?
+    
+    let drawerVC = WBStoryboardFactory.drawerStoryboard.instantiateViewController(withIdentifier: "drawerVC") as! WBDrawerViewController
+    
+    fileprivate var drawerOpeningState: DrawerOpeningState = .closed {
+        didSet {
+            switch drawerOpeningState {
+            case .open:
+                self.present(drawerVC, animated: false, completion: nil) // if using animated true, there will be a glitch where two phase, first phase fading in, second phase blurring 
+                break
+            case .closed:
+                drawerVC.dismiss(animated: true, completion: nil)
+                break
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-        // set up drawer
-        let drawerNavVC = WBStoryboardFactory.drawerStoryboard.instantiateViewController(withIdentifier: "drawerNavVC") as! UINavigationController
-        let drawerRootVC = drawerNavVC.viewControllers.first as! WBDrawerViewController
-        drawerRootVC.delegate = self
-        drawerRootVC.viewDelegate = self
-        
-        self.drawerViewController?.view.setNeedsLayout() // hack - to preload table items
-        self.drawerViewController = drawerNavVC
-        self.drawerWidth = UIScreen.main.bounds.width
+        drawerVC.delegate = self
+        drawerVC.viewDelegate = self
         
         // set up main
         let timerNavVC = WBStoryboardFactory.timerStoryboard.instantiateViewController(withIdentifier: "timerNavVC") as! UINavigationController
         let timerVC = timerNavVC.viewControllers.first as! WBMainViewController
         timerVC.viewDelegate = self
         
-        self.mainViewController = timerNavVC
+        self.viewControllers = [timerVC]
     }
     
     func presentDrawerItemViewController(drawerItem: WBDrawerItem) {
         let vc = WBStoryboardFactory.storyboard(byFileName: drawerItem.storyboardFileName)?.instantiateViewController(withIdentifier: drawerItem.storyboardID)
-        
+      
         if let navVC = vc as? UINavigationController,
             let rootVC = navVC.viewControllers.first,
             let drawerItemVC = rootVC as? WBDrawerItemViewControllerType
         {
             drawerItemVC.viewDelegate = self
-            self.mainViewController = navVC
+            self.viewControllers = [rootVC]
         }
         
-        self.setDrawerState(.closed, animated: true)
+        self.drawerOpeningState = .closed
     }
 }
 
@@ -66,19 +78,19 @@ extension WBDrawerMasterViewController: WBDrawerViewControllerDelegate {
         selectedDrawerItem = drawerItem
         
         // set drawer selected state
-        let drawerVC = (self.drawerViewController as! UINavigationController).viewControllers.first as! WBDrawerViewController
+        // let drawerVC = (self.drawerViewController as! UINavigationController).viewControllers.first as! WBDrawerViewController
         drawerVC.selectedDrawerItem = self.selectedDrawerItem
         drawerVC.tableView.reloadData()
         
-        if WBKeyStore.keyStoreItem?.accountAPIKey == nil &&
+        if WBKeyStore.keyStoreItem?.accountAPIKey == "" &&
             drawerItem.title != "Boss Timers"
         {
             let navVC = WBStoryboardFactory.apiKeyEntryStoryboard.instantiateInitialViewController() as! UINavigationController
             if let rootVC = navVC.viewControllers.first as? WBAPIKeyEntryViewController {
                 rootVC.isShownFullscreen = false
                 rootVC.viewDelegate = self
-                self.mainViewController = navVC
-                self.setDrawerState(.closed, animated: true)
+                self.viewControllers = [rootVC]
+                self.drawerOpeningState = .closed
             }
             return
         }
@@ -88,15 +100,16 @@ extension WBDrawerMasterViewController: WBDrawerViewControllerDelegate {
 }
 
 extension WBDrawerMasterViewController: WBDrawerMasterViewControllerDelegate {
+    
     func toggleDrawerView() {
-        var state = DrawerState.opened
-        switch self.drawerState {
-        case .opened:
-            state = .closed
+        switch drawerOpeningState {
         case .closed:
-            state = .opened
+            self.drawerOpeningState = .open
+            break
+        case .open:
+            self.drawerOpeningState = .closed
+            break
         }
-        self.setDrawerState(state, animated: true)
     }
     
     func drawerItemVCShouldChange() {
