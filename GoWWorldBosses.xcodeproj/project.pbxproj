@@ -70,6 +70,8 @@
 		C4903BF51E00678F004F3345 /* Characters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4903BF41E00678F004F3345 /* Characters.storyboard */; };
 		C4903BF81E006828004F3345 /* WBCharactersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4903BF71E006828004F3345 /* WBCharactersTableViewController.swift */; };
 		C4903BFA1E006859004F3345 /* WBCharactersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4903BF91E006859004F3345 /* WBCharactersTableViewCell.swift */; };
+		C499F0981E146895002F534F /* WBApiErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C499F0971E146895002F534F /* WBApiErrorView.swift */; };
+		C499F09A1E1468DA002F534F /* WBApiErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C499F0991E1468DA002F534F /* WBApiErrorView.xib */; };
 		C4A409411E01E11600130C85 /* WBSettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A409401E01E11600130C85 /* WBSettingsTableViewCell.swift */; };
 		C4A409441E01E2B200130C85 /* WBMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A409421E01E2B200130C85 /* WBMainTableViewCell.swift */; };
 		C4A409451E01E2B200130C85 /* WBSettingsNotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A409431E01E2B200130C85 /* WBSettingsNotificationTableViewCell.swift */; };
@@ -162,6 +164,8 @@
 		C4903BF41E00678F004F3345 /* Characters.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Characters.storyboard; sourceTree = "<group>"; };
 		C4903BF71E006828004F3345 /* WBCharactersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBCharactersTableViewController.swift; sourceTree = "<group>"; };
 		C4903BF91E006859004F3345 /* WBCharactersTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBCharactersTableViewCell.swift; sourceTree = "<group>"; };
+		C499F0971E146895002F534F /* WBApiErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBApiErrorView.swift; sourceTree = "<group>"; };
+		C499F0991E1468DA002F534F /* WBApiErrorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBApiErrorView.xib; sourceTree = "<group>"; };
 		C4A409401E01E11600130C85 /* WBSettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBSettingsTableViewCell.swift; sourceTree = "<group>"; };
 		C4A409421E01E2B200130C85 /* WBMainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBMainTableViewCell.swift; sourceTree = "<group>"; };
 		C4A409431E01E2B200130C85 /* WBSettingsNotificationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBSettingsNotificationTableViewCell.swift; sourceTree = "<group>"; };
@@ -457,6 +461,8 @@
 				C4E311121E09EFBB0095EEB4 /* ACBorderedButton.swift */,
 				C4E311161E09F03D0095EEB4 /* ACBorderedTextField.swift */,
 				C4E311181E09F17A0095EEB4 /* UIBarButtonPlus.swift */,
+				C499F0971E146895002F534F /* WBApiErrorView.swift */,
+				C499F0991E1468DA002F534F /* WBApiErrorView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -559,6 +565,7 @@
 				C4C799E91DF503D100A8B5F4 /* Utility.storyboard in Resources */,
 				C45B6C9E1D68BE5800F94060 /* Timer.storyboard in Resources */,
 				C45BAE2C1DF27F1800C6FB5A /* Settings.storyboard in Resources */,
+				C499F09A1E1468DA002F534F /* WBApiErrorView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -662,6 +669,7 @@
 				C4026EB11DEE2B840097FFC1 /* WBSyncContext.swift in Sources */,
 				C4E311171E09F03D0095EEB4 /* ACBorderedTextField.swift in Sources */,
 				C45D34531DEB8691001C47F9 /* WBDrawerTableViewCell.swift in Sources */,
+				C499F0981E146895002F534F /* WBApiErrorView.swift in Sources */,
 				C411FAEB1DFDF84E0038337F /* WBStorageTableViewModelType.swift in Sources */,
 				C4A409411E01E11600130C85 /* WBSettingsTableViewCell.swift in Sources */,
 				C45D345C1DECD7D6001C47F9 /* WBMainViewController+NavigationBar.swift in Sources */,
