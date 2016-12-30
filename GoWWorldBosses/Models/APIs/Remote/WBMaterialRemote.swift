@@ -10,11 +10,11 @@ import Foundation
 import Alamofire
 
 protocol WBMaterialRemoteType {
-    func fetchMaterialElements(completion: @escaping (_ success: Bool, _ elements: [WBJsonMaterialElement]?) -> ())
+    func fetchMaterialElements(completion: @escaping (_ result: WBRemoteResult<[WBJsonMaterialElement]?>) -> ())
 }
 
 class WBMaterialRemote: WBRemote, WBMaterialRemoteType {
-    func fetchMaterialElements(completion: @escaping (_ success: Bool, _ elements: [WBJsonMaterialElement]?) -> ()) {
+    func fetchMaterialElements(completion: @escaping (_ result: WBRemoteResult<[WBJsonMaterialElement]?>) -> ()) {
         // pass empty dict to trigger custom encoding routines
         let domain: String = self.remoteSession?.domain ?? ""
         
@@ -32,9 +32,13 @@ class WBMaterialRemote: WBRemote, WBMaterialRemoteType {
                         resultElements.append(bankElement)
                     }
                 }
-                completion(true, resultElements)
+                completion(WBRemoteResult.success(.some(resultElements)))
             } else {
-                completion(false, nil)
+                if response.response?.statusCode == 403 {
+                    completion(WBRemoteResult.failure(WBRemoteError.scopePermissionDenied))
+                } else {
+                    completion(WBRemoteResult.failure(response.result.error ?? WBRemoteError.unknown))
+                }
             }
         }
     }

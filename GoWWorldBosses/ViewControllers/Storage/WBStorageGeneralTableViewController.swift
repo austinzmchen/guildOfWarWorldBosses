@@ -13,9 +13,16 @@ import SDWebImage
 class WBStorageGeneralTableViewController: UITableViewController {
     
     var viewModel: WBStorageTableViewModelType?
+    let apiErrorView = WBApiErrorView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.addSubview(self.apiErrorView)
+        
+        var f = self.apiErrorView.frame
+        f = self.view.bounds
+        self.apiErrorView.frame = f
     }
     
 

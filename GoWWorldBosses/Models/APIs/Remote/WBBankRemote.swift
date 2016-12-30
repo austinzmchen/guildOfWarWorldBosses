@@ -9,12 +9,12 @@ import Foundation
 import Alamofire
 
 protocol WBBankRemoteType {
-    func fetchBanks(completion: @escaping (_ success: Bool, _ elements: [WBJsonBankElement]?) -> ())
+    func fetchBanks(completion: @escaping (_ result: WBRemoteResult<[WBJsonBankElement]?>) -> ())
 }
 
 class WBBankRemote: WBRemote, WBBankRemoteType {
     
-    func fetchBanks(completion: @escaping (_ success: Bool, _ elements: [WBJsonBankElement]?) -> ()) {
+    func fetchBanks(completion: @escaping (_ result: WBRemoteResult<[WBJsonBankElement]?>) -> ()) {
         // pass empty dict to trigger custom encoding routines
         let domain: String = self.remoteSession?.domain ?? ""
         
@@ -32,9 +32,14 @@ class WBBankRemote: WBRemote, WBBankRemoteType {
                         resultElements.append(bankElement)
                     }
                 }
-                completion(true, resultElements)
+                
+                completion(WBRemoteResult.success(.some(resultElements)))
             } else {
-                completion(false, nil)
+                if response.response?.statusCode == 403 {
+                    completion(WBRemoteResult.failure(WBRemoteError.scopePermissionDenied))
+                } else {
+                    completion(WBRemoteResult.failure(response.result.error ?? WBRemoteError.unknown))
+                }
             }
         }
     }

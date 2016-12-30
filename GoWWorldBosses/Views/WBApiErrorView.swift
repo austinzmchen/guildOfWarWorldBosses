@@ -39,5 +39,7 @@ class WBApiErrorView: UIView {
         let nib = UINib(nibName: "WBApiErrorView", bundle: bundle)
         contentView = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
         self.addSubview(contentView)
+        
+        contentView.frame = self.bounds
     }
 }

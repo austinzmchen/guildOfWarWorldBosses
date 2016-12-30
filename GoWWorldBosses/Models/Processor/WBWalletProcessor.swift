@@ -37,77 +37,95 @@ class WBWalletProcessor: NSObject {
     }
     
     func syncWalletElements(completion: @escaping (_ success: Bool, _ elements: [WBJsonWalletElement]?, _ error: NSError?) -> ()) {
-        self.walletRemote.fetchWalletElements { (success, walletElements) in
-            guard let we = walletElements else {
+        self.walletRemote.fetchWalletElements { result in
+            switch result {
+            case .success(let walletElements):
+                guard let we = walletElements else {
+                    DispatchQueue.main.async {
+                        completion(false, nil, nil)
+                    }
+                    return
+                }
+                
+                let realm = try! Realm()
+                let changes: [WBRemoteRecordChange<WBJsonWalletElement, WBWalletElement>] = realm.findOrInsert(we)
+                
+                try! realm.write {
+                    for change in changes {
+                        switch change {
+                        case .found(let remoteRecord, let localObject):
+                            localObject.saveSyncableProperties(fromSyncable: remoteRecord)
+                            realm.add(localObject, update: true)
+                            break
+                        case .inserted(let remoteRecord, let localObject):
+                            localObject.saveSyncableProperties(fromSyncable: remoteRecord)
+                            realm.add(localObject)
+                            break
+                        default:
+                            break
+                        }
+                    }
+                }
+                DispatchQueue.main.async {
+                    completion(true, walletElements, nil)
+                }
+                break
+                
+            case .failure(let error):
                 DispatchQueue.main.async {
                     completion(false, nil, nil)
                 }
-                return
-            }
-            
-            let realm = try! Realm()
-            let changes: [WBRemoteRecordChange<WBJsonWalletElement, WBWalletElement>] = realm.findOrInsert(we)
-            
-            try! realm.write {
-                for change in changes {
-                    switch change {
-                    case .found(let remoteRecord, let localObject):
-                        localObject.saveSyncableProperties(fromSyncable: remoteRecord)
-                        realm.add(localObject, update: true)
-                        break
-                    case .inserted(let remoteRecord, let localObject):
-                        localObject.saveSyncableProperties(fromSyncable: remoteRecord)
-                        realm.add(localObject)
-                        break
-                    default:
-                        break
-                    }
-                }
-            }
-            DispatchQueue.main.async {
-                completion(true, walletElements, nil)
             }
         }
     }
     
     func syncCurrencies(byIds ids: [String], completion: @escaping (_ success: Bool, _ syncedObjects: [WBJsonCurrency]?, _ error: NSError?) -> ())
     {
-        self.walletRemote.fetchCurrencies(byIds: ids, completion: { (success, currencies) in
-            guard success,
-                let currencies = currencies else
-            {
+        self.walletRemote.fetchCurrencies(byIds: ids, completion: { result in
+            switch result {
+            case .success(let currencies):
+                guard let currencies = currencies else
+                {
+                    DispatchQueue.main.async {
+                        completion(false, nil, nil)
+                    }
+                    return
+                }
+                
+                let realm = try! Realm()
+                let changes: [WBRemoteRecordChange<WBJsonCurrency, WBCurrency>] = realm.findOrInsert(currencies)
+                
+                try! realm.write {
+                    for change in changes {
+                        switch change {
+                        case .found(let remoteRecord, let localObject):
+                            localObject.saveSyncableProperties(fromSyncable: remoteRecord)
+                            realm.add(localObject, update: true)
+                            
+                            localObject.addToOneRelationship(WBWalletElement.self, relationshipName: "walletElement", inverseRelationshipName: "currency", foreignKey: localObject.id, realm: realm)
+                            break
+                        case .inserted(let remoteRecord, let localObject):
+                            localObject.saveSyncableProperties(fromSyncable: remoteRecord)
+                            realm.add(localObject)
+                            
+                            localObject.addToOneRelationship(WBWalletElement.self, relationshipName: "walletElement", inverseRelationshipName: "currency", foreignKey: localObject.id, realm: realm)
+                            break
+                        default:
+                            break
+                        }
+                    }
+                }
+                
+                DispatchQueue.main.async {
+                    completion(true, currencies, nil)
+                }
+                break
+                
+            case .failure(let error):
                 DispatchQueue.main.async {
                     completion(false, nil, nil)
                 }
-                return
-            }
-            
-            let realm = try! Realm()
-            let changes: [WBRemoteRecordChange<WBJsonCurrency, WBCurrency>] = realm.findOrInsert(currencies)
-            
-            try! realm.write {
-                for change in changes {
-                    switch change {
-                    case .found(let remoteRecord, let localObject):
-                        localObject.saveSyncableProperties(fromSyncable: remoteRecord)
-                        realm.add(localObject, update: true)
-                        
-                        localObject.addToOneRelationship(WBWalletElement.self, relationshipName: "walletElement", inverseRelationshipName: "currency", foreignKey: localObject.id, realm: realm)
-                        break
-                    case .inserted(let remoteRecord, let localObject):
-                        localObject.saveSyncableProperties(fromSyncable: remoteRecord)
-                        realm.add(localObject)
-                        
-                        localObject.addToOneRelationship(WBWalletElement.self, relationshipName: "walletElement", inverseRelationshipName: "currency", foreignKey: localObject.id, realm: realm)
-                        break
-                    default:
-                        break
-                    }
-                }
-            }
-            
-            DispatchQueue.main.async {
-                completion(true, currencies, nil)
+                break
             }
         })
     }

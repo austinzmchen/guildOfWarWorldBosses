@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 class WBItemRemote: WBRemote {
-    func fetchItems(byIds ids: [String], completion: @escaping (_ success: Bool, _ currencies: [WBJsonItem]?) -> ()) {
+    func fetchItems(byIds ids: [String], completion: @escaping (_ result: WBRemoteResult<[WBJsonItem]?>) -> ()) {
         
         let idsString = ids.map{ $0 }.joined(separator: ",")
         let parameters = "?ids=\(idsString)"
@@ -20,7 +20,16 @@ class WBItemRemote: WBRemote {
         
         let request = self.alamoFireManager.request(domain + "/items" + parameters, headers: self.remoteSession?.headers)
         request.responseArray(queue: WBRemoteSettings.concurrentQueue) { (response: DataResponse<[WBJsonItem]>) in
-            completion(response.result.isSuccess, response.result.value)
+            if response.result.isSuccess {
+                let result = WBRemoteResult.success(response.result.value)
+                completion(result)
+            } else {
+                if response.response?.statusCode == 403 {
+                    completion(WBRemoteResult.failure(WBRemoteError.scopePermissionDenied))
+                } else {
+                    completion(WBRemoteResult.failure(response.result.error ?? WBRemoteError.unknown))
+                }
+            }
         }
     }
 }

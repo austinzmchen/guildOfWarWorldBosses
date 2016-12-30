@@ -14,23 +14,24 @@ protocol WBCharacterRemoteType {
 
 class WBCharacterRemote: WBRemote, WBCharacterRemoteType {
     
-    func fetchCharacterNames(completion: @escaping (_ success: Bool, _ names: [String]?) -> ()) {
+    func fetchCharacterNames(completion: @escaping (_ result: WBRemoteResult<[String]?>) -> ()) {
         // pass empty dict to trigger custom encoding routines
         let domain: String = self.remoteSession?.domain ?? ""
         
         let request = self.alamoFireManager.request(domain + "/characters", headers: self.remoteSession?.headers)
         request.responseJSON { (response: DataResponse<Any>) in
-            if response.result.isSuccess,
+            if response.result.isSuccess {
                 let names = response.result.value as? [String]
-            {
-                completion(true, names)
+                completion(WBRemoteResult.success(names))
+            } else if response.response?.statusCode == 403 {
+                completion(WBRemoteResult.failure(WBRemoteError.scopePermissionDenied))
             } else {
-                completion(false, nil)
+                completion(WBRemoteResult.failure(response.result.error ?? WBRemoteError.unknown))
             }
         }
     }
     
-    func fetchCharacters(byNames names: [String], completion: @escaping (_ success: Bool, _ currencies: [WBJsonCharacter]?) -> ()) {
+    func fetchCharacters(byNames names: [String], completion: @escaping (_ result: WBRemoteResult<[WBJsonCharacter]?>) -> ()) {
         
         let idsString = names.map{ $0 }.joined(separator: ",")
         let parameters = "?ids=\(idsString)".addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
@@ -52,9 +53,13 @@ class WBCharacterRemote: WBRemote, WBCharacterRemoteType {
                         resultElements.append(bankElement)
                     }
                 }
-                completion(true, resultElements)
+                completion(WBRemoteResult.success(.some(resultElements)))
             } else {
-                completion(false, nil)
+                if response.response?.statusCode == 403 {
+                    completion(WBRemoteResult.failure(WBRemoteError.scopePermissionDenied))
+                } else {
+                    completion(WBRemoteResult.failure(response.result.error ?? WBRemoteError.unknown))
+                }
             }
         }
     }
