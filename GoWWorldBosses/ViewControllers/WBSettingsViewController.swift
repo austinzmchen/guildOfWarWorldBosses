@@ -37,7 +37,8 @@ class WBSettingsViewController: UIViewController {
         super.viewWillAppear(animated)
         
         settingItems = [WBSettingsItem(title: "Notifications", subtitle: "", segueId: ""),
-                        WBSettingsItem(title: "About", subtitle: AppConfiguration.appVersion(), segueId: "pushToAboutVC")]
+                        WBSettingsItem(title: "About", subtitle: AppConfiguration.appVersion(), segueId: "pushToAboutVC"),
+                        WBSettingsItem(title: "Help", subtitle: "", segueId: "")]
         if WBKeyStore.keyStoreItem?.accountAPIKey != "" {
             settingItems.insert(WBSettingsItem(title: "API Key", subtitle: "", segueId: "pushToAPIKeyVC"), at: 1)
         }
@@ -100,6 +101,8 @@ extension WBSettingsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
             UIApplication.shared.openURL(URL(string: UIApplicationOpenSettingsURLString)!)
+        } else if indexPath.row + 1 == settingItems.count {
+            UIApplication.shared.openURL(URL(string: "mailto:help@mytyria.com")!)
         } else {
             let settingsitem = settingItems[indexPath.row]
             self.performSegue(withIdentifier: settingsitem.segueId, sender: nil)
