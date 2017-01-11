@@ -7,6 +7,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -63,10 +64,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your API Key…" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iz4-WT-OXV" customClass="ACBorderedTextField" customModule="WorldBosses" customModuleProvider="target">
-                                <rect key="frame" x="38.5" y="279" width="300" height="45"/>
+                                <rect key="frame" x="39" y="279" width="300" height="45"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="7nP-RO-3eg"/>
                                     <constraint firstAttribute="height" constant="45" id="f17-pD-6AH"/>
                                 </constraints>
                                 <nil key="textColor"/>
@@ -85,7 +85,7 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2PK-sn-14x">
-                                <rect key="frame" x="33" y="334" width="310" height="70"/>
+                                <rect key="frame" x="34" y="334" width="310" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="310" id="RNi-Z5-bFG"/>
                                     <constraint firstAttribute="height" constant="70" id="uCp-V2-STP"/>
@@ -111,6 +111,7 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="9Uq-6R-kmk" secondAttribute="trailing" id="5bH-Lc-IBH"/>
                             <constraint firstItem="9Uq-6R-kmk" firstAttribute="top" secondItem="pjP-ag-QZb" secondAttribute="topMargin" id="6tZ-rJ-zTU"/>
+                            <constraint firstItem="iz4-WT-OXV" firstAttribute="width" secondItem="pjP-ag-QZb" secondAttribute="width" multiplier="0.8" id="BPH-b4-7Hf"/>
                             <constraint firstItem="iz4-WT-OXV" firstAttribute="centerX" secondItem="dYn-jz-qsa" secondAttribute="centerX" id="D4e-dg-qH5"/>
                             <constraint firstItem="2PK-sn-14x" firstAttribute="top" secondItem="iz4-WT-OXV" secondAttribute="bottom" constant="10" id="FyI-Jo-dT0"/>
                             <constraint firstItem="9Uq-6R-kmk" firstAttribute="leading" secondItem="pjP-ag-QZb" secondAttribute="leading" id="Heq-xc-Ayc"/>
@@ -163,7 +164,6 @@
                                 <rect key="frame" x="0.0" y="317" width="375" height="350"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="350" id="Q7N-l9-5BC"/>
-                                    <constraint firstAttribute="width" secondItem="wfF-hN-tcl" secondAttribute="height" multiplier="15:14" id="eFg-zM-v9R"/>
                                 </constraints>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="105" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8v3-hD-hR0">
