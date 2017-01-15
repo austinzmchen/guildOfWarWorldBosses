@@ -55,8 +55,15 @@ extension WBAPIKeyViewController: UITableViewDelegate {
         }))
         alertVC.addAction(UIAlertAction(title: "Remove", style: .destructive, handler: { (action) in
             let realm = try! Realm()
-            try! realm.removeAll(type: WBAccount.self)
-            WBKeyStore.keyStoreItem = nil // delete api key
+            try! realm.write {
+                realm.deleteAll()
+            }
+            
+            // delete api key
+            var kItem = WBKeyStore.keyStoreItem
+            kItem?.accountAPIKey = ""
+            WBKeyStore.keyStoreItem = kItem
+            
             self.accounts = []
             
             self.tableView.deleteRows(at: [IndexPath(row: 0, section: 0)], with: .automatic) // FIXME:

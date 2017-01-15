@@ -39,7 +39,10 @@ class WBSettingsViewController: UIViewController {
         settingItems = [WBSettingsItem(title: "Notifications", subtitle: "", segueId: ""),
                         WBSettingsItem(title: "About", subtitle: AppConfiguration.appVersion(), segueId: "pushToAboutVC"),
                         WBSettingsItem(title: "Help", subtitle: "", segueId: "")]
-        if WBKeyStore.keyStoreItem?.accountAPIKey != "" {
+        
+        if WBKeyStore.keyStoreItem != nil &&
+            WBKeyStore.keyStoreItem?.accountAPIKey != ""
+        {
             settingItems.insert(WBSettingsItem(title: "API Key", subtitle: "", segueId: "pushToAPIKeyVC"), at: 1)
         }
         tableView.reloadData()

@@ -82,7 +82,8 @@ extension WBDrawerMasterViewController: WBDrawerViewControllerDelegate {
         drawerVC.selectedDrawerItem = self.selectedDrawerItem
         drawerVC.tableView.reloadData()
         
-        if WBKeyStore.keyStoreItem?.accountAPIKey == "" &&
+        if (WBKeyStore.keyStoreItem == nil ||
+            WBKeyStore.keyStoreItem?.accountAPIKey == "") &&
             drawerItem.title != "Boss Timers"
         {
             let navVC = WBStoryboardFactory.apiKeyEntryStoryboard.instantiateInitialViewController() as! UINavigationController
