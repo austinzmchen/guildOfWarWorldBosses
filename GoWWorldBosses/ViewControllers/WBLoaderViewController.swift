@@ -8,9 +8,15 @@
 
 import UIKit
 
+enum WBLoaderStatus {
+    case loading
+    case loaded
+}
+
 class WBLoaderViewController: UIViewController {
 
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var spinner: UIImageView!
     
     static var sharedInstance: WBLoaderViewController? = nil
     
@@ -23,13 +29,40 @@ class WBLoaderViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
-        loadingIndicator.startAnimating()
+        //loadingIndicator.startAnimating()
+        
+        self.resetLoader()
     }
     
     deinit {
-        loadingIndicator.stopAnimating()
+        //loadingIndicator.stopAnimating()
+        
+        self.status = .loaded
     }
 
+    // MARK: instance methods
+    
+    var status: WBLoaderStatus = .loading
+    
+    @objc fileprivate func startLoader() {
+        switch self.status {
+        case .loading:
+            UIView.animate(withDuration: 0.6, delay: 0, options: .curveLinear, animations: { [weak self] in
+                if let iv = self?.spinner {
+                    iv.transform = iv.transform.rotated(by: CGFloat(M_PI_2))
+                }
+            }) { [weak self] (finished) -> () in
+                _ = self?.perform(#selector(self?.startLoader))
+            }
+            break
+        default:
+            break
+        }
+    }
+    
+    func resetLoader() {
+        self.status = .loading
+        self.startLoader()
+    }
 }

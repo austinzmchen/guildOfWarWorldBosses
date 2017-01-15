@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Is2-EE-VIW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Is2-EE-VIW">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -23,15 +24,29 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XXz-hl-mlA" userLabel="BackgroundView">
                                 <rect key="frame" x="0.0" y="-20" width="375" height="687"/>
                                 <subviews>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="XHm-Us-UYC">
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="XHm-Us-UYC">
                                         <rect key="frame" x="178" y="334" width="20" height="20"/>
                                     </activityIndicatorView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icSpinner" translatesAutoresizingMaskIntoConstraints="NO" id="hqG-kE-hfK">
+                                        <rect key="frame" x="162.5" y="464.5" width="51" height="51"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="51" id="iBg-Qe-cA9"/>
+                                            <constraint firstAttribute="width" constant="51" id="liw-rT-sbk"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="XHm-Us-UYC" firstAttribute="centerX" secondItem="XXz-hl-mlA" secondAttribute="centerX" id="3jE-zg-luY"/>
+                                    <constraint firstItem="hqG-kE-hfK" firstAttribute="bottom" secondItem="XXz-hl-mlA" secondAttribute="bottom" multiplier="0.75" id="JIT-O7-uQL"/>
+                                    <constraint firstItem="hqG-kE-hfK" firstAttribute="centerX" secondItem="XXz-hl-mlA" secondAttribute="centerX" id="dRJ-Fo-qzd"/>
                                     <constraint firstItem="XHm-Us-UYC" firstAttribute="centerY" secondItem="XXz-hl-mlA" secondAttribute="centerY" id="iDH-PS-1Gr"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="XHm-Us-UYC"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
@@ -45,6 +60,7 @@
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="loadingIndicator" destination="XHm-Us-UYC" id="CV0-d6-Lm6"/>
+                        <outlet property="spinner" destination="hqG-kE-hfK" id="aI1-fF-mt6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sL1-Kt-WCm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -52,4 +68,7 @@
             <point key="canvasLocation" x="822" y="144"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icSpinner" width="51" height="51"/>
+    </resources>
 </document>
