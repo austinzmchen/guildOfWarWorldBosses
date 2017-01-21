@@ -25,3 +25,9 @@ class WBJsonBase: Mappable, WBRemoteRecordSyncableType {
         }
     }
 }
+
+extension WBJsonBase: Equatable {
+    static func ==(lhs: WBJsonBase, rhs: WBJsonBase) -> Bool {
+        return lhs.id == rhs.id
+    }
+}

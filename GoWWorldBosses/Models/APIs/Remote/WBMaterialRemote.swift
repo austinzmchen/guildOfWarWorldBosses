@@ -32,6 +32,7 @@ class WBMaterialRemote: WBRemote, WBMaterialRemoteType {
                         resultElements.append(bankElement)
                     }
                 }
+                resultElements.uniqueInPlace()
                 completion(WBRemoteResult.success(.some(resultElements)))
             } else {
                 if response.response?.statusCode == 403 {

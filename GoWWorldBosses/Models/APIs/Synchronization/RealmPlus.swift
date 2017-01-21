@@ -16,9 +16,18 @@ extension Realm {
     func insertItem<S: WBObject>(byId id: String) -> S {
         let item = S()
         item.id = id
-        try! self.write {
-            self.add(item)
+        
+        /* sometimes response item with the same id is returned
+         an exception will be produce if that happens, eg @throw RLMException(@"Can't create object with existing primary key value '%@'.", primaryValue);
+         */
+        do {
+            try self.write {
+                self.add(item)
+            }
+        } catch let e {
+            print("\(e)")
         }
+            
         return item
     }
 

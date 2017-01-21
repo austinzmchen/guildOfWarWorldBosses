@@ -37,3 +37,9 @@ class WBJsonCharacter: Mappable, WBRemoteRecordSyncableType {
         created <- map["created"]
     }
 }
+
+extension WBJsonCharacter: Equatable {
+    static func ==(lhs: WBJsonCharacter, rhs: WBJsonCharacter) -> Bool {
+        return lhs.id == rhs.id
+    }
+}
