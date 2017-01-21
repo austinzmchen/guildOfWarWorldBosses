@@ -24,7 +24,7 @@ class WBBankProcessor: NSObject {
         return WBItemRemote(remoteSession: self.context.remoteSession)
     }()
     
-    func sync(completion: @escaping (_ success: Bool, _ syncedObjects: [AnyObject]?, _ error: NSError?) -> ()) {
+    func sync(completion: @escaping (_ success: Bool, _ syncedObjects: [AnyObject]?, _ error: Error?) -> ()) {
         self.syncBankElements { (success, elements, error) in
             guard success,
                 let elements = elements else
@@ -35,12 +35,12 @@ class WBBankProcessor: NSObject {
             
             let ids = elements.map{ $0.id }
             self.syncBankItems(byIds: ids, completion: { (success, syncedObjects, error) in
-                completion(success, syncedObjects, nil)
+                completion(success, syncedObjects, error)
             })
         }
     }
     
-    func syncBankElements(completion: @escaping (_ success: Bool, _ elements: [WBJsonBankElement]?, _ error: NSError?) -> ()) {
+    func syncBankElements(completion: @escaping (_ success: Bool, _ elements: [WBJsonBankElement]?, _ error: Error?) -> ()) {
         self.bankRemote.fetchBanks { result in
             
             switch result {
@@ -55,21 +55,25 @@ class WBBankProcessor: NSObject {
                 let realm = try! Realm()
                 let changes: [WBRemoteRecordChange<WBJsonBankElement, WBBankElement>] = realm.findOrInsert(elements)
                 
-                try! realm.write {
-                    for change in changes {
-                        switch change {
-                        case .found(let remoteRecord, let localObject):
-                            localObject.saveSyncableProperties(fromSyncable: remoteRecord)
-                            realm.add(localObject, update: true)
-                            break
-                        case .inserted(let remoteRecord, let localObject):
-                            localObject.saveSyncableProperties(fromSyncable: remoteRecord)
-                            realm.add(localObject)
-                            break
-                        default:
-                            break
+                do {
+                    try realm.write {
+                        for change in changes {
+                            switch change {
+                            case .found(let remoteRecord, let localObject):
+                                localObject.saveSyncableProperties(fromSyncable: remoteRecord)
+                                realm.add(localObject, update: true)
+                                break
+                            case .inserted(let remoteRecord, let localObject):
+                                localObject.saveSyncableProperties(fromSyncable: remoteRecord)
+                                realm.add(localObject)
+                                break
+                            default:
+                                break
+                            }
                         }
                     }
+                } catch {
+                    print("Error info: \(error)")
                 }
                 DispatchQueue.main.async {
                     completion(true, bankElements, nil)
@@ -78,14 +82,14 @@ class WBBankProcessor: NSObject {
                 
             case .failure(let error):
                 DispatchQueue.main.async {
-                    completion(false, nil, nil)
+                    completion(false, nil, error)
                 }
                 break
             }
         }
     }
     
-    func syncBankItems(byIds ids:[String], completion: @escaping (_ success: Bool, _ elements: [WBJsonItem]?, _ error: NSError?) -> ())
+    func syncBankItems(byIds ids:[String], completion: @escaping (_ success: Bool, _ elements: [WBJsonItem]?, _ error: Error?) -> ())
     {
         self.itemRemote.fetchItems(byIds: ids, completion: { result in
             switch result {
@@ -129,7 +133,7 @@ class WBBankProcessor: NSObject {
                 
             case .failure(let error):
                 DispatchQueue.main.async {
-                    completion(false, nil, nil)
+                    completion(false, nil, error)
                 }
                 break
             }

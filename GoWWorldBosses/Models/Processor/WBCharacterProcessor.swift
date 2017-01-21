@@ -20,7 +20,7 @@ class WBCharacterProcessor: NSObject {
         return WBCharacterRemote(remoteSession: self.context.remoteSession)
     }()
     
-    func sync(completion: @escaping (_ success: Bool, _ syncedObjects: [AnyObject]?, _ error: NSError?) -> ()) {
+    func sync(completion: @escaping (_ success: Bool, _ syncedObjects: [AnyObject]?, _ error: Error?) -> ()) {
         self.characterRemote.fetchCharacterNames { result in
             switch result {
             case .success(let names):
@@ -69,7 +69,7 @@ class WBCharacterProcessor: NSObject {
                         
                     case .failure(let error):
                         DispatchQueue.main.async {
-                            completion(false, nil, nil)
+                            completion(false, nil, error)
                         }
                         break
                     }
@@ -78,7 +78,7 @@ class WBCharacterProcessor: NSObject {
                 
             case .failure(let error):
                 DispatchQueue.main.async {
-                    completion(false, nil, nil)
+                    completion(false, nil, error)
                 }
                 break
             }

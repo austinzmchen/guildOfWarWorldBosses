@@ -25,7 +25,7 @@ class WBMaterialProcessor: NSObject {
         return WBItemRemote(remoteSession: self.context.remoteSession)
     }()
     
-    func sync(completion: @escaping (_ success: Bool, _ syncedObjects: [AnyObject]?, _ error: NSError?) -> ()) {
+    func sync(completion: @escaping (_ success: Bool, _ syncedObjects: [AnyObject]?, _ error: Error?) -> ()) {
         self.syncMaterialElements { (success, elements, error) in
             guard success,
                 let elements = elements else
@@ -36,12 +36,12 @@ class WBMaterialProcessor: NSObject {
             
             let ids = elements.map{ $0.id }
             self.syncMaterialItems(byIds: ids, completion: { (success, syncedObjects, error) in
-                completion(success, syncedObjects, nil)
+                completion(success, syncedObjects, error)
             })
         }
     }
     
-    func syncMaterialElements(completion: @escaping (_ success: Bool, _ elements: [WBJsonMaterialElement]?, _ error: NSError?) -> ()) {
+    func syncMaterialElements(completion: @escaping (_ success: Bool, _ elements: [WBJsonMaterialElement]?, _ error: Error?) -> ()) {
         self.materialRemote.fetchMaterialElements { result in
             switch result {
             case .success(let elements):
@@ -78,14 +78,14 @@ class WBMaterialProcessor: NSObject {
                 
             case .failure(let error):
                 DispatchQueue.main.async {
-                    completion(false, nil, nil)
+                    completion(false, nil, error)
                 }
             }
             
         }
     }
     
-    func syncMaterialItems(byIds ids:[String], completion: @escaping (_ success: Bool, _ elements: [WBJsonItem]?, _ error: NSError?) -> ())
+    func syncMaterialItems(byIds ids:[String], completion: @escaping (_ success: Bool, _ elements: [WBJsonItem]?, _ error: Error?) -> ())
     {
         let chunkSize = 150
         let chunks = stride(from: 0, to: ids.count, by: chunkSize).map {
@@ -93,6 +93,7 @@ class WBMaterialProcessor: NSObject {
         }
         
         let dispatchGroup = DispatchGroup()
+        var err: Error?
         
         for chunk in chunks {
             // FIXME: v2 does not work?
@@ -134,13 +135,14 @@ class WBMaterialProcessor: NSObject {
                     break
                 case .failure(let error):
                     dispatchGroup.leave()
+                    err = error
                     break
                 }
             })
         }
         
         dispatchGroup.notify(queue: DispatchQueue.main, execute: {
-            completion(true, nil, nil)
+            completion(true, nil, err)
         })
     }
 }

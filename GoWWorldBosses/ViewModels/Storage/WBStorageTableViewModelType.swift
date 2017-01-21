@@ -9,12 +9,12 @@
 import Foundation
 
 protocol WBStorageTableViewModelDelegate: class {
-    func didComplete(success: Bool, items: [WBObject]?)
+    func didComplete(success: Bool, items: [Any]?, error: Error?)
 }
 
 protocol WBStorageTableViewModelType {
     //var items: [WBObject]? {get}
-    //var delegate: WBStorageTableViewModelDelegate? {get set}
+    var delegate: WBStorageTableViewModelDelegate? {get set}
     
     func identifierForSuitableCell(atIndex index: Int) -> String
     func itemsCount() -> Int

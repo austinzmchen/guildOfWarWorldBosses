@@ -45,7 +45,6 @@ class WBAPIKeyEntryViewController: UIViewController, WBDrawerItemViewControllerT
         $0.showSwitchCameraButton = false
     })
     
-    var syncCoordinator: WBSyncCoordinator?
     var isShownFullscreen: Bool = true
     var viewDelegate: WBDrawerMasterViewControllerDelegate?
     
@@ -98,8 +97,12 @@ class WBAPIKeyEntryViewController: UIViewController, WBDrawerItemViewControllerT
                     let keyItem = WBKeyStore.keyStoreItem
                     WBKeyStore.keyStoreItem = WBKeyStoreItem(likedBosses: (keyItem?.likedBosses ?? Set<String>()), accountAPIKey: key)
                     
-                    self.syncCoordinator = WBSyncCoordinator(remoteSession: WBRemoteSession(domain: WBRemote.domain, bearer: key))
-                    self.syncCoordinator?.syncAll({ (success, error) in
+                    let syncCoordinator = WBSyncCoordinator(remoteSession: WBRemoteSession(domain: WBRemote.domain, bearer: key))
+                    
+                    // create app configuration
+                    appDelegate.appConfiguration.setObject(syncCoordinator, forKey: kAppConfigurationSyncCoordinator as NSCopying)
+                    
+                    syncCoordinator.syncAll({ (success, error) in
                         self.presentLandingView(completion: { 
                             UIApplication.hideLoader()
                         })

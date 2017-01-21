@@ -12,19 +12,24 @@ import SDWebImage
 
 class WBStorageGeneralTableViewController: UITableViewController {
     
-    var viewModel: WBStorageTableViewModelType?
+    var viewModel: WBStorageTableViewModelType? {
+        didSet {
+            viewModel?.delegate = self
+        }
+    }
+    
     let apiErrorView = WBApiErrorView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        /*
+        // set up api Error view
         self.view.addSubview(self.apiErrorView)
+        self.apiErrorView.isHidden = true
         
         var f = self.apiErrorView.frame
         f = self.view.bounds
         self.apiErrorView.frame = f
-         */
     }
     
 
@@ -65,4 +70,19 @@ class WBStorageGeneralTableViewController: UITableViewController {
         return cell
     }
 
+}
+
+extension WBStorageGeneralTableViewController: WBStorageTableViewModelDelegate {
+    func didComplete(success: Bool, items: [Any]?, error: Error?) {
+        guard let e = error as? WBRemoteError else {
+            return
+        }
+        
+        switch e {
+        case .scopePermissionDenied:
+            self.apiErrorView.isHidden = false
+        default:
+            self.apiErrorView.isHidden = true
+        }
+    }
 }

@@ -13,8 +13,8 @@ class AppConfigurator: NSObject {
 }
 
 
-fileprivate let kAppConfigurationRemoteSession = "remoteSession"
-fileprivate let kAppConfigurationSyncCoordinator = "syncCoordinator"
+let kAppConfigurationRemoteSession = "remoteSession"
+let kAppConfigurationSyncCoordinator = "syncCoordinator"
 
 typealias AppConfiguration = NSMutableDictionary // subclass dictionary would require override methods
 

@@ -19,6 +19,17 @@ class WBStorageMaterialViewModel: WBStorageTableViewModelType {
         // Query
         let results = realm.objects(WBMaterialElement.self).sorted(byProperty: "count", ascending: false)
         self.items = Array(results)
+    
+        materialProcessor?.sync(completion: { (success, syncedObjects, error) in
+            self.delegate?.didComplete(success: success, items: syncedObjects, error: error)
+        })
+    }
+    
+    // MARK: instance methods
+    
+    var materialProcessor: WBMaterialProcessor? {
+        let syncCoord = appDelegate.appConfiguration[kAppConfigurationSyncCoordinator] as? WBSyncCoordinator
+        return syncCoord?.materialProcessor
     }
     
     func itemsCount() -> Int {

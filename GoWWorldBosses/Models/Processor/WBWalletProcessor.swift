@@ -20,7 +20,7 @@ class WBWalletProcessor: NSObject {
         return WBWalletRemote(remoteSession: self.context.remoteSession)
     }()
     
-    func sync(completion: @escaping (_ success: Bool, _ syncedObjects: [AnyObject]?, _ error: NSError?) -> ()) {
+    func sync(completion: @escaping (_ success: Bool, _ syncedObjects: [AnyObject]?, _ error: Error?) -> ()) {
         self.syncWalletElements { (success, elements, error) in
             guard success,
                 let elements = elements else
@@ -31,12 +31,12 @@ class WBWalletProcessor: NSObject {
             
             let ids = elements.map{ $0.id }
             self.syncCurrencies(byIds: ids, completion: { (success, syncedObjects, error) in
-                completion(success, syncedObjects, nil)
+                completion(success, syncedObjects, error)
             })
         }
     }
     
-    func syncWalletElements(completion: @escaping (_ success: Bool, _ elements: [WBJsonWalletElement]?, _ error: NSError?) -> ()) {
+    func syncWalletElements(completion: @escaping (_ success: Bool, _ elements: [WBJsonWalletElement]?, _ error: Error?) -> ()) {
         self.walletRemote.fetchWalletElements { result in
             switch result {
             case .success(let walletElements):
@@ -73,13 +73,13 @@ class WBWalletProcessor: NSObject {
                 
             case .failure(let error):
                 DispatchQueue.main.async {
-                    completion(false, nil, nil)
+                    completion(false, nil, error)
                 }
             }
         }
     }
     
-    func syncCurrencies(byIds ids: [String], completion: @escaping (_ success: Bool, _ syncedObjects: [WBJsonCurrency]?, _ error: NSError?) -> ())
+    func syncCurrencies(byIds ids: [String], completion: @escaping (_ success: Bool, _ syncedObjects: [WBJsonCurrency]?, _ error: Error?) -> ())
     {
         self.walletRemote.fetchCurrencies(byIds: ids, completion: { result in
             switch result {
@@ -123,7 +123,7 @@ class WBWalletProcessor: NSObject {
                 
             case .failure(let error):
                 DispatchQueue.main.async {
-                    completion(false, nil, nil)
+                    completion(false, nil, error)
                 }
                 break
             }

@@ -20,7 +20,20 @@ class WBStorageWalletViewModel: WBStorageTableViewModelType {
         // Query
         let results = realm.objects(WBWalletElement.self)
         self.items = Array(results)
+        
+        walletProcessor?.sync(completion: { (success, syncedObjects, error) in
+            self.delegate?.didComplete(success: success, items: syncedObjects, error: error)
+        })
     }
+    
+    // MARK: instance methods 
+    
+    var walletProcessor: WBWalletProcessor? {
+        let syncCoord = appDelegate.appConfiguration[kAppConfigurationSyncCoordinator] as? WBSyncCoordinator
+        return syncCoord?.walletProcessor
+    }
+    
+    // MARK: interface impl
     
     func identifierForSuitableCell(atIndex index: Int) -> String {
         if let item = self.items?[index] as? WBWalletElement,
