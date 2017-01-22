@@ -21,7 +21,8 @@ class WBCharacterRemote: WBRemote, WBCharacterRemoteType {
         let request = self.alamoFireManager.request(domain + "/characters", headers: self.remoteSession?.headers)
         request.responseJSON { (response: DataResponse<Any>) in
             if response.result.isSuccess {
-                let names = response.result.value as? [String]
+                var names = response.result.value as? [String]
+                names?.uniqueInPlace()
                 completion(WBRemoteResult.success(names))
             } else if response.response?.statusCode == 403 {
                 completion(WBRemoteResult.failure(WBRemoteError.scopePermissionDenied))

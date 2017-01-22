@@ -23,7 +23,9 @@ class WBWalletRemote: WBRemote, WBWalletRemoteType {
         let request = self.alamoFireManager.request(domain + "/account/wallet", headers: self.remoteSession?.headers)
         request.responseArray(queue: WBRemoteSettings.concurrentQueue) { (response: DataResponse<[WBJsonWalletElement]>) in
             if response.result.isSuccess {
-                let result = WBRemoteResult.success(response.result.value)
+                var items: [WBJsonWalletElement]? = response.result.value
+                items?.uniqueInPlace()
+                let result = WBRemoteResult.success(items)
                 completion(result)
             } else {
                 if response.response?.statusCode == 403 {

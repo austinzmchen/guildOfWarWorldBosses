@@ -29,7 +29,7 @@ class WBBankProcessor: NSObject {
             guard success,
                 let elements = elements else
             {
-                completion(false, nil, nil)
+                completion(false, nil, error)
                 return
             }
             

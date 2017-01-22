@@ -21,7 +21,9 @@ class WBItemRemote: WBRemote {
         let request = self.alamoFireManager.request(domain + "/items" + parameters, headers: self.remoteSession?.headers)
         request.responseArray(queue: WBRemoteSettings.concurrentQueue) { (response: DataResponse<[WBJsonItem]>) in
             if response.result.isSuccess {
-                let result = WBRemoteResult.success(response.result.value)
+                var items: [WBJsonItem]? = response.result.value
+                items?.uniqueInPlace()
+                let result = WBRemoteResult.success(items)
                 completion(result)
             } else {
                 if response.response?.statusCode == 403 {
