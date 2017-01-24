@@ -255,6 +255,16 @@
                                     <constraint firstAttribute="height" constant="22" id="kLW-R1-jDT"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bMB-UY-aea">
+                                <rect key="frame" x="122.5" y="519" width="129" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="(Debug) force crash">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="debug_forceCrashButtonTapped:" destination="1GM-Ca-Coq" eventType="touchUpInside" id="SNl-U1-Gds"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rj5-He-FZ8">
                                 <rect key="frame" x="127.5" y="556.5" width="120" height="26.5"/>
                                 <constraints>
@@ -312,8 +322,10 @@
                             <constraint firstItem="RFb-nX-Nbf" firstAttribute="centerX" secondItem="reY-2D-rOR" secondAttribute="centerX" id="eSU-ve-MOL"/>
                             <constraint firstItem="lJN-Rk-pfM" firstAttribute="leading" secondItem="reY-2D-rOR" secondAttribute="leading" id="haG-ia-eiT"/>
                             <constraint firstItem="RFb-nX-Nbf" firstAttribute="centerX" secondItem="reY-2D-rOR" secondAttribute="centerX" id="mDN-2e-RjO"/>
+                            <constraint firstItem="bMB-UY-aea" firstAttribute="centerX" secondItem="rj5-He-FZ8" secondAttribute="centerX" id="nI6-vg-qbP"/>
                             <constraint firstAttribute="trailing" secondItem="WVU-FD-LaA" secondAttribute="trailing" constant="37.5" id="tt7-Jd-LyK"/>
                             <constraint firstItem="rj5-He-FZ8" firstAttribute="centerX" secondItem="reY-2D-rOR" secondAttribute="centerX" id="unc-dr-LwB"/>
+                            <constraint firstItem="rj5-He-FZ8" firstAttribute="top" secondItem="bMB-UY-aea" secondAttribute="bottom" constant="8.5" id="v4Z-Yj-6Bf"/>
                             <constraint firstItem="JCa-Bf-cSM" firstAttribute="centerX" secondItem="RFb-nX-Nbf" secondAttribute="centerX" id="vmP-Q4-WHk"/>
                             <constraint firstItem="RFb-nX-Nbf" firstAttribute="top" secondItem="Jvf-g4-3hy" secondAttribute="bottom" constant="32" id="xLR-SL-HdF"/>
                             <constraint firstItem="TRP-6H-3jc" firstAttribute="top" secondItem="JCa-Bf-cSM" secondAttribute="bottom" constant="25" id="ze3-wj-H1A"/>

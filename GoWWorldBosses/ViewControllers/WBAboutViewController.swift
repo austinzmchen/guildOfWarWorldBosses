@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Crashlytics
 
 class WBAboutViewController: UIViewController {
 
@@ -15,6 +16,11 @@ class WBAboutViewController: UIViewController {
     }
     @IBAction func doneButtonTapped(_ sender: AnyObject) {
         self.navigationController?.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func debug_forceCrashButtonTapped(_ sender: Any) {
+        // Crashlytics.sharedInstance().crash()
+        Crashlytics.sharedInstance().throwException()
     }
     
     override func viewDidLoad() {
