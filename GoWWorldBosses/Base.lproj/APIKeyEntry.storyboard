@@ -20,14 +20,14 @@
                         <viewControllerLayoutGuide type="bottom" id="JgQ-tf-RfY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="pjP-ag-QZb">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchScreen2" translatesAutoresizingMaskIntoConstraints="NO" id="9Uq-6R-kmk">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8cw-bn-Pb0">
-                                <rect key="frame" x="321" y="34" width="34" height="33"/>
+                                <rect key="frame" x="321" y="54" width="34" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Skip">
                                     <color key="titleColor" red="1" green="0.5725490196078431" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -37,14 +37,14 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loadingLogo" translatesAutoresizingMaskIntoConstraints="NO" id="xvR-1m-YcV">
-                                <rect key="frame" x="155" y="135" width="65" height="65"/>
+                                <rect key="frame" x="155" y="167" width="65" height="65"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="kTf-lS-SvL"/>
                                     <constraint firstAttribute="width" constant="65" id="vbm-vR-36T"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dYn-jz-qsa">
-                                <rect key="frame" x="64.5" y="225" width="247.5" height="24"/>
+                                <rect key="frame" x="64.5" y="257" width="247.5" height="24"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Please enter your ">
                                         <attributes>
@@ -64,7 +64,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your API Key…" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iz4-WT-OXV" customClass="ACBorderedTextField" customModule="WorldBosses" customModuleProvider="target">
-                                <rect key="frame" x="39" y="279" width="300" height="45"/>
+                                <rect key="frame" x="39" y="311" width="300" height="45"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="f17-pD-6AH"/>
@@ -85,7 +85,7 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2PK-sn-14x">
-                                <rect key="frame" x="34" y="334" width="310" height="70"/>
+                                <rect key="frame" x="34" y="366" width="310" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="310" id="RNi-Z5-bFG"/>
                                     <constraint firstAttribute="height" constant="70" id="uCp-V2-STP"/>
@@ -96,7 +96,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ki8-rD-AXm">
-                                <rect key="frame" x="157" y="523" width="60" height="60"/>
+                                <rect key="frame" x="157" y="587" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Skv-KX-lsL"/>
                                     <constraint firstAttribute="width" constant="60" id="zyF-nM-M6G"/>
@@ -106,6 +106,30 @@
                                     <action selector="qrCodeButtonTapped:" destination="rMz-GC-2a7" eventType="touchUpInside" id="IAA-LH-g9g"/>
                                 </connections>
                             </button>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nkr-rY-Cyt" userLabel="loadingPlaceholder">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchScreen2" translatesAutoresizingMaskIntoConstraints="NO" id="TIV-S2-3Ji">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loadingLogo" translatesAutoresizingMaskIntoConstraints="NO" id="jpX-bo-qeI">
+                                        <rect key="frame" x="109.5" y="255.5" width="155" height="155"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="155" id="5uJ-ji-Wmz"/>
+                                            <constraint firstAttribute="height" constant="155" id="oTg-ja-NkA"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="TIV-S2-3Ji" firstAttribute="top" secondItem="Nkr-rY-Cyt" secondAttribute="top" id="AoY-3b-g5x"/>
+                                    <constraint firstItem="TIV-S2-3Ji" firstAttribute="leading" secondItem="Nkr-rY-Cyt" secondAttribute="leading" id="EPn-hK-Ttv"/>
+                                    <constraint firstItem="TIV-S2-3Ji" firstAttribute="height" secondItem="Nkr-rY-Cyt" secondAttribute="height" id="Kkf-dD-abx"/>
+                                    <constraint firstItem="jpX-bo-qeI" firstAttribute="centerY" secondItem="Nkr-rY-Cyt" secondAttribute="centerY" id="YWe-f2-Byt"/>
+                                    <constraint firstItem="TIV-S2-3Ji" firstAttribute="width" secondItem="Nkr-rY-Cyt" secondAttribute="width" id="teV-m7-Vl4"/>
+                                    <constraint firstItem="jpX-bo-qeI" firstAttribute="centerX" secondItem="Nkr-rY-Cyt" secondAttribute="centerX" id="xnw-jS-YiI"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -119,12 +143,16 @@
                             <constraint firstItem="2PK-sn-14x" firstAttribute="centerX" secondItem="iz4-WT-OXV" secondAttribute="centerX" id="Pwd-yi-gYv"/>
                             <constraint firstItem="dYn-jz-qsa" firstAttribute="top" secondItem="xvR-1m-YcV" secondAttribute="bottom" constant="25" id="QhL-Yb-neT"/>
                             <constraint firstItem="dYn-jz-qsa" firstAttribute="centerX" secondItem="xvR-1m-YcV" secondAttribute="centerX" id="VpF-Ev-O9w"/>
+                            <constraint firstItem="Nkr-rY-Cyt" firstAttribute="width" secondItem="pjP-ag-QZb" secondAttribute="width" id="XsQ-QI-ic2"/>
+                            <constraint firstItem="Nkr-rY-Cyt" firstAttribute="height" secondItem="pjP-ag-QZb" secondAttribute="height" id="cuD-GQ-Haa"/>
                             <constraint firstItem="iz4-WT-OXV" firstAttribute="centerY" secondItem="pjP-ag-QZb" secondAttribute="centerY" id="hAC-bB-Vgi"/>
                             <constraint firstAttribute="trailing" secondItem="8cw-bn-Pb0" secondAttribute="trailing" constant="20" id="iS9-fv-8EC"/>
                             <constraint firstItem="Ki8-rD-AXm" firstAttribute="centerX" secondItem="pjP-ag-QZb" secondAttribute="centerX" id="kyW-lN-AVH"/>
                             <constraint firstItem="xvR-1m-YcV" firstAttribute="centerX" secondItem="pjP-ag-QZb" secondAttribute="centerX" id="nPU-kv-nV6"/>
                             <constraint firstItem="8cw-bn-Pb0" firstAttribute="top" secondItem="ltJ-J5-NmZ" secondAttribute="bottom" constant="34" id="nzp-dc-89G"/>
                             <constraint firstItem="JgQ-tf-RfY" firstAttribute="top" secondItem="Ki8-rD-AXm" secondAttribute="bottom" constant="20" id="p4j-hb-hXX"/>
+                            <constraint firstItem="Nkr-rY-Cyt" firstAttribute="top" secondItem="ltJ-J5-NmZ" secondAttribute="bottom" constant="-20" id="qRz-eB-OTn"/>
+                            <constraint firstItem="Nkr-rY-Cyt" firstAttribute="leading" secondItem="pjP-ag-QZb" secondAttribute="leading" id="xZ2-3r-6bz"/>
                             <constraint firstItem="iz4-WT-OXV" firstAttribute="top" secondItem="dYn-jz-qsa" secondAttribute="bottom" constant="30" id="zOb-qv-vaT"/>
                         </constraints>
                     </view>
@@ -136,9 +164,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="leftBarButton" destination="5Yv-ha-TsC" id="mWe-R8-27G"/>
+                        <outlet property="loadingPlaceholderView" destination="Nkr-rY-Cyt" id="0q0-xW-vj9"/>
                         <outlet property="qrCodeButton" destination="Ki8-rD-AXm" id="5gW-bw-NTA"/>
                         <outlet property="skipButton" destination="8cw-bn-Pb0" id="78e-ui-7sU"/>
                         <outlet property="textField" destination="iz4-WT-OXV" id="1ef-za-R4d"/>

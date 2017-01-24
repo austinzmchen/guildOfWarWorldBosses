@@ -21,6 +21,7 @@ class WBAPIKeyEntryViewController: UIViewController, WBDrawerItemViewControllerT
     @IBOutlet weak var skipButton: UIButton!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var qrCodeButton: UIButton!
+    @IBOutlet weak var loadingPlaceholderView: UIView!
     
     @IBAction func skipButtonTapped(_ sender: Any) {
         let drawerMasterVC = WBStoryboardFactory.drawerStoryboard.instantiateViewController(withIdentifier: "drawerMasterVC")
@@ -83,6 +84,7 @@ class WBAPIKeyEntryViewController: UIViewController, WBDrawerItemViewControllerT
     
     func authenticate(apiKey: String) {
         UIApplication.showLoader()
+        self.loadingPlaceholderView.isHidden = false
         
         let key = apiKey.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         self.accountRemote.authenticate(byApiKey: key) { (success) in
@@ -105,11 +107,13 @@ class WBAPIKeyEntryViewController: UIViewController, WBDrawerItemViewControllerT
                     syncCoordinator.syncAll({ (success, error) in
                         self.presentLandingView(completion: { 
                             UIApplication.hideLoader()
+                            self.loadingPlaceholderView.isHidden = true
                         })
                     })
                 } else {
                     self.presentErrorView()
                     UIApplication.hideLoader()
+                    self.loadingPlaceholderView.isHidden = true
                 }
             }
         }
