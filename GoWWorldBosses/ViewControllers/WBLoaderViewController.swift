@@ -50,7 +50,7 @@ class WBLoaderViewController: UIViewController {
         case .loading:
             UIView.animate(withDuration: 0.6, delay: 0, options: .curveLinear, animations: { [weak self] in
                 if let iv = self?.spinner {
-                    iv.transform = iv.transform.rotated(by: CGFloat(M_PI_2))
+                    iv.transform = iv.transform.rotated(by: -CGFloat(M_PI_2))
                 }
             }) { [weak self] (finished) -> () in
                 _ = self?.perform(#selector(self?.startLoader))
