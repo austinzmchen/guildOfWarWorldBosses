@@ -40,4 +40,30 @@ extension Array where Element: Equatable {
             }
         }
     }
+    
+    mutating public func sumInPlace(byKey key: String) {
+        var seen = [Element]()
+        var index = 0
+        for element in self {
+            if seen.contains(element) {
+                remove(at: index)
+                
+                let firstOccuranceIndex = self.index(of: element)
+                guard let fi = firstOccuranceIndex,
+                    let f = self[fi] as? NSObject,
+                    let n = element as? NSObject else {
+                    return
+                }
+                if let fv = f.value(forKey: key) as? Int,
+                    let nv = n.value(forKey: key) as? Int
+                {
+                    let newValue = fv + nv
+                    f.setValue(newValue, forKey: key)
+                }
+            } else {
+                seen.append(element)
+                index += 1
+            }
+        }
+    }
 }

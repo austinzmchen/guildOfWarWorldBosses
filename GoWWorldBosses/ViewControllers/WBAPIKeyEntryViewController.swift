@@ -105,8 +105,9 @@ class WBAPIKeyEntryViewController: UIViewController, WBDrawerItemViewControllerT
                     appDelegate.appConfiguration.setObject(syncCoordinator, forKey: kAppConfigurationSyncCoordinator as NSCopying)
                     
                     syncCoordinator.syncAll({ (success, error) in
-                        self.presentLandingView(completion: { 
-                            UIApplication.hideLoader()
+                        UIApplication.hideLoader()
+                        
+                        self.presentLandingView(completion: {
                             self.loadingPlaceholderView.isHidden = true
                         })
                     })

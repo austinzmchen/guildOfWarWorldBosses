@@ -27,12 +27,23 @@ class WBMaterialRemote: WBRemote, WBMaterialRemoteType {
                 for e in elements {
                     if !(e is NSNull),
                         let ej = e as? [String : Any],
-                        let bankElement = WBJsonMaterialElement(JSON: ej)
+                        let mElement = WBJsonMaterialElement(JSON: ej)
                     {
-                        resultElements.append(bankElement)
+                        if resultElements.contains(mElement) {
+                            let firstOccuranceIndex = resultElements.index(of: mElement)
+                            guard let fi = firstOccuranceIndex,
+                                let oc = resultElements[fi].count,
+                                let nc = mElement.count else {
+                                    return
+                            }
+                            
+                            resultElements[0].count = oc + nc
+                        } else {
+                            resultElements.append(mElement)
+                        }
                     }
                 }
-                resultElements.uniqueInPlace()
+                resultElements.sumInPlace(byKey: "count")
                 completion(WBRemoteResult.success(.some(resultElements)))
             } else {
                 if response.response?.statusCode == 403 {

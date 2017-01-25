@@ -53,7 +53,7 @@
 		C47D5B201DE69F0E00082CFD /* Entities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D5B1D1DE69F0E00082CFD /* Entities.swift */; };
 		C47D5B211DE69F0E00082CFD /* GoWWorldBosses.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C47D5B1E1DE69F0E00082CFD /* GoWWorldBosses.xcdatamodeld */; };
 		C47D5B231DE69F3000082CFD /* WBJsonCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D5B221DE69F3000082CFD /* WBJsonCurrency.swift */; };
-		C47D5B251DE69F5100082CFD /* WBJsonBankItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D5B241DE69F5100082CFD /* WBJsonBankItem.swift */; };
+		C47D5B251DE69F5100082CFD /* WBJsonBankElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D5B241DE69F5100082CFD /* WBJsonBankElement.swift */; };
 		C47D5B2A1DE6A01900082CFD /* WBBankRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D5B271DE6A01900082CFD /* WBBankRemote.swift */; };
 		C47D5B2B1DE6A01900082CFD /* WBRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D5B281DE6A01900082CFD /* WBRemote.swift */; };
 		C47D5B2D1DE6A23500082CFD /* WBRemoteSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D5B2C1DE6A23500082CFD /* WBRemoteSession.swift */; };
@@ -148,7 +148,7 @@
 		C47D5B1D1DE69F0E00082CFD /* Entities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entities.swift; sourceTree = "<group>"; };
 		C47D5B1F1DE69F0E00082CFD /* GoWWorldBosses.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GoWWorldBosses.xcdatamodel; sourceTree = "<group>"; };
 		C47D5B221DE69F3000082CFD /* WBJsonCurrency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBJsonCurrency.swift; sourceTree = "<group>"; };
-		C47D5B241DE69F5100082CFD /* WBJsonBankItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBJsonBankItem.swift; sourceTree = "<group>"; };
+		C47D5B241DE69F5100082CFD /* WBJsonBankElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBJsonBankElement.swift; sourceTree = "<group>"; };
 		C47D5B271DE6A01900082CFD /* WBBankRemote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBBankRemote.swift; sourceTree = "<group>"; };
 		C47D5B281DE6A01900082CFD /* WBRemote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBRemote.swift; sourceTree = "<group>"; };
 		C47D5B2C1DE6A23500082CFD /* WBRemoteSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBRemoteSession.swift; sourceTree = "<group>"; };
@@ -380,7 +380,7 @@
 				C4A4094C1E01F0AA00130C85 /* WBJsonAccount.swift */,
 				C48D84E51DFE160E00585E61 /* WBJsonItem.swift */,
 				C47D5B221DE69F3000082CFD /* WBJsonCurrency.swift */,
-				C47D5B241DE69F5100082CFD /* WBJsonBankItem.swift */,
+				C47D5B241DE69F5100082CFD /* WBJsonBankElement.swift */,
 				C48D84E31DFE15F800585E61 /* WBJsonMaterialElement.swift */,
 				C45D343E1DEB5A9E001C47F9 /* WBJsonCharacter.swift */,
 				C41300201DF0873C00D2A92F /* MapHelper.swift */,
@@ -686,7 +686,7 @@
 				C47D5B2B1DE6A01900082CFD /* WBRemote.swift in Sources */,
 				C4A781921D69227300786488 /* NSDate+Plus.swift in Sources */,
 				C4A409531E033B2500130C85 /* WBAPIKeyEntryViewController+QRCode.swift in Sources */,
-				C47D5B251DE69F5100082CFD /* WBJsonBankItem.swift in Sources */,
+				C47D5B251DE69F5100082CFD /* WBJsonBankElement.swift in Sources */,
 				C45D344E1DEB82AB001C47F9 /* WBDrawerMasterViewController.swift in Sources */,
 				C4903BF81E006828004F3345 /* WBCharactersTableViewController.swift in Sources */,
 				C45D343D1DEB5A1A001C47F9 /* WBWalletRemote.swift in Sources */,

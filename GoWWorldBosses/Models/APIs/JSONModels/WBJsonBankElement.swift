@@ -1,5 +1,5 @@
 //
-//  WBJsonBankItem.swift
+//  WBJsonBankElement.swift
 //  GoWWorldBosses
 //
 //  Created by Austin Chen on 2016-11-23.

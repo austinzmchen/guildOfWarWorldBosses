@@ -29,10 +29,20 @@ class WBBankRemote: WBRemote, WBBankRemoteType {
                         let ej = e as? [String : Any],
                         let bankElement = WBJsonBankElement(JSON: ej)
                     {
-                        resultElements.append(bankElement)
+                        if resultElements.contains(bankElement) {
+                            let firstOccuranceIndex = resultElements.index(of: bankElement)
+                            guard let fi = firstOccuranceIndex,
+                                let oc = resultElements[fi].count,
+                                let nc = bankElement.count else {
+                                return
+                            }
+                            
+                            resultElements[0].count = oc + nc
+                        } else {
+                            resultElements.append(bankElement)
+                        }
                     }
                 }
-                resultElements.uniqueInPlace()
                 completion(WBRemoteResult.success(.some(resultElements)))
             } else {
                 if response.response?.statusCode == 403 {
