@@ -41,6 +41,7 @@ extension Array where Element: Equatable {
         }
     }
     
+    /*
     mutating public func sumInPlace(byKey key: String) {
         var seen = [Element]()
         var index = 0
@@ -66,4 +67,5 @@ extension Array where Element: Equatable {
             }
         }
     }
+     */
 }

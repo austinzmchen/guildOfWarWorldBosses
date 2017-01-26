@@ -37,7 +37,7 @@ class WBMaterialRemote: WBRemote, WBMaterialRemoteType {
                                     return
                             }
                             
-                            resultElements[0].count = oc + nc
+                            resultElements[fi].count = oc + nc
                         } else {
                             resultElements.append(mElement)
                         }
