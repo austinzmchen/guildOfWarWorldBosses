@@ -43,7 +43,6 @@ class WBMaterialRemote: WBRemote, WBMaterialRemoteType {
                         }
                     }
                 }
-                resultElements.sumInPlace(byKey: "count")
                 completion(WBRemoteResult.success(.some(resultElements)))
             } else {
                 if response.response?.statusCode == 403 {
