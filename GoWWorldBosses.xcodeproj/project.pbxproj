@@ -25,6 +25,7 @@
 		C42B94641DFE2A130019CB3D /* ArrayPlus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42B94631DFE2A130019CB3D /* ArrayPlus.swift */; };
 		C4341A841D89FA28007D84CC /* WBBossFactory+TestBosses.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4341A831D89FA28007D84CC /* WBBossFactory+TestBosses.swift */; };
 		C4341F181D8F1027007D84CC /* WBKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4341F171D8F1027007D84CC /* WBKeyStore.swift */; };
+		C4358C9E1E443A970094D863 /* WBSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4358C9D1E443A970094D863 /* WBSettings.swift */; };
 		C45B6C9E1D68BE5800F94060 /* Timer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C45B6C9C1D68BE5800F94060 /* Timer.storyboard */; };
 		C45B6CA31D68BE5800F94060 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C45B6CA21D68BE5800F94060 /* Assets.xcassets */; };
 		C45B6CA61D68BE5800F94060 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C45B6CA41D68BE5800F94060 /* LaunchScreen.storyboard */; };
@@ -116,6 +117,7 @@
 		C42B94631DFE2A130019CB3D /* ArrayPlus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayPlus.swift; sourceTree = "<group>"; };
 		C4341A831D89FA28007D84CC /* WBBossFactory+TestBosses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WBBossFactory+TestBosses.swift"; sourceTree = "<group>"; };
 		C4341F171D8F1027007D84CC /* WBKeyStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBKeyStore.swift; sourceTree = "<group>"; };
+		C4358C9D1E443A970094D863 /* WBSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBSettings.swift; sourceTree = "<group>"; };
 		C45B6C951D68BE5800F94060 /* WorldBosses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldBosses.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C45B6C9D1D68BE5800F94060 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Timer.storyboard; sourceTree = "<group>"; };
 		C45B6CA21D68BE5800F94060 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -339,6 +341,7 @@
 				C45D34631DECDBBC001C47F9 /* WBStoryboardFactory.swift */,
 				C4C799EC1DF505BD00A8B5F4 /* UIApplication+Loader.swift */,
 				C47B01251E088CEE0057F475 /* AppConfigurator.swift */,
+				C4358C9D1E443A970094D863 /* WBSettings.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -677,6 +680,7 @@
 				C4A409411E01E11600130C85 /* WBSettingsTableViewCell.swift in Sources */,
 				C45D345C1DECD7D6001C47F9 /* WBMainViewController+NavigationBar.swift in Sources */,
 				C45D345F1DECD865001C47F9 /* WBStoragePageViewController.swift in Sources */,
+				C4358C9E1E443A970094D863 /* WBSettings.swift in Sources */,
 				C48D84EA1DFE17C500585E61 /* WBItemRemote.swift in Sources */,
 				C4026EAF1DEE2A1A0097FFC1 /* WBWalletProcessor.swift in Sources */,
 				C4341F181D8F1027007D84CC /* WBKeyStore.swift in Sources */,

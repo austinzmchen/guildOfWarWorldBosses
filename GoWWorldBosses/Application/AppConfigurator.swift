@@ -44,15 +44,3 @@ extension AppConfiguration {
         return String(format: "%@ (%@)", self.appVersion(), self.appBuild())
     }
 }
-
-
-class WBSettings {
-    
-    static func isDebugEnabled() -> Bool {
-        let bool = false
-        #if DEBUG
-            bool = true
-        #endif
-        return bool
-    }
-}

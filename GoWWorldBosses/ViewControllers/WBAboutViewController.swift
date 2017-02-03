@@ -18,15 +18,8 @@ class WBAboutViewController: UIViewController {
         self.navigationController?.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func debug_forceCrashButtonTapped(_ sender: Any) {
-        // Crashlytics.sharedInstance().crash()
-        Crashlytics.sharedInstance().throwException()
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
 }
