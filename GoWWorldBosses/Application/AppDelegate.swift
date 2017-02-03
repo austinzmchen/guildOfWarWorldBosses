@@ -21,7 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var appConfiguration = AppConfiguration()
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
+    {
         Fabric.with([Crashlytics.self])
         
         // Override point for customization after application launch.
@@ -66,4 +67,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {}
 
+    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void)
+    {
+        NotificationCenter.default.post(name: Notification.Name("kAppIconForcePressed"), object: nil, userInfo: ["kShortCutItem": shortcutItem])
+    }
 }

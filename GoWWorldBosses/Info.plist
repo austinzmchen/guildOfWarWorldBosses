@@ -79,5 +79,24 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>icTimers</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Boss Timers</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>kHomeScreenShortcutOpenTimers</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>icSettings</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Settings</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>kHomeScreenShortcutOpenSettings</string>
+		</dict>
+	</array>
 </dict>
 </plist>

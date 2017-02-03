@@ -7,3 +7,14 @@
 //
 
 import Foundation
+
+class WBSettings {
+    
+    static var isDebugEnabled: Bool {
+        let bool = false
+        #if DEBUG
+            bool = true
+        #endif
+        return bool
+    }
+}
