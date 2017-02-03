@@ -24,8 +24,12 @@ class WBAPIKeyEntryViewController: UIViewController, WBDrawerItemViewControllerT
     @IBOutlet weak var loadingPlaceholderView: UIView!
     
     @IBAction func skipButtonTapped(_ sender: Any) {
+        self.presentDrawerMasterPage(animated: true)
+    }
+    
+    func presentDrawerMasterPage(animated: Bool) {
         let drawerMasterVC = WBStoryboardFactory.drawerStoryboard.instantiateViewController(withIdentifier: "drawerMasterVC")
-        self.present(drawerMasterVC, animated: true) {}
+        self.present(drawerMasterVC, animated: animated) {}
     }
     
     @IBAction func qrCodeButtonTapped(_ sender: Any) {

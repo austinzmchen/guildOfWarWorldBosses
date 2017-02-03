@@ -66,9 +66,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillTerminate(_ application: UIApplication) {}
-
-    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void)
-    {
-        NotificationCenter.default.post(name: Notification.Name("kAppIconForcePressed"), object: nil, userInfo: ["kShortCutItem": shortcutItem])
-    }
 }

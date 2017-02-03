@@ -29,40 +29,36 @@ class WBDrawerMasterViewController: UINavigationController {
     
     let drawerVC = WBStoryboardFactory.drawerStoryboard.instantiateViewController(withIdentifier: "drawerVC") as! WBDrawerViewController
     
-    var drawerOpeningState: DrawerOpeningState = .closed {
-        didSet {
-            guard drawerOpeningState != oldValue else {
-                return
-            }
-            self.setDrawerOpeningState(drawerOpeningState, animted: true, completion: {})
-        }
-    }
+    fileprivate var drawerOpeningState: DrawerOpeningState = .closed
     
-    func setDrawerOpeningState(_ state: DrawerOpeningState, animted: Bool, completion: @escaping () -> ()) {
+    func setDrawerOpeningState(_ state: DrawerOpeningState, animated: Bool = true,
+                               completion: ((_ stateChange: Bool) -> ())? = nil)
+    {
+        guard state != self.drawerOpeningState else {
+            if let c = completion { c(false) }
+            return
+        }
+        
         switch state {
         case .open:
-            self.present(drawerVC, animated: false, completion: {}) // if using animated true, there will be a glitch where two phase, first phase fading in, second phase blurring
-            completion()
+            self.present(drawerVC, animated: false, completion: {
+                if let c = completion { c(true) }
+            }) // if using animated true, there will be a glitch where two phase, first phase fading in, second phase blurring
         case .closed:
-            if animted {
-                drawerVC.dismiss(animated: animted, completion: {
-                    completion()
+            if animated {
+                drawerVC.dismiss(animated: animated, completion: {
+                    if let c = completion { c(true) }
                 })
             } else {
-                completion()
+                if let c = completion { c(true) }
             }
             break
         }
-    }
-    
-    deinit {
-        NotificationCenter.default.removeObserver(self)
+        self.drawerOpeningState = state
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(appIconForcePressed(_:)), name: Notification.Name("kAppIconForcePressed"), object: nil)
 
         // Do any additional setup after loading the view.
         drawerVC.delegate = self
@@ -87,7 +83,7 @@ class WBDrawerMasterViewController: UINavigationController {
             self.viewControllers = [rootVC]
         }
         
-        self.drawerOpeningState = .closed
+        self.setDrawerOpeningState(.closed)
     }
 }
 
@@ -110,7 +106,7 @@ extension WBDrawerMasterViewController: WBDrawerViewControllerDelegate {
                 rootVC.isShownFullscreen = false
                 rootVC.viewDelegate = self
                 self.viewControllers = [rootVC]
-                self.drawerOpeningState = .closed
+                self.setDrawerOpeningState(.closed)
             }
             return
         }
@@ -124,10 +120,10 @@ extension WBDrawerMasterViewController: WBDrawerMasterViewControllerDelegate {
     func toggleDrawerView() {
         switch drawerOpeningState {
         case .closed:
-            self.drawerOpeningState = .open
+            self.setDrawerOpeningState(.open)
             break
         case .open:
-            self.drawerOpeningState = .closed
+            self.setDrawerOpeningState(.closed)
             break
         }
     }
@@ -138,37 +134,5 @@ extension WBDrawerMasterViewController: WBDrawerMasterViewControllerDelegate {
         }
         
         self.presentDrawerItemViewController(drawerItem: drawerItem)
-    }
-}
-
-// application shortcut items
-extension WBDrawerMasterViewController {
-    func appIconForcePressed(_ note: Notification) {
-        if let shortcutItem = note.userInfo?["kShortCutItem"] as? UIApplicationShortcutItem {
-            
-            if shortcutItem.type == "kHomeScreenShortcutOpenTimers" {
-                if let pvc = self.presentedViewController {
-                    pvc.dismiss(animated: false, completion: nil) // dismiss settings vc
-                    self.didSelect(drawerItem: WBDrawerViewController.drawerItems[0], atIndex: 0)
-                    self.setDrawerOpeningState(.closed, animted: false, completion: {})
-                }
-            } else if shortcutItem.type == "kHomeScreenShortcutOpenSettings" {
-                let completion = {
-                    if let settingsNavVC = self.drawerVC.presentedViewController as? UINavigationController {
-                        settingsNavVC.popToRootViewController(animated: false)
-                    } else {
-                        self.drawerVC.showSettingsPage(animated: false)
-                    }
-                }
-                
-                if self.drawerOpeningState == .closed {
-                    self.setDrawerOpeningState(.open, animted: false, completion: {
-                        completion()
-                    })
-                } else {
-                    completion()
-                }
-            }
-        }
     }
 }

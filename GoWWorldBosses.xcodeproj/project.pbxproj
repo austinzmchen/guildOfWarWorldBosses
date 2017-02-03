@@ -26,6 +26,8 @@
 		C4341A841D89FA28007D84CC /* WBBossFactory+TestBosses.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4341A831D89FA28007D84CC /* WBBossFactory+TestBosses.swift */; };
 		C4341F181D8F1027007D84CC /* WBKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4341F171D8F1027007D84CC /* WBKeyStore.swift */; };
 		C4358C9E1E443A970094D863 /* WBSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4358C9D1E443A970094D863 /* WBSettings.swift */; };
+		C446050B1E45306300E3B0C3 /* UIApplication+VCStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C446050A1E45306300E3B0C3 /* UIApplication+VCStack.swift */; };
+		C446050D1E4536CD00E3B0C3 /* AppDelegate+ForceTouchMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C446050C1E4536CD00E3B0C3 /* AppDelegate+ForceTouchMenu.swift */; };
 		C45B6C9E1D68BE5800F94060 /* Timer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C45B6C9C1D68BE5800F94060 /* Timer.storyboard */; };
 		C45B6CA31D68BE5800F94060 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C45B6CA21D68BE5800F94060 /* Assets.xcassets */; };
 		C45B6CA61D68BE5800F94060 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C45B6CA41D68BE5800F94060 /* LaunchScreen.storyboard */; };
@@ -118,6 +120,8 @@
 		C4341A831D89FA28007D84CC /* WBBossFactory+TestBosses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WBBossFactory+TestBosses.swift"; sourceTree = "<group>"; };
 		C4341F171D8F1027007D84CC /* WBKeyStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBKeyStore.swift; sourceTree = "<group>"; };
 		C4358C9D1E443A970094D863 /* WBSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBSettings.swift; sourceTree = "<group>"; };
+		C446050A1E45306300E3B0C3 /* UIApplication+VCStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+VCStack.swift"; sourceTree = "<group>"; };
+		C446050C1E4536CD00E3B0C3 /* AppDelegate+ForceTouchMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppDelegate+ForceTouchMenu.swift"; sourceTree = "<group>"; };
 		C45B6C951D68BE5800F94060 /* WorldBosses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldBosses.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C45B6C9D1D68BE5800F94060 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Timer.storyboard; sourceTree = "<group>"; };
 		C45B6CA21D68BE5800F94060 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -338,8 +342,10 @@
 			isa = PBXGroup;
 			children = (
 				C45D34611DECDB42001C47F9 /* AppDelegate.swift */,
+				C446050C1E4536CD00E3B0C3 /* AppDelegate+ForceTouchMenu.swift */,
 				C45D34631DECDBBC001C47F9 /* WBStoryboardFactory.swift */,
 				C4C799EC1DF505BD00A8B5F4 /* UIApplication+Loader.swift */,
+				C446050A1E45306300E3B0C3 /* UIApplication+VCStack.swift */,
 				C47B01251E088CEE0057F475 /* AppConfigurator.swift */,
 				C4358C9D1E443A970094D863 /* WBSettings.swift */,
 			);
@@ -664,6 +670,7 @@
 				C42B94611DFE1DCE0019CB3D /* WBMaterialElement.swift in Sources */,
 				C45D34621DECDB42001C47F9 /* AppDelegate.swift in Sources */,
 				C4A7818E1D6915E900786488 /* WBBossFactory.swift in Sources */,
+				C446050D1E4536CD00E3B0C3 /* AppDelegate+ForceTouchMenu.swift in Sources */,
 				C47D5B2D1DE6A23500082CFD /* WBRemoteSession.swift in Sources */,
 				C4E311091E09EC8C0095EEB4 /* TechNotes.md in Sources */,
 				C411FAE51DFDF7D90038337F /* WBStorageWalletViewModel.swift in Sources */,
@@ -692,6 +699,7 @@
 				C4A409531E033B2500130C85 /* WBAPIKeyEntryViewController+QRCode.swift in Sources */,
 				C47D5B251DE69F5100082CFD /* WBJsonBankElement.swift in Sources */,
 				C45D344E1DEB82AB001C47F9 /* WBDrawerMasterViewController.swift in Sources */,
+				C446050B1E45306300E3B0C3 /* UIApplication+VCStack.swift in Sources */,
 				C4903BF81E006828004F3345 /* WBCharactersTableViewController.swift in Sources */,
 				C45D343D1DEB5A1A001C47F9 /* WBWalletRemote.swift in Sources */,
 				C4A409441E01E2B200130C85 /* WBMainTableViewCell.swift in Sources */,
