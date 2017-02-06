@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GaB-Rz-zF4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GaB-Rz-zF4">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -119,13 +119,23 @@
                                             <constraint firstAttribute="height" constant="155" id="oTg-ja-NkA"/>
                                         </constraints>
                                     </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Grr-eD-GvS" userLabel="spinnerView" customClass="WBSpinnerView" customModule="WorldBosses" customModuleProvider="target">
+                                        <rect key="frame" x="161.5" y="482.5" width="51" height="51"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="51" id="O9Q-ao-EDj"/>
+                                            <constraint firstAttribute="width" constant="51" id="ltJ-CY-uH7"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="TIV-S2-3Ji" firstAttribute="top" secondItem="Nkr-rY-Cyt" secondAttribute="top" id="AoY-3b-g5x"/>
                                     <constraint firstItem="TIV-S2-3Ji" firstAttribute="leading" secondItem="Nkr-rY-Cyt" secondAttribute="leading" id="EPn-hK-Ttv"/>
+                                    <constraint firstItem="Grr-eD-GvS" firstAttribute="bottom" secondItem="Nkr-rY-Cyt" secondAttribute="bottom" multiplier="0.8" id="IUl-4R-20U"/>
                                     <constraint firstItem="TIV-S2-3Ji" firstAttribute="height" secondItem="Nkr-rY-Cyt" secondAttribute="height" id="Kkf-dD-abx"/>
                                     <constraint firstItem="jpX-bo-qeI" firstAttribute="centerY" secondItem="Nkr-rY-Cyt" secondAttribute="centerY" id="YWe-f2-Byt"/>
+                                    <constraint firstItem="Grr-eD-GvS" firstAttribute="centerX" secondItem="Nkr-rY-Cyt" secondAttribute="centerX" id="gNT-1D-Iz2"/>
                                     <constraint firstItem="TIV-S2-3Ji" firstAttribute="width" secondItem="Nkr-rY-Cyt" secondAttribute="width" id="teV-m7-Vl4"/>
                                     <constraint firstItem="jpX-bo-qeI" firstAttribute="centerX" secondItem="Nkr-rY-Cyt" secondAttribute="centerX" id="xnw-jS-YiI"/>
                                 </constraints>
@@ -168,6 +178,7 @@
                     <connections>
                         <outlet property="leftBarButton" destination="5Yv-ha-TsC" id="mWe-R8-27G"/>
                         <outlet property="loadingPlaceholderView" destination="Nkr-rY-Cyt" id="0q0-xW-vj9"/>
+                        <outlet property="loadingSpinner" destination="Grr-eD-GvS" id="gmv-Cz-bcb"/>
                         <outlet property="qrCodeButton" destination="Ki8-rD-AXm" id="5gW-bw-NTA"/>
                         <outlet property="skipButton" destination="8cw-bn-Pb0" id="78e-ui-7sU"/>
                         <outlet property="textField" destination="iz4-WT-OXV" id="1ef-za-R4d"/>

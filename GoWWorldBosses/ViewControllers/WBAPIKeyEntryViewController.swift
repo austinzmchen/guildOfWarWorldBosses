@@ -22,14 +22,10 @@ class WBAPIKeyEntryViewController: UIViewController, WBDrawerItemViewControllerT
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var qrCodeButton: UIButton!
     @IBOutlet weak var loadingPlaceholderView: UIView!
+    @IBOutlet weak var loadingSpinner: WBSpinnerView!
     
     @IBAction func skipButtonTapped(_ sender: Any) {
-        self.presentDrawerMasterPage(animated: true)
-    }
-    
-    func presentDrawerMasterPage(animated: Bool) {
-        let drawerMasterVC = WBStoryboardFactory.drawerStoryboard.instantiateViewController(withIdentifier: "drawerMasterVC")
-        self.present(drawerMasterVC, animated: animated) {}
+        self.presentLandingView(animated: true) {}
     }
     
     @IBAction func qrCodeButtonTapped(_ sender: Any) {
@@ -87,8 +83,7 @@ class WBAPIKeyEntryViewController: UIViewController, WBDrawerItemViewControllerT
     }()
     
     func authenticate(apiKey: String) {
-        UIApplication.showLoader()
-        self.loadingPlaceholderView.isHidden = false
+        self.showLoading()
         
         let key = apiKey.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         self.accountRemote.authenticate(byApiKey: key) { (success) in
@@ -109,16 +104,15 @@ class WBAPIKeyEntryViewController: UIViewController, WBDrawerItemViewControllerT
                     appDelegate.appConfiguration.setObject(syncCoordinator, forKey: kAppConfigurationSyncCoordinator as NSCopying)
                     
                     syncCoordinator.syncAll({ (success, error) in
-                        UIApplication.hideLoader()
-                        
-                        self.presentLandingView(completion: {
-                            self.loadingPlaceholderView.isHidden = true
+                        /* not moved outside of syncAll because sync -> delete account -> sync will crash 
+                        */
+                        self.presentLandingView(isFullScreen: self.isShownFullscreen, animated: true, completion: {
+                            self.hideLoading()
                         })
                     })
                 } else {
                     self.presentErrorView()
-                    UIApplication.hideLoader()
-                    self.loadingPlaceholderView.isHidden = true
+                    self.hideLoading()
                 }
             }
         }
@@ -128,10 +122,10 @@ class WBAPIKeyEntryViewController: UIViewController, WBDrawerItemViewControllerT
 }
 
 extension WBAPIKeyEntryViewController {
-    func presentLandingView(completion: @escaping () -> () ) {
-        if self.isShownFullscreen {
+    func presentLandingView(isFullScreen: Bool = true, animated: Bool, completion: @escaping () -> () ) {
+        if isFullScreen {
             let drawerMasterVC = WBStoryboardFactory.drawerStoryboard.instantiateViewController(withIdentifier: "drawerMasterVC")
-            self.present(drawerMasterVC, animated: true) {
+            self.present(drawerMasterVC, animated: animated) {
                 completion()
             }
         } else {
@@ -149,5 +143,19 @@ extension WBAPIKeyEntryViewController {
         alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
         
         self.present(alert, animated: true, completion: nil)
+    }
+}
+
+extension WBAPIKeyEntryViewController {
+    func showLoading() {
+        self.loadingPlaceholderView.isHidden = false
+        self.loadingSpinner.resetLoader()
+        self.loadingSpinner.isHidden = false
+    }
+    
+    func hideLoading() {
+        self.loadingPlaceholderView.isHidden = true
+        self.loadingSpinner.status = .loaded
+        self.loadingSpinner.isHidden = true
     }
 }

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WBSpinnerView" customModule="WorldBosses" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="Kel-hC-Dtf"/>
+                <outlet property="spinnerImageView" destination="XLE-EF-cXH" id="fl9-BM-gj1"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="51" height="51"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icSpinner" translatesAutoresizingMaskIntoConstraints="NO" id="XLE-EF-cXH">
+                    <rect key="frame" x="0.0" y="0.0" width="51" height="51"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="51" id="7sz-89-YhH"/>
+                        <constraint firstAttribute="width" constant="51" id="Gf8-BX-dPO"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="XLE-EF-cXH" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Lbb-aT-nbq"/>
+                <constraint firstItem="XLE-EF-cXH" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="UL1-e4-sha"/>
+                <constraint firstItem="XLE-EF-cXH" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="b2Y-mb-AbO"/>
+                <constraint firstItem="XLE-EF-cXH" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="h3b-jD-ym3"/>
+                <constraint firstItem="XLE-EF-cXH" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="tJw-pN-Jr6"/>
+                <constraint firstItem="XLE-EF-cXH" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="xns-W6-Hr3"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="25.5" y="52.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icSpinner" width="51" height="51"/>
+    </resources>
+</document>

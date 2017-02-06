@@ -89,6 +89,8 @@
 		C4A7818E1D6915E900786488 /* WBBossFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A7818D1D6915E900786488 /* WBBossFactory.swift */; };
 		C4A781901D69165B00786488 /* WBBoss.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A7818F1D69165B00786488 /* WBBoss.swift */; };
 		C4A781921D69227300786488 /* NSDate+Plus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A781911D69227300786488 /* NSDate+Plus.swift */; };
+		C4ACF9C81E49087500C3F4E3 /* WBSpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4ACF9C71E49087500C3F4E3 /* WBSpinnerView.swift */; };
+		C4ACF9CC1E49089B00C3F4E3 /* WBSpinnerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4ACF9CB1E49089B00C3F4E3 /* WBSpinnerView.xib */; };
 		C4C799E91DF503D100A8B5F4 /* Utility.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4C799E71DF503D000A8B5F4 /* Utility.storyboard */; };
 		C4C799EB1DF5044000A8B5F4 /* WBLoaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C799EA1DF5044000A8B5F4 /* WBLoaderViewController.swift */; };
 		C4C799ED1DF505BD00A8B5F4 /* UIApplication+Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C799EC1DF505BD00A8B5F4 /* UIApplication+Loader.swift */; };
@@ -187,6 +189,8 @@
 		C4A7818D1D6915E900786488 /* WBBossFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBBossFactory.swift; sourceTree = "<group>"; };
 		C4A7818F1D69165B00786488 /* WBBoss.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBBoss.swift; sourceTree = "<group>"; };
 		C4A781911D69227300786488 /* NSDate+Plus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Plus.swift"; sourceTree = "<group>"; };
+		C4ACF9C71E49087500C3F4E3 /* WBSpinnerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBSpinnerView.swift; sourceTree = "<group>"; };
+		C4ACF9CB1E49089B00C3F4E3 /* WBSpinnerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBSpinnerView.xib; sourceTree = "<group>"; };
 		C4C799E81DF503D100A8B5F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Utility.storyboard; sourceTree = "<group>"; };
 		C4C799EA1DF5044000A8B5F4 /* WBLoaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBLoaderViewController.swift; sourceTree = "<group>"; };
 		C4C799EC1DF505BD00A8B5F4 /* UIApplication+Loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+Loader.swift"; sourceTree = "<group>"; };
@@ -475,6 +479,8 @@
 				C4E311181E09F17A0095EEB4 /* UIBarButtonPlus.swift */,
 				C499F0971E146895002F534F /* WBApiErrorView.swift */,
 				C499F0991E1468DA002F534F /* WBApiErrorView.xib */,
+				C4ACF9C71E49087500C3F4E3 /* WBSpinnerView.swift */,
+				C4ACF9CB1E49089B00C3F4E3 /* WBSpinnerView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -575,6 +581,7 @@
 				C45D34461DEB6D53001C47F9 /* Storage.storyboard in Resources */,
 				C47E30CD1DF24F8F00B91996 /* APIKeyEntry.storyboard in Resources */,
 				C4C799E91DF503D100A8B5F4 /* Utility.storyboard in Resources */,
+				C4ACF9CC1E49089B00C3F4E3 /* WBSpinnerView.xib in Resources */,
 				C45B6C9E1D68BE5800F94060 /* Timer.storyboard in Resources */,
 				C45BAE2C1DF27F1800C6FB5A /* Settings.storyboard in Resources */,
 				C499F09A1E1468DA002F534F /* WBApiErrorView.xib in Resources */,
@@ -714,6 +721,7 @@
 				C45D343F1DEB5A9E001C47F9 /* WBJsonCharacter.swift in Sources */,
 				C413001D1DEF7BDC00D2A92F /* WBBankProcessor.swift in Sources */,
 				C4A781901D69165B00786488 /* WBBoss.swift in Sources */,
+				C4ACF9C81E49087500C3F4E3 /* WBSpinnerView.swift in Sources */,
 				C4C799EB1DF5044000A8B5F4 /* WBLoaderViewController.swift in Sources */,
 				C45D345D1DECD7D6001C47F9 /* WBMainViewController.swift in Sources */,
 				C48D84E81DFE16DC00585E61 /* WBMaterialRemote.swift in Sources */,

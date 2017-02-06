@@ -44,7 +44,7 @@ extension AppDelegate {
             if let rootNavVC = rootVC as? UINavigationController,
                 let apiKeyEntryVC = rootNavVC.viewControllers.first as? WBAPIKeyEntryViewController
             {
-                apiKeyEntryVC.presentDrawerMasterPage(animated: false) // mimick tapping 'skip'
+                apiKeyEntryVC.presentLandingView(animated: false, completion: {}) // mimick tapping 'skip'
                 
                 guard let drawerMasterVC = apiKeyEntryVC.presentedViewController as? WBDrawerMasterViewController else {
                     return
