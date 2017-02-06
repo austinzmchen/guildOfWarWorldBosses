@@ -65,3 +65,15 @@ class WBKeyStore: NSObject {
         }
     }
 }
+
+extension WBKeyStore {
+    static var isAccountAvailable: Bool { // by APIKey
+        if WBKeyStore.keyStoreItem == nil ||
+            WBKeyStore.keyStoreItem?.accountAPIKey == ""
+        {
+            return false
+        } else {
+            return true
+        }
+    }
+}

@@ -25,7 +25,7 @@ class WBDrawerViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
 
     @IBAction func closeButtonTapped(_ sender: Any) {
-        viewDelegate?.toggleDrawerView()
+        viewDelegate?.didTriggerToggleButton()
     }
     
     @IBAction func settingsButtonTapped(_ sender: Any) {

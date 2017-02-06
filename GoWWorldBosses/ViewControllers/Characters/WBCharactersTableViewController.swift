@@ -13,7 +13,7 @@ class WBCharactersTableViewController: UITableViewController, WBDrawerItemViewCo
     
     @IBOutlet weak var leftBarButton: UIBarButtonItem!
     @IBAction func leftBarButtonTapped(_ sender: Any) {
-        self.viewDelegate?.toggleDrawerView()
+        self.viewDelegate?.didTriggerToggleButton()
     }
     
     var characters: [WBCharacter]?

@@ -11,7 +11,7 @@ import UIKit
 class WBMainViewController: UIViewController, WBDrawerItemViewControllerType {
     
     @IBAction func leftBarButtonTapped(_ sender: Any) {
-        viewDelegate?.toggleDrawerView()
+        viewDelegate?.didTriggerToggleButton()
     }
     
     @IBOutlet weak var tableView: UITableView!

@@ -15,7 +15,7 @@ class WBAPIKeyEntryViewController: UIViewController, WBDrawerItemViewControllerT
 
     @IBOutlet weak var leftBarButton: UIBarButtonItem!
     @IBAction func leftBarButtonTapped(_ sender: Any) {
-        viewDelegate?.toggleDrawerView()
+        viewDelegate?.didTriggerToggleButton()
     }
     
     @IBOutlet weak var skipButton: UIButton!
@@ -71,8 +71,8 @@ class WBAPIKeyEntryViewController: UIViewController, WBDrawerItemViewControllerT
         view.addGestureRecognizer(tapGR)
         
         // Do any additional setup after loading the view.
-        if let keyItem = WBKeyStore.keyStoreItem,
-            !(keyItem.accountAPIKey == "")
+        if WBKeyStore.isAccountAvailable,
+            let keyItem = WBKeyStore.keyStoreItem
         {
             self.authenticate(apiKey: keyItem.accountAPIKey)
         }

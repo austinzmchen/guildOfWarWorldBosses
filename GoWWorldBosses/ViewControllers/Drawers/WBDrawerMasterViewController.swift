@@ -14,7 +14,7 @@ protocol WBDrawerItemViewControllerType: class {
 }
 
 protocol WBDrawerMasterViewControllerDelegate: class {
-    func toggleDrawerView()
+    func didTriggerToggleButton()
     func drawerItemVCShouldChange()
 }
 
@@ -82,8 +82,15 @@ class WBDrawerMasterViewController: UINavigationController {
             drawerItemVC.viewDelegate = self
             self.viewControllers = [rootVC]
         }
-        
-        self.setDrawerOpeningState(.closed)
+    }
+    
+    func presentAPIKeyEntryViewController() {
+        let navVC = WBStoryboardFactory.apiKeyEntryStoryboard.instantiateInitialViewController() as! UINavigationController
+        if let rootVC = navVC.viewControllers.first as? WBAPIKeyEntryViewController {
+            rootVC.isShownFullscreen = false
+            rootVC.viewDelegate = self
+            self.viewControllers = [rootVC]
+        }
     }
 }
 
@@ -97,34 +104,28 @@ extension WBDrawerMasterViewController: WBDrawerViewControllerDelegate {
         drawerVC.selectedDrawerItem = self.selectedDrawerItem
         drawerVC.tableView.reloadData()
         
-        if (WBKeyStore.keyStoreItem == nil ||
-            WBKeyStore.keyStoreItem?.accountAPIKey == "") &&
+        if !WBKeyStore.isAccountAvailable &&
             drawerItem.title != "Boss Timers"
         {
-            let navVC = WBStoryboardFactory.apiKeyEntryStoryboard.instantiateInitialViewController() as! UINavigationController
-            if let rootVC = navVC.viewControllers.first as? WBAPIKeyEntryViewController {
-                rootVC.isShownFullscreen = false
-                rootVC.viewDelegate = self
-                self.viewControllers = [rootVC]
-                self.setDrawerOpeningState(.closed)
-            }
-            return
+            self.presentAPIKeyEntryViewController()
+        } else {
+            self.presentDrawerItemViewController(drawerItem: drawerItem)
         }
-        
-        self.presentDrawerItemViewController(drawerItem: drawerItem)
+        self.setDrawerOpeningState(.closed)
     }
 }
 
 extension WBDrawerMasterViewController: WBDrawerMasterViewControllerDelegate {
     
-    func toggleDrawerView() {
-        switch drawerOpeningState {
+    func didTriggerToggleButton() {
+        switch drawerOpeningState { // current state
         case .closed:
             self.setDrawerOpeningState(.open)
-            break
         case .open:
+            if !WBKeyStore.isAccountAvailable {
+                self.presentAPIKeyEntryViewController()
+            }
             self.setDrawerOpeningState(.closed)
-            break
         }
     }
     
