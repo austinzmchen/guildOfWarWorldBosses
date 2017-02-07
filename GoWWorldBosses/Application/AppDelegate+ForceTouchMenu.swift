@@ -15,11 +15,12 @@ extension AppDelegate {
         // declare steps
         let step_showTimerOrSettings = { (drawerMasterVC: WBDrawerMasterViewController, completion: () -> ()) in
             if shortcutItem.type == "kHomeScreenShortcutOpenTimers" {
-                if let pvc = drawerMasterVC.presentedViewController {
-                    pvc.dismiss(animated: false, completion: nil) // dismiss settings vc
-                    drawerMasterVC.didSelect(drawerItem: WBDrawerViewController.drawerItems[0], atIndex: 0)
-                    drawerMasterVC.setDrawerOpeningState(.closed, animated: false)
+                if let settingsPvc = drawerMasterVC.presentedViewController { // settings vc is presenteda
+                    settingsPvc.dismiss(animated: false, completion: nil)
                 }
+                drawerMasterVC.didSelect(drawerItem: WBDrawerViewController.drawerItems[0], atIndex: 0)
+                drawerMasterVC.setDrawerOpeningState(.closed, animated: false)
+                
             } else if shortcutItem.type == "kHomeScreenShortcutOpenSettings" {
                 if let settingsNavVC = drawerMasterVC.drawerVC.presentedViewController as? UINavigationController {
                     settingsNavVC.popToRootViewController(animated: false) // if settings VC already presented
@@ -38,9 +39,9 @@ extension AppDelegate {
         guard let rootVC = application.presentedViewControllers.first else { return }
         
         if let drawerMasterVC = rootVC.presentedViewController as? WBDrawerMasterViewController {
-            // app already launched
+            // app already past initial api key entry page
             step_showTimerOrSettings(drawerMasterVC, {})
-        } else { // app not launched
+        } else { // app not past initial api key entry page
             if let rootNavVC = rootVC as? UINavigationController,
                 let apiKeyEntryVC = rootNavVC.viewControllers.first as? WBAPIKeyEntryViewController
             {

@@ -102,7 +102,7 @@ extension WBDrawerMasterViewController: WBDrawerViewControllerDelegate {
         // set drawer selected state
         // let drawerVC = (self.drawerViewController as! UINavigationController).viewControllers.first as! WBDrawerViewController
         drawerVC.selectedDrawerItem = self.selectedDrawerItem
-        drawerVC.tableView.reloadData()
+        drawerVC.tableView?.reloadData()
         
         if !WBKeyStore.isAccountAvailable &&
             drawerItem.title != "Boss Timers"

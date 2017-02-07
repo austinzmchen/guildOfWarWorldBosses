@@ -22,7 +22,7 @@ struct WBDrawerItem {
 
 class WBDrawerViewController: UIViewController {
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView?
 
     @IBAction func closeButtonTapped(_ sender: Any) {
         viewDelegate?.didTriggerToggleButton()
@@ -67,10 +67,10 @@ class WBDrawerViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.navigationController?.isNavigationBarHidden = true // use custom view to replace nav bar for style reason
         
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
+        self.tableView?.delegate = self
+        self.tableView?.dataSource = self
         self.selectedDrawerItem = type(of: self).drawerItems.first // select timers as default
-        self.tableView.reloadData()
+        self.tableView?.reloadData()
     }
 }
 
