@@ -17,6 +17,7 @@ class WBJsonItem: WBJsonBase {
     var type: String?
     var level: Int?
     var rarity: String?
+    var flags: [String]?
     
     override func mapping(map: Map) {
         super.mapping(map: map)
@@ -27,5 +28,6 @@ class WBJsonItem: WBJsonBase {
         icon <- map["icon"]
         level <- map["order"]
         rarity <- map["rarity"]
+        flags <- map["flags"]
     }
 }

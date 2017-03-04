@@ -19,7 +19,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>2</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
@@ -55,7 +55,7 @@
 	<array>
 		<dict>
 			<key>UIApplicationShortcutItemIconFile</key>
-			<string>icTimers</string>
+			<string>icTimersForce</string>
 			<key>UIApplicationShortcutItemTitle</key>
 			<string>Boss Timers</string>
 			<key>UIApplicationShortcutItemType</key>
@@ -63,7 +63,7 @@
 		</dict>
 		<dict>
 			<key>UIApplicationShortcutItemIconFile</key>
-			<string>icSettings</string>
+			<string>icSettingsForce</string>
 			<key>UIApplicationShortcutItemTitle</key>
 			<string>Settings</string>
 			<key>UIApplicationShortcutItemType</key>

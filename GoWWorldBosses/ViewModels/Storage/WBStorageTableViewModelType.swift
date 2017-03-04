@@ -13,14 +13,9 @@ protocol WBStorageTableViewModelDelegate: class {
 }
 
 protocol WBStorageTableViewModelType {
-    //var items: [WBObject]? {get}
     var delegate: WBStorageTableViewModelDelegate? {get set}
-    
     func identifierForSuitableCell(atIndex index: Int) -> String
-    func itemsCount() -> Int
-    func mainTitleForItem(atIndex index: Int) -> String
-    func subTitleForItem(atIndex index: Int) -> String
-    func imageUrlStringForItem(atIndex index: Int) -> String
+    var items: [WBObject]? {get}
 }
 
 extension WBStorageTableViewModelType {

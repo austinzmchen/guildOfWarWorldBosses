@@ -45,39 +45,6 @@ class WBStorageWalletViewModel: WBStorageTableViewModelType {
         return "storageItemTableCell"
     }
     
-    func itemsCount() -> Int {
-        return self.items?.count ?? 0
-    }
-    
-    func mainTitleForItem(atIndex index: Int) -> String {
-        if let item = self.items?[index] as? WBWalletElement,
-            let currency = item.currency
-        {
-            return currency.name ?? ""
-        } else {
-            return ""
-        }
-    }
-    
-    func subTitleForItem(atIndex index: Int) -> String {
-        if let item = self.items?[index] as? WBWalletElement
-        {
-            return String(format: "%d", item.value)
-        } else {
-            return ""
-        }
-    }
-    
-    func imageUrlStringForItem(atIndex index: Int) -> String {
-        if let item = self.items?[index] as? WBWalletElement,
-            let currency = item.currency
-        {
-            return currency.icon ?? ""
-        } else {
-            return ""
-        }
-    }
-    
     
     // FIXME: to be removed
     

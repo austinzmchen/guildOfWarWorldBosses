@@ -41,12 +41,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let config = Realm.Configuration(
             // Set the new schema version. This must be greater than the previously used
             // version (if you've never set a schema version before, the version is 0).
-            schemaVersion: 2,
+            schemaVersion: 3,
             
             // Set the block which will be called automatically when opening a Realm with
             // a schema version lower than the one set above
             migrationBlock: { migration, oldSchemaVersion in
-                
+                migration.enumerateObjects(ofType: WBItem.className()) { oldObject, newObject in
+                    // Add the `fullName` property only to Realms with a schema version of 0
+                    if oldSchemaVersion < 3 {
+                        newObject!["flags"] = nil
+                        newObject!["rarity"] = nil
+                    }
+                }
             }
         )
         

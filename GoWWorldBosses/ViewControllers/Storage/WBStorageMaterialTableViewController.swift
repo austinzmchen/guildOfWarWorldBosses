@@ -1,22 +1,20 @@
 //
-//  WBStorageBankTableViewController.swift
+//  WBStorageMaterialTableViewController.swift
 //  GoWWorldBosses
 //
-//  Created by Austin Chen on 2016-12-04.
-//  Copyright © 2016 Austin Chen. All rights reserved.
+//  Created by Austin Chen on 2017-03-03.
+//  Copyright © 2017 Austin Chen. All rights reserved.
 //
 
 import UIKit
-import RealmSwift
-import SDWebImage
 
-class WBStorageBankTableViewController: WBStorageGeneralTableViewController {
-
+class WBStorageMaterialTableViewController: WBStorageGeneralTableViewController {
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = super.tableView(tableView, cellForRowAt: indexPath) as! WBStorageItemTableViewCell
         
         guard let items = self.viewModel?.items, indexPath.row < items.count,
-            let item = items[indexPath.row] as? WBBankElement else {
+            let item = items[indexPath.row] as? WBMaterialElement else {
                 return cell
         }
         
