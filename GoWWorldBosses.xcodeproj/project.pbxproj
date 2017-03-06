@@ -35,6 +35,9 @@
 		C43EF31A1E6A7A7700C6FADD /* WBStorageWalletTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43EF3191E6A7A7700C6FADD /* WBStorageWalletTableViewController.swift */; };
 		C43EF31C1E6A7B6D00C6FADD /* WBStorageBankTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43EF31B1E6A7B6D00C6FADD /* WBStorageBankTableViewController.swift */; };
 		C43EF31E1E6A7B8900C6FADD /* WBStorageMaterialTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43EF31D1E6A7B8900C6FADD /* WBStorageMaterialTableViewController.swift */; };
+		C43EF3201E6B7AAF00C6FADD /* WBCoinView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C43EF31F1E6B7AAF00C6FADD /* WBCoinView.xib */; };
+		C43EF3221E6B7D7900C6FADD /* WBCoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43EF3211E6B7D7900C6FADD /* WBCoinView.swift */; };
+		C43EF3241E6CE9A500C6FADD /* WBStorageDetailCoinValueTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43EF3231E6CE9A500C6FADD /* WBStorageDetailCoinValueTableCell.swift */; };
 		C446050B1E45306300E3B0C3 /* UIApplication+VCStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C446050A1E45306300E3B0C3 /* UIApplication+VCStack.swift */; };
 		C446050D1E4536CD00E3B0C3 /* AppDelegate+ForceTouchMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C446050C1E4536CD00E3B0C3 /* AppDelegate+ForceTouchMenu.swift */; };
 		C45B6C9E1D68BE5800F94060 /* Timer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C45B6C9C1D68BE5800F94060 /* Timer.storyboard */; };
@@ -140,6 +143,9 @@
 		C43EF3191E6A7A7700C6FADD /* WBStorageWalletTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStorageWalletTableViewController.swift; sourceTree = "<group>"; };
 		C43EF31B1E6A7B6D00C6FADD /* WBStorageBankTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStorageBankTableViewController.swift; sourceTree = "<group>"; };
 		C43EF31D1E6A7B8900C6FADD /* WBStorageMaterialTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStorageMaterialTableViewController.swift; sourceTree = "<group>"; };
+		C43EF31F1E6B7AAF00C6FADD /* WBCoinView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBCoinView.xib; sourceTree = "<group>"; };
+		C43EF3211E6B7D7900C6FADD /* WBCoinView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBCoinView.swift; sourceTree = "<group>"; };
+		C43EF3231E6CE9A500C6FADD /* WBStorageDetailCoinValueTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStorageDetailCoinValueTableCell.swift; sourceTree = "<group>"; };
 		C446050A1E45306300E3B0C3 /* UIApplication+VCStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+VCStack.swift"; sourceTree = "<group>"; };
 		C446050C1E4536CD00E3B0C3 /* AppDelegate+ForceTouchMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppDelegate+ForceTouchMenu.swift"; sourceTree = "<group>"; };
 		C45B6C951D68BE5800F94060 /* WorldBosses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldBosses.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -340,6 +346,7 @@
 				C43EF30D1E68D00300C6FADD /* WBStorageDetailTitleTableCell.swift */,
 				C43EF30F1E68D01900C6FADD /* WBStorageDetailDescriptionTableCell.swift */,
 				C43EF3111E68D02C00C6FADD /* WBStorageDetailTypeTableCell.swift */,
+				C43EF3231E6CE9A500C6FADD /* WBStorageDetailCoinValueTableCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -508,6 +515,8 @@
 				C499F0991E1468DA002F534F /* WBApiErrorView.xib */,
 				C4ACF9C71E49087500C3F4E3 /* WBSpinnerView.swift */,
 				C4ACF9CB1E49089B00C3F4E3 /* WBSpinnerView.xib */,
+				C43EF3211E6B7D7900C6FADD /* WBCoinView.swift */,
+				C43EF31F1E6B7AAF00C6FADD /* WBCoinView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -601,6 +610,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C43EF3201E6B7AAF00C6FADD /* WBCoinView.xib in Resources */,
 				C45B6CA61D68BE5800F94060 /* LaunchScreen.storyboard in Resources */,
 				C4903BF51E00678F004F3345 /* Characters.storyboard in Resources */,
 				C45B6CA31D68BE5800F94060 /* Assets.xcassets in Resources */,
@@ -689,6 +699,7 @@
 				C4A409491E01EA1A00130C85 /* WBAPIKeyTableViewCell.swift in Sources */,
 				C4341A841D89FA28007D84CC /* WBBossFactory+TestBosses.swift in Sources */,
 				C4A409451E01E2B200130C85 /* WBSettingsNotificationTableViewCell.swift in Sources */,
+				C43EF3221E6B7D7900C6FADD /* WBCoinView.swift in Sources */,
 				C4E311191E09F17A0095EEB4 /* UIBarButtonPlus.swift in Sources */,
 				C45D34431DEB5CC2001C47F9 /* WBJsonBase.swift in Sources */,
 				C48D84EC1DFE186100585E61 /* WBMaterialProcessor.swift in Sources */,
@@ -713,6 +724,7 @@
 				C4026EB31DEE33C00097FFC1 /* WBSyncCoordinator.swift in Sources */,
 				C4E311131E09EFBB0095EEB4 /* ACBorderedButton.swift in Sources */,
 				C43EF3141E68D4D700C6FADD /* ACBorderedImageView.swift in Sources */,
+				C43EF3241E6CE9A500C6FADD /* WBStorageDetailCoinValueTableCell.swift in Sources */,
 				C45D34681DECDEE1001C47F9 /* WBStorageMainViewController.swift in Sources */,
 				C47D5B201DE69F0E00082CFD /* Entities.swift in Sources */,
 				C4026EB11DEE2B840097FFC1 /* WBSyncContext.swift in Sources */,

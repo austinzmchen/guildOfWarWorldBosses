@@ -11,4 +11,5 @@ import UIKit
 class WBStorageDetailTypeTableCell: UITableViewCell {
     
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var bottomSeparator: UIView!
 }

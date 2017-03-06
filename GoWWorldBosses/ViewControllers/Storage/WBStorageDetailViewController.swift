@@ -18,7 +18,15 @@ class WBStorageDetailViewController: UIViewController {
 extension WBStorageDetailViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        guard let itm = item as? WBBankElement else {
+            return 0
+        }
+        
+        if itm.item?.vendorValue ?? 0 > 0 {
+            return 5
+        } else {
+            return 3
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -33,7 +41,7 @@ extension WBStorageDetailViewController: UITableViewDataSource, UITableViewDeleg
             
             let size = self.sizeThatFits(attributedString: NSMutableAttributedString(string: desc))
             h = size.height + 30.0
-        } else {
+        } else if indexPath.row == 2 {
             if let itm = item as? WBBankElement {
                 var text = itm.item?.type ?? ""
                 if let fs = itm.item?.flags {
@@ -44,6 +52,10 @@ extension WBStorageDetailViewController: UITableViewDataSource, UITableViewDeleg
                 let size = self.sizeThatFits(attributedString: NSMutableAttributedString(string: text))
                 h = size.height
             }
+        } else if indexPath.row == 3 {
+            h = 36.0
+        } else if indexPath.row == 4 {
+            h = 36.0
         }
         return h
     }
@@ -78,7 +90,22 @@ extension WBStorageDetailViewController: UITableViewDataSource, UITableViewDeleg
                 }
                 typeCell.textView.text = text
             }
+            typeCell.bottomSeparator.isHidden = !(tableView.numberOfRows(inSection: 0) > 3)
             cell = typeCell
+        } else if indexPath.row == 3 { // vendor price
+            let coinValueCell = tableView.dequeueReusableCell(withIdentifier: "storageDetailCoinValueCell") as! WBStorageDetailCoinValueTableCell
+            if let itm = item as? WBBankElement {
+                coinValueCell.titleLabel.text = "Vendor Price:"
+                coinValueCell.coinView.coinValue = itm.item?.vendorValue ?? 0
+            }
+            cell = coinValueCell
+        } else if indexPath.row == 4 { // value
+            let coinValueCell = tableView.dequeueReusableCell(withIdentifier: "storageDetailCoinValueCell") as! WBStorageDetailCoinValueTableCell
+            if let itm = item as? WBBankElement {
+                coinValueCell.titleLabel.text = "Value:"
+                coinValueCell.coinView.coinValue = (itm.item?.vendorValue ?? 0) * itm.count
+            }
+            cell = coinValueCell
         }
         return cell
     }

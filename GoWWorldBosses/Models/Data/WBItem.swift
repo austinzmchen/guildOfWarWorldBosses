@@ -19,6 +19,7 @@ class WBItem: WBObject {
     dynamic var count: Int = -1
     dynamic var flags: String?
     dynamic var rarity: String?
+    dynamic var vendorValue: Int = -1
     
     override func saveSyncableProperties(fromSyncable syncable: WBRemoteRecordSyncableType) {
         guard let rRecord = syncable as? WBJsonItem else {
@@ -35,6 +36,7 @@ class WBItem: WBObject {
             flags = fs.joined(separator: ",")
         }
         self.rarity = rRecord.rarity
+        self.vendorValue = rRecord.vendorValue ?? -1
     }
 }
 /*

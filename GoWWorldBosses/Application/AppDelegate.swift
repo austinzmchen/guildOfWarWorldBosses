@@ -51,6 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     if oldSchemaVersion < 3 {
                         newObject!["flags"] = nil
                         newObject!["rarity"] = nil
+                        newObject!["vendorValue"] = nil
                     }
                 }
             }

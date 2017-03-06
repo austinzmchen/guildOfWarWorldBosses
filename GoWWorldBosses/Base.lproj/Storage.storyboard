@@ -333,17 +333,61 @@ Summons a Black Lion Merchant If Your Inventory Is Full after Gathering (20-Minu
                                                     </attributedString>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fCp-Sq-LUw" userLabel="Separator">
+                                                    <rect key="frame" x="37.5" y="79" width="300" height="1"/>
+                                                    <color key="backgroundColor" white="1" alpha="0.14999999999999999" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="CeS-6a-5tV"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="KFy-ab-f9M" secondAttribute="trailing" constant="37.5" id="MSU-Ff-Z72"/>
+                                                <constraint firstAttribute="bottom" secondItem="fCp-Sq-LUw" secondAttribute="bottom" id="Maf-qR-eRY"/>
                                                 <constraint firstItem="KFy-ab-f9M" firstAttribute="leading" secondItem="UaH-W9-ghB" secondAttribute="leading" constant="37.5" id="PsA-xK-9qR"/>
                                                 <constraint firstAttribute="bottom" secondItem="KFy-ab-f9M" secondAttribute="bottom" id="dTL-nB-4Wi"/>
+                                                <constraint firstItem="fCp-Sq-LUw" firstAttribute="leading" secondItem="UaH-W9-ghB" secondAttribute="leading" constant="37.5" id="eqK-dk-H6c"/>
                                                 <constraint firstItem="KFy-ab-f9M" firstAttribute="top" secondItem="UaH-W9-ghB" secondAttribute="top" id="jMk-Q1-eMp"/>
+                                                <constraint firstAttribute="trailing" secondItem="fCp-Sq-LUw" secondAttribute="trailing" constant="37.5" id="yEM-MF-2uA"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
+                                            <outlet property="bottomSeparator" destination="fCp-Sq-LUw" id="JZO-if-xxc"/>
                                             <outlet property="textView" destination="KFy-ab-f9M" id="cLJ-d5-GYI"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="storageDetailCoinValueCell" rowHeight="36" id="ojH-VT-hgs" userLabel="walletCoinTableCell" customClass="WBStorageDetailCoinValueTableCell" customModule="WorldBosses" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="368" width="375" height="36"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ojH-VT-hgs" id="VWD-UJ-Hrt">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="36"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vendor Price:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iku-9T-NGp" userLabel="mainLabel">
+                                                    <rect key="frame" x="37.5" y="9.5" width="85.5" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" placeholderIntrinsicWidth="200" placeholderIntrinsicHeight="infinite" translatesAutoresizingMaskIntoConstraints="NO" id="ily-rc-z8y" userLabel="coinView" customClass="WBCoinView" customModule="WorldBosses" customModuleProvider="target">
+                                                    <rect key="frame" x="131" y="-0.5" width="200" height="36"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="ily-rc-z8y" firstAttribute="centerY" secondItem="VWD-UJ-Hrt" secondAttribute="centerY" id="0KC-EL-RLy"/>
+                                                <constraint firstItem="ily-rc-z8y" firstAttribute="height" secondItem="VWD-UJ-Hrt" secondAttribute="height" id="F8F-1h-wah"/>
+                                                <constraint firstItem="Iku-9T-NGp" firstAttribute="leading" secondItem="VWD-UJ-Hrt" secondAttribute="leading" constant="37.5" id="TdS-aL-BUQ"/>
+                                                <constraint firstItem="Iku-9T-NGp" firstAttribute="centerY" secondItem="VWD-UJ-Hrt" secondAttribute="centerY" id="haq-T8-wA2"/>
+                                                <constraint firstItem="ily-rc-z8y" firstAttribute="leading" secondItem="Iku-9T-NGp" secondAttribute="trailing" constant="8" id="taR-d5-mrw"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="coinView" destination="ily-rc-z8y" id="B7h-nc-JR6"/>
+                                            <outlet property="titleLabel" destination="Iku-9T-NGp" id="ypQ-zC-bAX"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
