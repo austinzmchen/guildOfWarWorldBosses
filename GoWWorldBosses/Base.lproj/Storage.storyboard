@@ -154,7 +154,7 @@
                                     <outlet property="leftImageView" destination="oqn-7e-5FE" id="7VM-Of-CEn"/>
                                     <outlet property="mainTitleLabel" destination="Rbk-gz-Y89" id="uHh-j5-WXs"/>
                                     <outlet property="subTitleLabel" destination="TnF-8D-lPe" id="INo-pj-1L0"/>
-                                    <segue destination="2nX-QF-Af3" kind="presentation" identifier="pushFromStorageTableVCToDetailVC" modalPresentationStyle="overCurrentContext" id="CWj-lo-IB6"/>
+                                    <segue destination="2nX-QF-Af3" kind="presentation" identifier="pushFromStorageTableVCToDetailVC" animates="NO" modalPresentationStyle="overCurrentContext" id="CWj-lo-IB6"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -357,21 +357,21 @@ Summons a Black Lion Merchant If Your Inventory Is Full after Gathering (20-Minu
                                             <outlet property="textView" destination="KFy-ab-f9M" id="cLJ-d5-GYI"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="storageDetailCoinValueCell" rowHeight="36" id="ojH-VT-hgs" userLabel="walletCoinTableCell" customClass="WBStorageDetailCoinValueTableCell" customModule="WorldBosses" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="368" width="375" height="36"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="storageDetailCoinValueCell" rowHeight="24" id="ojH-VT-hgs" userLabel="walletCoinTableCell" customClass="WBStorageDetailCoinValueTableCell" customModule="WorldBosses" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="368" width="375" height="24"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ojH-VT-hgs" id="VWD-UJ-Hrt">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="36"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="24"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vendor Price:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iku-9T-NGp" userLabel="mainLabel">
-                                                    <rect key="frame" x="37.5" y="9.5" width="85.5" height="16"/>
+                                                    <rect key="frame" x="42" y="4" width="85.5" height="16"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" placeholderIntrinsicWidth="200" placeholderIntrinsicHeight="infinite" translatesAutoresizingMaskIntoConstraints="NO" id="ily-rc-z8y" userLabel="coinView" customClass="WBCoinView" customModule="WorldBosses" customModuleProvider="target">
-                                                    <rect key="frame" x="131" y="-0.5" width="200" height="36"/>
+                                                    <rect key="frame" x="135.5" y="0.0" width="200" height="24"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
                                             </subviews>
@@ -379,7 +379,7 @@ Summons a Black Lion Merchant If Your Inventory Is Full after Gathering (20-Minu
                                             <constraints>
                                                 <constraint firstItem="ily-rc-z8y" firstAttribute="centerY" secondItem="VWD-UJ-Hrt" secondAttribute="centerY" id="0KC-EL-RLy"/>
                                                 <constraint firstItem="ily-rc-z8y" firstAttribute="height" secondItem="VWD-UJ-Hrt" secondAttribute="height" id="F8F-1h-wah"/>
-                                                <constraint firstItem="Iku-9T-NGp" firstAttribute="leading" secondItem="VWD-UJ-Hrt" secondAttribute="leading" constant="37.5" id="TdS-aL-BUQ"/>
+                                                <constraint firstItem="Iku-9T-NGp" firstAttribute="leading" secondItem="VWD-UJ-Hrt" secondAttribute="leading" constant="42" id="TdS-aL-BUQ"/>
                                                 <constraint firstItem="Iku-9T-NGp" firstAttribute="centerY" secondItem="VWD-UJ-Hrt" secondAttribute="centerY" id="haq-T8-wA2"/>
                                                 <constraint firstItem="ily-rc-z8y" firstAttribute="leading" secondItem="Iku-9T-NGp" secondAttribute="trailing" constant="8" id="taR-d5-mrw"/>
                                             </constraints>

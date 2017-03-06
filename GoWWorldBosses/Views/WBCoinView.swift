@@ -50,16 +50,16 @@ class WBCoinView: UIView {
         contentView.frame = self.bounds
     }
     
-    override func sizeThatFits(_ size: CGSize) -> CGSize {
-        return CGSize(width: bronzeLabel.frame.maxX, height: self.goldDividerView.bounds.height)
-    }
-    
     override var intrinsicContentSize: CGSize {
-        return CGSize(width: bronzeLabel.frame.maxX, height: self.goldDividerView.bounds.height)
+        let s = CGSize(width: bronzeLabel.frame.maxX, height: self.goldDividerView.bounds.height)
+        return s
     }
     
     // MARK: instance methods 
     
+    /* http://stackoverflow.com/questions/18065938/how-to-use-auto-layout-to-move-other-views-when-a-view-is-hidden
+     to resize child views when removing other child views, need to over-constraint. eg, add leading constraint to previous view's trailing as well as  leading to superview's lead constraint. I used inequality instead of priority, priority does not work for me.
+    */
     var coinValue: Int {
         get {
             let gold = Int(goldLabel.text!)!
@@ -71,31 +71,18 @@ class WBCoinView: UIView {
             let gold = newValue / 10000
             goldLabel.text = String(format: "%d", gold)
             if gold == 0 {
-                var f = goldLabel.frame
-                f.size = CGSize.zero
-                goldLabel.frame = f
-                goldLabel.invalidateIntrinsicContentSize()
-                goldLabel.isHidden = true
-                goldDividerView.isHidden = true
-            } else {
-                goldLabel.sizeToFit()
+                goldLabel.removeFromSuperview()
+                goldDividerView.removeFromSuperview()
             }
             
             let silver = (newValue / 100) % 100
             silverLabel.text = String(format: "%d", silver)
             if silver == 0 {
-                var f = silverLabel.frame
-                f.size = CGSize.zero
-                silverLabel.frame = f
-                silverLabel.invalidateIntrinsicContentSize()
-                silverLabel.isHidden = true
-                silverDividerView.isHidden = true
-            } else {
-                silverLabel.sizeToFit()
+                silverLabel.removeFromSuperview()
+                silverDividerView.removeFromSuperview()
             }
             
             bronzeLabel.text = String(format: "%d", newValue % 100)
-            self.setNeedsLayout()
             self.invalidateIntrinsicContentSize()
         }
     }
