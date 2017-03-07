@@ -38,6 +38,7 @@
 		C43EF3201E6B7AAF00C6FADD /* WBCoinView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C43EF31F1E6B7AAF00C6FADD /* WBCoinView.xib */; };
 		C43EF3221E6B7D7900C6FADD /* WBCoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43EF3211E6B7D7900C6FADD /* WBCoinView.swift */; };
 		C43EF3241E6CE9A500C6FADD /* WBStorageDetailCoinValueTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43EF3231E6CE9A500C6FADD /* WBStorageDetailCoinValueTableCell.swift */; };
+		C43EF3261E6F6E0100C6FADD /* StringPlus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43EF3251E6F6E0100C6FADD /* StringPlus.swift */; };
 		C446050B1E45306300E3B0C3 /* UIApplication+VCStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C446050A1E45306300E3B0C3 /* UIApplication+VCStack.swift */; };
 		C446050D1E4536CD00E3B0C3 /* AppDelegate+ForceTouchMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C446050C1E4536CD00E3B0C3 /* AppDelegate+ForceTouchMenu.swift */; };
 		C45B6C9E1D68BE5800F94060 /* Timer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C45B6C9C1D68BE5800F94060 /* Timer.storyboard */; };
@@ -146,6 +147,7 @@
 		C43EF31F1E6B7AAF00C6FADD /* WBCoinView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBCoinView.xib; sourceTree = "<group>"; };
 		C43EF3211E6B7D7900C6FADD /* WBCoinView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBCoinView.swift; sourceTree = "<group>"; };
 		C43EF3231E6CE9A500C6FADD /* WBStorageDetailCoinValueTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStorageDetailCoinValueTableCell.swift; sourceTree = "<group>"; };
+		C43EF3251E6F6E0100C6FADD /* StringPlus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringPlus.swift; sourceTree = "<group>"; };
 		C446050A1E45306300E3B0C3 /* UIApplication+VCStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+VCStack.swift"; sourceTree = "<group>"; };
 		C446050C1E4536CD00E3B0C3 /* AppDelegate+ForceTouchMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppDelegate+ForceTouchMenu.swift"; sourceTree = "<group>"; };
 		C45B6C951D68BE5800F94060 /* WorldBosses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldBosses.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -265,6 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				C42B94631DFE2A130019CB3D /* ArrayPlus.swift */,
+				C43EF3251E6F6E0100C6FADD /* StringPlus.swift */,
 				C4873F9A1E0D855E002E742D /* UIColorPlus.swift */,
 			);
 			path = Extensions;
@@ -771,6 +774,7 @@
 				C4C799EB1DF5044000A8B5F4 /* WBLoaderViewController.swift in Sources */,
 				C45D345D1DECD7D6001C47F9 /* WBMainViewController.swift in Sources */,
 				C48D84E81DFE16DC00585E61 /* WBMaterialRemote.swift in Sources */,
+				C43EF3261E6F6E0100C6FADD /* StringPlus.swift in Sources */,
 				C45D346D1DECEA41001C47F9 /* WBObject.swift in Sources */,
 				C45D34501DEB8417001C47F9 /* WBDrawerViewController.swift in Sources */,
 				C47D5B231DE69F3000082CFD /* WBJsonCurrency.swift in Sources */,

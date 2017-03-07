@@ -39,20 +39,19 @@ class WBItem: WBObject {
         self.vendorValue = rRecord.vendorValue ?? -1
     }
 }
-/*
-extension WBItem { // to allow array of strings? come on!
-    var flags: [String] {
-        get {
-            return _flags.map { $0.stringValue }
+
+fileprivate let kAdjustedFlags = ["AccountBindOnUse", "AccountBound", "SoulbindOnAcquire", "SoulBindOnUse"]
+
+extension WBItem {
+    var adjustedFlags: [String] {
+        if let f = self.flags {
+            let array = f.components(separatedBy: ",")
+            return array.filter { arrayItem in
+                return kAdjustedFlags.contains { flag in
+                    return flag ~= arrayItem
+                }
+            }
         }
-        set {
-            _flags.removeAll()
-            _flags.append(contentsOf: newValue.map({RealmString(value: $0)}))
-        }
-    }
-    
-    override static func ignoredProperties() -> [String] {
-        return ["flags"]
+        return []
     }
 }
-*/

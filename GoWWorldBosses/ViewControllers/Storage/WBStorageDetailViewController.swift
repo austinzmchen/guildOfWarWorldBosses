@@ -101,9 +101,9 @@ extension WBStorageDetailViewController: UITableViewDataSource, UITableViewDeleg
                 let typeCell = tableView.dequeueReusableCell(withIdentifier: "storageDetailTypeCell") as! WBStorageDetailTypeTableCell
                 if let itm = item as? WBBankElement {
                     var text = itm.item?.type ?? ""
-                    if let fs = itm.item?.flags {
-                        text += "\n"
-                        text += fs.replacingOccurrences(of: ",", with: "\n")
+                    text += "\n"
+                    if let it = itm.item {
+                        text += it.adjustedFlags.joined(separator: "\n")
                     }
                     typeCell.textView.text = text
                 }
