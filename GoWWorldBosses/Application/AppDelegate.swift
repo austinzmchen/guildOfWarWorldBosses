@@ -52,6 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         newObject!["flags"] = nil
                         newObject!["rarity"] = nil
                         newObject!["vendorValue"] = nil
+                        newObject!["_details"] = nil
                     }
                 }
             }

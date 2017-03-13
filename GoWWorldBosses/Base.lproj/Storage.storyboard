@@ -263,14 +263,69 @@
                                             <outlet property="titleLabel" destination="MYd-HF-Faa" id="1kz-Ks-Zif"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="storageDetailDescriptionCell" rowHeight="200" id="LVs-EA-IBE" userLabel="descriptionCell" customClass="WBStorageDetailDescriptionTableCell" customModule="WorldBosses" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="88" width="375" height="200"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="storageDetailArmorWeaponDescriptionCell" rowHeight="120" id="LVs-EA-IBE" userLabel="armorWeaponDescCell" customClass="WBStorageDetailArmorWeaponDescTableCell" customModule="WorldBosses" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="88" width="375" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LVs-EA-IBE" id="BmF-t2-9Cp">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weapon Strength:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KU3-Jb-9Sc" userLabel="title">
+                                                    <rect key="frame" x="40" y="0.0" width="124" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="995-1100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FNb-tc-BAm">
+                                                    <rect key="frame" x="169" y="-2" width="74.5" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.43137254899999999" green="0.80784313730000001" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LnN-gL-j5n">
+                                                    <rect key="frame" x="37.5" y="18" width="300" height="102"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment>
+                                                            <string key="content">+171 Power
++171 Toughness
++239 Healing</string>
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.43137254901960786" green="0.80784313725490198" blue="0.10196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <font key="NSFont" size="15" name="HelveticaNeue"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="8" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="FNb-tc-BAm" firstAttribute="baseline" secondItem="KU3-Jb-9Sc" secondAttribute="baseline" id="Ay5-8A-QoJ"/>
+                                                <constraint firstItem="KU3-Jb-9Sc" firstAttribute="leading" secondItem="BmF-t2-9Cp" secondAttribute="leading" constant="40" id="F1T-Ml-Spi"/>
+                                                <constraint firstAttribute="trailing" secondItem="LnN-gL-j5n" secondAttribute="trailing" constant="37.5" id="HJQ-8M-lkd"/>
+                                                <constraint firstItem="FNb-tc-BAm" firstAttribute="leading" secondItem="KU3-Jb-9Sc" secondAttribute="trailing" constant="5" id="IqJ-lK-zaP"/>
+                                                <constraint firstItem="LnN-gL-j5n" firstAttribute="leading" secondItem="BmF-t2-9Cp" secondAttribute="leading" constant="37.5" id="Kla-FS-FBR"/>
+                                                <constraint firstAttribute="bottom" secondItem="LnN-gL-j5n" secondAttribute="bottom" id="KpR-XC-Ckb"/>
+                                                <constraint firstItem="KU3-Jb-9Sc" firstAttribute="top" secondItem="BmF-t2-9Cp" secondAttribute="top" id="QBz-HP-sQZ"/>
+                                                <constraint firstItem="LnN-gL-j5n" firstAttribute="top" secondItem="KU3-Jb-9Sc" secondAttribute="bottom" id="zCN-5q-YnB"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="KU3-Jb-9Sc" id="RSa-1i-hxl"/>
+                                            <outlet property="textView" destination="LnN-gL-j5n" id="2fJ-Fn-yCG"/>
+                                            <outlet property="valueLabel" destination="FNb-tc-BAm" id="DOq-uL-UMk"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="storageDetailDescriptionCell" rowHeight="200" id="yE4-tL-i5A" userLabel="descriptionCell" customClass="WBStorageDetailDescriptionTableCell" customModule="WorldBosses" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="208" width="375" height="200"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yE4-tL-i5A" id="QUZ-Ty-11N">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LnN-gL-j5n">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i5r-Br-Bae">
                                                     <rect key="frame" x="37.5" y="0.0" width="300" height="200"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <attributedString key="attributedText">
@@ -292,25 +347,25 @@ Summons a Black Lion Merchant If Your Inventory Is Full after Gathering (20-Minu
                                                 </textView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="LnN-gL-j5n" secondAttribute="trailing" constant="37.5" id="HJQ-8M-lkd"/>
-                                                <constraint firstItem="LnN-gL-j5n" firstAttribute="leading" secondItem="BmF-t2-9Cp" secondAttribute="leading" constant="37.5" id="Kla-FS-FBR"/>
-                                                <constraint firstAttribute="bottom" secondItem="LnN-gL-j5n" secondAttribute="bottom" id="KpR-XC-Ckb"/>
-                                                <constraint firstItem="LnN-gL-j5n" firstAttribute="top" secondItem="BmF-t2-9Cp" secondAttribute="top" id="wNa-cb-yI7"/>
+                                                <constraint firstItem="i5r-Br-Bae" firstAttribute="leading" secondItem="QUZ-Ty-11N" secondAttribute="leading" constant="37.5" id="OEX-Nz-QQR"/>
+                                                <constraint firstItem="i5r-Br-Bae" firstAttribute="top" secondItem="QUZ-Ty-11N" secondAttribute="top" id="WEN-KT-Xqq"/>
+                                                <constraint firstAttribute="bottom" secondItem="i5r-Br-Bae" secondAttribute="bottom" id="fDk-LB-TIq"/>
+                                                <constraint firstAttribute="trailing" secondItem="i5r-Br-Bae" secondAttribute="trailing" constant="37.5" id="oJk-Xe-nmW"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
-                                            <outlet property="textView" destination="LnN-gL-j5n" id="WNe-qg-fua"/>
+                                            <outlet property="textView" destination="i5r-Br-Bae" id="Fpp-ax-TiG"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="storageDetailTypeCell" rowHeight="80" id="EPp-Wa-tBz" userLabel="typeCell" customClass="WBStorageDetailTypeTableCell" customModule="WorldBosses" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="288" width="375" height="80"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="storageDetailTypeCell" rowHeight="80" id="Ggl-m3-JMx" userLabel="typeCell" customClass="WBStorageDetailTypeTableCell" customModule="WorldBosses" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="408" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EPp-Wa-tBz" id="UaH-W9-ghB">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ggl-m3-JMx" id="a42-Jc-Ior">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KFy-ab-f9M">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k5w-9I-hke">
                                                     <rect key="frame" x="37.5" y="0.0" width="300" height="80"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <attributedString key="attributedText">
@@ -333,32 +388,32 @@ Summons a Black Lion Merchant If Your Inventory Is Full after Gathering (20-Minu
                                                     </attributedString>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fCp-Sq-LUw" userLabel="Separator">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OwD-3f-v15" userLabel="Separator">
                                                     <rect key="frame" x="37.5" y="79" width="300" height="1"/>
                                                     <color key="backgroundColor" white="1" alpha="0.14999999999999999" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="1" id="CeS-6a-5tV"/>
+                                                        <constraint firstAttribute="height" constant="1" id="K2E-a1-zHc"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="KFy-ab-f9M" secondAttribute="trailing" constant="37.5" id="MSU-Ff-Z72"/>
-                                                <constraint firstAttribute="bottom" secondItem="fCp-Sq-LUw" secondAttribute="bottom" id="Maf-qR-eRY"/>
-                                                <constraint firstItem="KFy-ab-f9M" firstAttribute="leading" secondItem="UaH-W9-ghB" secondAttribute="leading" constant="37.5" id="PsA-xK-9qR"/>
-                                                <constraint firstAttribute="bottom" secondItem="KFy-ab-f9M" secondAttribute="bottom" id="dTL-nB-4Wi"/>
-                                                <constraint firstItem="fCp-Sq-LUw" firstAttribute="leading" secondItem="UaH-W9-ghB" secondAttribute="leading" constant="37.5" id="eqK-dk-H6c"/>
-                                                <constraint firstItem="KFy-ab-f9M" firstAttribute="top" secondItem="UaH-W9-ghB" secondAttribute="top" id="jMk-Q1-eMp"/>
-                                                <constraint firstAttribute="trailing" secondItem="fCp-Sq-LUw" secondAttribute="trailing" constant="37.5" id="yEM-MF-2uA"/>
+                                                <constraint firstItem="OwD-3f-v15" firstAttribute="leading" secondItem="a42-Jc-Ior" secondAttribute="leading" constant="37.5" id="1U5-ok-9xS"/>
+                                                <constraint firstAttribute="trailing" secondItem="k5w-9I-hke" secondAttribute="trailing" constant="37.5" id="UWc-iM-LAI"/>
+                                                <constraint firstItem="k5w-9I-hke" firstAttribute="top" secondItem="a42-Jc-Ior" secondAttribute="top" id="djY-qF-gzp"/>
+                                                <constraint firstItem="k5w-9I-hke" firstAttribute="leading" secondItem="a42-Jc-Ior" secondAttribute="leading" constant="37.5" id="gzb-cb-c6p"/>
+                                                <constraint firstAttribute="trailing" secondItem="OwD-3f-v15" secondAttribute="trailing" constant="37.5" id="hXL-ge-bKH"/>
+                                                <constraint firstAttribute="bottom" secondItem="OwD-3f-v15" secondAttribute="bottom" id="l4q-ve-Jpz"/>
+                                                <constraint firstAttribute="bottom" secondItem="k5w-9I-hke" secondAttribute="bottom" id="w6m-8v-43P"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
-                                            <outlet property="bottomSeparator" destination="fCp-Sq-LUw" id="JZO-if-xxc"/>
-                                            <outlet property="textView" destination="KFy-ab-f9M" id="cLJ-d5-GYI"/>
+                                            <outlet property="bottomSeparator" destination="OwD-3f-v15" id="Vzh-sb-OzJ"/>
+                                            <outlet property="textView" destination="k5w-9I-hke" id="FH5-ka-oB0"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="storageDetailCoinValueCell" rowHeight="24" id="ojH-VT-hgs" userLabel="walletCoinTableCell" customClass="WBStorageDetailCoinValueTableCell" customModule="WorldBosses" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="368" width="375" height="24"/>
+                                        <rect key="frame" x="0.0" y="488" width="375" height="24"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ojH-VT-hgs" id="VWD-UJ-Hrt">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="24"/>
@@ -500,6 +555,7 @@ Summons a Black Lion Merchant If Your Inventory Is Full after Gathering (20-Minu
                                     <outlet property="leftImageView" destination="DFl-iA-J6u" id="sVw-WH-jNv"/>
                                     <outlet property="mainTitleLabel" destination="eQW-mr-rhj" id="nRo-LR-c1w"/>
                                     <outlet property="subTitleLabel" destination="tcS-cF-Bgz" id="7Os-1p-qEk"/>
+                                    <segue destination="2nX-QF-Af3" kind="presentation" identifier="pushFromStorageTableVCToDetailVC" trigger="accessoryAction" modalPresentationStyle="overCurrentContext" id="Skr-sx-mlD"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -697,4 +753,7 @@ Summons a Black Lion Merchant If Your Inventory Is Full after Gathering (20-Minu
         <image name="icWalletGem" width="22" height="20"/>
         <image name="icWalletKarma" width="30" height="23"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Skr-sx-mlD"/>
+    </inferredMetricsTieBreakers>
 </document>

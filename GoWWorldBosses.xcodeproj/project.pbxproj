@@ -26,6 +26,14 @@
 		C4341A841D89FA28007D84CC /* WBBossFactory+TestBosses.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4341A831D89FA28007D84CC /* WBBossFactory+TestBosses.swift */; };
 		C4341F181D8F1027007D84CC /* WBKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4341F171D8F1027007D84CC /* WBKeyStore.swift */; };
 		C4358C9E1E443A970094D863 /* WBSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4358C9D1E443A970094D863 /* WBSettings.swift */; };
+		C4386A171E75F67600285F5B /* WBJsonItemArmorDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4386A161E75F67600285F5B /* WBJsonItemArmorDetail.swift */; };
+		C4386A191E75F69E00285F5B /* WBJsonItemWeaponDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4386A181E75F69E00285F5B /* WBJsonItemWeaponDetail.swift */; };
+		C4386A1B1E75F7AF00285F5B /* WBJsonItemAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4386A1A1E75F7AF00285F5B /* WBJsonItemAttribute.swift */; };
+		C4386A201E760C7600285F5B /* WBItemPlus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4386A1F1E760C7600285F5B /* WBItemPlus.swift */; };
+		C4386A221E7612A700285F5B /* WBJsonItemBaseDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4386A211E7612A700285F5B /* WBJsonItemBaseDetail.swift */; };
+		C4386A241E7614C100285F5B /* WBItemTypeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4386A231E7614C100285F5B /* WBItemTypeProtocol.swift */; };
+		C4386A261E7621C400285F5B /* WBStorageDetailArmorWeaponDescTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4386A251E7621C400285F5B /* WBStorageDetailArmorWeaponDescTableCell.swift */; };
+		C4386A281E7621E700285F5B /* WBStorageDetailArmorWeaponTypeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4386A271E7621E700285F5B /* WBStorageDetailArmorWeaponTypeTableCell.swift */; };
 		C43EF30C1E68CB1700C6FADD /* WBStorageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43EF30B1E68CB1700C6FADD /* WBStorageDetailViewController.swift */; };
 		C43EF30E1E68D00300C6FADD /* WBStorageDetailTitleTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43EF30D1E68D00300C6FADD /* WBStorageDetailTitleTableCell.swift */; };
 		C43EF3101E68D01900C6FADD /* WBStorageDetailDescriptionTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43EF30F1E68D01900C6FADD /* WBStorageDetailDescriptionTableCell.swift */; };
@@ -135,6 +143,14 @@
 		C4341A831D89FA28007D84CC /* WBBossFactory+TestBosses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WBBossFactory+TestBosses.swift"; sourceTree = "<group>"; };
 		C4341F171D8F1027007D84CC /* WBKeyStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBKeyStore.swift; sourceTree = "<group>"; };
 		C4358C9D1E443A970094D863 /* WBSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBSettings.swift; sourceTree = "<group>"; };
+		C4386A161E75F67600285F5B /* WBJsonItemArmorDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBJsonItemArmorDetail.swift; sourceTree = "<group>"; };
+		C4386A181E75F69E00285F5B /* WBJsonItemWeaponDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBJsonItemWeaponDetail.swift; sourceTree = "<group>"; };
+		C4386A1A1E75F7AF00285F5B /* WBJsonItemAttribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBJsonItemAttribute.swift; sourceTree = "<group>"; };
+		C4386A1F1E760C7600285F5B /* WBItemPlus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBItemPlus.swift; sourceTree = "<group>"; };
+		C4386A211E7612A700285F5B /* WBJsonItemBaseDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBJsonItemBaseDetail.swift; sourceTree = "<group>"; };
+		C4386A231E7614C100285F5B /* WBItemTypeProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBItemTypeProtocol.swift; sourceTree = "<group>"; };
+		C4386A251E7621C400285F5B /* WBStorageDetailArmorWeaponDescTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStorageDetailArmorWeaponDescTableCell.swift; sourceTree = "<group>"; };
+		C4386A271E7621E700285F5B /* WBStorageDetailArmorWeaponTypeTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStorageDetailArmorWeaponTypeTableCell.swift; sourceTree = "<group>"; };
 		C43EF30B1E68CB1700C6FADD /* WBStorageDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStorageDetailViewController.swift; sourceTree = "<group>"; };
 		C43EF30D1E68D00300C6FADD /* WBStorageDetailTitleTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStorageDetailTitleTableCell.swift; sourceTree = "<group>"; };
 		C43EF30F1E68D01900C6FADD /* WBStorageDetailDescriptionTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStorageDetailDescriptionTableCell.swift; sourceTree = "<group>"; };
@@ -273,6 +289,17 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		C4386A151E75F65700285F5B /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				C4386A1A1E75F7AF00285F5B /* WBJsonItemAttribute.swift */,
+				C4386A211E7612A700285F5B /* WBJsonItemBaseDetail.swift */,
+				C4386A161E75F67600285F5B /* WBJsonItemArmorDetail.swift */,
+				C4386A181E75F69E00285F5B /* WBJsonItemWeaponDetail.swift */,
+			);
+			path = Items;
+			sourceTree = "<group>";
+		};
 		C45B6C8C1D68BE5800F94060 = {
 			isa = PBXGroup;
 			children = (
@@ -347,7 +374,9 @@
 				C4A409401E01E11600130C85 /* WBSettingsTableViewCell.swift */,
 				C4A409481E01EA1A00130C85 /* WBAPIKeyTableViewCell.swift */,
 				C43EF30D1E68D00300C6FADD /* WBStorageDetailTitleTableCell.swift */,
+				C4386A251E7621C400285F5B /* WBStorageDetailArmorWeaponDescTableCell.swift */,
 				C43EF30F1E68D01900C6FADD /* WBStorageDetailDescriptionTableCell.swift */,
+				C4386A271E7621E700285F5B /* WBStorageDetailArmorWeaponTypeTableCell.swift */,
 				C43EF3111E68D02C00C6FADD /* WBStorageDetailTypeTableCell.swift */,
 				C43EF3231E6CE9A500C6FADD /* WBStorageDetailCoinValueTableCell.swift */,
 			);
@@ -404,6 +433,7 @@
 		C47D5B131DE6970C00082CFD /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C4386A231E7614C100285F5B /* WBItemTypeProtocol.swift */,
 				C47D5B191DE69F0E00082CFD /* APIs */,
 				C47D5B1C1DE69F0E00082CFD /* Data */,
 				C4026EAD1DEE29E30097FFC1 /* Processor */,
@@ -424,6 +454,7 @@
 		C47D5B1A1DE69F0E00082CFD /* JSONModels */ = {
 			isa = PBXGroup;
 			children = (
+				C4386A151E75F65700285F5B /* Items */,
 				C45D34421DEB5CC2001C47F9 /* WBJsonBase.swift */,
 				C4A4094C1E01F0AA00130C85 /* WBJsonAccount.swift */,
 				C48D84E51DFE160E00585E61 /* WBJsonItem.swift */,
@@ -459,6 +490,7 @@
 				C45D346C1DECEA41001C47F9 /* WBObject.swift */,
 				C47D5B1D1DE69F0E00082CFD /* Entities.swift */,
 				C48D84ED1DFE189A00585E61 /* WBItem.swift */,
+				C4386A1F1E760C7600285F5B /* WBItemPlus.swift */,
 				C42B94601DFE1DCE0019CB3D /* WBMaterialElement.swift */,
 				C4A409501E03279A00130C85 /* WBAccount.swift */,
 				C47D5B1E1DE69F0E00082CFD /* GoWWorldBosses.xcdatamodeld */,
@@ -706,6 +738,7 @@
 				C4E311191E09F17A0095EEB4 /* UIBarButtonPlus.swift in Sources */,
 				C45D34431DEB5CC2001C47F9 /* WBJsonBase.swift in Sources */,
 				C48D84EC1DFE186100585E61 /* WBMaterialProcessor.swift in Sources */,
+				C4386A201E760C7600285F5B /* WBItemPlus.swift in Sources */,
 				C4A409471E01E3E100130C85 /* WBAPIKeyViewController.swift in Sources */,
 				C4C799ED1DF505BD00A8B5F4 /* UIApplication+Loader.swift in Sources */,
 				C45D34551DEB8766001C47F9 /* WBStorageItemTableViewCell.swift in Sources */,
@@ -741,11 +774,13 @@
 				C45D345F1DECD865001C47F9 /* WBStoragePageViewController.swift in Sources */,
 				C4358C9E1E443A970094D863 /* WBSettings.swift in Sources */,
 				C48D84EA1DFE17C500585E61 /* WBItemRemote.swift in Sources */,
+				C4386A1B1E75F7AF00285F5B /* WBJsonItemAttribute.swift in Sources */,
 				C4026EAF1DEE2A1A0097FFC1 /* WBWalletProcessor.swift in Sources */,
 				C4341F181D8F1027007D84CC /* WBKeyStore.swift in Sources */,
 				C43EF31E1E6A7B8900C6FADD /* WBStorageMaterialTableViewController.swift in Sources */,
 				C4873F9F1E0F3AA6002E742D /* WBRootViewController.swift in Sources */,
 				C411FAE91DFDF8110038337F /* WBStorageMaterialViewModel.swift in Sources */,
+				C4386A191E75F69E00285F5B /* WBJsonItemWeaponDetail.swift in Sources */,
 				C47D5B211DE69F0E00082CFD /* GoWWorldBosses.xcdatamodeld in Sources */,
 				C47D5B2B1DE6A01900082CFD /* WBRemote.swift in Sources */,
 				C43EF3101E68D01900C6FADD /* WBStorageDetailDescriptionTableCell.swift in Sources */,
@@ -756,6 +791,7 @@
 				C446050B1E45306300E3B0C3 /* UIApplication+VCStack.swift in Sources */,
 				C4903BF81E006828004F3345 /* WBCharactersTableViewController.swift in Sources */,
 				C45D343D1DEB5A1A001C47F9 /* WBWalletRemote.swift in Sources */,
+				C4386A221E7612A700285F5B /* WBJsonItemBaseDetail.swift in Sources */,
 				C4A409441E01E2B200130C85 /* WBMainTableViewCell.swift in Sources */,
 				C41094A51D88FFCF00751A72 /* WBSettingsViewController.swift in Sources */,
 				C4903BFA1E006859004F3345 /* WBCharactersTableViewCell.swift in Sources */,
@@ -776,18 +812,22 @@
 				C48D84E81DFE16DC00585E61 /* WBMaterialRemote.swift in Sources */,
 				C43EF3261E6F6E0100C6FADD /* StringPlus.swift in Sources */,
 				C45D346D1DECEA41001C47F9 /* WBObject.swift in Sources */,
+				C4386A261E7621C400285F5B /* WBStorageDetailArmorWeaponDescTableCell.swift in Sources */,
 				C45D34501DEB8417001C47F9 /* WBDrawerViewController.swift in Sources */,
 				C47D5B231DE69F3000082CFD /* WBJsonCurrency.swift in Sources */,
 				C47B01261E088CEE0057F475 /* AppConfigurator.swift in Sources */,
 				C411FAE71DFDF7FA0038337F /* WBStorageBankViewModel.swift in Sources */,
 				C43EF30E1E68D00300C6FADD /* WBStorageDetailTitleTableCell.swift in Sources */,
+				C4386A281E7621E700285F5B /* WBStorageDetailArmorWeaponTypeTableCell.swift in Sources */,
 				C43EF3181E6A2C5700C6FADD /* RealmSwiftPlus.swift in Sources */,
 				C48D84E61DFE160E00585E61 /* WBJsonItem.swift in Sources */,
+				C4386A171E75F67600285F5B /* WBJsonItemArmorDetail.swift in Sources */,
 				C45D34411DEB5ABF001C47F9 /* WBCharacterRemote.swift in Sources */,
 				C4E310F21E09EC7B0095EEB4 /* README.md in Sources */,
 				C41094A71D89003D00751A72 /* WBAboutViewController.swift in Sources */,
 				C48D84EE1DFE189A00585E61 /* WBItem.swift in Sources */,
 				C4873F9D1E0D93E7002E742D /* WBStorageWalletCoinTableViewCell.swift in Sources */,
+				C4386A241E7614C100285F5B /* WBItemTypeProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

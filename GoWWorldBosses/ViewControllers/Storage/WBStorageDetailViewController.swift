@@ -11,13 +11,12 @@ import UIKit
 class WBStorageDetailViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    
     var item: WBObject?
 }
 
 extension WBStorageDetailViewController: UITableViewDataSource, UITableViewDelegate {
     
-    func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int { // price as the second section
         guard let itm = item as? WBBankElement else {
             return 0
         }
@@ -29,7 +28,14 @@ extension WBStorageDetailViewController: UITableViewDataSource, UITableViewDeleg
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return 3
+            if let be = item as? WBBankElement,
+                let itm = be.item,
+                itm.type1.isArmor || itm.type1.isWeapon
+            {
+                return 5
+            } else {
+                return 3
+            }
         } else {
             return 2
         }
@@ -38,26 +44,69 @@ extension WBStorageDetailViewController: UITableViewDataSource, UITableViewDeleg
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         var h: CGFloat = 0
         if indexPath.section == 0 {
-            if indexPath.row == 0 {
-                h = 60
-            } else if indexPath.row == 1 {
-                guard let itm = item as? WBBankElement,
-                    let desc = itm.item?.descriptionText else {
-                    return h
-                }
-                
-                let size = self.sizeThatFits(attributedString: NSMutableAttributedString(string: desc))
-                h = size.height + 30.0
-            } else if indexPath.row == 2 {
-                if let itm = item as? WBBankElement {
-                    var text = itm.item?.type ?? ""
-                    if let fs = itm.item?.flags {
+            if let be = item as? WBBankElement,
+                let itm = be.item,
+                itm.type1.isArmor || itm.type1.isWeapon
+            {
+                if indexPath.row == 0 {
+                    h = 60
+                } else if indexPath.row == 1 {
+                    if let be = item as? WBBankElement,
+                        let itm = be.item
+                    {
+                        let desc = itm.details?.infixUpgradeAttributes.toWBTextViewText
+                        let size = self.sizeThatFits(attributedString: NSMutableAttributedString(string: desc ?? ""))
+                        h = size.height + 50 //25.0
+                    }
+                } else if indexPath.row == 2 {
+                    if let be = item as? WBBankElement,
+                        let itm = be.item {
+                        let desc = itm.descriptionText
+                        
+                        let size = self.sizeThatFits(attributedString: NSMutableAttributedString(string: desc ?? ""))
+                        h = size.height
+                    }
+                } else if indexPath.row == 3 {
+                    if let itm = item as? WBBankElement {
+                        let desc = "\(itm.item?.rarity)\n\(itm.item?.details?.type)\nRequired Level: \(itm.item?.level)"
+                        
+                        let size = self.sizeThatFits(attributedString: NSMutableAttributedString(string: desc))
+                        h = size.height
+                    }
+                } else if indexPath.row == 4 {
+                    if let itm = item as? WBBankElement {
+                        var text = itm.item?.type ?? ""
                         text += "\n"
-                        text += fs.replacingOccurrences(of: ",", with: "\n")
+                        if let it = itm.item {
+                            text += it.adjustedFlags.joined(separator: "\n")
+                        }
+                        
+                        let size = self.sizeThatFits(attributedString: NSMutableAttributedString(string: text))
+                        h = size.height
+                    }
+                }
+            } else {
+                if indexPath.row == 0 {
+                    h = 60
+                } else if indexPath.row == 1 {
+                    guard let itm = item as? WBBankElement,
+                        let desc = itm.item?.descriptionText else {
+                        return h
                     }
                     
-                    let size = self.sizeThatFits(attributedString: NSMutableAttributedString(string: text))
-                    h = size.height
+                    let size = self.sizeThatFits(attributedString: NSMutableAttributedString(string: desc))
+                    h = size.height + 30.0
+                } else if indexPath.row == 2 {
+                    if let itm = item as? WBBankElement {
+                        var text = itm.item?.type ?? ""
+                        if let fs = itm.item?.flags {
+                            text += "\n"
+                            text += fs.replacingOccurrences(of: ",", with: "\n")
+                        }
+                        
+                        let size = self.sizeThatFits(attributedString: NSMutableAttributedString(string: text))
+                        h = size.height
+                    }
                 }
             }
         } else {
@@ -80,35 +129,107 @@ extension WBStorageDetailViewController: UITableViewDataSource, UITableViewDeleg
         
         var cell = UITableViewCell()
         if indexPath.section == 0 {
-            if indexPath.row == 0 {
-                let titleCell = tableView.dequeueReusableCell(withIdentifier: "storageDetailTitleCell") as! WBStorageDetailTitleTableCell
-                if let itm = item as? WBBankElement,
-                    let ic = itm.item?.icon {
-                    titleCell.imgView.sd_setImage(with: URL(string: ic))
-                    titleCell.titleLabel.text = itm.item?.name
-                    titleCell.titleLabel.textColor = itm.item?.rarityColor ?? UIColor.white
-                    titleCell.countLabel.text = itm.count == 1 ? "" : "(\(itm.count))"
-                    titleCell.countLabel.textColor = itm.item?.rarityColor ?? UIColor.white
-                }
-                cell = titleCell
-            } else if indexPath.row == 1 {
-                let descCell = tableView.dequeueReusableCell(withIdentifier: "storageDetailDescriptionCell") as! WBStorageDetailDescriptionTableCell
-                if let itm = item as? WBBankElement {
-                    descCell.textView.text = itm.item?.descriptionText
-                }
-                cell = descCell
-            } else if indexPath.row == 2 {
-                let typeCell = tableView.dequeueReusableCell(withIdentifier: "storageDetailTypeCell") as! WBStorageDetailTypeTableCell
-                if let itm = item as? WBBankElement {
-                    var text = itm.item?.type ?? ""
-                    text += "\n"
-                    if let it = itm.item {
-                        text += it.adjustedFlags.joined(separator: "\n")
+            if let be = item as? WBBankElement,
+                let itm = be.item,
+                itm.type1.isArmor || itm.type1.isWeapon
+            {
+                if indexPath.row == 0 {
+                    let titleCell = tableView.dequeueReusableCell(withIdentifier: "storageDetailTitleCell") as! WBStorageDetailTitleTableCell
+                    if let itm = item as? WBBankElement,
+                        let ic = itm.item?.icon {
+                        titleCell.imgView.sd_setImage(with: URL(string: ic))
+                        titleCell.titleLabel.text = itm.item?.name
+                        titleCell.titleLabel.textColor = itm.item?.rarityColor ?? UIColor.white
+                        titleCell.countLabel.text = itm.count == 1 ? "" : "(\(itm.count))"
+                        titleCell.countLabel.textColor = itm.item?.rarityColor ?? UIColor.white
                     }
-                    typeCell.textView.text = text
+                    cell = titleCell
+                } else if indexPath.row == 1 {
+                    let descCell = tableView.dequeueReusableCell(withIdentifier: "storageDetailArmorWeaponDescriptionCell") as! WBStorageDetailArmorWeaponDescTableCell
+                    if let be = item as? WBBankElement,
+                        let itm = be.item {
+                        if case itm.type1 = WBItemType.armor,
+                            let armorDetails = itm.details as? WBJsonItemArmorDetail
+                        {
+                            descCell.nameLabel.text = "Defense:"
+                            descCell.valueLabel.text = "\(armorDetails.defense ?? 0)"
+                        } else if case itm.type1 = WBItemType.weapon,
+                            let weaponDetails = itm.details as? WBJsonItemWeaponDetail
+                        {
+                            descCell.nameLabel.text = "Weapon Strength:"
+                            descCell.valueLabel.text = "\(weaponDetails.minPower ?? 0)-\(weaponDetails.maxPower ?? 0)"
+                        }
+                        descCell.textView.text = itm.details?.infixUpgradeAttributes.toWBTextViewText
+                    }
+                    cell = descCell
+                } else if indexPath.row == 2 {
+                    let descCell = tableView.dequeueReusableCell(withIdentifier: "storageDetailDescriptionCell") as! WBStorageDetailDescriptionTableCell
+                    if let be = item as? WBBankElement,
+                        let itm = be.item {
+                        descCell.textView.text = itm.descriptionText
+                    }
+                    cell = descCell
+                } else if indexPath.row == 3 {
+                    let typeCell = tableView.dequeueReusableCell(withIdentifier: "storageDetailTypeCell") as! WBStorageDetailTypeTableCell
+                    if let itm = item as? WBBankElement {
+                        if let r = itm.item?.rarity,
+                            let t = itm.item?.details?.type,
+                            let l = itm.item?.level
+                        {
+                            let text = "\(r)\n\(t)\nRequired Level: \(l)"
+                            typeCell.textView.text = text
+                        }
+                    }
+                    typeCell.bottomSeparator.isHidden = true
+                    cell = typeCell
+                } else if indexPath.row == 4 {
+                    let typeCell = tableView.dequeueReusableCell(withIdentifier: "storageDetailTypeCell") as! WBStorageDetailTypeTableCell
+                    if let itm = item as? WBBankElement {
+                        var text = itm.item?.type ?? ""
+                        text += "\n"
+                        if let it = itm.item {
+                            text += it.adjustedFlags.joined(separator: "\n")
+                        }
+                        typeCell.textView.text = text
+                    }
+                    typeCell.bottomSeparator.isHidden = !(tableView.numberOfSections > 1)
+                    cell = typeCell
                 }
-                typeCell.bottomSeparator.isHidden = !(tableView.numberOfSections > 1)
-                cell = typeCell
+            } else {
+                if indexPath.row == 0 {
+                    let titleCell = tableView.dequeueReusableCell(withIdentifier: "storageDetailTitleCell") as! WBStorageDetailTitleTableCell
+                    if let itm = item as? WBBankElement,
+                        let ic = itm.item?.icon {
+                        titleCell.imgView.sd_setImage(with: URL(string: ic))
+                        titleCell.titleLabel.text = itm.item?.name
+                        titleCell.titleLabel.textColor = itm.item?.rarityColor ?? UIColor.white
+                        titleCell.countLabel.text = itm.count == 1 ? "" : "(\(itm.count))"
+                        titleCell.countLabel.textColor = itm.item?.rarityColor ?? UIColor.white
+                    }
+                    cell = titleCell
+                } else if indexPath.row == 1 {
+                    let descCell = tableView.dequeueReusableCell(withIdentifier: "storageDetailDescriptionCell") as! WBStorageDetailDescriptionTableCell
+                    if let be = item as? WBBankElement,
+                        let itm = be.item {
+                        if case itm.type1 = WBItemType.armor {
+                            print(itm.details?.infixUpgradeAttributes)
+                        }
+                        descCell.textView.text = itm.descriptionText
+                    }
+                    cell = descCell
+                } else if indexPath.row == 2 {
+                    let typeCell = tableView.dequeueReusableCell(withIdentifier: "storageDetailTypeCell") as! WBStorageDetailTypeTableCell
+                    if let itm = item as? WBBankElement {
+                        var text = itm.item?.type ?? ""
+                        text += "\n"
+                        if let it = itm.item {
+                            text += it.adjustedFlags.joined(separator: "\n")
+                        }
+                        typeCell.textView.text = text
+                    }
+                    typeCell.bottomSeparator.isHidden = !(tableView.numberOfSections > 1)
+                    cell = typeCell
+                }
             }
         } else {
             if indexPath.row == 0 { // vendor price

@@ -10,7 +10,8 @@ import Foundation
 import RealmSwift
 import Realm
 
-class WBItem: WBObject {
+class WBItem: WBObject, WBItemTypeProtocol {
+    
     dynamic var name: String?
     dynamic var descriptionText: String?
     dynamic var icon: String?
@@ -20,6 +21,7 @@ class WBItem: WBObject {
     dynamic var flags: String?
     dynamic var rarity: String?
     dynamic var vendorValue: Int = -1
+    dynamic var _details: NSData? = nil
     
     override func saveSyncableProperties(fromSyncable syncable: WBRemoteRecordSyncableType) {
         guard let rRecord = syncable as? WBJsonItem else {
@@ -37,21 +39,7 @@ class WBItem: WBObject {
         }
         self.rarity = rRecord.rarity
         self.vendorValue = rRecord.vendorValue ?? -1
-    }
-}
-
-fileprivate let kAdjustedFlags = ["AccountBindOnUse", "AccountBound", "SoulbindOnAcquire", "SoulBindOnUse"]
-
-extension WBItem {
-    var adjustedFlags: [String] {
-        if let f = self.flags {
-            let array = f.components(separatedBy: ",")
-            return array.filter { arrayItem in
-                return kAdjustedFlags.contains { flag in
-                    return flag ~= arrayItem
-                }
-            }
-        }
-        return []
+        
+        _details = rRecord.details?.toJSONString()?.data(using: String.Encoding.utf8) as NSData?
     }
 }

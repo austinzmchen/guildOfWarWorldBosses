@@ -10,7 +10,7 @@ import Foundation
 import ObjectMapper
 import AlamofireObjectMapper
 
-class WBJsonItem: WBJsonBase {
+class WBJsonItem: WBJsonBase, WBItemTypeProtocol {
     var name: String?
     var descriptionText: String?
     var icon: String?
@@ -19,6 +19,7 @@ class WBJsonItem: WBJsonBase {
     var rarity: String?
     var flags: [String]?
     var vendorValue: Int?
+    var details: WBJsonItemBaseDetail?
     
     override func mapping(map: Map) {
         super.mapping(map: map)
@@ -31,5 +32,18 @@ class WBJsonItem: WBJsonBase {
         rarity <- map["rarity"]
         flags <- map["flags"]
         vendorValue <- map["vendor_value"]
+        
+        switch self.type1 {
+        case .armor:
+            var d: WBJsonItemArmorDetail?
+            d <- map["details"]
+            details = d
+        case .weapon:
+            var d: WBJsonItemWeaponDetail?
+            d <- map["details"]
+            details = d
+        default:
+            details <- map["details"]
+        }
     }
 }
