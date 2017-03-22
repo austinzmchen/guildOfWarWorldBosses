@@ -270,20 +270,20 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weapon Strength:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KU3-Jb-9Sc" userLabel="title">
-                                                    <rect key="frame" x="40" y="0.0" width="124" height="18"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Weapon Strength:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KU3-Jb-9Sc" userLabel="title">
+                                                    <rect key="frame" x="40" y="15" width="124" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="995-1100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FNb-tc-BAm">
-                                                    <rect key="frame" x="169" y="-2" width="74.5" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="169" y="15" width="66.5" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="0.43137254899999999" green="0.80784313730000001" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LnN-gL-j5n">
-                                                    <rect key="frame" x="37.5" y="18" width="300" height="102"/>
+                                                    <rect key="frame" x="37.5" y="33" width="300" height="85"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <attributedString key="attributedText">
                                                         <fragment>
@@ -306,8 +306,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="LnN-gL-j5n" secondAttribute="trailing" constant="37.5" id="HJQ-8M-lkd"/>
                                                 <constraint firstItem="FNb-tc-BAm" firstAttribute="leading" secondItem="KU3-Jb-9Sc" secondAttribute="trailing" constant="5" id="IqJ-lK-zaP"/>
                                                 <constraint firstItem="LnN-gL-j5n" firstAttribute="leading" secondItem="BmF-t2-9Cp" secondAttribute="leading" constant="37.5" id="Kla-FS-FBR"/>
-                                                <constraint firstAttribute="bottom" secondItem="LnN-gL-j5n" secondAttribute="bottom" id="KpR-XC-Ckb"/>
-                                                <constraint firstItem="KU3-Jb-9Sc" firstAttribute="top" secondItem="BmF-t2-9Cp" secondAttribute="top" id="QBz-HP-sQZ"/>
+                                                <constraint firstItem="KU3-Jb-9Sc" firstAttribute="top" secondItem="BmF-t2-9Cp" secondAttribute="top" constant="15" id="QBz-HP-sQZ"/>
                                                 <constraint firstItem="LnN-gL-j5n" firstAttribute="top" secondItem="KU3-Jb-9Sc" secondAttribute="bottom" id="zCN-5q-YnB"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -555,7 +554,6 @@ Summons a Black Lion Merchant If Your Inventory Is Full after Gathering (20-Minu
                                     <outlet property="leftImageView" destination="DFl-iA-J6u" id="sVw-WH-jNv"/>
                                     <outlet property="mainTitleLabel" destination="eQW-mr-rhj" id="nRo-LR-c1w"/>
                                     <outlet property="subTitleLabel" destination="tcS-cF-Bgz" id="7Os-1p-qEk"/>
-                                    <segue destination="2nX-QF-Af3" kind="presentation" identifier="pushFromStorageTableVCToDetailVC" trigger="accessoryAction" modalPresentationStyle="overCurrentContext" id="Skr-sx-mlD"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -753,7 +751,4 @@ Summons a Black Lion Merchant If Your Inventory Is Full after Gathering (20-Minu
         <image name="icWalletGem" width="22" height="20"/>
         <image name="icWalletKarma" width="30" height="23"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="Skr-sx-mlD"/>
-    </inferredMetricsTieBreakers>
 </document>

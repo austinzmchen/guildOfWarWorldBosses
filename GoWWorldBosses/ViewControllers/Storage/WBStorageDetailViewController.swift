@@ -12,6 +12,29 @@ class WBStorageDetailViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     var item: WBObject?
+    var itemPrices: [WBJsonItemPrice]?
+    
+    var bankProcessor: WBBankProcessor? {
+        let syncCoord = appDelegate.appConfiguration[kAppConfigurationSyncCoordinator] as? WBSyncCoordinator
+        return syncCoord?.bankProcessor
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        if let be = item as? WBBankElement,
+            let itm = be.item
+        {
+            self.bankProcessor?.itemRemote.getItemPrice(byIds: [itm.id], completion: { (result) in
+                DispatchQueue.main.async {
+                    if case WBRemoteResult.success(let prices) = result {
+                        self.itemPrices = prices
+                        self.tableView.reloadSections(IndexSet(integer: 1), with: .automatic)
+                    }
+                }
+            })
+        }
+    }
 }
 
 extension WBStorageDetailViewController: UITableViewDataSource, UITableViewDelegate {
@@ -32,12 +55,16 @@ extension WBStorageDetailViewController: UITableViewDataSource, UITableViewDeleg
                 let itm = be.item,
                 itm.type1.isArmor || itm.type1.isWeapon
             {
-                return 5
+                return 4
             } else {
                 return 3
             }
         } else {
-            return 2
+            if let _ = self.itemPrices?.first {
+                return 4
+            } else {
+                return 2
+            }
         }
     }
     
@@ -56,7 +83,7 @@ extension WBStorageDetailViewController: UITableViewDataSource, UITableViewDeleg
                     {
                         let desc = itm.details?.infixUpgradeAttributes.toWBTextViewText
                         let size = self.sizeThatFits(attributedString: NSMutableAttributedString(string: desc ?? ""))
-                        h = size.height + 50 //25.0
+                        h = size.height + 45 //25.0
                     }
                 } else if indexPath.row == 2 {
                     if let be = item as? WBBankElement,
@@ -68,21 +95,27 @@ extension WBStorageDetailViewController: UITableViewDataSource, UITableViewDeleg
                     }
                 } else if indexPath.row == 3 {
                     if let itm = item as? WBBankElement {
-                        let desc = "\(itm.item?.rarity)\n\(itm.item?.details?.type)\nRequired Level: \(itm.item?.level)"
+                        var lines: [String] = []
+                        lines.append(itm.item?.rarity ?? "")
+                        lines.append(itm.item?.details?.type ?? "")
                         
-                        let size = self.sizeThatFits(attributedString: NSMutableAttributedString(string: desc))
-                        h = size.height
-                    }
-                } else if indexPath.row == 4 {
-                    if let itm = item as? WBBankElement {
-                        var text = itm.item?.type ?? ""
-                        text += "\n"
-                        if let it = itm.item {
-                            text += it.adjustedFlags.joined(separator: "\n")
+                        // add level
+                        if let l = itm.item?.level, l > 0
+                        {
+                            lines.append( String(format: "Required Level: %d", itm.item!.level) )
                         }
                         
+                        // add type
+                        lines.append(itm.item?.type ?? "")
+                        
+                        // add flags
+                        if let it = itm.item {
+                            lines.append(contentsOf: it.adjustedFlags)
+                        }
+                        
+                        let text = lines.filter{$0 != ""}.joined(separator: "\n")
                         let size = self.sizeThatFits(attributedString: NSMutableAttributedString(string: text))
-                        h = size.height
+                        h = size.height + 20
                     }
                 }
             } else {
@@ -172,24 +205,25 @@ extension WBStorageDetailViewController: UITableViewDataSource, UITableViewDeleg
                 } else if indexPath.row == 3 {
                     let typeCell = tableView.dequeueReusableCell(withIdentifier: "storageDetailTypeCell") as! WBStorageDetailTypeTableCell
                     if let itm = item as? WBBankElement {
-                        if let r = itm.item?.rarity,
-                            let t = itm.item?.details?.type,
-                            let l = itm.item?.level
+                        var lines: [String] = []
+                        lines.append(itm.item?.rarity ?? "")
+                        lines.append(itm.item?.details?.type ?? "")
+                        
+                        // add level
+                        if let l = itm.item?.level, l > 0
                         {
-                            let text = "\(r)\n\(t)\nRequired Level: \(l)"
-                            typeCell.textView.text = text
+                            lines.append( String(format: "Required Level: %d", itm.item!.level) )
                         }
-                    }
-                    typeCell.bottomSeparator.isHidden = true
-                    cell = typeCell
-                } else if indexPath.row == 4 {
-                    let typeCell = tableView.dequeueReusableCell(withIdentifier: "storageDetailTypeCell") as! WBStorageDetailTypeTableCell
-                    if let itm = item as? WBBankElement {
-                        var text = itm.item?.type ?? ""
-                        text += "\n"
+                        
+                        // add type
+                        lines.append(itm.item?.type ?? "")
+                        
+                        // add flags
                         if let it = itm.item {
-                            text += it.adjustedFlags.joined(separator: "\n")
+                            lines.append(contentsOf: it.adjustedFlags)
                         }
+                        
+                        let text = lines.filter{$0 != ""}.joined(separator: "\n")
                         typeCell.textView.text = text
                     }
                     typeCell.bottomSeparator.isHidden = !(tableView.numberOfSections > 1)
@@ -209,11 +243,8 @@ extension WBStorageDetailViewController: UITableViewDataSource, UITableViewDeleg
                     cell = titleCell
                 } else if indexPath.row == 1 {
                     let descCell = tableView.dequeueReusableCell(withIdentifier: "storageDetailDescriptionCell") as! WBStorageDetailDescriptionTableCell
-                    if let be = item as? WBBankElement,
-                        let itm = be.item {
-                        if case itm.type1 = WBItemType.armor {
-                            print(itm.details?.infixUpgradeAttributes)
-                        }
+                    if let be = item as? WBBankElement, let itm = be.item
+                    {
                         descCell.textView.text = itm.descriptionText
                     }
                     cell = descCell
@@ -244,6 +275,20 @@ extension WBStorageDetailViewController: UITableViewDataSource, UITableViewDeleg
                 if let itm = item as? WBBankElement {
                     coinValueCell.titleLabel.text = "Value:"
                     coinValueCell.coinView.coinValue = (itm.item?.vendorValue ?? 0) * itm.count
+                }
+                cell = coinValueCell
+            } else if indexPath.row == 2 { // value
+                let coinValueCell = tableView.dequeueReusableCell(withIdentifier: "storageDetailCoinValueCell") as! WBStorageDetailCoinValueTableCell
+                if let itm = item as? WBBankElement {
+                    coinValueCell.titleLabel.text = "Buy Price:"
+                    coinValueCell.coinView.coinValue = itemPrices?.first?.buysUnitPrice ?? 0
+                }
+                cell = coinValueCell
+            } else if indexPath.row == 3 { // value
+                let coinValueCell = tableView.dequeueReusableCell(withIdentifier: "storageDetailCoinValueCell") as! WBStorageDetailCoinValueTableCell
+                if let itm = item as? WBBankElement {
+                    coinValueCell.titleLabel.text = "Sell Price:"
+                    coinValueCell.coinView.coinValue = itemPrices?.first?.sellsUnitPrice ?? 0
                 }
                 cell = coinValueCell
             }

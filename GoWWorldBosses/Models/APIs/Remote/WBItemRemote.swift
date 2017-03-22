@@ -34,4 +34,29 @@ class WBItemRemote: WBRemote {
             }
         }
     }
+    
+    func getItemPrice(byIds ids: [String], completion: @escaping (_ result: WBRemoteResult<[WBJsonItemPrice]?>) -> ()) {
+        
+        let idsString = ids.map{ $0 }.joined(separator: ",")
+        let parameters = "?ids=\(idsString)"
+        
+        // pass empty dict to trigger custom encoding routines
+        let domain: String = self.remoteSession?.domain ?? ""
+        
+        let request = self.alamoFireManager.request(domain + "/commerce/prices" + parameters, headers: self.remoteSession?.headers)
+        request.responseArray(queue: WBRemoteSettings.concurrentQueue) { (response: DataResponse<[WBJsonItemPrice]>) in
+            if response.result.isSuccess {
+                var items: [WBJsonItemPrice]? = response.result.value
+                items?.uniqueInPlace()
+                let result = WBRemoteResult.success(items)
+                completion(result)
+            } else {
+                if response.response?.statusCode == 403 {
+                    completion(WBRemoteResult.failure(WBRemoteError.scopePermissionDenied))
+                } else {
+                    completion(WBRemoteResult.failure(response.result.error ?? WBRemoteError.unknown))
+                }
+            }
+        }
+    }
 }
