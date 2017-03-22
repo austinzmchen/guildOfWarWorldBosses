@@ -87,6 +87,9 @@ class WBMaterialProcessor: NSObject {
     
     func syncMaterialItems(byIds ids:[String], completion: @escaping (_ success: Bool, _ elements: [WBJsonItem]?, _ error: Error?) -> ())
     {
+        var ids = ids
+        ids.uniqueInPlace() // remove duplicates
+        
         let chunkSize = 150
         let chunks = stride(from: 0, to: ids.count, by: chunkSize).map {
             Array(ids[$0..<min($0 + chunkSize, ids.count)])
