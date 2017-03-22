@@ -212,15 +212,15 @@
                                 <rect key="frame" x="-0.5" y="100" width="375" height="467"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="storageDetailTitleCell" rowHeight="60" id="JdL-oS-uOv" userLabel="titleCell" customClass="WBStorageDetailTitleTableCell" customModule="WorldBosses" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="60"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="storageDetailTitleCell" rowHeight="80" id="JdL-oS-uOv" userLabel="titleCell" customClass="WBStorageDetailTitleTableCell" customModule="WorldBosses" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JdL-oS-uOv" id="Tt7-Uy-ulq">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icWalletCoin" translatesAutoresizingMaskIntoConstraints="NO" id="F8P-FH-QFn" customClass="ACBorderedImageView" customModule="WorldBosses" customModuleProvider="target">
-                                                    <rect key="frame" x="37.5" y="5" width="50" height="50"/>
+                                                    <rect key="frame" x="37.5" y="15" width="50" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="JKJ-q7-QhM"/>
                                                         <constraint firstAttribute="height" constant="50" id="e4c-l9-1fZ"/>
@@ -235,13 +235,13 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item Booster" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MYd-HF-Faa">
-                                                    <rect key="frame" x="107.5" y="18.5" width="114" height="23"/>
+                                                    <rect key="frame" x="107.5" y="28.5" width="114" height="23"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(2)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sbg-TQ-I5a" userLabel="countLabel">
-                                                    <rect key="frame" x="227.5" y="18.5" width="23.5" height="23"/>
+                                                    <rect key="frame" x="227.5" y="28.5" width="23.5" height="23"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -264,7 +264,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="storageDetailArmorWeaponDescriptionCell" rowHeight="120" id="LVs-EA-IBE" userLabel="armorWeaponDescCell" customClass="WBStorageDetailArmorWeaponDescTableCell" customModule="WorldBosses" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="88" width="375" height="120"/>
+                                        <rect key="frame" x="0.0" y="108" width="375" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LVs-EA-IBE" id="BmF-t2-9Cp">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
@@ -318,7 +318,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="storageDetailDescriptionCell" rowHeight="200" id="yE4-tL-i5A" userLabel="descriptionCell" customClass="WBStorageDetailDescriptionTableCell" customModule="WorldBosses" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="208" width="375" height="200"/>
+                                        <rect key="frame" x="0.0" y="228" width="375" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yE4-tL-i5A" id="QUZ-Ty-11N">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
@@ -358,7 +358,7 @@ Summons a Black Lion Merchant If Your Inventory Is Full after Gathering (20-Minu
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="storageDetailTypeCell" rowHeight="80" id="Ggl-m3-JMx" userLabel="typeCell" customClass="WBStorageDetailTypeTableCell" customModule="WorldBosses" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="408" width="375" height="80"/>
+                                        <rect key="frame" x="0.0" y="428" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ggl-m3-JMx" id="a42-Jc-Ior">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
@@ -412,7 +412,7 @@ Summons a Black Lion Merchant If Your Inventory Is Full after Gathering (20-Minu
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="storageDetailCoinValueCell" rowHeight="24" id="ojH-VT-hgs" userLabel="walletCoinTableCell" customClass="WBStorageDetailCoinValueTableCell" customModule="WorldBosses" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="488" width="375" height="24"/>
+                                        <rect key="frame" x="0.0" y="508" width="375" height="24"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ojH-VT-hgs" id="VWD-UJ-Hrt">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="24"/>
@@ -488,6 +488,606 @@ Summons a Black Lion Merchant If Your Inventory Is Full after Gathering (20-Minu
             </objects>
             <point key="canvasLocation" x="737" y="1639"/>
         </scene>
+        <!--Item Detail-->
+        <scene sceneID="J6W-Lw-aII">
+            <objects>
+                <viewController storyboardIdentifier="drawerWalletDetailVC" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="4QR-ug-e5j" userLabel="Item Detail" customClass="WBStorageWalletDetailViewController" customModule="WorldBosses" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7aq-Nz-Pqa"/>
+                        <viewControllerLayoutGuide type="bottom" id="16a-ju-r8d"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8fS-Vt-fJA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CHi-BF-9SY">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="egd-Fy-2QM">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="erP-Hl-mKI">
+                                <rect key="frame" x="-0.5" y="100" width="375" height="467"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="storageDetailTitleCell" rowHeight="80" id="MMV-O6-Ymh" userLabel="titleCell" customClass="WBStorageDetailTitleTableCell" customModule="WorldBosses" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MMV-O6-Ymh" id="Igi-Qq-wsM">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icWalletCoin" translatesAutoresizingMaskIntoConstraints="NO" id="fRx-3N-4rx" customClass="ACBorderedImageView" customModule="WorldBosses" customModuleProvider="target">
+                                                    <rect key="frame" x="38" y="15" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="5UF-0N-wvT"/>
+                                                        <constraint firstAttribute="width" constant="50" id="AIs-ga-80k"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                            <color key="value" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item Booster" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="14C-8F-w4p">
+                                                    <rect key="frame" x="108" y="29" width="114" height="23"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(2)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nWb-ff-J4X" userLabel="countLabel">
+                                                    <rect key="frame" x="228" y="29" width="24" height="23"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="14C-8F-w4p" firstAttribute="trailing" secondItem="nWb-ff-J4X" secondAttribute="leading" constant="-6" id="8qd-mZ-240"/>
+                                                <constraint firstItem="14C-8F-w4p" firstAttribute="centerY" secondItem="fRx-3N-4rx" secondAttribute="centerY" id="KpR-8i-6I6"/>
+                                                <constraint firstItem="fRx-3N-4rx" firstAttribute="leading" secondItem="Igi-Qq-wsM" secondAttribute="leading" constant="37.5" id="a35-m1-YSw"/>
+                                                <constraint firstItem="14C-8F-w4p" firstAttribute="leading" secondItem="fRx-3N-4rx" secondAttribute="trailing" constant="20" id="fcb-bs-2Qh"/>
+                                                <constraint firstItem="nWb-ff-J4X" firstAttribute="centerY" secondItem="14C-8F-w4p" secondAttribute="centerY" id="fqE-T1-Lpa"/>
+                                                <constraint firstItem="fRx-3N-4rx" firstAttribute="centerY" secondItem="Igi-Qq-wsM" secondAttribute="centerY" id="uG7-0r-YRb"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="countLabel" destination="nWb-ff-J4X" id="FXl-3m-Zt8"/>
+                                            <outlet property="imgView" destination="fRx-3N-4rx" id="1ji-1I-BVN"/>
+                                            <outlet property="titleLabel" destination="14C-8F-w4p" id="eXe-jh-rjE"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="storageDetailArmorWeaponDescriptionCell" rowHeight="120" id="qxK-LR-93l" userLabel="armorWeaponDescCell" customClass="WBStorageDetailArmorWeaponDescTableCell" customModule="WorldBosses" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="108" width="375" height="120"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qxK-LR-93l" id="qNZ-ts-EVB">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Weapon Strength:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bLW-G1-QD7" userLabel="title">
+                                                    <rect key="frame" x="40" y="15" width="124" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="995-1100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qZR-gz-Ob1">
+                                                    <rect key="frame" x="169" y="15" width="67" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="0.43137254899999999" green="0.80784313730000001" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z5O-5D-N67">
+                                                    <rect key="frame" x="38" y="33" width="300" height="85"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment>
+                                                            <string key="content">+171 Power
++171 Toughness
++239 Healing</string>
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.43137254901960786" green="0.80784313725490198" blue="0.10196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <font key="NSFont" size="15" name="HelveticaNeue"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="8" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Z5O-5D-N67" firstAttribute="top" secondItem="bLW-G1-QD7" secondAttribute="bottom" id="2Dk-PQ-T7U"/>
+                                                <constraint firstItem="bLW-G1-QD7" firstAttribute="top" secondItem="qNZ-ts-EVB" secondAttribute="top" constant="15" id="BQw-Fz-Lhy"/>
+                                                <constraint firstItem="bLW-G1-QD7" firstAttribute="leading" secondItem="qNZ-ts-EVB" secondAttribute="leading" constant="40" id="KIL-SH-m5v"/>
+                                                <constraint firstAttribute="trailing" secondItem="Z5O-5D-N67" secondAttribute="trailing" constant="37.5" id="O5p-ZO-O9h"/>
+                                                <constraint firstItem="qZR-gz-Ob1" firstAttribute="leading" secondItem="bLW-G1-QD7" secondAttribute="trailing" constant="5" id="VdR-D4-ehK"/>
+                                                <constraint firstItem="Z5O-5D-N67" firstAttribute="leading" secondItem="qNZ-ts-EVB" secondAttribute="leading" constant="37.5" id="wUH-fG-iuM"/>
+                                                <constraint firstItem="qZR-gz-Ob1" firstAttribute="baseline" secondItem="bLW-G1-QD7" secondAttribute="baseline" id="wfe-6F-DPQ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="bLW-G1-QD7" id="yUu-uY-FWx"/>
+                                            <outlet property="textView" destination="Z5O-5D-N67" id="Wae-Ya-E1f"/>
+                                            <outlet property="valueLabel" destination="qZR-gz-Ob1" id="jkf-9N-dKv"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="storageDetailDescriptionCell" rowHeight="200" id="I0R-cy-pmS" userLabel="descriptionCell" customClass="WBStorageDetailDescriptionTableCell" customModule="WorldBosses" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="228" width="375" height="200"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="I0R-cy-pmS" id="JQ5-kB-QQ5">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bpf-u0-jSR">
+                                                    <rect key="frame" x="38" y="0.0" width="300" height="200"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment>
+                                                            <string key="content">Grants the following benefits for 2 hours:
+   +50% Magic Find
+   +50% Critical Hit Chance
+   +33% Change of Extra Gathering Strike
+   10 seconds of Swiftness after Gathering
+Summons a Black Lion Merchant If Your Inventory Is Full after Gathering (20-Minute Cooldown)</string>
+                                                            <attributes>
+                                                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <font key="NSFont" size="15" name="HelveticaNeue"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="8" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="bpf-u0-jSR" firstAttribute="top" secondItem="JQ5-kB-QQ5" secondAttribute="top" id="MxD-Ft-9LC"/>
+                                                <constraint firstAttribute="trailing" secondItem="bpf-u0-jSR" secondAttribute="trailing" constant="37.5" id="clT-lH-fI2"/>
+                                                <constraint firstItem="bpf-u0-jSR" firstAttribute="leading" secondItem="JQ5-kB-QQ5" secondAttribute="leading" constant="37.5" id="dNU-hw-xB9"/>
+                                                <constraint firstAttribute="bottom" secondItem="bpf-u0-jSR" secondAttribute="bottom" id="gFP-oY-gh5"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="textView" destination="bpf-u0-jSR" id="LGe-7B-a5x"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="storageDetailTypeCell" rowHeight="80" id="6em-iz-gU0" userLabel="typeCell" customClass="WBStorageDetailTypeTableCell" customModule="WorldBosses" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="428" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6em-iz-gU0" id="VjF-Th-bd0">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qFq-wb-pfC">
+                                                    <rect key="frame" x="38" y="0.0" width="300" height="80"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment>
+                                                            <string key="content">Consumable
+</string>
+                                                            <attributes>
+                                                                <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <font key="NSFont" size="13" name="HelveticaNeue-Medium"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="8" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment content="Accountbound">
+                                                            <attributes>
+                                                                <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <font key="NSFont" size="13" name="HelveticaNeue-Medium"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="8" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CIl-sc-zYj" userLabel="Separator">
+                                                    <rect key="frame" x="38" y="79" width="300" height="1"/>
+                                                    <color key="backgroundColor" white="1" alpha="0.14999999999999999" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="EaD-Tj-XBZ"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="qFq-wb-pfC" secondAttribute="trailing" constant="37.5" id="Ddc-6f-1pH"/>
+                                                <constraint firstAttribute="bottom" secondItem="CIl-sc-zYj" secondAttribute="bottom" id="NVu-g2-W6V"/>
+                                                <constraint firstItem="qFq-wb-pfC" firstAttribute="top" secondItem="VjF-Th-bd0" secondAttribute="top" id="f4j-QR-ZRI"/>
+                                                <constraint firstAttribute="bottom" secondItem="qFq-wb-pfC" secondAttribute="bottom" id="fXp-s0-AZD"/>
+                                                <constraint firstItem="qFq-wb-pfC" firstAttribute="leading" secondItem="VjF-Th-bd0" secondAttribute="leading" constant="37.5" id="kxo-kz-9L7"/>
+                                                <constraint firstAttribute="trailing" secondItem="CIl-sc-zYj" secondAttribute="trailing" constant="37.5" id="lZQ-Jb-hFE"/>
+                                                <constraint firstItem="CIl-sc-zYj" firstAttribute="leading" secondItem="VjF-Th-bd0" secondAttribute="leading" constant="37.5" id="rtb-zK-Mxy"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="bottomSeparator" destination="CIl-sc-zYj" id="AIi-T0-8Fw"/>
+                                            <outlet property="textView" destination="qFq-wb-pfC" id="udD-sL-tfl"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="storageDetailCoinValueCell" rowHeight="24" id="xfZ-4b-dYh" userLabel="walletCoinTableCell" customClass="WBStorageDetailCoinValueTableCell" customModule="WorldBosses" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="508" width="375" height="24"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xfZ-4b-dYh" id="DxR-8V-YIT">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="24"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vendor Price:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3GR-Mf-v0D" userLabel="mainLabel">
+                                                    <rect key="frame" x="42" y="4" width="86" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" placeholderIntrinsicWidth="200" placeholderIntrinsicHeight="infinite" translatesAutoresizingMaskIntoConstraints="NO" id="IND-1d-SyO" userLabel="coinView" customClass="WBCoinView" customModule="WorldBosses" customModuleProvider="target">
+                                                    <rect key="frame" x="136" y="0.0" width="200" height="24"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="3GR-Mf-v0D" firstAttribute="leading" secondItem="DxR-8V-YIT" secondAttribute="leading" constant="42" id="You-Mg-6nN"/>
+                                                <constraint firstItem="3GR-Mf-v0D" firstAttribute="centerY" secondItem="DxR-8V-YIT" secondAttribute="centerY" id="buH-gq-0a3"/>
+                                                <constraint firstItem="IND-1d-SyO" firstAttribute="height" secondItem="DxR-8V-YIT" secondAttribute="height" id="ea9-Je-5AP"/>
+                                                <constraint firstItem="IND-1d-SyO" firstAttribute="centerY" secondItem="DxR-8V-YIT" secondAttribute="centerY" id="iGu-MK-QlA"/>
+                                                <constraint firstItem="IND-1d-SyO" firstAttribute="leading" secondItem="3GR-Mf-v0D" secondAttribute="trailing" constant="8" id="p8v-QP-Pkh"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="coinView" destination="IND-1d-SyO" id="l0B-te-S13"/>
+                                            <outlet property="titleLabel" destination="3GR-Mf-v0D" id="dVS-fI-gtO"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="4QR-ug-e5j" id="WGC-Wx-RhQ"/>
+                                    <outlet property="delegate" destination="4QR-ug-e5j" id="4YW-5E-DZs"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Bs-NT-qSe">
+                                <rect key="frame" x="164" y="581" width="46" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="50F-9I-CBg"/>
+                                    <constraint firstAttribute="height" constant="46" id="Jag-Cp-Ffp"/>
+                                </constraints>
+                                <state key="normal" image="bounds"/>
+                                <connections>
+                                    <segue destination="dY4-rE-z9A" kind="unwind" unwindAction="unwindActionFromItemDetailWithUnwindSegue:" id="iuq-HB-pYb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="erP-Hl-mKI" firstAttribute="bottom" secondItem="CHi-BF-9SY" secondAttribute="bottom" constant="-100" id="BA5-Ke-IwK"/>
+                            <constraint firstAttribute="trailing" secondItem="CHi-BF-9SY" secondAttribute="trailing" id="Bbd-vB-85G"/>
+                            <constraint firstItem="16a-ju-r8d" firstAttribute="top" secondItem="CHi-BF-9SY" secondAttribute="bottom" id="GEZ-UP-w6J"/>
+                            <constraint firstItem="erP-Hl-mKI" firstAttribute="top" secondItem="CHi-BF-9SY" secondAttribute="top" constant="100" id="LZI-WV-Jji"/>
+                            <constraint firstItem="erP-Hl-mKI" firstAttribute="width" secondItem="CHi-BF-9SY" secondAttribute="width" id="P18-uv-CE7"/>
+                            <constraint firstItem="CHi-BF-9SY" firstAttribute="top" secondItem="7aq-Nz-Pqa" secondAttribute="bottom" constant="-20" id="TaS-qR-gDe"/>
+                            <constraint firstItem="5Bs-NT-qSe" firstAttribute="bottom" secondItem="CHi-BF-9SY" secondAttribute="bottom" constant="-40" id="W1s-7X-1qT"/>
+                            <constraint firstItem="5Bs-NT-qSe" firstAttribute="centerX" secondItem="CHi-BF-9SY" secondAttribute="centerX" id="jHF-Mp-saY"/>
+                            <constraint firstItem="erP-Hl-mKI" firstAttribute="centerX" secondItem="CHi-BF-9SY" secondAttribute="centerX" id="uM6-5f-2ZI"/>
+                            <constraint firstItem="CHi-BF-9SY" firstAttribute="leading" secondItem="8fS-Vt-fJA" secondAttribute="leading" id="y7O-We-KFt"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="OhP-Qg-XZC"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="erP-Hl-mKI" id="hOZ-iT-qBJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h2r-Ev-NWH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="dY4-rE-z9A" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-10" y="1639"/>
+        </scene>
+        <!--Item Detail-->
+        <scene sceneID="acv-58-H86">
+            <objects>
+                <viewController storyboardIdentifier="drawerMaterialDetailVC" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="VJ0-7w-SCz" userLabel="Item Detail" customClass="WBStorageMaterialDetailViewController" customModule="WorldBosses" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vW4-Vy-P7e"/>
+                        <viewControllerLayoutGuide type="bottom" id="9mE-to-Fme"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nIT-IL-WVT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dDq-9w-HhE">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="fHI-Bc-8Sy">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="skl-kr-Vm9">
+                                <rect key="frame" x="-0.5" y="100" width="375" height="467"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="storageDetailTitleCell" rowHeight="80" id="XXf-c8-FE2" userLabel="titleCell" customClass="WBStorageDetailTitleTableCell" customModule="WorldBosses" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XXf-c8-FE2" id="k8T-FO-X9w">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icWalletCoin" translatesAutoresizingMaskIntoConstraints="NO" id="id7-v5-kKb" customClass="ACBorderedImageView" customModule="WorldBosses" customModuleProvider="target">
+                                                    <rect key="frame" x="38" y="15" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="G94-23-3qV"/>
+                                                        <constraint firstAttribute="height" constant="50" id="iZM-eg-hPX"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                            <color key="value" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item Booster" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ge6-9c-1Xq">
+                                                    <rect key="frame" x="108" y="29" width="114" height="23"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(2)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nLc-Bv-8nL" userLabel="countLabel">
+                                                    <rect key="frame" x="228" y="29" width="24" height="23"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="id7-v5-kKb" firstAttribute="centerY" secondItem="k8T-FO-X9w" secondAttribute="centerY" id="7tS-pz-DOW"/>
+                                                <constraint firstItem="ge6-9c-1Xq" firstAttribute="leading" secondItem="id7-v5-kKb" secondAttribute="trailing" constant="20" id="JXk-DH-azH"/>
+                                                <constraint firstItem="ge6-9c-1Xq" firstAttribute="centerY" secondItem="id7-v5-kKb" secondAttribute="centerY" id="O5U-Q5-WUN"/>
+                                                <constraint firstItem="nLc-Bv-8nL" firstAttribute="centerY" secondItem="ge6-9c-1Xq" secondAttribute="centerY" id="V4y-GV-d4C"/>
+                                                <constraint firstItem="id7-v5-kKb" firstAttribute="leading" secondItem="k8T-FO-X9w" secondAttribute="leading" constant="37.5" id="pld-l2-lWw"/>
+                                                <constraint firstItem="ge6-9c-1Xq" firstAttribute="trailing" secondItem="nLc-Bv-8nL" secondAttribute="leading" constant="-6" id="yBB-pZ-6We"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="countLabel" destination="nLc-Bv-8nL" id="51v-1n-1mU"/>
+                                            <outlet property="imgView" destination="id7-v5-kKb" id="IUY-Dm-su1"/>
+                                            <outlet property="titleLabel" destination="ge6-9c-1Xq" id="wue-SK-equ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="storageDetailArmorWeaponDescriptionCell" rowHeight="120" id="Oox-ON-FJw" userLabel="armorWeaponDescCell" customClass="WBStorageDetailArmorWeaponDescTableCell" customModule="WorldBosses" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="108" width="375" height="120"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Oox-ON-FJw" id="pjx-ZY-bmG">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Weapon Strength:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fuS-Pl-gLa" userLabel="title">
+                                                    <rect key="frame" x="40" y="15" width="124" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="995-1100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BDl-Yv-zFz">
+                                                    <rect key="frame" x="169" y="15" width="67" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="0.43137254899999999" green="0.80784313730000001" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wVa-zL-Wi0">
+                                                    <rect key="frame" x="38" y="33" width="300" height="85"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment>
+                                                            <string key="content">+171 Power
++171 Toughness
++239 Healing</string>
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.43137254901960786" green="0.80784313725490198" blue="0.10196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <font key="NSFont" size="15" name="HelveticaNeue"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="8" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="BDl-Yv-zFz" firstAttribute="leading" secondItem="fuS-Pl-gLa" secondAttribute="trailing" constant="5" id="8ZJ-9W-Wrr"/>
+                                                <constraint firstAttribute="trailing" secondItem="wVa-zL-Wi0" secondAttribute="trailing" constant="37.5" id="IdA-Vj-xII"/>
+                                                <constraint firstItem="wVa-zL-Wi0" firstAttribute="leading" secondItem="pjx-ZY-bmG" secondAttribute="leading" constant="37.5" id="RjD-Rq-pmi"/>
+                                                <constraint firstItem="fuS-Pl-gLa" firstAttribute="top" secondItem="pjx-ZY-bmG" secondAttribute="top" constant="15" id="VJS-i1-tmo"/>
+                                                <constraint firstItem="wVa-zL-Wi0" firstAttribute="top" secondItem="fuS-Pl-gLa" secondAttribute="bottom" id="Whn-Oh-anb"/>
+                                                <constraint firstItem="BDl-Yv-zFz" firstAttribute="baseline" secondItem="fuS-Pl-gLa" secondAttribute="baseline" id="YnP-o1-8PI"/>
+                                                <constraint firstItem="fuS-Pl-gLa" firstAttribute="leading" secondItem="pjx-ZY-bmG" secondAttribute="leading" constant="40" id="s2X-QP-28y"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="fuS-Pl-gLa" id="8Dy-M5-eWR"/>
+                                            <outlet property="textView" destination="wVa-zL-Wi0" id="bdE-zH-ALP"/>
+                                            <outlet property="valueLabel" destination="BDl-Yv-zFz" id="R3K-MW-RvC"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="storageDetailDescriptionCell" rowHeight="200" id="8nL-4B-BT6" userLabel="descriptionCell" customClass="WBStorageDetailDescriptionTableCell" customModule="WorldBosses" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="228" width="375" height="200"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8nL-4B-BT6" id="BbI-cc-h8F">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bDc-Yg-aVy">
+                                                    <rect key="frame" x="38" y="0.0" width="300" height="200"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment>
+                                                            <string key="content">Grants the following benefits for 2 hours:
+   +50% Magic Find
+   +50% Critical Hit Chance
+   +33% Change of Extra Gathering Strike
+   10 seconds of Swiftness after Gathering
+Summons a Black Lion Merchant If Your Inventory Is Full after Gathering (20-Minute Cooldown)</string>
+                                                            <attributes>
+                                                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <font key="NSFont" size="15" name="HelveticaNeue"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="8" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="bDc-Yg-aVy" secondAttribute="bottom" id="Eo5-Pd-16Z"/>
+                                                <constraint firstAttribute="trailing" secondItem="bDc-Yg-aVy" secondAttribute="trailing" constant="37.5" id="biq-lA-iOO"/>
+                                                <constraint firstItem="bDc-Yg-aVy" firstAttribute="leading" secondItem="BbI-cc-h8F" secondAttribute="leading" constant="37.5" id="uD8-IR-cyt"/>
+                                                <constraint firstItem="bDc-Yg-aVy" firstAttribute="top" secondItem="BbI-cc-h8F" secondAttribute="top" id="w6e-yS-RT2"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="textView" destination="bDc-Yg-aVy" id="VwM-NU-5NJ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="storageDetailTypeCell" rowHeight="80" id="A4l-hd-Po9" userLabel="typeCell" customClass="WBStorageDetailTypeTableCell" customModule="WorldBosses" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="428" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="A4l-hd-Po9" id="MBc-5e-Fdw">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VoT-eB-Ggz">
+                                                    <rect key="frame" x="38" y="0.0" width="300" height="80"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment>
+                                                            <string key="content">Consumable
+</string>
+                                                            <attributes>
+                                                                <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <font key="NSFont" size="13" name="HelveticaNeue-Medium"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="8" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment content="Accountbound">
+                                                            <attributes>
+                                                                <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <font key="NSFont" size="13" name="HelveticaNeue-Medium"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="8" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8vH-KI-f0N" userLabel="Separator">
+                                                    <rect key="frame" x="38" y="79" width="300" height="1"/>
+                                                    <color key="backgroundColor" white="1" alpha="0.14999999999999999" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="E6H-cB-GLa"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="VoT-eB-Ggz" secondAttribute="trailing" constant="37.5" id="7kB-zM-08S"/>
+                                                <constraint firstItem="VoT-eB-Ggz" firstAttribute="top" secondItem="MBc-5e-Fdw" secondAttribute="top" id="9Uz-YU-dUv"/>
+                                                <constraint firstItem="VoT-eB-Ggz" firstAttribute="leading" secondItem="MBc-5e-Fdw" secondAttribute="leading" constant="37.5" id="TY2-cM-8AY"/>
+                                                <constraint firstItem="8vH-KI-f0N" firstAttribute="leading" secondItem="MBc-5e-Fdw" secondAttribute="leading" constant="37.5" id="WMK-gC-iaH"/>
+                                                <constraint firstAttribute="bottom" secondItem="VoT-eB-Ggz" secondAttribute="bottom" id="YGN-pu-7mh"/>
+                                                <constraint firstAttribute="trailing" secondItem="8vH-KI-f0N" secondAttribute="trailing" constant="37.5" id="Zmx-AB-K94"/>
+                                                <constraint firstAttribute="bottom" secondItem="8vH-KI-f0N" secondAttribute="bottom" id="gMo-x9-PBQ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="bottomSeparator" destination="8vH-KI-f0N" id="f6s-Td-eXD"/>
+                                            <outlet property="textView" destination="VoT-eB-Ggz" id="fbY-bG-pLl"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="storageDetailCoinValueCell" rowHeight="24" id="cfa-wb-aJ7" userLabel="walletCoinTableCell" customClass="WBStorageDetailCoinValueTableCell" customModule="WorldBosses" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="508" width="375" height="24"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cfa-wb-aJ7" id="7xb-nl-Whu">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="24"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vendor Price:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M65-7w-3mh" userLabel="mainLabel">
+                                                    <rect key="frame" x="42" y="4" width="86" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" placeholderIntrinsicWidth="200" placeholderIntrinsicHeight="infinite" translatesAutoresizingMaskIntoConstraints="NO" id="hUW-gN-njc" userLabel="coinView" customClass="WBCoinView" customModule="WorldBosses" customModuleProvider="target">
+                                                    <rect key="frame" x="136" y="0.0" width="200" height="24"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="M65-7w-3mh" firstAttribute="leading" secondItem="7xb-nl-Whu" secondAttribute="leading" constant="42" id="BgM-J5-82r"/>
+                                                <constraint firstItem="hUW-gN-njc" firstAttribute="centerY" secondItem="7xb-nl-Whu" secondAttribute="centerY" id="Ori-jD-YLL"/>
+                                                <constraint firstItem="hUW-gN-njc" firstAttribute="leading" secondItem="M65-7w-3mh" secondAttribute="trailing" constant="8" id="gDm-c6-cYX"/>
+                                                <constraint firstItem="M65-7w-3mh" firstAttribute="centerY" secondItem="7xb-nl-Whu" secondAttribute="centerY" id="qam-fH-CA5"/>
+                                                <constraint firstItem="hUW-gN-njc" firstAttribute="height" secondItem="7xb-nl-Whu" secondAttribute="height" id="xS8-WN-AuN"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="coinView" destination="hUW-gN-njc" id="5gf-Cd-OnS"/>
+                                            <outlet property="titleLabel" destination="M65-7w-3mh" id="ZIR-hA-yaS"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="VJ0-7w-SCz" id="eQL-F2-J3Y"/>
+                                    <outlet property="delegate" destination="VJ0-7w-SCz" id="bkV-Vz-BQV"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M2k-ja-Ozh">
+                                <rect key="frame" x="164" y="581" width="46" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="W45-88-9w5"/>
+                                    <constraint firstAttribute="height" constant="46" id="dja-Qk-e1P"/>
+                                </constraints>
+                                <state key="normal" image="bounds"/>
+                                <connections>
+                                    <segue destination="K5d-li-O9O" kind="unwind" unwindAction="unwindActionFromItemDetailWithUnwindSegue:" id="gxt-3D-Dyi"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="M2k-ja-Ozh" firstAttribute="bottom" secondItem="dDq-9w-HhE" secondAttribute="bottom" constant="-40" id="3wD-5t-nj8"/>
+                            <constraint firstItem="skl-kr-Vm9" firstAttribute="width" secondItem="dDq-9w-HhE" secondAttribute="width" id="AXY-PH-xui"/>
+                            <constraint firstItem="skl-kr-Vm9" firstAttribute="top" secondItem="dDq-9w-HhE" secondAttribute="top" constant="100" id="NMJ-zN-o8Z"/>
+                            <constraint firstItem="9mE-to-Fme" firstAttribute="top" secondItem="dDq-9w-HhE" secondAttribute="bottom" id="YwW-ya-Box"/>
+                            <constraint firstAttribute="trailing" secondItem="dDq-9w-HhE" secondAttribute="trailing" id="ZSk-od-fqe"/>
+                            <constraint firstItem="M2k-ja-Ozh" firstAttribute="centerX" secondItem="dDq-9w-HhE" secondAttribute="centerX" id="aIU-Ai-h7e"/>
+                            <constraint firstItem="dDq-9w-HhE" firstAttribute="leading" secondItem="nIT-IL-WVT" secondAttribute="leading" id="hlC-GD-hNs"/>
+                            <constraint firstItem="dDq-9w-HhE" firstAttribute="top" secondItem="vW4-Vy-P7e" secondAttribute="bottom" constant="-20" id="wWW-RO-e3D"/>
+                            <constraint firstItem="skl-kr-Vm9" firstAttribute="centerX" secondItem="dDq-9w-HhE" secondAttribute="centerX" id="xqU-nj-MSr"/>
+                            <constraint firstItem="skl-kr-Vm9" firstAttribute="bottom" secondItem="dDq-9w-HhE" secondAttribute="bottom" constant="-100" id="yLd-Vf-buP"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="9cT-N9-2OF"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="skl-kr-Vm9" id="yZs-X1-qfa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PjU-45-9fz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="K5d-li-O9O" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1510" y="1639"/>
+        </scene>
         <!--Material Table View Controller-->
         <scene sceneID="e2H-Wr-Etp">
             <objects>
@@ -554,6 +1154,7 @@ Summons a Black Lion Merchant If Your Inventory Is Full after Gathering (20-Minu
                                     <outlet property="leftImageView" destination="DFl-iA-J6u" id="sVw-WH-jNv"/>
                                     <outlet property="mainTitleLabel" destination="eQW-mr-rhj" id="nRo-LR-c1w"/>
                                     <outlet property="subTitleLabel" destination="tcS-cF-Bgz" id="7Os-1p-qEk"/>
+                                    <segue destination="VJ0-7w-SCz" kind="presentation" identifier="pushFromStorageTableVCToDetailVC" animates="NO" modalPresentationStyle="overCurrentContext" id="FYm-OM-NQb"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -675,6 +1276,7 @@ Summons a Black Lion Merchant If Your Inventory Is Full after Gathering (20-Minu
                                     <outlet property="mainTitleLabel" destination="wmQ-8D-uCD" id="DHZ-Qb-VKv"/>
                                     <outlet property="silverLabel" destination="E0G-NB-Xcp" id="hsv-7h-mgA"/>
                                     <outlet property="subTitleLabel" destination="zqU-Sk-GbT" id="ZeF-yk-qvO"/>
+                                    <segue destination="4QR-ug-e5j" kind="presentation" identifier="pushFromStorageTableVCToDetailVC" animates="NO" modalPresentationStyle="overCurrentContext" id="Y20-7J-leg"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="storageItemTableCell" id="D7G-6P-4V5" customClass="WBStorageItemTableViewCell" customModule="WorldBosses" customModuleProvider="target">
@@ -729,6 +1331,7 @@ Summons a Black Lion Merchant If Your Inventory Is Full after Gathering (20-Minu
                                     <outlet property="leftImageView" destination="U2p-BG-duu" id="5Ty-qH-NHq"/>
                                     <outlet property="mainTitleLabel" destination="TCC-fp-5HI" id="vDJ-17-PhB"/>
                                     <outlet property="subTitleLabel" destination="m5g-Pt-iog" id="8Wu-ml-72h"/>
+                                    <segue destination="4QR-ug-e5j" kind="presentation" identifier="pushFromStorageTableVCToDetailVC" animates="NO" modalPresentationStyle="overCurrentContext" id="mhQ-zJ-tKk"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -751,4 +1354,7 @@ Summons a Black Lion Merchant If Your Inventory Is Full after Gathering (20-Minu
         <image name="icWalletGem" width="22" height="20"/>
         <image name="icWalletKarma" width="30" height="23"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Y20-7J-leg"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -34,7 +34,6 @@
 		C4386A241E7614C100285F5B /* WBItemTypeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4386A231E7614C100285F5B /* WBItemTypeProtocol.swift */; };
 		C4386A261E7621C400285F5B /* WBStorageDetailArmorWeaponDescTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4386A251E7621C400285F5B /* WBStorageDetailArmorWeaponDescTableCell.swift */; };
 		C4386A281E7621E700285F5B /* WBStorageDetailArmorWeaponTypeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4386A271E7621E700285F5B /* WBStorageDetailArmorWeaponTypeTableCell.swift */; };
-		C43EF30C1E68CB1700C6FADD /* WBStorageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43EF30B1E68CB1700C6FADD /* WBStorageDetailViewController.swift */; };
 		C43EF30E1E68D00300C6FADD /* WBStorageDetailTitleTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43EF30D1E68D00300C6FADD /* WBStorageDetailTitleTableCell.swift */; };
 		C43EF3101E68D01900C6FADD /* WBStorageDetailDescriptionTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43EF30F1E68D01900C6FADD /* WBStorageDetailDescriptionTableCell.swift */; };
 		C43EF3121E68D02C00C6FADD /* WBStorageDetailTypeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43EF3111E68D02C00C6FADD /* WBStorageDetailTypeTableCell.swift */; };
@@ -49,6 +48,9 @@
 		C43EF3261E6F6E0100C6FADD /* StringPlus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43EF3251E6F6E0100C6FADD /* StringPlus.swift */; };
 		C446050B1E45306300E3B0C3 /* UIApplication+VCStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C446050A1E45306300E3B0C3 /* UIApplication+VCStack.swift */; };
 		C446050D1E4536CD00E3B0C3 /* AppDelegate+ForceTouchMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C446050C1E4536CD00E3B0C3 /* AppDelegate+ForceTouchMenu.swift */; };
+		C452A1531E833DED00CB105D /* WBStorageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C452A1501E833DED00CB105D /* WBStorageDetailViewController.swift */; };
+		C452A1541E833DED00CB105D /* WBStorageMaterialDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C452A1511E833DED00CB105D /* WBStorageMaterialDetailViewController.swift */; };
+		C452A1551E833DED00CB105D /* WBStorageWalletDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C452A1521E833DED00CB105D /* WBStorageWalletDetailViewController.swift */; };
 		C459F6291E78EA460064FDB5 /* WBJsonItemPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C459F6281E78EA460064FDB5 /* WBJsonItemPrice.swift */; };
 		C45B6C9E1D68BE5800F94060 /* Timer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C45B6C9C1D68BE5800F94060 /* Timer.storyboard */; };
 		C45B6CA31D68BE5800F94060 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C45B6CA21D68BE5800F94060 /* Assets.xcassets */; };
@@ -152,7 +154,6 @@
 		C4386A231E7614C100285F5B /* WBItemTypeProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBItemTypeProtocol.swift; sourceTree = "<group>"; };
 		C4386A251E7621C400285F5B /* WBStorageDetailArmorWeaponDescTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStorageDetailArmorWeaponDescTableCell.swift; sourceTree = "<group>"; };
 		C4386A271E7621E700285F5B /* WBStorageDetailArmorWeaponTypeTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStorageDetailArmorWeaponTypeTableCell.swift; sourceTree = "<group>"; };
-		C43EF30B1E68CB1700C6FADD /* WBStorageDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStorageDetailViewController.swift; sourceTree = "<group>"; };
 		C43EF30D1E68D00300C6FADD /* WBStorageDetailTitleTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStorageDetailTitleTableCell.swift; sourceTree = "<group>"; };
 		C43EF30F1E68D01900C6FADD /* WBStorageDetailDescriptionTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStorageDetailDescriptionTableCell.swift; sourceTree = "<group>"; };
 		C43EF3111E68D02C00C6FADD /* WBStorageDetailTypeTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStorageDetailTypeTableCell.swift; sourceTree = "<group>"; };
@@ -167,6 +168,9 @@
 		C43EF3251E6F6E0100C6FADD /* StringPlus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringPlus.swift; sourceTree = "<group>"; };
 		C446050A1E45306300E3B0C3 /* UIApplication+VCStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+VCStack.swift"; sourceTree = "<group>"; };
 		C446050C1E4536CD00E3B0C3 /* AppDelegate+ForceTouchMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppDelegate+ForceTouchMenu.swift"; sourceTree = "<group>"; };
+		C452A1501E833DED00CB105D /* WBStorageDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStorageDetailViewController.swift; sourceTree = "<group>"; };
+		C452A1511E833DED00CB105D /* WBStorageMaterialDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStorageMaterialDetailViewController.swift; sourceTree = "<group>"; };
+		C452A1521E833DED00CB105D /* WBStorageWalletDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStorageWalletDetailViewController.swift; sourceTree = "<group>"; };
 		C459F6281E78EA460064FDB5 /* WBJsonItemPrice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBJsonItemPrice.swift; sourceTree = "<group>"; };
 		C45B6C951D68BE5800F94060 /* WorldBosses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldBosses.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C45B6C9D1D68BE5800F94060 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Timer.storyboard; sourceTree = "<group>"; };
@@ -302,6 +306,16 @@
 			path = Items;
 			sourceTree = "<group>";
 		};
+		C452A14F1E833DED00CB105D /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				C452A1501E833DED00CB105D /* WBStorageDetailViewController.swift */,
+				C452A1521E833DED00CB105D /* WBStorageWalletDetailViewController.swift */,
+				C452A1511E833DED00CB105D /* WBStorageMaterialDetailViewController.swift */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
 		C45B6C8C1D68BE5800F94060 = {
 			isa = PBXGroup;
 			children = (
@@ -388,13 +402,13 @@
 		C45D34581DECD7D6001C47F9 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
+				C452A14F1E833DED00CB105D /* Details */,
 				C45D34671DECDEE1001C47F9 /* WBStorageMainViewController.swift */,
 				C45D345E1DECD865001C47F9 /* WBStoragePageViewController.swift */,
 				C45D34651DECDD73001C47F9 /* WBStorageGeneralTableViewController.swift */,
 				C43EF3191E6A7A7700C6FADD /* WBStorageWalletTableViewController.swift */,
 				C43EF31B1E6A7B6D00C6FADD /* WBStorageBankTableViewController.swift */,
 				C43EF31D1E6A7B8900C6FADD /* WBStorageMaterialTableViewController.swift */,
-				C43EF30B1E68CB1700C6FADD /* WBStorageDetailViewController.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -782,6 +796,7 @@
 				C4026EAF1DEE2A1A0097FFC1 /* WBWalletProcessor.swift in Sources */,
 				C4341F181D8F1027007D84CC /* WBKeyStore.swift in Sources */,
 				C43EF31E1E6A7B8900C6FADD /* WBStorageMaterialTableViewController.swift in Sources */,
+				C452A1551E833DED00CB105D /* WBStorageWalletDetailViewController.swift in Sources */,
 				C4873F9F1E0F3AA6002E742D /* WBRootViewController.swift in Sources */,
 				C411FAE91DFDF8110038337F /* WBStorageMaterialViewModel.swift in Sources */,
 				C4386A191E75F69E00285F5B /* WBJsonItemWeaponDetail.swift in Sources */,
@@ -797,6 +812,8 @@
 				C45D343D1DEB5A1A001C47F9 /* WBWalletRemote.swift in Sources */,
 				C4386A221E7612A700285F5B /* WBJsonItemBaseDetail.swift in Sources */,
 				C4A409441E01E2B200130C85 /* WBMainTableViewCell.swift in Sources */,
+				C452A1531E833DED00CB105D /* WBStorageDetailViewController.swift in Sources */,
+				C452A1541E833DED00CB105D /* WBStorageMaterialDetailViewController.swift in Sources */,
 				C41094A51D88FFCF00751A72 /* WBSettingsViewController.swift in Sources */,
 				C4903BFA1E006859004F3345 /* WBCharactersTableViewCell.swift in Sources */,
 				C4A4094D1E01F0AA00130C85 /* WBJsonAccount.swift in Sources */,
@@ -806,7 +823,6 @@
 				C413001F1DEF88A200D2A92F /* WBCharacterProcessor.swift in Sources */,
 				C45BAE291DF2550200C6FB5A /* WBAPIKeyEntryViewController.swift in Sources */,
 				C45D343F1DEB5A9E001C47F9 /* WBJsonCharacter.swift in Sources */,
-				C43EF30C1E68CB1700C6FADD /* WBStorageDetailViewController.swift in Sources */,
 				C43EF31A1E6A7A7700C6FADD /* WBStorageWalletTableViewController.swift in Sources */,
 				C413001D1DEF7BDC00D2A92F /* WBBankProcessor.swift in Sources */,
 				C4A781901D69165B00786488 /* WBBoss.swift in Sources */,

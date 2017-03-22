@@ -35,12 +35,17 @@ class WBStorageGeneralTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "pushFromStorageTableVCToDetailVC",
-            let vc = segue.destination as? WBStorageDetailViewController,
             let cell = sender as? UITableViewCell,
             let indexPath = tableView.indexPath(for: cell),
             let items = self.viewModel?.items
         {
-            vc.item = items[indexPath.row]
+            if let vc = segue.destination as? WBStorageDetailViewController {
+                vc.item = items[indexPath.row]
+            } else if let vc = segue.destination as? WBStorageMaterialDetailViewController {
+                vc.item = items[indexPath.row]
+            } else if let vc = segue.destination as? WBStorageWalletDetailViewController {
+                vc.item = items[indexPath.row]
+            }
         }
     }
 
