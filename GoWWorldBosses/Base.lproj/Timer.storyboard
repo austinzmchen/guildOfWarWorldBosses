@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="qsg-yQ-Hqg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="i3K-KC-L0H">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,7 +12,7 @@
         <!--Main-->
         <scene sceneID="ZEf-Ed-Trm">
             <objects>
-                <viewController storyboardIdentifier="timerVC" id="i3K-KC-L0H" userLabel="Main" customClass="WBMainViewController" customModule="WorldBosses" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="timerVC" id="i3K-KC-L0H" userLabel="Main" customClass="WBTimerViewController" customModule="WorldBosses" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xeQ-Lf-6Xl"/>
                         <viewControllerLayoutGuide type="bottom" id="K4M-M2-9QL"/>
@@ -21,12 +21,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="115" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Sj2-Zd-APg">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="692"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="115" sectionHeaderHeight="1" sectionFooterHeight="55" translatesAutoresizingMaskIntoConstraints="NO" id="Sj2-Zd-APg">
+                                <rect key="frame" x="0.0" y="20" width="414" height="716"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="f97-Vg-r3O">
+                                    <rect key="frame" x="0.0" y="116" width="414" height="55"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="mainTableViewCell" id="uVv-WM-G6b" userLabel="tableViewCell" customClass="WBMainTableViewCell" customModule="WorldBosses" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="115"/>
+                                        <rect key="frame" x="0.0" y="1" width="414" height="115"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uVv-WM-G6b" id="beR-1z-S5Q">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="115"/>
@@ -120,35 +125,13 @@
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Sj2-Zd-APg" firstAttribute="width" secondItem="T3l-of-Qug" secondAttribute="width" id="1EZ-zX-xCR"/>
-                            <constraint firstItem="K4M-M2-9QL" firstAttribute="top" secondItem="Sj2-Zd-APg" secondAttribute="bottom" id="HRw-Go-G3U"/>
-                            <constraint firstItem="Sj2-Zd-APg" firstAttribute="top" secondItem="xeQ-Lf-6Xl" secondAttribute="bottom" constant="-64" id="IqO-zu-flo"/>
-                            <constraint firstItem="Sj2-Zd-APg" firstAttribute="height" secondItem="T3l-of-Qug" secondAttribute="height" id="SGj-ng-TzB"/>
-                            <constraint firstItem="Sj2-Zd-APg" firstAttribute="centerX" secondItem="T3l-of-Qug" secondAttribute="centerX" id="g5z-6n-gfO"/>
-                            <constraint firstItem="Sj2-Zd-APg" firstAttribute="leading" secondItem="T3l-of-Qug" secondAttribute="leading" id="paE-0H-tep"/>
-                            <constraint firstAttribute="trailing" secondItem="Sj2-Zd-APg" secondAttribute="trailing" id="vax-kK-skv"/>
-                            <constraint firstItem="Sj2-Zd-APg" firstAttribute="centerY" secondItem="T3l-of-Qug" secondAttribute="centerY" id="zUK-Mq-OCl"/>
+                            <constraint firstAttribute="trailing" secondItem="Sj2-Zd-APg" secondAttribute="trailing" id="2yi-2A-ZfX"/>
+                            <constraint firstItem="Sj2-Zd-APg" firstAttribute="leading" secondItem="T3l-of-Qug" secondAttribute="leading" id="Che-d3-FHe"/>
+                            <constraint firstItem="K4M-M2-9QL" firstAttribute="top" secondItem="Sj2-Zd-APg" secondAttribute="bottom" id="MqK-lX-nqv"/>
+                            <constraint firstItem="Sj2-Zd-APg" firstAttribute="top" secondItem="xeQ-Lf-6Xl" secondAttribute="bottom" id="kcV-3m-1TY"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="1EZ-zX-xCR"/>
-                                <exclude reference="SGj-ng-TzB"/>
-                                <exclude reference="g5z-6n-gfO"/>
-                                <exclude reference="zUK-Mq-OCl"/>
-                            </mask>
-                        </variation>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="ijq-31-xpF">
-                        <barButtonItem key="leftBarButtonItem" image="icBurger" id="B0H-tw-EeY">
-                            <color key="tintColor" red="1" green="0.57254901960000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <action selector="leftBarButtonTapped:" destination="i3K-KC-L0H" id="zNz-LB-eSm"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="Sj2-Zd-APg" id="Tk4-wq-lsk"/>
                     </connections>
@@ -157,31 +140,10 @@
             </objects>
             <point key="canvasLocation" x="391" y="382"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="AfT-6J-Wc4">
-            <objects>
-                <navigationController storyboardIdentifier="timerNavVC" id="qsg-yQ-Hqg" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="pl0-rj-jrU">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="i3K-KC-L0H" kind="relationship" relationship="rootViewController" id="BtO-FP-FD1"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oHY-5x-dGl" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-387" y="382"/>
-        </scene>
     </scenes>
     <resources>
         <image name="clockIcon" width="30" height="30"/>
         <image name="heartIcon" width="20" height="18"/>
-        <image name="icBurger" width="25" height="15"/>
         <image name="unheartIcon" width="40" height="37"/>
     </resources>
 </document>

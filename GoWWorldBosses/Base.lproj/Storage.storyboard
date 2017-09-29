@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -92,18 +92,18 @@
         <scene sceneID="T4J-x0-53j">
             <objects>
                 <tableViewController storyboardIdentifier="storageBankTableVC" id="chF-Lb-ET8" userLabel="Bank Table View Controller" customClass="WBStorageBankTableViewController" customModule="WorldBosses" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" id="A9F-e4-ije">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="65" sectionHeaderHeight="1" sectionFooterHeight="55" id="A9F-e4-ije">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="Awx-xW-f51">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="95"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="iHL-Vs-cDg">
+                            <rect key="frame" x="0.0" y="66" width="375" height="55"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="storageItemTableCell" id="Gmg-yV-yg3" customClass="WBStorageItemTableViewCell" customModule="WorldBosses" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="123" width="375" height="65"/>
+                                <rect key="frame" x="0.0" y="1" width="375" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Gmg-yV-yg3" id="8RK-UK-321">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
@@ -1092,18 +1092,18 @@ Summons a Black Lion Merchant If Your Inventory Is Full after Gathering (20-Minu
         <scene sceneID="e2H-Wr-Etp">
             <objects>
                 <tableViewController storyboardIdentifier="storageMaterialTableVC" id="lvo-Nq-hbB" userLabel="Material Table View Controller" customClass="WBStorageMaterialTableViewController" customModule="WorldBosses" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" id="Y9j-nl-KFZ">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="65" sectionHeaderHeight="1" sectionFooterHeight="55" id="Y9j-nl-KFZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="IjW-qB-UXx">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="95"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="aHo-2S-iOQ">
+                            <rect key="frame" x="0.0" y="66" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="storageItemTableCell" id="ftx-Wy-EgC" customClass="WBStorageItemTableViewCell" customModule="WorldBosses" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="123" width="375" height="65"/>
+                                <rect key="frame" x="0.0" y="1" width="375" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ftx-Wy-EgC" id="NCQ-v8-0r3">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
@@ -1173,18 +1173,18 @@ Summons a Black Lion Merchant If Your Inventory Is Full after Gathering (20-Minu
         <scene sceneID="sfb-LT-lxp">
             <objects>
                 <tableViewController storyboardIdentifier="storageWalletTableVC" id="jaX-mO-K12" userLabel="Wallet Table View Controller" customClass="WBStorageWalletTableViewController" customModule="WorldBosses" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" id="pBi-KQ-KRh">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="65" sectionHeaderHeight="1" sectionFooterHeight="55" id="pBi-KQ-KRh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="3sA-vp-Yt0">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="95"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="BxR-C1-Qg8">
+                            <rect key="frame" x="0.0" y="131" width="375" height="55"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="walletCoinTableCell" id="yLC-GY-Ey6" userLabel="walletCoinTableCell" customClass="WBStorageWalletCoinTableViewCell" customModule="WorldBosses" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="123" width="375" height="65"/>
+                                <rect key="frame" x="0.0" y="1" width="375" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yLC-GY-Ey6" id="gpY-vU-Vai">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
@@ -1280,7 +1280,7 @@ Summons a Black Lion Merchant If Your Inventory Is Full after Gathering (20-Minu
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="storageItemTableCell" id="D7G-6P-4V5" customClass="WBStorageItemTableViewCell" customModule="WorldBosses" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="188" width="375" height="65"/>
+                                <rect key="frame" x="0.0" y="66" width="375" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="D7G-6P-4V5" id="r5q-Hf-5Oy">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>

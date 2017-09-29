@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="pqd-Z6-ztt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -12,13 +12,18 @@
         <scene sceneID="0ud-oL-Fpc">
             <objects>
                 <tableViewController storyboardIdentifier="charactersTableVC" id="UXN-Oj-5XW" userLabel="Characters Table View Controller" customClass="WBCharactersTableViewController" customModule="WorldBosses" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" id="HLq-DE-KPu">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="65" sectionHeaderHeight="1" sectionFooterHeight="55" id="HLq-DE-KPu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="1Ff-z9-v7r">
+                            <rect key="frame" x="0.0" y="66" width="375" height="55"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="charactersTableCell" id="MHd-su-zTU" customClass="WBCharactersTableViewCell" customModule="WorldBosses" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="65"/>
+                                <rect key="frame" x="0.0" y="1" width="375" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MHd-su-zTU" id="x9q-nH-bhw">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
@@ -96,43 +101,13 @@
                             <outlet property="delegate" destination="UXN-Oj-5XW" id="H6p-Uc-h3f"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="VVG-Re-nzo">
-                        <barButtonItem key="leftBarButtonItem" image="icBurger" id="V88-U7-Jn1">
-                            <connections>
-                                <action selector="leftBarButtonTapped:" destination="UXN-Oj-5XW" id="J17-PP-8RX"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="leftBarButton" destination="V88-U7-Jn1" id="opF-zB-6Yh"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uJ3-Eo-sEf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3180" y="131.78410794602701"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="IyN-WQ-PzB">
-            <objects>
-                <navigationController storyboardIdentifier="charactersNavVC" automaticallyAdjustsScrollViewInsets="NO" id="pqd-Z6-ztt" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="6Ng-Wt-RXQ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" red="1" green="0.57254901960000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="UXN-Oj-5XW" kind="relationship" relationship="rootViewController" id="Sfh-KT-Yjn"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QLh-Op-fog" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2410" y="132"/>
+            <point key="canvasLocation" x="2474" y="35"/>
         </scene>
     </scenes>
     <resources>
-        <image name="icBurger" width="25" height="15"/>
         <image name="icGuardian" width="35" height="35"/>
     </resources>
 </document>

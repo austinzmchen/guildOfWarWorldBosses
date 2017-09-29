@@ -19,10 +19,6 @@ class WBCharactersTableViewController: UITableViewController, WBDrawerItemViewCo
     var characters: [WBCharacter]?
     weak var viewDelegate: WBDrawerMasterViewControllerDelegate?
     
-    override func viewDidLayoutSubviews() {
-        print("here1")
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 

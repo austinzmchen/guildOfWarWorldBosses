@@ -67,8 +67,8 @@
 		C45D34501DEB8417001C47F9 /* WBDrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D344F1DEB8417001C47F9 /* WBDrawerViewController.swift */; };
 		C45D34531DEB8691001C47F9 /* WBDrawerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D34521DEB8691001C47F9 /* WBDrawerTableViewCell.swift */; };
 		C45D34551DEB8766001C47F9 /* WBStorageItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D34541DEB8766001C47F9 /* WBStorageItemTableViewCell.swift */; };
-		C45D345C1DECD7D6001C47F9 /* WBMainViewController+NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D345A1DECD7D6001C47F9 /* WBMainViewController+NavigationBar.swift */; };
-		C45D345D1DECD7D6001C47F9 /* WBMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D345B1DECD7D6001C47F9 /* WBMainViewController.swift */; };
+		C45D345C1DECD7D6001C47F9 /* WBTimerViewController+NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D345A1DECD7D6001C47F9 /* WBTimerViewController+NavigationBar.swift */; };
+		C45D345D1DECD7D6001C47F9 /* WBTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D345B1DECD7D6001C47F9 /* WBTimerViewController.swift */; };
 		C45D345F1DECD865001C47F9 /* WBStoragePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D345E1DECD865001C47F9 /* WBStoragePageViewController.swift */; };
 		C45D34621DECDB42001C47F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D34611DECDB42001C47F9 /* AppDelegate.swift */; };
 		C45D34641DECDBBC001C47F9 /* WBStoryboardFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D34631DECDBBC001C47F9 /* WBStoryboardFactory.swift */; };
@@ -76,6 +76,21 @@
 		C45D34681DECDEE1001C47F9 /* WBStorageMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D34671DECDEE1001C47F9 /* WBStorageMainViewController.swift */; };
 		C45D346D1DECEA41001C47F9 /* WBObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D346C1DECEA41001C47F9 /* WBObject.swift */; };
 		C45D346F1DED0E4A001C47F9 /* RealmPlus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D346E1DED0E4A001C47F9 /* RealmPlus.swift */; };
+		C45D683A1F75C6FD001144B3 /* WBTimerPageMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D68391F75C6FD001144B3 /* WBTimerPageMainViewController.swift */; };
+		C47120F01F7C596100A885BC /* ACCustomPageViewController+Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47120E61F7C596100A885BC /* ACCustomPageViewController+Cards.swift */; };
+		C47120F11F7C596100A885BC /* ACCustomPageViewController+CardTransitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47120E71F7C596100A885BC /* ACCustomPageViewController+CardTransitions.swift */; };
+		C47120F21F7C596100A885BC /* ACCustomPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47120E81F7C596100A885BC /* ACCustomPageViewController.swift */; };
+		C47120F31F7C596100A885BC /* ACCustomPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C47120E91F7C596100A885BC /* ACCustomPageViewController.xib */; };
+		C47120F41F7C596100A885BC /* STCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47120EA1F7C596100A885BC /* STCardViewController.swift */; };
+		C47120F51F7C596100A885BC /* STTabHeaderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47120EB1F7C596100A885BC /* STTabHeaderCollectionViewCell.swift */; };
+		C47120F61F7C596100A885BC /* STTabHeaderCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C47120EC1F7C596100A885BC /* STTabHeaderCollectionViewCell.xib */; };
+		C47120F71F7C596100A885BC /* STTabsHeaderView+Interactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47120ED1F7C596100A885BC /* STTabsHeaderView+Interactive.swift */; };
+		C47120F81F7C596100A885BC /* STTabsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47120EE1F7C596100A885BC /* STTabsHeaderView.swift */; };
+		C47120F91F7C596100A885BC /* STTabsHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C47120EF1F7C596100A885BC /* STTabsHeaderView.xib */; };
+		C47120FC1F7C5A4900A885BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C47120FA1F7C5A4900A885BC /* Main.storyboard */; };
+		C47120FE1F7C5B2D00A885BC /* WBMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47120FD1F7C5B2D00A885BC /* WBMainViewController.swift */; };
+		C471210D1F7DD05A00A885BC /* WBStoragePageMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C471210C1F7DD05A00A885BC /* WBStoragePageMainViewController.swift */; };
+		C47121111F7EBE8D00A885BC /* WBCharactersPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47121101F7EBE8D00A885BC /* WBCharactersPageViewController.swift */; };
 		C47B01261E088CEE0057F475 /* AppConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47B01251E088CEE0057F475 /* AppConfigurator.swift */; };
 		C47D5B201DE69F0E00082CFD /* Entities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D5B1D1DE69F0E00082CFD /* Entities.swift */; };
 		C47D5B211DE69F0E00082CFD /* GoWWorldBosses.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C47D5B1E1DE69F0E00082CFD /* GoWWorldBosses.xcdatamodeld */; };
@@ -191,8 +206,8 @@
 		C45D344F1DEB8417001C47F9 /* WBDrawerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBDrawerViewController.swift; sourceTree = "<group>"; };
 		C45D34521DEB8691001C47F9 /* WBDrawerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBDrawerTableViewCell.swift; sourceTree = "<group>"; };
 		C45D34541DEB8766001C47F9 /* WBStorageItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStorageItemTableViewCell.swift; sourceTree = "<group>"; };
-		C45D345A1DECD7D6001C47F9 /* WBMainViewController+NavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WBMainViewController+NavigationBar.swift"; sourceTree = "<group>"; };
-		C45D345B1DECD7D6001C47F9 /* WBMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBMainViewController.swift; sourceTree = "<group>"; };
+		C45D345A1DECD7D6001C47F9 /* WBTimerViewController+NavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WBTimerViewController+NavigationBar.swift"; sourceTree = "<group>"; };
+		C45D345B1DECD7D6001C47F9 /* WBTimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBTimerViewController.swift; sourceTree = "<group>"; };
 		C45D345E1DECD865001C47F9 /* WBStoragePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStoragePageViewController.swift; sourceTree = "<group>"; };
 		C45D34611DECDB42001C47F9 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C45D34631DECDBBC001C47F9 /* WBStoryboardFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStoryboardFactory.swift; sourceTree = "<group>"; };
@@ -200,6 +215,21 @@
 		C45D34671DECDEE1001C47F9 /* WBStorageMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStorageMainViewController.swift; sourceTree = "<group>"; };
 		C45D346C1DECEA41001C47F9 /* WBObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBObject.swift; sourceTree = "<group>"; };
 		C45D346E1DED0E4A001C47F9 /* RealmPlus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmPlus.swift; sourceTree = "<group>"; };
+		C45D68391F75C6FD001144B3 /* WBTimerPageMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBTimerPageMainViewController.swift; sourceTree = "<group>"; };
+		C47120E61F7C596100A885BC /* ACCustomPageViewController+Cards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ACCustomPageViewController+Cards.swift"; sourceTree = "<group>"; };
+		C47120E71F7C596100A885BC /* ACCustomPageViewController+CardTransitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ACCustomPageViewController+CardTransitions.swift"; sourceTree = "<group>"; };
+		C47120E81F7C596100A885BC /* ACCustomPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACCustomPageViewController.swift; sourceTree = "<group>"; };
+		C47120E91F7C596100A885BC /* ACCustomPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ACCustomPageViewController.xib; sourceTree = "<group>"; };
+		C47120EA1F7C596100A885BC /* STCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STCardViewController.swift; sourceTree = "<group>"; };
+		C47120EB1F7C596100A885BC /* STTabHeaderCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STTabHeaderCollectionViewCell.swift; sourceTree = "<group>"; };
+		C47120EC1F7C596100A885BC /* STTabHeaderCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = STTabHeaderCollectionViewCell.xib; sourceTree = "<group>"; };
+		C47120ED1F7C596100A885BC /* STTabsHeaderView+Interactive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "STTabsHeaderView+Interactive.swift"; sourceTree = "<group>"; };
+		C47120EE1F7C596100A885BC /* STTabsHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STTabsHeaderView.swift; sourceTree = "<group>"; };
+		C47120EF1F7C596100A885BC /* STTabsHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = STTabsHeaderView.xib; sourceTree = "<group>"; };
+		C47120FB1F7C5A4900A885BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C47120FD1F7C5B2D00A885BC /* WBMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBMainViewController.swift; sourceTree = "<group>"; };
+		C471210C1F7DD05A00A885BC /* WBStoragePageMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStoragePageMainViewController.swift; sourceTree = "<group>"; };
+		C47121101F7EBE8D00A885BC /* WBCharactersPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBCharactersPageViewController.swift; sourceTree = "<group>"; };
 		C47B01251E088CEE0057F475 /* AppConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfigurator.swift; sourceTree = "<group>"; };
 		C47D5B1D1DE69F0E00082CFD /* Entities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entities.swift; sourceTree = "<group>"; };
 		C47D5B1F1DE69F0E00082CFD /* GoWWorldBosses.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GoWWorldBosses.xcdatamodel; sourceTree = "<group>"; };
@@ -348,6 +378,7 @@
 				C42B94621DFE2A020019CB3D /* Extensions */,
 				C47E30CB1DF24F8F00B91996 /* APIKeyEntry.storyboard */,
 				C45D34471DEB7A66001C47F9 /* Drawer.storyboard */,
+				C47120FA1F7C5A4900A885BC /* Main.storyboard */,
 				C45B6C9C1D68BE5800F94060 /* Timer.storyboard */,
 				C4903BF41E00678F004F3345 /* Characters.storyboard */,
 				C45D34441DEB6D53001C47F9 /* Storage.storyboard */,
@@ -403,6 +434,7 @@
 			isa = PBXGroup;
 			children = (
 				C452A14F1E833DED00CB105D /* Details */,
+				C471210C1F7DD05A00A885BC /* WBStoragePageMainViewController.swift */,
 				C45D34671DECDEE1001C47F9 /* WBStorageMainViewController.swift */,
 				C45D345E1DECD865001C47F9 /* WBStoragePageViewController.swift */,
 				C45D34651DECDD73001C47F9 /* WBStorageGeneralTableViewController.swift */,
@@ -416,8 +448,9 @@
 		C45D34591DECD7D6001C47F9 /* Timers */ = {
 			isa = PBXGroup;
 			children = (
-				C45D345A1DECD7D6001C47F9 /* WBMainViewController+NavigationBar.swift */,
-				C45D345B1DECD7D6001C47F9 /* WBMainViewController.swift */,
+				C45D68391F75C6FD001144B3 /* WBTimerPageMainViewController.swift */,
+				C45D345B1DECD7D6001C47F9 /* WBTimerViewController.swift */,
+				C45D345A1DECD7D6001C47F9 /* WBTimerViewController+NavigationBar.swift */,
 			);
 			path = Timers;
 			sourceTree = "<group>";
@@ -444,6 +477,23 @@
 				C4026EB21DEE33C00097FFC1 /* WBSyncCoordinator.swift */,
 			);
 			path = Synchronization;
+			sourceTree = "<group>";
+		};
+		C47120E51F7C596100A885BC /* V2 */ = {
+			isa = PBXGroup;
+			children = (
+				C47120E81F7C596100A885BC /* ACCustomPageViewController.swift */,
+				C47120E61F7C596100A885BC /* ACCustomPageViewController+Cards.swift */,
+				C47120E71F7C596100A885BC /* ACCustomPageViewController+CardTransitions.swift */,
+				C47120E91F7C596100A885BC /* ACCustomPageViewController.xib */,
+				C47120EA1F7C596100A885BC /* STCardViewController.swift */,
+				C47120EB1F7C596100A885BC /* STTabHeaderCollectionViewCell.swift */,
+				C47120EC1F7C596100A885BC /* STTabHeaderCollectionViewCell.xib */,
+				C47120EE1F7C596100A885BC /* STTabsHeaderView.swift */,
+				C47120ED1F7C596100A885BC /* STTabsHeaderView+Interactive.swift */,
+				C47120EF1F7C596100A885BC /* STTabsHeaderView.xib */,
+			);
+			path = V2;
 			sourceTree = "<group>";
 		};
 		C47D5B131DE6970C00082CFD /* Models */ = {
@@ -518,6 +568,7 @@
 		C4903BF61E006810004F3345 /* Characters */ = {
 			isa = PBXGroup;
 			children = (
+				C47121101F7EBE8D00A885BC /* WBCharactersPageViewController.swift */,
 				C4903BF71E006828004F3345 /* WBCharactersTableViewController.swift */,
 			);
 			path = Characters;
@@ -529,6 +580,7 @@
 				C45BAE281DF2550200C6FB5A /* WBAPIKeyEntryViewController.swift */,
 				C4A409521E033B2500130C85 /* WBAPIKeyEntryViewController+QRCode.swift */,
 				C4A409461E01E3E100130C85 /* WBAPIKeyViewController.swift */,
+				C47120FD1F7C5B2D00A885BC /* WBMainViewController.swift */,
 				C45D344C1DEB8265001C47F9 /* Drawers */,
 				C4903BF61E006810004F3345 /* Characters */,
 				C45D34581DECD7D6001C47F9 /* Storage */,
@@ -558,6 +610,7 @@
 		C4A781861D68CFB200786488 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C47120E51F7C596100A885BC /* V2 */,
 				C45D34511DEB8658001C47F9 /* Cells */,
 				C4E311121E09EFBB0095EEB4 /* ACBorderedButton.swift */,
 				C4E311161E09F03D0095EEB4 /* ACBorderedTextField.swift */,
@@ -668,9 +721,13 @@
 				C45B6CA31D68BE5800F94060 /* Assets.xcassets in Resources */,
 				C45D34491DEB7A66001C47F9 /* Drawer.storyboard in Resources */,
 				C45D34461DEB6D53001C47F9 /* Storage.storyboard in Resources */,
+				C47120F91F7C596100A885BC /* STTabsHeaderView.xib in Resources */,
 				C47E30CD1DF24F8F00B91996 /* APIKeyEntry.storyboard in Resources */,
 				C4C799E91DF503D100A8B5F4 /* Utility.storyboard in Resources */,
+				C47120F31F7C596100A885BC /* ACCustomPageViewController.xib in Resources */,
 				C4ACF9CC1E49089B00C3F4E3 /* WBSpinnerView.xib in Resources */,
+				C47120FC1F7C5A4900A885BC /* Main.storyboard in Resources */,
+				C47120F61F7C596100A885BC /* STTabHeaderCollectionViewCell.xib in Resources */,
 				C45B6C9E1D68BE5800F94060 /* Timer.storyboard in Resources */,
 				C45BAE2C1DF27F1800C6FB5A /* Settings.storyboard in Resources */,
 				C499F09A1E1468DA002F534F /* WBApiErrorView.xib in Resources */,
@@ -692,7 +749,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		B0B0EDF9B1E08D019965315B /* [CP] Copy Pods Resources */ = {
@@ -747,6 +804,7 @@
 			files = (
 				C41300211DF0873C00D2A92F /* MapHelper.swift in Sources */,
 				C45D34641DECDBBC001C47F9 /* WBStoryboardFactory.swift in Sources */,
+				C47121111F7EBE8D00A885BC /* WBCharactersPageViewController.swift in Sources */,
 				C45D346F1DED0E4A001C47F9 /* RealmPlus.swift in Sources */,
 				C4A409491E01EA1A00130C85 /* WBAPIKeyTableViewCell.swift in Sources */,
 				C4341A841D89FA28007D84CC /* WBBossFactory+TestBosses.swift in Sources */,
@@ -773,6 +831,9 @@
 				C47D5B2D1DE6A23500082CFD /* WBRemoteSession.swift in Sources */,
 				C459F6291E78EA460064FDB5 /* WBJsonItemPrice.swift in Sources */,
 				C4E311091E09EC8C0095EEB4 /* TechNotes.md in Sources */,
+				C47120F51F7C596100A885BC /* STTabHeaderCollectionViewCell.swift in Sources */,
+				C47120F01F7C596100A885BC /* ACCustomPageViewController+Cards.swift in Sources */,
+				C47120F11F7C596100A885BC /* ACCustomPageViewController+CardTransitions.swift in Sources */,
 				C411FAE51DFDF7D90038337F /* WBStorageWalletViewModel.swift in Sources */,
 				C47D5B2A1DE6A01900082CFD /* WBBankRemote.swift in Sources */,
 				C4026EB31DEE33C00097FFC1 /* WBSyncCoordinator.swift in Sources */,
@@ -780,16 +841,19 @@
 				C43EF3141E68D4D700C6FADD /* ACBorderedImageView.swift in Sources */,
 				C43EF3241E6CE9A500C6FADD /* WBStorageDetailCoinValueTableCell.swift in Sources */,
 				C45D34681DECDEE1001C47F9 /* WBStorageMainViewController.swift in Sources */,
+				C47120F81F7C596100A885BC /* STTabsHeaderView.swift in Sources */,
 				C47D5B201DE69F0E00082CFD /* Entities.swift in Sources */,
 				C4026EB11DEE2B840097FFC1 /* WBSyncContext.swift in Sources */,
 				C4E311171E09F03D0095EEB4 /* ACBorderedTextField.swift in Sources */,
 				C45D34531DEB8691001C47F9 /* WBDrawerTableViewCell.swift in Sources */,
+				C45D683A1F75C6FD001144B3 /* WBTimerPageMainViewController.swift in Sources */,
 				C499F0981E146895002F534F /* WBApiErrorView.swift in Sources */,
 				C411FAEB1DFDF84E0038337F /* WBStorageTableViewModelType.swift in Sources */,
 				C4A409411E01E11600130C85 /* WBSettingsTableViewCell.swift in Sources */,
 				C43EF3121E68D02C00C6FADD /* WBStorageDetailTypeTableCell.swift in Sources */,
-				C45D345C1DECD7D6001C47F9 /* WBMainViewController+NavigationBar.swift in Sources */,
+				C45D345C1DECD7D6001C47F9 /* WBTimerViewController+NavigationBar.swift in Sources */,
 				C45D345F1DECD865001C47F9 /* WBStoragePageViewController.swift in Sources */,
+				C47120FE1F7C5B2D00A885BC /* WBMainViewController.swift in Sources */,
 				C4358C9E1E443A970094D863 /* WBSettings.swift in Sources */,
 				C48D84EA1DFE17C500585E61 /* WBItemRemote.swift in Sources */,
 				C4386A1B1E75F7AF00285F5B /* WBJsonItemAttribute.swift in Sources */,
@@ -800,6 +864,7 @@
 				C4873F9F1E0F3AA6002E742D /* WBRootViewController.swift in Sources */,
 				C411FAE91DFDF8110038337F /* WBStorageMaterialViewModel.swift in Sources */,
 				C4386A191E75F69E00285F5B /* WBJsonItemWeaponDetail.swift in Sources */,
+				C47120F71F7C596100A885BC /* STTabsHeaderView+Interactive.swift in Sources */,
 				C47D5B211DE69F0E00082CFD /* GoWWorldBosses.xcdatamodeld in Sources */,
 				C47D5B2B1DE6A01900082CFD /* WBRemote.swift in Sources */,
 				C43EF3101E68D01900C6FADD /* WBStorageDetailDescriptionTableCell.swift in Sources */,
@@ -817,6 +882,7 @@
 				C41094A51D88FFCF00751A72 /* WBSettingsViewController.swift in Sources */,
 				C4903BFA1E006859004F3345 /* WBCharactersTableViewCell.swift in Sources */,
 				C4A4094D1E01F0AA00130C85 /* WBJsonAccount.swift in Sources */,
+				C471210D1F7DD05A00A885BC /* WBStoragePageMainViewController.swift in Sources */,
 				C48D84E41DFE15F800585E61 /* WBJsonMaterialElement.swift in Sources */,
 				C48F43C81E160275008DB46B /* WBRemoteResult.swift in Sources */,
 				C4A4094F1E01FF4E00130C85 /* WBAccountProcessor.swift in Sources */,
@@ -828,7 +894,8 @@
 				C4A781901D69165B00786488 /* WBBoss.swift in Sources */,
 				C4ACF9C81E49087500C3F4E3 /* WBSpinnerView.swift in Sources */,
 				C4C799EB1DF5044000A8B5F4 /* WBLoaderViewController.swift in Sources */,
-				C45D345D1DECD7D6001C47F9 /* WBMainViewController.swift in Sources */,
+				C45D345D1DECD7D6001C47F9 /* WBTimerViewController.swift in Sources */,
+				C47120F21F7C596100A885BC /* ACCustomPageViewController.swift in Sources */,
 				C48D84E81DFE16DC00585E61 /* WBMaterialRemote.swift in Sources */,
 				C43EF3261E6F6E0100C6FADD /* StringPlus.swift in Sources */,
 				C45D346D1DECEA41001C47F9 /* WBObject.swift in Sources */,
@@ -843,6 +910,7 @@
 				C48D84E61DFE160E00585E61 /* WBJsonItem.swift in Sources */,
 				C4386A171E75F67600285F5B /* WBJsonItemArmorDetail.swift in Sources */,
 				C45D34411DEB5ABF001C47F9 /* WBCharacterRemote.swift in Sources */,
+				C47120F41F7C596100A885BC /* STCardViewController.swift in Sources */,
 				C4E310F21E09EC7B0095EEB4 /* README.md in Sources */,
 				C41094A71D89003D00751A72 /* WBAboutViewController.swift in Sources */,
 				C48D84EE1DFE189A00585E61 /* WBItem.swift in Sources */,
@@ -892,6 +960,14 @@
 				C45D34481DEB7A66001C47F9 /* Base */,
 			);
 			name = Drawer.storyboard;
+			sourceTree = "<group>";
+		};
+		C47120FA1F7C5A4900A885BC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C47120FB1F7C5A4900A885BC /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		C47E30CB1DF24F8F00B91996 /* APIKeyEntry.storyboard */ = {

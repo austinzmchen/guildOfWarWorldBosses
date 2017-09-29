@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="FVh-Rq-JUp">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="PXY-tV-5kX">
+            <objects>
+                <viewController storyboardIdentifier="mainVC" id="FVh-Rq-JUp" customClass="WBMainViewController" customModule="WorldBosses" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LE4-Dw-uLU"/>
+                        <viewControllerLayoutGuide type="bottom" id="aor-MM-Gsq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EOR-2u-f45">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LkG-dB-7ru">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <connections>
+                                    <segue destination="wsX-lt-pcJ" kind="embed" identifier="embedVCSegue" id="ajq-Xj-g8W"/>
+                                </connections>
+                            </containerView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gGw-Cf-QR5">
+                                <rect key="frame" x="0.0" y="612" width="375" height="55"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="NnG-1T-KtN">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Y7j-gH-1IJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eSO-LT-Fiv" userLabel="timerTabButton">
+                                                    <rect key="frame" x="0.0" y="0.0" width="94" height="55"/>
+                                                    <state key="normal" image="icTimers">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="timerTabButtonTapped:" destination="FVh-Rq-JUp" eventType="touchUpInside" id="y6t-ms-faN"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AOX-Wn-SrY" userLabel="storageTabButton">
+                                                    <rect key="frame" x="94" y="0.0" width="93.5" height="55"/>
+                                                    <state key="normal" image="icStorage">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="storageTabButtonTapped:" destination="FVh-Rq-JUp" eventType="touchUpInside" id="fLa-8r-UYP"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gTf-z9-CUd" userLabel="characterTabButton">
+                                                    <rect key="frame" x="187.5" y="0.0" width="94" height="55"/>
+                                                    <state key="normal" image="icCharacters"/>
+                                                    <connections>
+                                                        <action selector="characterTabButtonTapped:" destination="FVh-Rq-JUp" eventType="touchUpInside" id="wkL-a6-2uf"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwm-9b-k46" userLabel="moreTabButton">
+                                                    <rect key="frame" x="281.5" y="0.0" width="93.5" height="55"/>
+                                                    <state key="normal" image="icMore"/>
+                                                    <connections>
+                                                        <action selector="moreTabButtonTapped:" destination="FVh-Rq-JUp" eventType="touchUpInside" id="fKX-lh-kX5"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="Y7j-gH-1IJ" secondAttribute="trailing" id="QoU-Q6-GaT"/>
+                                        <constraint firstItem="Y7j-gH-1IJ" firstAttribute="leading" secondItem="NnG-1T-KtN" secondAttribute="leading" id="XXM-0l-fhT"/>
+                                        <constraint firstAttribute="bottom" secondItem="Y7j-gH-1IJ" secondAttribute="bottom" id="iLV-yO-kwW"/>
+                                        <constraint firstItem="Y7j-gH-1IJ" firstAttribute="top" secondItem="NnG-1T-KtN" secondAttribute="top" id="qsL-w2-UOi"/>
+                                    </constraints>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="Wea-Nt-St2"/>
+                                </constraints>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LkG-dB-7ru" firstAttribute="trailing" secondItem="gGw-Cf-QR5" secondAttribute="trailing" id="0MX-Xg-l0R"/>
+                            <constraint firstItem="gGw-Cf-QR5" firstAttribute="leading" secondItem="EOR-2u-f45" secondAttribute="leading" id="42V-uk-tBx"/>
+                            <constraint firstItem="LkG-dB-7ru" firstAttribute="leading" secondItem="gGw-Cf-QR5" secondAttribute="leading" id="9SS-Hb-XWC"/>
+                            <constraint firstAttribute="trailing" secondItem="gGw-Cf-QR5" secondAttribute="trailing" id="DrC-So-n43"/>
+                            <constraint firstItem="gGw-Cf-QR5" firstAttribute="bottom" secondItem="aor-MM-Gsq" secondAttribute="top" id="Fml-cD-Pda"/>
+                            <constraint firstItem="aor-MM-Gsq" firstAttribute="top" secondItem="LkG-dB-7ru" secondAttribute="bottom" id="iMg-5I-GR5"/>
+                            <constraint firstItem="LkG-dB-7ru" firstAttribute="top" secondItem="LE4-Dw-uLU" secondAttribute="bottom" id="x9G-PX-gdZ"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="embeddedView" destination="LkG-dB-7ru" id="Mj8-WY-uoq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TEw-P8-hcH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138" y="70"/>
+        </scene>
+        <!--Timer Page Main View Controller-->
+        <scene sceneID="s0z-1x-biq">
+            <objects>
+                <viewController storyboardIdentifier="timerPageVC" id="wsX-lt-pcJ" customClass="WBTimerPageMainViewController" customModule="WorldBosses" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="z26-mw-y7x"/>
+                        <viewControllerLayoutGuide type="bottom" id="CMa-XB-Prp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pJB-MZ-81n">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view tag="11" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DJ6-ra-ZmE" userLabel="headerView" customClass="STTabsHeaderView" customModule="WorldBosses" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="JMA-iA-IVS"/>
+                                </constraints>
+                            </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="saR-my-rj5">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <connections>
+                                    <segue destination="bmN-km-1oc" kind="embed" identifier="embedVCSegue" id="I6N-2d-Vzi"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="saR-my-rj5" firstAttribute="top" secondItem="DJ6-ra-ZmE" secondAttribute="bottom" id="9Vh-a2-d4m"/>
+                            <constraint firstItem="CMa-XB-Prp" firstAttribute="top" secondItem="saR-my-rj5" secondAttribute="bottom" id="P0M-Ib-ema"/>
+                            <constraint firstAttribute="trailing" secondItem="DJ6-ra-ZmE" secondAttribute="trailing" id="Wt1-1O-ut8"/>
+                            <constraint firstItem="DJ6-ra-ZmE" firstAttribute="leading" secondItem="pJB-MZ-81n" secondAttribute="leading" id="lhT-hi-VwQ"/>
+                            <constraint firstItem="DJ6-ra-ZmE" firstAttribute="top" secondItem="z26-mw-y7x" secondAttribute="bottom" id="tE5-eE-BHJ"/>
+                            <constraint firstAttribute="trailing" secondItem="saR-my-rj5" secondAttribute="trailing" id="xse-d0-6fL"/>
+                            <constraint firstItem="saR-my-rj5" firstAttribute="leading" secondItem="pJB-MZ-81n" secondAttribute="leading" id="z7O-gy-HFo"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="jiE-1v-MeI"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xUa-Bm-fwT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="967" y="70"/>
+        </scene>
+        <!--Transitions Navigation Controller-->
+        <scene sceneID="kKY-Kl-3cW">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="bmN-km-1oc" customClass="RZTransitionsNavigationController" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XSM-so-3re">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KAC-tr-9Mh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1774" y="70"/>
+        </scene>
+        <!--Storage Page Main View Controller-->
+        <scene sceneID="r43-gl-Z6p">
+            <objects>
+                <viewController storyboardIdentifier="storagePageVC" id="By3-MJ-IiI" customClass="WBStoragePageMainViewController" customModule="WorldBosses" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Jy4-Op-u1b"/>
+                        <viewControllerLayoutGuide type="bottom" id="7HC-cY-fPj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sO1-0p-XDN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view tag="11" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1td-H6-GVI" userLabel="headerView" customClass="STTabsHeaderView" customModule="WorldBosses" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="48F-2Y-mQb"/>
+                                </constraints>
+                            </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x54-Y5-U1q">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <connections>
+                                    <segue destination="nEy-iY-5tw" kind="embed" identifier="embedVCSegue" id="FC1-j1-Sqv"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="1td-H6-GVI" secondAttribute="trailing" id="5wf-oo-P6D"/>
+                            <constraint firstItem="x54-Y5-U1q" firstAttribute="top" secondItem="1td-H6-GVI" secondAttribute="bottom" id="6kv-Wc-1Km"/>
+                            <constraint firstAttribute="trailing" secondItem="x54-Y5-U1q" secondAttribute="trailing" id="KmK-fq-F6m"/>
+                            <constraint firstItem="1td-H6-GVI" firstAttribute="leading" secondItem="sO1-0p-XDN" secondAttribute="leading" id="cP6-vq-3IL"/>
+                            <constraint firstItem="x54-Y5-U1q" firstAttribute="leading" secondItem="sO1-0p-XDN" secondAttribute="leading" id="dWU-Ky-kk4"/>
+                            <constraint firstItem="7HC-cY-fPj" firstAttribute="top" secondItem="x54-Y5-U1q" secondAttribute="bottom" id="pHa-pd-BBz"/>
+                            <constraint firstItem="1td-H6-GVI" firstAttribute="top" secondItem="Jy4-Op-u1b" secondAttribute="bottom" id="s5q-Uu-8O9"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="PkE-Cc-AM9"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hq6-yz-bGQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="966" y="777"/>
+        </scene>
+        <!--Transitions Navigation Controller-->
+        <scene sceneID="cFS-8i-P4y">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="nEy-iY-5tw" customClass="RZTransitionsNavigationController" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cjQ-Dz-v93">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7MP-mf-shL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1774" y="777"/>
+        </scene>
+        <!--Characters Page View Controller-->
+        <scene sceneID="6Ha-IS-znH">
+            <objects>
+                <viewController storyboardIdentifier="charactersPageVC" id="jyf-uS-n2e" customClass="WBCharactersPageViewController" customModule="WorldBosses" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fLv-t7-N8h"/>
+                        <viewControllerLayoutGuide type="bottom" id="mih-WP-am2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="B2g-cS-MQ4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view tag="11" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R34-bb-WZO" userLabel="headerView" customClass="STTabsHeaderView" customModule="WorldBosses" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="lFA-Z0-EdH"/>
+                                </constraints>
+                            </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7HM-A1-ZZx">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <connections>
+                                    <segue destination="QnS-ah-WgV" kind="embed" identifier="embedVCSegue" id="FL4-uC-rhm"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="R34-bb-WZO" secondAttribute="trailing" id="4ku-QM-UI4"/>
+                            <constraint firstItem="7HM-A1-ZZx" firstAttribute="leading" secondItem="B2g-cS-MQ4" secondAttribute="leading" id="Go7-QY-9WG"/>
+                            <constraint firstItem="mih-WP-am2" firstAttribute="top" secondItem="7HM-A1-ZZx" secondAttribute="bottom" id="MU1-yu-K5i"/>
+                            <constraint firstItem="R34-bb-WZO" firstAttribute="top" secondItem="fLv-t7-N8h" secondAttribute="bottom" id="VnS-L6-kl2"/>
+                            <constraint firstAttribute="trailing" secondItem="7HM-A1-ZZx" secondAttribute="trailing" id="XfY-o4-zyx"/>
+                            <constraint firstItem="7HM-A1-ZZx" firstAttribute="top" secondItem="R34-bb-WZO" secondAttribute="bottom" id="f6n-Lv-SPW"/>
+                            <constraint firstItem="R34-bb-WZO" firstAttribute="leading" secondItem="B2g-cS-MQ4" secondAttribute="leading" id="iUd-ZA-F58"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="lBm-4k-hjZ"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cgU-XR-D8V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="966" y="1508"/>
+        </scene>
+        <!--Transitions Navigation Controller-->
+        <scene sceneID="7Od-gm-bC3">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="QnS-ah-WgV" customClass="RZTransitionsNavigationController" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uvP-ne-ioN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dUS-CO-87v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1774" y="1508"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icCharacters" width="25" height="25"/>
+        <image name="icMore" width="25" height="25"/>
+        <image name="icStorage" width="25" height="25"/>
+        <image name="icTimers" width="25" height="25"/>
+    </resources>
+</document>

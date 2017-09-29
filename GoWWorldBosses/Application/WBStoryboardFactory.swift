@@ -14,6 +14,10 @@ class WBStoryboardFactory: NSObject {
         return UIStoryboard(name: fileName, bundle: nil)
     }
     
+    static var mainStoryboard: UIStoryboard {
+        return storyboard(byFileName: "Main")!
+    }
+    
     static var apiKeyEntryStoryboard: UIStoryboard {
         return UIStoryboard(name: "APIKeyEntry", bundle: nil)
     }

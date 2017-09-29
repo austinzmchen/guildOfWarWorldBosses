@@ -124,8 +124,9 @@ class WBAPIKeyEntryViewController: UIViewController, WBDrawerItemViewControllerT
 extension WBAPIKeyEntryViewController {
     func presentLandingView(isFullScreen: Bool = true, animated: Bool, completion: @escaping () -> () ) {
         if isFullScreen {
-            let drawerMasterVC = WBStoryboardFactory.drawerStoryboard.instantiateViewController(withIdentifier: "drawerMasterVC")
-            self.present(drawerMasterVC, animated: animated) {
+//            let drawerMasterVC = WBStoryboardFactory.drawerStoryboard.instantiateViewController(withIdentifier: "drawerMasterVC")
+            let mainVC = WBStoryboardFactory.mainStoryboard.instantiateInitialViewController()!
+            self.present(mainVC, animated: animated) {
                 completion()
             }
         } else {

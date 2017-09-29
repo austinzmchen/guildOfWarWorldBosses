@@ -15,6 +15,7 @@ PODS:
   - Realm/Headers (2.1.1)
   - RealmSwift (2.1.1):
     - Realm (= 2.1.1)
+  - RZTransitions (1.2.1)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
@@ -28,7 +29,18 @@ DEPENDENCIES:
   - Locksmith
   - QRCodeReader.swift
   - RealmSwift
+  - RZTransitions (from `https://github.com/austinzmchen/RZTransitions.git`, branch `release/ACCustomUI_1.1.4`)
   - SDWebImage
+
+EXTERNAL SOURCES:
+  RZTransitions:
+    :branch: release/ACCustomUI_1.1.4
+    :git: https://github.com/austinzmchen/RZTransitions.git
+
+CHECKOUT OPTIONS:
+  RZTransitions:
+    :commit: e1fd2cdfd32b707952bef0e7c9fa22984b149f52
+    :git: https://github.com/austinzmchen/RZTransitions.git
 
 SPEC CHECKSUMS:
   Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
@@ -41,8 +53,9 @@ SPEC CHECKSUMS:
   QRCodeReader.swift: 2ddf74993243106dd2be5cf9f6e13c7a3e9a2d00
   Realm: a55959c0b171a5fe5267406d17f314fec3cefaae
   RealmSwift: 749fd955bf8d6471c21d218b9389a47aaeccfe3f
+  RZTransitions: 0e0013fda6989ee84dc5e44dca79fd539e1a975a
   SDWebImage: '098e97e6176540799c27e804c96653ee0833d13c'
 
-PODFILE CHECKSUM: 6c5fe4ea3c615d36f5795b1b83b6cc1c00d7310e
+PODFILE CHECKSUM: f543b5631946e632036521867e8f8d83b25839bf
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.1

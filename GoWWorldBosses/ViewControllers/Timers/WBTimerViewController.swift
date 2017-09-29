@@ -1,5 +1,5 @@
 //
-//  WBMainViewController.swift
+//  WBTimerViewController.swift
 //  TimerCountDown
 //
 //  Created by Austin Chen on 2016-08-14.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WBMainViewController: UIViewController, WBDrawerItemViewControllerType {
+class WBTimerViewController: UIViewController, WBDrawerItemViewControllerType {
     
     @IBAction func leftBarButtonTapped(_ sender: Any) {
         viewDelegate?.didTriggerToggleButton()
@@ -148,7 +148,7 @@ class WBMainViewController: UIViewController, WBDrawerItemViewControllerType {
     }
 }
 
-extension WBMainViewController: UITableViewDelegate, UITableViewDataSource {
+extension WBTimerViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -179,7 +179,7 @@ extension WBMainViewController: UITableViewDelegate, UITableViewDataSource {
 
 let kLocalNotificationBossName = "kLocalNotificationUserBossName"
 
-extension WBMainViewController: WBMainTableViewCellDelegate {
+extension WBTimerViewController: WBMainTableViewCellDelegate {
     
     func selectFavorite(isSelected selected: Bool, forBoss boss: WBBoss) {
         boss.faved = selected

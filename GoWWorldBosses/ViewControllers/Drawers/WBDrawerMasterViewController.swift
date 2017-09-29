@@ -65,11 +65,13 @@ class WBDrawerMasterViewController: UINavigationController {
         drawerVC.viewDelegate = self
         
         // set up main
-        let timerNavVC = WBStoryboardFactory.timerStoryboard.instantiateViewController(withIdentifier: "timerNavVC") as! UINavigationController
-        let timerVC = timerNavVC.viewControllers.first as! WBMainViewController
-        timerVC.viewDelegate = self
+//        let timerNavVC = WBStoryboardFactory.timerStoryboard.instantiateViewController(withIdentifier: "timerNavVC") as! UINavigationController
+//        let timerVC = WBStoryboardFactory.timerStoryboard.instantiateViewController(withIdentifier: "timerVC")
+//        timerVC.viewDelegate = self
         
-        self.viewControllers = [timerVC]
+        let mainVC = WBStoryboardFactory.mainStoryboard.instantiateInitialViewController()!
+        
+        self.viewControllers = [mainVC]
     }
     
     func presentDrawerItemViewController(drawerItem: WBDrawerItem) {
