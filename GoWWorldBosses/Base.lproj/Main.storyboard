@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="FVh-Rq-JUp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="FVh-Rq-JUp">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LkG-dB-7ru">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <connections>
                                     <segue destination="wsX-lt-pcJ" kind="embed" identifier="embedVCSegue" id="ajq-Xj-g8W"/>
                                 </connections>
@@ -83,7 +84,7 @@
                                 <blurEffect style="dark"/>
                             </visualEffectView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="LkG-dB-7ru" firstAttribute="trailing" secondItem="gGw-Cf-QR5" secondAttribute="trailing" id="0MX-Xg-l0R"/>
                             <constraint firstItem="gGw-Cf-QR5" firstAttribute="leading" secondItem="EOR-2u-f45" secondAttribute="leading" id="42V-uk-tBx"/>
@@ -112,9 +113,15 @@
                         <viewControllerLayoutGuide type="bottom" id="CMa-XB-Prp"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="pJB-MZ-81n">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="saR-my-rj5">
+                                <rect key="frame" x="0.0" y="44" width="375" height="603"/>
+                                <connections>
+                                    <segue destination="bmN-km-1oc" kind="embed" identifier="embedVCSegue" id="I6N-2d-Vzi"/>
+                                </connections>
+                            </containerView>
                             <view tag="11" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DJ6-ra-ZmE" userLabel="headerView" customClass="STTabsHeaderView" customModule="WorldBosses" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -122,12 +129,6 @@
                                     <constraint firstAttribute="height" constant="44" id="JMA-iA-IVS"/>
                                 </constraints>
                             </view>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="saR-my-rj5">
-                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
-                                <connections>
-                                    <segue destination="bmN-km-1oc" kind="embed" identifier="embedVCSegue" id="I6N-2d-Vzi"/>
-                                </connections>
-                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -135,7 +136,7 @@
                             <constraint firstItem="CMa-XB-Prp" firstAttribute="top" secondItem="saR-my-rj5" secondAttribute="bottom" id="P0M-Ib-ema"/>
                             <constraint firstAttribute="trailing" secondItem="DJ6-ra-ZmE" secondAttribute="trailing" id="Wt1-1O-ut8"/>
                             <constraint firstItem="DJ6-ra-ZmE" firstAttribute="leading" secondItem="pJB-MZ-81n" secondAttribute="leading" id="lhT-hi-VwQ"/>
-                            <constraint firstItem="DJ6-ra-ZmE" firstAttribute="top" secondItem="z26-mw-y7x" secondAttribute="bottom" id="tE5-eE-BHJ"/>
+                            <constraint firstItem="DJ6-ra-ZmE" firstAttribute="top" secondItem="pJB-MZ-81n" secondAttribute="top" id="tE5-eE-BHJ"/>
                             <constraint firstAttribute="trailing" secondItem="saR-my-rj5" secondAttribute="trailing" id="xse-d0-6fL"/>
                             <constraint firstItem="saR-my-rj5" firstAttribute="leading" secondItem="pJB-MZ-81n" secondAttribute="leading" id="z7O-gy-HFo"/>
                         </constraints>
@@ -152,7 +153,6 @@
             <objects>
                 <navigationController navigationBarHidden="YES" id="bmN-km-1oc" customClass="RZTransitionsNavigationController" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="XSM-so-3re">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                 </navigationController>
@@ -173,14 +173,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view tag="11" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1td-H6-GVI" userLabel="headerView" customClass="STTabsHeaderView" customModule="WorldBosses" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="48F-2Y-mQb"/>
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x54-Y5-U1q">
-                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <connections>
                                     <segue destination="nEy-iY-5tw" kind="embed" identifier="embedVCSegue" id="FC1-j1-Sqv"/>
                                 </connections>
@@ -209,7 +209,6 @@
             <objects>
                 <navigationController navigationBarHidden="YES" id="nEy-iY-5tw" customClass="RZTransitionsNavigationController" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="cjQ-Dz-v93">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                 </navigationController>
@@ -230,14 +229,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view tag="11" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R34-bb-WZO" userLabel="headerView" customClass="STTabsHeaderView" customModule="WorldBosses" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="lFA-Z0-EdH"/>
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7HM-A1-ZZx">
-                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <connections>
                                     <segue destination="QnS-ah-WgV" kind="embed" identifier="embedVCSegue" id="FL4-uC-rhm"/>
                                 </connections>
@@ -266,7 +265,6 @@
             <objects>
                 <navigationController navigationBarHidden="YES" id="QnS-ah-WgV" customClass="RZTransitionsNavigationController" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="uvP-ne-ioN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                 </navigationController>
