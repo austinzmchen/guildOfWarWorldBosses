@@ -109,6 +109,8 @@
 		C48D84EA1DFE17C500585E61 /* WBItemRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48D84E91DFE17C500585E61 /* WBItemRemote.swift */; };
 		C48D84EC1DFE186100585E61 /* WBMaterialProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48D84EB1DFE186100585E61 /* WBMaterialProcessor.swift */; };
 		C48D84EE1DFE189A00585E61 /* WBItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48D84ED1DFE189A00585E61 /* WBItem.swift */; };
+		C48DFAFF1F8415AC00958368 /* WBSkipButtonModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48DFAFE1F8415AC00958368 /* WBSkipButtonModalViewController.swift */; };
+		C48DFB011F8415EF00958368 /* WBWhatsAPIKeyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48DFB001F8415EF00958368 /* WBWhatsAPIKeyViewController.swift */; };
 		C48F43C81E160275008DB46B /* WBRemoteResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F43C71E160275008DB46B /* WBRemoteResult.swift */; };
 		C4903BF51E00678F004F3345 /* Characters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4903BF41E00678F004F3345 /* Characters.storyboard */; };
 		C4903BF81E006828004F3345 /* WBCharactersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4903BF71E006828004F3345 /* WBCharactersTableViewController.swift */; };
@@ -248,6 +250,8 @@
 		C48D84E91DFE17C500585E61 /* WBItemRemote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBItemRemote.swift; sourceTree = "<group>"; };
 		C48D84EB1DFE186100585E61 /* WBMaterialProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBMaterialProcessor.swift; sourceTree = "<group>"; };
 		C48D84ED1DFE189A00585E61 /* WBItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBItem.swift; sourceTree = "<group>"; };
+		C48DFAFE1F8415AC00958368 /* WBSkipButtonModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBSkipButtonModalViewController.swift; sourceTree = "<group>"; };
+		C48DFB001F8415EF00958368 /* WBWhatsAPIKeyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBWhatsAPIKeyViewController.swift; sourceTree = "<group>"; };
 		C48F43C71E160275008DB46B /* WBRemoteResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBRemoteResult.swift; sourceTree = "<group>"; };
 		C4903BF41E00678F004F3345 /* Characters.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Characters.storyboard; sourceTree = "<group>"; };
 		C4903BF71E006828004F3345 /* WBCharactersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBCharactersTableViewController.swift; sourceTree = "<group>"; };
@@ -580,6 +584,8 @@
 				C45BAE281DF2550200C6FB5A /* WBAPIKeyEntryViewController.swift */,
 				C4A409521E033B2500130C85 /* WBAPIKeyEntryViewController+QRCode.swift */,
 				C4A409461E01E3E100130C85 /* WBAPIKeyViewController.swift */,
+				C48DFAFE1F8415AC00958368 /* WBSkipButtonModalViewController.swift */,
+				C48DFB001F8415EF00958368 /* WBWhatsAPIKeyViewController.swift */,
 				C47120FD1F7C5B2D00A885BC /* WBMainViewController.swift */,
 				C45D344C1DEB8265001C47F9 /* Drawers */,
 				C4903BF61E006810004F3345 /* Characters */,
@@ -850,6 +856,7 @@
 				C499F0981E146895002F534F /* WBApiErrorView.swift in Sources */,
 				C411FAEB1DFDF84E0038337F /* WBStorageTableViewModelType.swift in Sources */,
 				C4A409411E01E11600130C85 /* WBSettingsTableViewCell.swift in Sources */,
+				C48DFAFF1F8415AC00958368 /* WBSkipButtonModalViewController.swift in Sources */,
 				C43EF3121E68D02C00C6FADD /* WBStorageDetailTypeTableCell.swift in Sources */,
 				C45D345C1DECD7D6001C47F9 /* WBTimerViewController+NavigationBar.swift in Sources */,
 				C45D345F1DECD865001C47F9 /* WBStoragePageViewController.swift in Sources */,
@@ -915,6 +922,7 @@
 				C41094A71D89003D00751A72 /* WBAboutViewController.swift in Sources */,
 				C48D84EE1DFE189A00585E61 /* WBItem.swift in Sources */,
 				C4873F9D1E0D93E7002E742D /* WBStorageWalletCoinTableViewCell.swift in Sources */,
+				C48DFB011F8415EF00958368 /* WBWhatsAPIKeyViewController.swift in Sources */,
 				C4386A241E7614C100285F5B /* WBItemTypeProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

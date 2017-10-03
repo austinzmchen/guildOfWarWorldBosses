@@ -10,6 +10,7 @@ def addCommonDependancies
     pod 'KYDrawerController'
     pod 'QRCodeReader.swift'
     pod 'RZTransitions', :git => 'https://github.com/austinzmchen/RZTransitions.git', :branch => 'release/ACCustomUI_1.1.4'
+    pod 'ACKit', :git => 'https://github.com/austinzmchen/ACKit.git', :branch => 'master'
     
     # Model
     pod 'RealmSwift'

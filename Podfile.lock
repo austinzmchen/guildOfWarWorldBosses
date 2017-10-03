@@ -1,5 +1,8 @@
 PODS:
-  - Alamofire (4.2.0)
+  - ACKit (0.2.2):
+    - Alamofire
+    - AlamofireObjectMapper
+  - Alamofire (4.5.1)
   - AlamofireObjectMapper (4.0.1):
     - Alamofire (~> 4.1)
     - ObjectMapper (~> 2.0)
@@ -21,6 +24,7 @@ PODS:
   - SDWebImage/Core (3.8.2)
 
 DEPENDENCIES:
+  - ACKit (from `https://github.com/austinzmchen/ACKit.git`, branch `master`)
   - Alamofire
   - AlamofireObjectMapper
   - Crashlytics
@@ -33,17 +37,24 @@ DEPENDENCIES:
   - SDWebImage
 
 EXTERNAL SOURCES:
+  ACKit:
+    :branch: master
+    :git: https://github.com/austinzmchen/ACKit.git
   RZTransitions:
     :branch: release/ACCustomUI_1.1.4
     :git: https://github.com/austinzmchen/RZTransitions.git
 
 CHECKOUT OPTIONS:
+  ACKit:
+    :commit: 10a03ac203d0616acb184d4c3ba9f93da5ef2243
+    :git: https://github.com/austinzmchen/ACKit.git
   RZTransitions:
     :commit: e1fd2cdfd32b707952bef0e7c9fa22984b149f52
     :git: https://github.com/austinzmchen/RZTransitions.git
 
 SPEC CHECKSUMS:
-  Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
+  ACKit: 301ef7f5bb9edb3bae58ec6856e863ac974fc1cf
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   AlamofireObjectMapper: 842d2eed43a4d0593ff0110d54ac86a170c4519c
   Crashlytics: 2b6dbe138a42395577cfa73dfa1aa7248cadf39e
   Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
@@ -56,6 +67,6 @@ SPEC CHECKSUMS:
   RZTransitions: 0e0013fda6989ee84dc5e44dca79fd539e1a975a
   SDWebImage: '098e97e6176540799c27e804c96653ee0833d13c'
 
-PODFILE CHECKSUM: f543b5631946e632036521867e8f8d83b25839bf
+PODFILE CHECKSUM: 05a10491e5ed0d240111a38ac50d32335e465e66
 
 COCOAPODS: 1.2.1
