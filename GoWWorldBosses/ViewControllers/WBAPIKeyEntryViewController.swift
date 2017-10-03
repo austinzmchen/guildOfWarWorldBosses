@@ -70,7 +70,10 @@ class WBAPIKeyEntryViewController: UIViewController, WBDrawerItemViewControllerT
         if WBKeyStore.isAccountAvailable,
             let keyItem = WBKeyStore.keyStoreItem
         {
+            showLoading()
             self.authenticate(apiKey: keyItem.accountAPIKey)
+        } else {
+            hideLoading()
         }
     }
     
@@ -116,9 +119,7 @@ class WBAPIKeyEntryViewController: UIViewController, WBDrawerItemViewControllerT
                 }
             }
         }
-        
     }
-    
 }
 
 extension WBAPIKeyEntryViewController {
