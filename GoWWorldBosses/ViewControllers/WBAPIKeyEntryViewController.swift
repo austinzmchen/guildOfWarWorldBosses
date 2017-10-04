@@ -19,14 +19,13 @@ class WBAPIKeyEntryViewController: UIViewController, WBDrawerItemViewControllerT
     }
     
     @IBOutlet weak var skipButton: UIButton!
+    
     @IBOutlet weak var textField: UITextField!
+    @IBOutlet var textContainerBottomConstraint: NSLayoutConstraint!
+    
     @IBOutlet weak var qrCodeButton: UIButton!
     @IBOutlet weak var loadingPlaceholderView: UIView!
     @IBOutlet weak var loadingSpinner: WBSpinnerView!
-    
-    @IBAction func skipButtonTapped(_ sender: Any) {
-        self.presentLandingView(animated: true) {}
-    }
     
     @IBAction func qrCodeButtonTapped(_ sender: Any) {
         showQRCodeScanner()
@@ -75,6 +74,31 @@ class WBAPIKeyEntryViewController: UIViewController, WBDrawerItemViewControllerT
         } else {
             hideLoading()
         }
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidShow(note:)), name: NSNotification.Name.UIKeyboardDidShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(note:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    func keyboardDidShow(note: Notification) {
+        guard let ui = note.userInfo as? [String: Any],
+            let rect = (ui[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
+            else { return }
+        
+        textContainerBottomConstraint.constant = rect.height + 20
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    func keyboardWillHide(note: Notification) {
+        textContainerBottomConstraint.constant = 125
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
     }
     
     func tappingOffKeyboard() {
@@ -118,6 +142,13 @@ class WBAPIKeyEntryViewController: UIViewController, WBDrawerItemViewControllerT
                     self.hideLoading()
                 }
             }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "presentSkipButtonModalVC" {
+            let skipButtonVC = segue.destination as! WBSkipButtonModalViewController
+            skipButtonVC.vc = self
         }
     }
 }

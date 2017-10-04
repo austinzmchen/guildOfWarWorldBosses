@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "timersJormagBackground.png",
+      "filename" : "clawOfJormag.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "timersJormagBackground@2x.png",
+      "filename" : "clawOfJormag@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "timersJormagBackground@3x.png",
+      "filename" : "clawOfJormag@3x.png",
       "scale" : "3x"
     }
   ],

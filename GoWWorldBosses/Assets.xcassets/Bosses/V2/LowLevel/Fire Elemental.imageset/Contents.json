@@ -2,16 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "timersFireelementalBackground.png",
+      "filename" : "shadowBehemoth.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "shadowBehemoth@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "timersFireelementalBackground@3x.png",
+      "filename" : "shadowBehemoth@3x.png",
       "scale" : "3x"
     }
   ],

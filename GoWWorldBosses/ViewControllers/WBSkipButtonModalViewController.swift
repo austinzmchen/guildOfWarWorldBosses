@@ -11,6 +11,15 @@ import UIKit
 class WBSkipButtonModalViewController: UIViewController {
     
     @IBAction func useAPIKeyButtonTapped(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: {
+            self.vc?.textField.becomeFirstResponder()
+        })
     }
+    @IBAction func confirmSkipButtonTapped(_ sender: Any) {
+        dismiss(animated: true, completion: {
+            self.vc?.presentLandingView(animated: true) {}
+        })
+    }
+    
+    weak var vc: WBAPIKeyEntryViewController?
 }

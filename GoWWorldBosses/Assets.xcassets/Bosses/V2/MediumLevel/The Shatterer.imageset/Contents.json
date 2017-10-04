@@ -2,16 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "timersShattererBackground.png",
+      "filename" : "theShatterer.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "theShatterer@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "timersShattererBackground@3x.png",
+      "filename" : "theShatterer@3x.png",
       "scale" : "3x"
     }
   ],
