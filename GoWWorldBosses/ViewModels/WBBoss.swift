@@ -30,16 +30,19 @@ class WBBoss: NSObject, WBBossProtocol {
     let name: String
     let firstSpawnTime: Int
     let spawnPattern: WBBossSpawnPattern
+    let locationCode: String
+    
     var faved: Bool = false
     var _latestSpawnTime: Int?
     
-    init(name: String, firstSpt: Int, spawnPattern: WBBossSpawnPattern) {
+    init(name: String, firstSpt: Int, spawnPattern: WBBossSpawnPattern, locationCode: String) {
         self.name = name
         self.spawnPattern = spawnPattern
         self.firstSpawnTime = firstSpt
+        self.locationCode = locationCode
     }
     
-    init(name: String, firstSpawnTime: (hours: Int, minutes: Int), spawnPattern: WBBossSpawnPattern) {
+    init(name: String, firstSpawnTime: (hours: Int, minutes: Int), spawnPattern: WBBossSpawnPattern, locationCode: String) {
         self.name = name
         self.spawnPattern = spawnPattern
         
@@ -48,6 +51,8 @@ class WBBoss: NSObject, WBBossProtocol {
         let spawnTimeUTC = (firstSpawnTime.hours * wb1Hour + firstSpawnTime.minutes * wb1Minute)
         self.firstSpawnTime = Int(spawnTimeUTC + timeZoneoffset + wb1Day) % Int(spawnPattern.rawValue)
 //        print("first spawn time -\(name):\(self.firstSpawnTime / 60)")
+        
+        self.locationCode = locationCode
     }
 
     var isActive: Bool {

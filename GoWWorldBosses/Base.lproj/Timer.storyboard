@@ -45,74 +45,90 @@
                                                         <constraint firstAttribute="height" constant="180" id="ji6-Fk-UL4"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Claw of Jormag" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="37a-Or-YpF" userLabel="nameLabel">
-                                                    <rect key="frame" x="15" y="28" width="114" height="20"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Active" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6d0-tJ-8Ju" userLabel="countDownLabel">
-                                                    <rect key="frame" x="15" y="49" width="58" height="24"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                    <rect key="frame" x="20" y="15" width="87" height="33.666666666666664"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="28"/>
                                                     <color key="textColor" red="0.45882352941176469" green="0.83921568627450982" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view alpha="0.10000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Gf-8y-ea6" userLabel="separator">
-                                                    <rect key="frame" x="15" y="149" width="200" height="1"/>
-                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Claw of Jormag" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="37a-Or-YpF" userLabel="nameLabel">
+                                                    <rect key="frame" x="20" y="53.666666666666671" width="116" height="20.000000000000014"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bossLocation" translatesAutoresizingMaskIntoConstraints="NO" id="Ljz-So-kKH">
+                                                    <rect key="frame" x="20" y="83.666666666666671" width="12" height="12"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="200" id="Gci-9u-GMJ"/>
+                                                        <constraint firstAttribute="height" constant="12" id="B1L-x8-uT5"/>
+                                                        <constraint firstAttribute="width" constant="12" id="QH7-CJ-Hff"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[&amp;BEcAAAA=]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lgh-Du-e2Q" userLabel="locationCodeLabel">
+                                                    <rect key="frame" x="42" y="80.666666666666671" width="100.66666666666666" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                    <color key="textColor" red="0.88627450980392153" green="0.61176470588235299" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Gf-8y-ea6" userLabel="separator">
+                                                    <rect key="frame" x="20" y="146" width="374" height="1"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="cbD-df-q6A"/>
                                                     </constraints>
                                                 </view>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clockIcon" translatesAutoresizingMaskIntoConstraints="NO" id="e6d-ce-NMg" userLabel="clockIcon">
-                                                    <rect key="frame" x="15" y="159" width="10" height="10"/>
+                                                    <rect key="frame" x="20" y="160" width="10" height="10"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="10" id="ba1-aj-55o"/>
                                                         <constraint firstAttribute="width" constant="10" id="lhO-0L-Bui"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1:30PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHq-bA-Waj" userLabel="spawnTimeLabel">
-                                                    <rect key="frame" x="33" y="157" width="43" height="15"/>
+                                                    <rect key="frame" x="38" y="158" width="43" height="15"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="0.55000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heartIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Mfe-Fy-7kJ" userLabel="favAnimImageView">
+                                                    <rect key="frame" x="388" y="29" width="2" height="2"/>
+                                                </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aNF-Ed-OXi" userLabel="favButton">
-                                                    <rect key="frame" x="373" y="0.0" width="40" height="38"/>
+                                                    <rect key="frame" x="374" y="15" width="30" height="30"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="38" id="QlS-uq-Jl9"/>
-                                                        <constraint firstAttribute="width" constant="40" id="xZh-LH-YSv"/>
+                                                        <constraint firstAttribute="height" constant="30" id="QlS-uq-Jl9"/>
+                                                        <constraint firstAttribute="width" constant="30" id="xZh-LH-YSv"/>
                                                     </constraints>
-                                                    <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                                     <state key="normal" image="unheartIcon"/>
                                                     <state key="selected" image="heartIcon"/>
                                                 </button>
-                                                <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heartIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Mfe-Fy-7kJ" userLabel="favAnimImageView">
-                                                    <rect key="frame" x="392" y="18" width="2" height="2"/>
-                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="Mfe-Fy-7kJ" firstAttribute="width" secondItem="aNF-Ed-OXi" secondAttribute="width" multiplier="0.05" id="8Pg-e2-EaB"/>
                                                 <constraint firstAttribute="trailing" secondItem="qbJ-PM-HzZ" secondAttribute="trailing" id="8gm-X0-hWv"/>
+                                                <constraint firstItem="Ljz-So-kKH" firstAttribute="top" secondItem="37a-Or-YpF" secondAttribute="bottom" constant="10" id="99C-JO-2DI"/>
                                                 <constraint firstItem="Mfe-Fy-7kJ" firstAttribute="height" secondItem="aNF-Ed-OXi" secondAttribute="height" multiplier="0.05" id="APV-po-szF"/>
-                                                <constraint firstItem="8Gf-8y-ea6" firstAttribute="bottom" secondItem="beR-1z-S5Q" secondAttribute="bottom" constant="-35" id="D8x-Jn-cb3"/>
+                                                <constraint firstItem="8Gf-8y-ea6" firstAttribute="bottom" secondItem="beR-1z-S5Q" secondAttribute="bottom" constant="-38" id="D8x-Jn-cb3"/>
                                                 <constraint firstItem="qbJ-PM-HzZ" firstAttribute="top" secondItem="beR-1z-S5Q" secondAttribute="top" id="Fsu-CY-TCP"/>
+                                                <constraint firstAttribute="trailing" secondItem="8Gf-8y-ea6" secondAttribute="trailing" constant="20" id="G9P-Tv-1eN"/>
                                                 <constraint firstItem="ZHq-bA-Waj" firstAttribute="leading" secondItem="e6d-ce-NMg" secondAttribute="trailing" constant="8" id="GDE-bN-DeI"/>
+                                                <constraint firstItem="6d0-tJ-8Ju" firstAttribute="top" secondItem="beR-1z-S5Q" secondAttribute="top" constant="15" id="HF2-6j-m1E"/>
                                                 <constraint firstItem="Mfe-Fy-7kJ" firstAttribute="centerY" secondItem="aNF-Ed-OXi" secondAttribute="centerY" id="LUx-dM-zd9"/>
+                                                <constraint firstItem="37a-Or-YpF" firstAttribute="leading" secondItem="6d0-tJ-8Ju" secondAttribute="leading" id="PaX-qQ-ic6"/>
                                                 <constraint firstItem="qbJ-PM-HzZ" firstAttribute="leading" secondItem="beR-1z-S5Q" secondAttribute="leading" id="SAl-1I-MIn"/>
-                                                <constraint firstItem="8Gf-8y-ea6" firstAttribute="leading" secondItem="37a-Or-YpF" secondAttribute="leading" id="SbL-FO-HcF"/>
+                                                <constraint firstItem="Lgh-Du-e2Q" firstAttribute="centerY" secondItem="Ljz-So-kKH" secondAttribute="centerY" id="TEZ-Xu-NYs"/>
                                                 <constraint firstItem="Mfe-Fy-7kJ" firstAttribute="centerX" secondItem="aNF-Ed-OXi" secondAttribute="centerX" id="TmJ-f7-BS4"/>
-                                                <constraint firstItem="37a-Or-YpF" firstAttribute="leading" secondItem="beR-1z-S5Q" secondAttribute="leading" constant="15" id="U1T-3j-943"/>
-                                                <constraint firstItem="37a-Or-YpF" firstAttribute="top" secondItem="beR-1z-S5Q" secondAttribute="top" constant="28" id="UDf-MK-N9H"/>
-                                                <constraint firstItem="aNF-Ed-OXi" firstAttribute="top" secondItem="qbJ-PM-HzZ" secondAttribute="top" id="Vlj-9C-HmI"/>
-                                                <constraint firstItem="6d0-tJ-8Ju" firstAttribute="top" secondItem="37a-Or-YpF" secondAttribute="bottom" constant="1" id="e6w-Q5-RjH"/>
-                                                <constraint firstItem="8Gf-8y-ea6" firstAttribute="top" secondItem="e6d-ce-NMg" secondAttribute="bottom" constant="-20" id="g5V-IH-NhU"/>
-                                                <constraint firstItem="6d0-tJ-8Ju" firstAttribute="leading" secondItem="37a-Or-YpF" secondAttribute="leading" id="m0k-IC-j9d"/>
-                                                <constraint firstItem="aNF-Ed-OXi" firstAttribute="trailing" secondItem="qbJ-PM-HzZ" secondAttribute="trailing" constant="-1" id="nsg-uo-BkO"/>
+                                                <constraint firstItem="37a-Or-YpF" firstAttribute="top" secondItem="6d0-tJ-8Ju" secondAttribute="bottom" constant="5" id="U7a-Ow-4Y1"/>
+                                                <constraint firstItem="aNF-Ed-OXi" firstAttribute="top" secondItem="qbJ-PM-HzZ" secondAttribute="top" constant="15" id="Vlj-9C-HmI"/>
+                                                <constraint firstItem="8Gf-8y-ea6" firstAttribute="leading" secondItem="beR-1z-S5Q" secondAttribute="leading" constant="20" id="bBb-Ag-47e"/>
+                                                <constraint firstItem="6d0-tJ-8Ju" firstAttribute="leading" secondItem="beR-1z-S5Q" secondAttribute="leading" constant="20" id="ewu-YJ-xS6"/>
+                                                <constraint firstItem="8Gf-8y-ea6" firstAttribute="top" secondItem="e6d-ce-NMg" secondAttribute="bottom" constant="-24" id="g5V-IH-NhU"/>
+                                                <constraint firstItem="Lgh-Du-e2Q" firstAttribute="leading" secondItem="Ljz-So-kKH" secondAttribute="trailing" constant="10" id="jkL-8n-H6H"/>
+                                                <constraint firstItem="aNF-Ed-OXi" firstAttribute="trailing" secondItem="qbJ-PM-HzZ" secondAttribute="trailing" constant="-10" id="nsg-uo-BkO"/>
                                                 <constraint firstItem="e6d-ce-NMg" firstAttribute="leading" secondItem="8Gf-8y-ea6" secondAttribute="leading" id="o4a-Vv-FWD"/>
                                                 <constraint firstItem="ZHq-bA-Waj" firstAttribute="centerY" secondItem="e6d-ce-NMg" secondAttribute="centerY" id="xIO-yF-Wo3"/>
+                                                <constraint firstItem="Ljz-So-kKH" firstAttribute="leading" secondItem="37a-Or-YpF" secondAttribute="leading" id="zii-bg-Rf1"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -121,6 +137,7 @@
                                             <outlet property="countDownLabel" destination="6d0-tJ-8Ju" id="NRb-gn-hNa"/>
                                             <outlet property="favAnimImageView" destination="Mfe-Fy-7kJ" id="49S-sr-ZwT"/>
                                             <outlet property="favButton" destination="aNF-Ed-OXi" id="34A-4j-e3E"/>
+                                            <outlet property="locationCodeLabel" destination="Lgh-Du-e2Q" id="3aN-nQ-nOJ"/>
                                             <outlet property="nameLabel" destination="37a-Or-YpF" id="UaZ-ma-JSp"/>
                                             <outlet property="spawnTimeLabel" destination="ZHq-bA-Waj" id="s2p-QX-Krc"/>
                                         </connections>
@@ -147,8 +164,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bossLocation" width="12" height="12"/>
         <image name="clockIcon" width="30" height="30"/>
-        <image name="heartIcon" width="20" height="18"/>
-        <image name="unheartIcon" width="40" height="37"/>
+        <image name="heartIcon" width="30" height="30"/>
+        <image name="unheartIcon" width="30" height="30"/>
     </resources>
 </document>

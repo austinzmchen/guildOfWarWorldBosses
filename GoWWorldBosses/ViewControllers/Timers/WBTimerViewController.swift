@@ -171,6 +171,7 @@ extension WBTimerViewController: UITableViewDelegate, UITableViewDataSource {
         cell.nameLabel.text = boss.name
         cell.bossImageView.image = UIImage(named: boss.name)
         cell.favButton.isSelected = boss.faved
+        cell.locationCodeLabel.text = boss.locationCode
         cell.delegate = self
         
         self.updateCell(cell, atIndexPath: indexPath)

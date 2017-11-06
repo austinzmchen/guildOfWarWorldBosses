@@ -13,7 +13,7 @@ class WBHighLevelBoss: WBBoss {
     let spawnTimes: [Int]
     var lastestSpawnTimeIndex: Int = -1
     
-    init(name: String, spawnTimes: [(hours: Int, minutes: Int)]) {
+    init(name: String, spawnTimes: [(hours: Int, minutes: Int)], locationCode: String) {
         var sTimes: [Int] = []
         let timeZoneoffset: Int = NSTimeZone.local.secondsFromGMT()
         
@@ -36,7 +36,7 @@ class WBHighLevelBoss: WBBoss {
             }
         }
         
-        super.init(name: name, firstSpt: self.spawnTimes[0], spawnPattern: .patternIrregular)
+        super.init(name: name, firstSpt: self.spawnTimes[0], spawnPattern: .patternIrregular, locationCode: locationCode)
     }
     
     override var latestSpawnTime: Int? {

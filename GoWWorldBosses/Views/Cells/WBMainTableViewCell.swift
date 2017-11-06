@@ -31,6 +31,7 @@ class WBMainTableViewCell: UITableViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var countDownLabel: UILabel!
+    @IBOutlet weak var locationCodeLabel: UILabel!
     @IBOutlet weak var spawnTimeLabel: UILabel!
     @IBOutlet weak var favButton: UIButton!
     @IBOutlet weak var favAnimImageView: UIImageView!
@@ -42,7 +43,7 @@ class WBMainTableViewCell: UITableViewCell {
         if !self.favButton.isSelected {
             self.favAnimImageView.alpha = 0
             UIView.animate(withDuration: 0.22, delay: 0, options: .curveEaseOut, animations: {
-                self.favAnimImageView.transform = CGAffineTransform(scaleX: 12.5, y: 11.25)
+                self.favAnimImageView.transform = CGAffineTransform(scaleX: 20, y: 20)
                 self.favAnimImageView.alpha = 1
             }) { (completed) in
                 self.favButton.isSelected = !self.favButton.isSelected
@@ -81,7 +82,7 @@ class WBMainTableViewCell: UITableViewCell {
             switch countDownStyle {
                 case .active:
                     self.countDownLabel.textColor = UIColor(red: 117/255.0, green: 214/255.0, blue: 17/255.0, alpha: 1)
-                    self.countDownLabel.text = "ACTIVE"
+                    self.countDownLabel.text = "LIVE"
                     break
                 case .countDownRed(let countDown):
                     self.countDownLabel.textColor = UIColor.red

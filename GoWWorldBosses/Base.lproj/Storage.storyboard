@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -12,10 +14,6 @@
         <scene sceneID="di6-uf-1Yz">
             <objects>
                 <viewController id="Fsw-cc-egh" customClass="WBStorageMainViewController" customModule="WorldBosses" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="xBk-sp-xIA"/>
-                        <viewControllerLayoutGuide type="bottom" id="qW4-xU-D1x"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="b1T-qr-y1Y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -53,17 +51,18 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="GQc-qy-IfP" firstAttribute="top" secondItem="xBk-sp-xIA" secondAttribute="bottom" constant="11" id="03q-ow-Hcn"/>
-                            <constraint firstItem="Js8-ZK-1SD" firstAttribute="leading" secondItem="b1T-qr-y1Y" secondAttribute="leading" id="DQ5-pH-jhM"/>
-                            <constraint firstItem="qW4-xU-D1x" firstAttribute="top" secondItem="3bh-uA-XSI" secondAttribute="bottom" id="Js6-gb-FKe"/>
-                            <constraint firstItem="3bh-uA-XSI" firstAttribute="leading" secondItem="b1T-qr-y1Y" secondAttribute="leading" id="STB-ko-Du4"/>
+                            <constraint firstItem="GQc-qy-IfP" firstAttribute="top" secondItem="cjG-pP-OPf" secondAttribute="top" constant="11" id="03q-ow-Hcn"/>
+                            <constraint firstItem="Js8-ZK-1SD" firstAttribute="leading" secondItem="cjG-pP-OPf" secondAttribute="leading" id="DQ5-pH-jhM"/>
+                            <constraint firstItem="cjG-pP-OPf" firstAttribute="bottom" secondItem="3bh-uA-XSI" secondAttribute="bottom" id="Js6-gb-FKe"/>
+                            <constraint firstItem="3bh-uA-XSI" firstAttribute="leading" secondItem="cjG-pP-OPf" secondAttribute="leading" id="STB-ko-Du4"/>
                             <constraint firstItem="3bh-uA-XSI" firstAttribute="top" secondItem="GQc-qy-IfP" secondAttribute="bottom" constant="-83" id="WeT-GD-SY6"/>
-                            <constraint firstItem="Js8-ZK-1SD" firstAttribute="top" secondItem="xBk-sp-xIA" secondAttribute="bottom" id="WrJ-eO-4lI"/>
-                            <constraint firstAttribute="trailing" secondItem="3bh-uA-XSI" secondAttribute="trailing" id="YM8-GA-0IT"/>
-                            <constraint firstAttribute="trailing" secondItem="Js8-ZK-1SD" secondAttribute="trailing" id="ZdY-6R-usd"/>
-                            <constraint firstAttribute="trailing" secondItem="GQc-qy-IfP" secondAttribute="trailing" constant="16" id="fUT-bl-hYp"/>
-                            <constraint firstItem="GQc-qy-IfP" firstAttribute="leading" secondItem="b1T-qr-y1Y" secondAttribute="leading" constant="16" id="ks7-Rr-aE0"/>
+                            <constraint firstItem="Js8-ZK-1SD" firstAttribute="top" secondItem="cjG-pP-OPf" secondAttribute="top" id="WrJ-eO-4lI"/>
+                            <constraint firstItem="cjG-pP-OPf" firstAttribute="trailing" secondItem="3bh-uA-XSI" secondAttribute="trailing" id="YM8-GA-0IT"/>
+                            <constraint firstItem="cjG-pP-OPf" firstAttribute="trailing" secondItem="Js8-ZK-1SD" secondAttribute="trailing" id="ZdY-6R-usd"/>
+                            <constraint firstItem="cjG-pP-OPf" firstAttribute="trailing" secondItem="GQc-qy-IfP" secondAttribute="trailing" constant="16" id="fUT-bl-hYp"/>
+                            <constraint firstItem="GQc-qy-IfP" firstAttribute="leading" secondItem="cjG-pP-OPf" secondAttribute="leading" constant="16" id="ks7-Rr-aE0"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="cjG-pP-OPf"/>
                     </view>
                     <navigationItem key="navigationItem" id="njq-RQ-DUE">
                         <barButtonItem key="leftBarButtonItem" image="icBurger" id="ia7-SS-AZi">
@@ -130,7 +129,7 @@
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v23-Yy-5K5" userLabel="Separator">
                                             <rect key="frame" x="0.0" y="63.5" width="375" height="1"/>
-                                            <color key="backgroundColor" red="0.1176470588" green="0.1176470588" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" red="0.10196078431372549" green="0.011764705882352941" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="1" id="svT-gI-9Lr"/>
                                             </constraints>
@@ -175,7 +174,7 @@
                 <navigationController storyboardIdentifier="storageNavVC" automaticallyAdjustsScrollViewInsets="NO" id="4AI-iH-wpi" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="51a-EI-DKR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="1" green="0.57254901960000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
@@ -192,10 +191,6 @@
         <scene sceneID="I1E-Ad-cBh">
             <objects>
                 <viewController storyboardIdentifier="drawerVC" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="2nX-QF-Af3" userLabel="Item Detail" customClass="WBStorageDetailViewController" customModule="WorldBosses" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="p2d-Gf-bQx"/>
-                        <viewControllerLayoutGuide type="bottom" id="NjN-Zm-Ueq"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="cpX-Tr-609">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -241,7 +236,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(2)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sbg-TQ-I5a" userLabel="countLabel">
-                                                    <rect key="frame" x="227.5" y="28.5" width="23.5" height="23"/>
+                                                    <rect key="frame" x="227.5" y="28.5" width="24" height="23"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -465,16 +460,17 @@ Summons a Black Lion Merchant If Your Inventory Is Full after Gathering (20-Minu
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="TPU-1W-56r" firstAttribute="bottom" secondItem="UmG-w2-RGz" secondAttribute="bottom" constant="-100" id="Qnv-Z2-GG8"/>
-                            <constraint firstItem="NjN-Zm-Ueq" firstAttribute="top" secondItem="UmG-w2-RGz" secondAttribute="bottom" id="Quf-N2-2tx"/>
+                            <constraint firstItem="LYx-Am-uSU" firstAttribute="bottom" secondItem="UmG-w2-RGz" secondAttribute="bottom" id="Quf-N2-2tx"/>
                             <constraint firstItem="CGC-ir-9Uu" firstAttribute="bottom" secondItem="UmG-w2-RGz" secondAttribute="bottom" constant="-40" id="bb7-WL-gp0"/>
-                            <constraint firstItem="UmG-w2-RGz" firstAttribute="top" secondItem="p2d-Gf-bQx" secondAttribute="bottom" constant="-20" id="eNn-uW-EJq"/>
+                            <constraint firstItem="UmG-w2-RGz" firstAttribute="top" secondItem="LYx-Am-uSU" secondAttribute="top" constant="-20" id="eNn-uW-EJq"/>
                             <constraint firstItem="CGC-ir-9Uu" firstAttribute="centerX" secondItem="UmG-w2-RGz" secondAttribute="centerX" id="eQI-lj-xuF"/>
                             <constraint firstItem="TPU-1W-56r" firstAttribute="top" secondItem="UmG-w2-RGz" secondAttribute="top" constant="100" id="hHu-au-E8D"/>
-                            <constraint firstAttribute="trailing" secondItem="UmG-w2-RGz" secondAttribute="trailing" id="mCf-Et-ek4"/>
-                            <constraint firstItem="UmG-w2-RGz" firstAttribute="leading" secondItem="cpX-Tr-609" secondAttribute="leading" id="ssu-x3-7TD"/>
+                            <constraint firstItem="LYx-Am-uSU" firstAttribute="trailing" secondItem="UmG-w2-RGz" secondAttribute="trailing" id="mCf-Et-ek4"/>
+                            <constraint firstItem="UmG-w2-RGz" firstAttribute="leading" secondItem="LYx-Am-uSU" secondAttribute="leading" id="ssu-x3-7TD"/>
                             <constraint firstItem="TPU-1W-56r" firstAttribute="centerX" secondItem="UmG-w2-RGz" secondAttribute="centerX" id="vfd-5q-JFY"/>
                             <constraint firstItem="TPU-1W-56r" firstAttribute="width" secondItem="UmG-w2-RGz" secondAttribute="width" id="xDo-QH-axW"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="LYx-Am-uSU"/>
                     </view>
                     <navigationItem key="navigationItem" id="Lfv-vD-wJn"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
@@ -492,10 +488,6 @@ Summons a Black Lion Merchant If Your Inventory Is Full after Gathering (20-Minu
         <scene sceneID="J6W-Lw-aII">
             <objects>
                 <viewController storyboardIdentifier="drawerWalletDetailVC" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="4QR-ug-e5j" userLabel="Item Detail" customClass="WBStorageWalletDetailViewController" customModule="WorldBosses" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="7aq-Nz-Pqa"/>
-                        <viewControllerLayoutGuide type="bottom" id="16a-ju-r8d"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8fS-Vt-fJA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -765,16 +757,17 @@ Summons a Black Lion Merchant If Your Inventory Is Full after Gathering (20-Minu
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="erP-Hl-mKI" firstAttribute="bottom" secondItem="CHi-BF-9SY" secondAttribute="bottom" constant="-100" id="BA5-Ke-IwK"/>
-                            <constraint firstAttribute="trailing" secondItem="CHi-BF-9SY" secondAttribute="trailing" id="Bbd-vB-85G"/>
-                            <constraint firstItem="16a-ju-r8d" firstAttribute="top" secondItem="CHi-BF-9SY" secondAttribute="bottom" id="GEZ-UP-w6J"/>
+                            <constraint firstItem="N9c-xP-DRC" firstAttribute="trailing" secondItem="CHi-BF-9SY" secondAttribute="trailing" id="Bbd-vB-85G"/>
+                            <constraint firstItem="N9c-xP-DRC" firstAttribute="bottom" secondItem="CHi-BF-9SY" secondAttribute="bottom" id="GEZ-UP-w6J"/>
                             <constraint firstItem="erP-Hl-mKI" firstAttribute="top" secondItem="CHi-BF-9SY" secondAttribute="top" constant="100" id="LZI-WV-Jji"/>
                             <constraint firstItem="erP-Hl-mKI" firstAttribute="width" secondItem="CHi-BF-9SY" secondAttribute="width" id="P18-uv-CE7"/>
-                            <constraint firstItem="CHi-BF-9SY" firstAttribute="top" secondItem="7aq-Nz-Pqa" secondAttribute="bottom" constant="-20" id="TaS-qR-gDe"/>
+                            <constraint firstItem="CHi-BF-9SY" firstAttribute="top" secondItem="N9c-xP-DRC" secondAttribute="top" constant="-20" id="TaS-qR-gDe"/>
                             <constraint firstItem="5Bs-NT-qSe" firstAttribute="bottom" secondItem="CHi-BF-9SY" secondAttribute="bottom" constant="-40" id="W1s-7X-1qT"/>
                             <constraint firstItem="5Bs-NT-qSe" firstAttribute="centerX" secondItem="CHi-BF-9SY" secondAttribute="centerX" id="jHF-Mp-saY"/>
                             <constraint firstItem="erP-Hl-mKI" firstAttribute="centerX" secondItem="CHi-BF-9SY" secondAttribute="centerX" id="uM6-5f-2ZI"/>
-                            <constraint firstItem="CHi-BF-9SY" firstAttribute="leading" secondItem="8fS-Vt-fJA" secondAttribute="leading" id="y7O-We-KFt"/>
+                            <constraint firstItem="CHi-BF-9SY" firstAttribute="leading" secondItem="N9c-xP-DRC" secondAttribute="leading" id="y7O-We-KFt"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="N9c-xP-DRC"/>
                     </view>
                     <navigationItem key="navigationItem" id="OhP-Qg-XZC"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
@@ -792,10 +785,6 @@ Summons a Black Lion Merchant If Your Inventory Is Full after Gathering (20-Minu
         <scene sceneID="acv-58-H86">
             <objects>
                 <viewController storyboardIdentifier="drawerMaterialDetailVC" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="VJ0-7w-SCz" userLabel="Item Detail" customClass="WBStorageMaterialDetailViewController" customModule="WorldBosses" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="vW4-Vy-P7e"/>
-                        <viewControllerLayoutGuide type="bottom" id="9mE-to-Fme"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="nIT-IL-WVT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1067,14 +1056,15 @@ Summons a Black Lion Merchant If Your Inventory Is Full after Gathering (20-Minu
                             <constraint firstItem="M2k-ja-Ozh" firstAttribute="bottom" secondItem="dDq-9w-HhE" secondAttribute="bottom" constant="-40" id="3wD-5t-nj8"/>
                             <constraint firstItem="skl-kr-Vm9" firstAttribute="width" secondItem="dDq-9w-HhE" secondAttribute="width" id="AXY-PH-xui"/>
                             <constraint firstItem="skl-kr-Vm9" firstAttribute="top" secondItem="dDq-9w-HhE" secondAttribute="top" constant="100" id="NMJ-zN-o8Z"/>
-                            <constraint firstItem="9mE-to-Fme" firstAttribute="top" secondItem="dDq-9w-HhE" secondAttribute="bottom" id="YwW-ya-Box"/>
-                            <constraint firstAttribute="trailing" secondItem="dDq-9w-HhE" secondAttribute="trailing" id="ZSk-od-fqe"/>
+                            <constraint firstItem="6AL-QP-dty" firstAttribute="bottom" secondItem="dDq-9w-HhE" secondAttribute="bottom" id="YwW-ya-Box"/>
+                            <constraint firstItem="6AL-QP-dty" firstAttribute="trailing" secondItem="dDq-9w-HhE" secondAttribute="trailing" id="ZSk-od-fqe"/>
                             <constraint firstItem="M2k-ja-Ozh" firstAttribute="centerX" secondItem="dDq-9w-HhE" secondAttribute="centerX" id="aIU-Ai-h7e"/>
-                            <constraint firstItem="dDq-9w-HhE" firstAttribute="leading" secondItem="nIT-IL-WVT" secondAttribute="leading" id="hlC-GD-hNs"/>
-                            <constraint firstItem="dDq-9w-HhE" firstAttribute="top" secondItem="vW4-Vy-P7e" secondAttribute="bottom" constant="-20" id="wWW-RO-e3D"/>
+                            <constraint firstItem="dDq-9w-HhE" firstAttribute="leading" secondItem="6AL-QP-dty" secondAttribute="leading" id="hlC-GD-hNs"/>
+                            <constraint firstItem="dDq-9w-HhE" firstAttribute="top" secondItem="6AL-QP-dty" secondAttribute="top" constant="-20" id="wWW-RO-e3D"/>
                             <constraint firstItem="skl-kr-Vm9" firstAttribute="centerX" secondItem="dDq-9w-HhE" secondAttribute="centerX" id="xqU-nj-MSr"/>
                             <constraint firstItem="skl-kr-Vm9" firstAttribute="bottom" secondItem="dDq-9w-HhE" secondAttribute="bottom" constant="-100" id="yLd-Vf-buP"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="6AL-QP-dty"/>
                     </view>
                     <navigationItem key="navigationItem" id="9cT-N9-2OF"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
@@ -1130,7 +1120,7 @@ Summons a Black Lion Merchant If Your Inventory Is Full after Gathering (20-Minu
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YUo-nY-5sC" userLabel="Separator">
                                             <rect key="frame" x="0.0" y="64" width="375" height="1"/>
-                                            <color key="backgroundColor" red="0.1176470588" green="0.1176470588" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" red="0.10196078431372549" green="0.011764705882352941" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="1" id="1rG-px-7WY"/>
                                             </constraints>
@@ -1241,7 +1231,7 @@ Summons a Black Lion Merchant If Your Inventory Is Full after Gathering (20-Minu
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0tS-UA-uB0" userLabel="Separator">
                                             <rect key="frame" x="0.0" y="64" width="375" height="1"/>
-                                            <color key="backgroundColor" red="0.1176470588" green="0.1176470588" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" red="0.10196078431372549" green="0.011764705882352941" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="1" id="KAi-90-jUU"/>
                                             </constraints>
@@ -1307,7 +1297,7 @@ Summons a Black Lion Merchant If Your Inventory Is Full after Gathering (20-Minu
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MMg-LH-TiZ" userLabel="Separator">
                                             <rect key="frame" x="0.0" y="64" width="375" height="1"/>
-                                            <color key="backgroundColor" red="0.1176470588" green="0.1176470588" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" red="0.10196078431372549" green="0.011764705882352941" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="1" id="ddz-56-Vvq"/>
                                             </constraints>

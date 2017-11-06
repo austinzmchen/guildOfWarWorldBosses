@@ -18,14 +18,14 @@ extension WBBossFactory {
         let secondSpawnMinutes = minutes + 1
         
         // 2hrs
-        let l1 = WBBoss(name: "Svanir Sharman Chief",
-                        firstSpawnTime: (hours: hours, minutes: firstSpawnMinutes), spawnPattern: .pattern2hrs)
+        let l1 = WBBoss(name: "Svanir Shaman Chief",
+                        firstSpawnTime: (hours: hours, minutes: firstSpawnMinutes), spawnPattern: .pattern2hrs, locationCode: "[&BMIDAAA=]")
         let l2 = WBBoss(name: "Fire Elemental",
-                        firstSpawnTime: (hours: hours, minutes: firstSpawnMinutes), spawnPattern: .pattern2hrs)
+                        firstSpawnTime: (hours: hours, minutes: firstSpawnMinutes), spawnPattern: .pattern2hrs, locationCode: "[&BEcAAAA=]")
         let l3 = WBBoss(name: "Great Jungle Wurm",
-                        firstSpawnTime: (hours: hours, minutes: secondSpawnMinutes), spawnPattern: .pattern2hrs)
+                        firstSpawnTime: (hours: hours, minutes: secondSpawnMinutes), spawnPattern: .pattern2hrs, locationCode: "[&BEEFAAA=]")
         let l4 = WBBoss(name: "Shadow Behemoth",
-                        firstSpawnTime: (hours: hours, minutes: secondSpawnMinutes), spawnPattern: .pattern2hrs)
+                        firstSpawnTime: (hours: hours, minutes: secondSpawnMinutes), spawnPattern: .pattern2hrs, locationCode: "[&BPcAAAA=]")
         
         return [
             l1,
