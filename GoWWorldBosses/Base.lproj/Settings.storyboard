@@ -42,7 +42,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settingsBackground" translatesAutoresizingMaskIntoConstraints="NO" id="ObP-2Y-y8r">
-                                <rect key="frame" x="0.0" y="375" width="375" height="350"/>
+                                <rect key="frame" x="0.0" y="374" width="375" height="350"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="350" id="8Jg-qv-Brp"/>
                                 </constraints>
@@ -156,10 +156,10 @@
                         <constraints>
                             <constraint firstItem="quU-Bq-yG9" firstAttribute="width" secondItem="8nx-Cb-HZP" secondAttribute="width" id="6At-cM-n0W"/>
                             <constraint firstItem="ObP-2Y-y8r" firstAttribute="width" secondItem="8nx-Cb-HZP" secondAttribute="width" id="7FH-tu-RJ1"/>
-                            <constraint firstItem="PHO-o3-L6S" firstAttribute="bottom" secondItem="ObP-2Y-y8r" secondAttribute="bottom" constant="-35" id="E1M-fG-nYO"/>
+                            <constraint firstAttribute="bottom" secondItem="ObP-2Y-y8r" secondAttribute="bottom" id="E1M-fG-nYO"/>
                             <constraint firstItem="PHO-o3-L6S" firstAttribute="bottom" secondItem="quU-Bq-yG9" secondAttribute="bottom" id="JgL-77-sw2"/>
                             <constraint firstItem="quU-Bq-yG9" firstAttribute="top" secondItem="PHO-o3-L6S" secondAttribute="top" id="TbM-uf-N3Q"/>
-                            <constraint firstItem="ObP-2Y-y8r" firstAttribute="leading" secondItem="PHO-o3-L6S" secondAttribute="leading" id="kfe-Bl-Ee7"/>
+                            <constraint firstItem="ObP-2Y-y8r" firstAttribute="left" secondItem="8nx-Cb-HZP" secondAttribute="left" id="kfe-Bl-Ee7"/>
                             <constraint firstItem="quU-Bq-yG9" firstAttribute="leading" secondItem="PHO-o3-L6S" secondAttribute="leading" id="ys4-3I-uAG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PHO-o3-L6S"/>
@@ -202,7 +202,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settingsBackground" translatesAutoresizingMaskIntoConstraints="NO" id="lJN-Rk-pfM">
-                                <rect key="frame" x="0.0" y="375" width="375" height="350"/>
+                                <rect key="frame" x="0.0" y="374" width="375" height="350"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="lJN-Rk-pfM" secondAttribute="height" multiplier="15:14" id="1NZ-Yf-1nG"/>
                                 </constraints>
@@ -301,7 +301,7 @@
                             <constraint firstItem="lJN-Rk-pfM" firstAttribute="width" secondItem="reY-2D-rOR" secondAttribute="width" id="NCg-TS-jkY"/>
                             <constraint firstItem="JCa-Bf-cSM" firstAttribute="top" secondItem="WVU-FD-LaA" secondAttribute="bottom" constant="-28" id="OPc-Un-TvJ"/>
                             <constraint firstItem="JCa-Bf-cSM" firstAttribute="top" secondItem="WVU-FD-LaA" secondAttribute="bottom" constant="10" id="Ttv-vx-GVF"/>
-                            <constraint firstItem="l6J-Gp-cTh" firstAttribute="bottom" secondItem="lJN-Rk-pfM" secondAttribute="bottom" constant="-35" id="U1M-qX-qOM"/>
+                            <constraint firstAttribute="bottom" secondItem="lJN-Rk-pfM" secondAttribute="bottom" id="U1M-qX-qOM"/>
                             <constraint firstItem="RFb-nX-Nbf" firstAttribute="top" secondItem="l6J-Gp-cTh" secondAttribute="top" constant="76" id="WeQ-Av-azb"/>
                             <constraint firstItem="JCa-Bf-cSM" firstAttribute="centerX" secondItem="WVU-FD-LaA" secondAttribute="centerX" id="e6I-wf-9ZY"/>
                             <constraint firstItem="RFb-nX-Nbf" firstAttribute="centerX" secondItem="l6J-Gp-cTh" secondAttribute="centerX" id="eSU-ve-MOL"/>

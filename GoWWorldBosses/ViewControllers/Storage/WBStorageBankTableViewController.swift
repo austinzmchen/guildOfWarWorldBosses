@@ -29,4 +29,21 @@ class WBStorageBankTableViewController: WBStorageGeneralTableViewController {
         
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        guard let items = self.viewModel?.items, indexPath.row < items.count,
+            let item = items[indexPath.row] as? WBWalletElement else
+        {
+            return
+        }
+        
+        let walletVC = WBStoryboardFactory.storageStoryboard
+            .instantiateViewController(withIdentifier: "drawerVC") as! WBStorageDetailViewController
+        walletVC.modalTransitionStyle = .crossDissolve
+        walletVC.modalPresentationStyle = .overCurrentContext
+        walletVC.item = item
+        UIApplication.shared.presentedViewControllers.last?.present(walletVC, animated: true, completion: nil)
+    }
 }
