@@ -11,7 +11,7 @@ import Foundation
 class WBSettings {
     
     static var isDebugEnabled: Bool {
-        let bool = false
+        var bool = false
         #if DEBUG
             bool = true
         #endif
