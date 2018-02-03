@@ -12,16 +12,16 @@ import Realm
 
 class WBItem: WBObject, WBItemTypeProtocol {
     
-    dynamic var name: String?
-    dynamic var descriptionText: String?
-    dynamic var icon: String?
-    dynamic var type: String?
-    dynamic var level: Int = -1
-    dynamic var count: Int = -1
-    dynamic var flags: String?
-    dynamic var rarity: String?
-    dynamic var vendorValue: Int = -1
-    dynamic var _details: NSData? = nil
+    @objc dynamic var name: String?
+    @objc dynamic var descriptionText: String?
+    @objc dynamic var icon: String?
+    @objc dynamic var type: String?
+    @objc dynamic var level: Int = -1
+    @objc dynamic var count: Int = -1
+    @objc dynamic var flags: String?
+    @objc dynamic var rarity: String?
+    @objc dynamic var vendorValue: Int = -1
+    @objc dynamic var _details: NSData? = nil
     
     override func saveSyncableProperties(fromSyncable syncable: WBRemoteRecordSyncableType) {
         guard let rRecord = syncable as? WBJsonItem else {

@@ -10,8 +10,8 @@ import Foundation
 import RealmSwift
 
 class WBWalletElement: WBObject {
-    dynamic var value: Int = -1
-    dynamic var currency: WBCurrency?
+    @objc dynamic var value: Int = -1
+    @objc dynamic var currency: WBCurrency?
     
     override func saveSyncableProperties(fromSyncable syncable: WBRemoteRecordSyncableType) {
         guard let rRecord = syncable as? WBJsonWalletElement else {
@@ -24,12 +24,12 @@ class WBWalletElement: WBObject {
 
 
 class WBCurrency: WBObject {
-    dynamic var name: String?
-    dynamic var descriptionText: String?
-    dynamic var icon: String?
-    dynamic var order: Int = -1
-    dynamic var count: Int = -1
-    dynamic var walletElement: WBWalletElement?
+    @objc dynamic var name: String?
+    @objc dynamic var descriptionText: String?
+    @objc dynamic var icon: String?
+    @objc dynamic var order: Int = -1
+    @objc dynamic var count: Int = -1
+    @objc dynamic var walletElement: WBWalletElement?
     
     override func saveSyncableProperties(fromSyncable syncable: WBRemoteRecordSyncableType) {
         guard let rRecord = syncable as? WBJsonCurrency else {
@@ -44,9 +44,9 @@ class WBCurrency: WBObject {
 }
 
 class WBBankElement: WBObject {
-    dynamic var count: Int = -1
-    dynamic var binding: String?
-    dynamic var item: WBItem?
+    @objc dynamic var count: Int = -1
+    @objc dynamic var binding: String?
+    @objc dynamic var item: WBItem?
     
     override func saveSyncableProperties(fromSyncable syncable: WBRemoteRecordSyncableType) {
         guard let rRecord = syncable as? WBJsonBankElement else {
@@ -59,14 +59,14 @@ class WBBankElement: WBObject {
 }
 
 class WBCharacter: WBObject {
-    dynamic var name: String?
-    dynamic var race: String?
-    dynamic var gender: String?
-    dynamic var profession: String?
-    dynamic var level: Int = -1
-    dynamic var age: Int = -1
-    dynamic var death: Int = -1
-    dynamic var created: Date?
+    @objc dynamic var name: String?
+    @objc dynamic var race: String?
+    @objc dynamic var gender: String?
+    @objc dynamic var profession: String?
+    @objc dynamic var level: Int = -1
+    @objc dynamic var age: Int = -1
+    @objc dynamic var death: Int = -1
+    @objc dynamic var created: Date?
     
     override func saveSyncableProperties(fromSyncable syncable: WBRemoteRecordSyncableType) {
         guard let rRecord = syncable as? WBJsonCharacter else {

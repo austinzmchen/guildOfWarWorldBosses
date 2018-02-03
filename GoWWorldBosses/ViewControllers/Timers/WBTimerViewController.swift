@@ -45,7 +45,7 @@ class WBTimerViewController: UIViewController, WBDrawerItemViewControllerType {
         self.initializeBosses()
     }
 
-    func initializeBosses() {
+    @objc func initializeBosses() {
         self.updateBosses()
         
         // sorting
@@ -73,7 +73,7 @@ class WBTimerViewController: UIViewController, WBDrawerItemViewControllerType {
         }
     }
     
-    func timerFiredPerSecond() {
+    @objc func timerFiredPerSecond() {
         self.updateBosses()
         
         // sorting

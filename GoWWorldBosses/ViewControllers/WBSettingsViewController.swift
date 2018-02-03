@@ -46,7 +46,7 @@ class WBSettingsViewController: UIViewController {
         tableView.reloadData()
     }
     
-    func appDidBecomeActive() {
+    @objc func appDidBecomeActive() {
         guard let settings = UIApplication.shared.currentUserNotificationSettings, settings.types != UIUserNotificationType() else
         {
             isNotificationTurnedOnInSettings = false

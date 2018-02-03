@@ -37,7 +37,6 @@
 		C43EF30E1E68D00300C6FADD /* WBStorageDetailTitleTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43EF30D1E68D00300C6FADD /* WBStorageDetailTitleTableCell.swift */; };
 		C43EF3101E68D01900C6FADD /* WBStorageDetailDescriptionTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43EF30F1E68D01900C6FADD /* WBStorageDetailDescriptionTableCell.swift */; };
 		C43EF3121E68D02C00C6FADD /* WBStorageDetailTypeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43EF3111E68D02C00C6FADD /* WBStorageDetailTypeTableCell.swift */; };
-		C43EF3141E68D4D700C6FADD /* ACBorderedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43EF3131E68D4D700C6FADD /* ACBorderedImageView.swift */; };
 		C43EF3181E6A2C5700C6FADD /* RealmSwiftPlus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43EF3171E6A2C5700C6FADD /* RealmSwiftPlus.swift */; };
 		C43EF31A1E6A7A7700C6FADD /* WBStorageWalletTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43EF3191E6A7A7700C6FADD /* WBStorageWalletTableViewController.swift */; };
 		C43EF31C1E6A7B6D00C6FADD /* WBStorageBankTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43EF31B1E6A7B6D00C6FADD /* WBStorageBankTableViewController.swift */; };
@@ -139,8 +138,6 @@
 		C4C799ED1DF505BD00A8B5F4 /* UIApplication+Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C799EC1DF505BD00A8B5F4 /* UIApplication+Loader.swift */; };
 		C4E310F21E09EC7B0095EEB4 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = C4E310F11E09EC7B0095EEB4 /* README.md */; };
 		C4E311091E09EC8C0095EEB4 /* TechNotes.md in Sources */ = {isa = PBXBuildFile; fileRef = C4E310F91E09EC8C0095EEB4 /* TechNotes.md */; };
-		C4E311131E09EFBB0095EEB4 /* ACBorderedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E311121E09EFBB0095EEB4 /* ACBorderedButton.swift */; };
-		C4E311171E09F03D0095EEB4 /* ACBorderedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E311161E09F03D0095EEB4 /* ACBorderedTextField.swift */; };
 		C4E311191E09F17A0095EEB4 /* UIBarButtonPlus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E311181E09F17A0095EEB4 /* UIBarButtonPlus.swift */; };
 /* End PBXBuildFile section */
 
@@ -176,7 +173,6 @@
 		C43EF30D1E68D00300C6FADD /* WBStorageDetailTitleTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStorageDetailTitleTableCell.swift; sourceTree = "<group>"; };
 		C43EF30F1E68D01900C6FADD /* WBStorageDetailDescriptionTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStorageDetailDescriptionTableCell.swift; sourceTree = "<group>"; };
 		C43EF3111E68D02C00C6FADD /* WBStorageDetailTypeTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStorageDetailTypeTableCell.swift; sourceTree = "<group>"; };
-		C43EF3131E68D4D700C6FADD /* ACBorderedImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACBorderedImageView.swift; sourceTree = "<group>"; };
 		C43EF3171E6A2C5700C6FADD /* RealmSwiftPlus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmSwiftPlus.swift; sourceTree = "<group>"; };
 		C43EF3191E6A7A7700C6FADD /* WBStorageWalletTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStorageWalletTableViewController.swift; sourceTree = "<group>"; };
 		C43EF31B1E6A7B6D00C6FADD /* WBStorageBankTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStorageBankTableViewController.swift; sourceTree = "<group>"; };
@@ -282,8 +278,6 @@
 		C4C799EC1DF505BD00A8B5F4 /* UIApplication+Loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+Loader.swift"; sourceTree = "<group>"; };
 		C4E310F11E09EC7B0095EEB4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C4E310F91E09EC8C0095EEB4 /* TechNotes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = TechNotes.md; sourceTree = "<group>"; };
-		C4E311121E09EFBB0095EEB4 /* ACBorderedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACBorderedButton.swift; sourceTree = "<group>"; };
-		C4E311161E09F03D0095EEB4 /* ACBorderedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACBorderedTextField.swift; sourceTree = "<group>"; };
 		C4E311181E09F17A0095EEB4 /* UIBarButtonPlus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBarButtonPlus.swift; sourceTree = "<group>"; };
 		E8EEB5B9C2FEDBFFEEF747BA /* Pods_WorldBosses.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WorldBosses.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -624,9 +618,6 @@
 			children = (
 				C47120E51F7C596100A885BC /* V2 */,
 				C45D34511DEB8658001C47F9 /* Cells */,
-				C4E311121E09EFBB0095EEB4 /* ACBorderedButton.swift */,
-				C4E311161E09F03D0095EEB4 /* ACBorderedTextField.swift */,
-				C43EF3131E68D4D700C6FADD /* ACBorderedImageView.swift */,
 				C4E311181E09F17A0095EEB4 /* UIBarButtonPlus.swift */,
 				C499F0971E146895002F534F /* WBApiErrorView.swift */,
 				C499F0991E1468DA002F534F /* WBApiErrorView.xib */,
@@ -876,14 +867,11 @@
 				C411FAE51DFDF7D90038337F /* WBStorageWalletViewModel.swift in Sources */,
 				C47D5B2A1DE6A01900082CFD /* WBBankRemote.swift in Sources */,
 				C4026EB31DEE33C00097FFC1 /* WBSyncCoordinator.swift in Sources */,
-				C4E311131E09EFBB0095EEB4 /* ACBorderedButton.swift in Sources */,
-				C43EF3141E68D4D700C6FADD /* ACBorderedImageView.swift in Sources */,
 				C43EF3241E6CE9A500C6FADD /* WBStorageDetailCoinValueTableCell.swift in Sources */,
 				C45D34681DECDEE1001C47F9 /* WBStorageMainViewController.swift in Sources */,
 				C47120F81F7C596100A885BC /* STTabsHeaderView.swift in Sources */,
 				C47D5B201DE69F0E00082CFD /* Entities.swift in Sources */,
 				C4026EB11DEE2B840097FFC1 /* WBSyncContext.swift in Sources */,
-				C4E311171E09F03D0095EEB4 /* ACBorderedTextField.swift in Sources */,
 				C45D34531DEB8691001C47F9 /* WBDrawerTableViewCell.swift in Sources */,
 				C45D683A1F75C6FD001144B3 /* WBTimerPageMainViewController.swift in Sources */,
 				C499F0981E146895002F534F /* WBApiErrorView.swift in Sources */,
@@ -1076,7 +1064,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0.1;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1119,7 +1107,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0.1;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1142,7 +1130,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1162,7 +1150,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.accodeworks.GoWWorldBosses;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

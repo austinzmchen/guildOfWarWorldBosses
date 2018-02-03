@@ -78,7 +78,7 @@ extension Realm {
         //
         let localObjects: Results<S> = self.objects(S.self)
             .filter(NSPredicate(format: "\(uniqueKey) IN %@", sortedRRIds))
-            .sorted(byProperty: uniqueKey, ascending: true)
+            .sorted(byKeyPath: uniqueKey, ascending: true)
         
         var results:[WBRemoteRecordChange<T, S>] = []
         var remoteIndex = 0

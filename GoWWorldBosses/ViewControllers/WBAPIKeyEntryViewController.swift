@@ -40,7 +40,7 @@ class WBAPIKeyEntryViewController: UIViewController, WBDrawerItemViewControllerT
     }
     
     lazy var reader = QRCodeReaderViewController(builder: QRCodeReaderViewControllerBuilder {
-        $0.reader          = QRCodeReader(metadataObjectTypes: [AVMetadataObjectTypeQRCode])
+        $0.reader          = QRCodeReader(metadataObjectTypes: [AVMetadataObject.ObjectType.qr.rawValue])
         $0.showTorchButton = false
         $0.showSwitchCameraButton = false
     })
@@ -83,7 +83,7 @@ class WBAPIKeyEntryViewController: UIViewController, WBDrawerItemViewControllerT
         NotificationCenter.default.removeObserver(self)
     }
     
-    func keyboardDidShow(note: Notification) {
+    @objc func keyboardDidShow(note: Notification) {
         guard let ui = note.userInfo as? [String: Any],
             let rect = (ui[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
             else { return }
@@ -94,14 +94,14 @@ class WBAPIKeyEntryViewController: UIViewController, WBDrawerItemViewControllerT
         }
     }
     
-    func keyboardWillHide(note: Notification) {
+    @objc func keyboardWillHide(note: Notification) {
         textContainerBottomConstraint.constant = 125
         UIView.animate(withDuration: 0.3) {
             self.view.layoutIfNeeded()
         }
     }
     
-    func tappingOffKeyboard() {
+    @objc func tappingOffKeyboard() {
         self.view.endEditing(true)
     }
     

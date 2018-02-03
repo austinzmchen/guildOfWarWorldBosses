@@ -6,6 +6,7 @@
 //  Copyright © 2016 Austin Chen. All rights reserved.
 //
 
+import UIKit
 import Foundation
 
 enum WBBossSpawnPattern: Int {
@@ -26,7 +27,7 @@ protocol WBBossLocalNotificationProtocol {
     func cancelNotification()
 }
 
-class WBBoss: NSObject, WBBossProtocol {
+class WBBoss: NSObject, WBBossProtocol, WBBossLocalNotificationProtocol {
     let name: String
     let firstSpawnTime: Int
     let spawnPattern: WBBossSpawnPattern
@@ -85,11 +86,7 @@ class WBBoss: NSObject, WBBossProtocol {
             _latestSpawnTime = self.firstSpawnTime + spawnIndex * self.spawnPattern.rawValue
         }
     }
-}
 
-import UIKit
-
-extension WBBoss: WBBossLocalNotificationProtocol {
     func createNotification(alertBody: String) {
         let num = wb1Day / self.spawnPattern.rawValue
         var i = 0

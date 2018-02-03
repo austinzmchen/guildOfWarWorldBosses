@@ -20,7 +20,7 @@ extension UIBarButtonItem {
         leftButton.tintColor = UIColor.black
         leftButton.setTitle(title, for: .normal)
         leftButton.titleLabel?.text = title
-        leftButton.titleLabel?.font = UIFont.systemFont(ofSize: 19, weight: UIFontWeightBold)
+        leftButton.titleLabel?.font = UIFont.systemFont(ofSize: 19, weight: UIFont.Weight.bold)
         leftButton.imageEdgeInsets = UIEdgeInsetsMake(0, -15, 0, 0)
         
         var f = leftButton.bounds

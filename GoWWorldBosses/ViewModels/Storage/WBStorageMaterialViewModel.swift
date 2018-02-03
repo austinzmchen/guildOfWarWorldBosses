@@ -17,7 +17,7 @@ class WBStorageMaterialViewModel: WBStorageTableViewModelType {
         let realm = try! Realm()
         
         // Query
-        let results = realm.objects(WBMaterialElement.self).sorted(byProperty: "count", ascending: false)
+        let results = realm.objects(WBMaterialElement.self).sorted(byKeyPath: "count", ascending: false)
         self.items = Array(results)
     
         materialProcessor?.sync(completion: { (success, syncedObjects, error) in

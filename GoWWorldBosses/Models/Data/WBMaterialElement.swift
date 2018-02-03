@@ -10,9 +10,9 @@ import Foundation
 import RealmSwift
 
 class WBMaterialElement: WBObject {
-    dynamic var category: Int = -1
-    dynamic var count: Int = -1
-    dynamic var item: WBItem?
+    @objc dynamic var category: Int = -1
+    @objc dynamic var count: Int = -1
+    @objc dynamic var item: WBItem?
     
     override func saveSyncableProperties(fromSyncable syncable: WBRemoteRecordSyncableType) {
         guard let rRecord = syncable as? WBJsonMaterialElement else {

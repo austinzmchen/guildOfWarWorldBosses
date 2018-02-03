@@ -30,7 +30,7 @@ class WBCharacterDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        tableView.registerCellNib
+        tableView.registerCellNib(WBStorageItemTableViewCell.self)
     }
 }
 
@@ -61,7 +61,7 @@ extension WBCharacterDetailViewController: UITableViewDelegate, UITableViewDataS
             let cell = tableView.dequeueReusableCell(withIdentifier: "kCurrentGearCollectionCell")!
             return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "k")!
+            let cell: WBStorageItemTableViewCell = tableView.dequeueReusableCell(for: indexPath)
             return cell
         }
     }

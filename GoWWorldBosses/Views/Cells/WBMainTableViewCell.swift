@@ -39,7 +39,7 @@ class WBMainTableViewCell: UITableViewCell {
     var boss: WBBoss?
     weak var delegate: WBMainTableViewCellDelegate?
     
-    func favButtonTapped(_ sender: AnyObject) {
+    @objc func favButtonTapped(_ sender: AnyObject) {
         if !self.favButton.isSelected {
             self.favAnimImageView.alpha = 0
             UIView.animate(withDuration: 0.22, delay: 0, options: .curveEaseOut, animations: {

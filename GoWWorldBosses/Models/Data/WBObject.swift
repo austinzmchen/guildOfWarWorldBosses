@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 
 class WBObject: Object {
-    dynamic var id: String = "wbNull"
+    @objc dynamic var id: String = "wbNull"
     
     convenience init(primaryKey: String) {
         self.init()

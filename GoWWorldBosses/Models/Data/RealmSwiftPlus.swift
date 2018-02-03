@@ -11,5 +11,5 @@ import RealmSwift
 import Realm
 
 class RealmString : Object {
-    dynamic var stringValue = ""
+    @objc dynamic var stringValue = ""
 }

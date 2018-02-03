@@ -10,15 +10,15 @@ import Foundation
 import RealmSwift
 
 class WBAccount: WBObject {
-    dynamic var name: String?
-    dynamic var world: Int = -1
-    dynamic var created: Date?
-    dynamic var access: String?
-    dynamic var commander: Bool = false
-    dynamic var fractalLevel: Int = -1
-    dynamic var daily_ap: Int = -1
-    dynamic var monthly_ap: Int = -1
-    dynamic var wvw_rank: Int = -1
+    @objc dynamic var name: String?
+    @objc dynamic var world: Int = -1
+    @objc dynamic var created: Date?
+    @objc dynamic var access: String?
+    @objc dynamic var commander: Bool = false
+    @objc dynamic var fractalLevel: Int = -1
+    @objc dynamic var daily_ap: Int = -1
+    @objc dynamic var monthly_ap: Int = -1
+    @objc dynamic var wvw_rank: Int = -1
     
     override func saveSyncableProperties(fromSyncable syncable: WBRemoteRecordSyncableType) {
         guard let rRecord = syncable as? WBJsonAccount else {

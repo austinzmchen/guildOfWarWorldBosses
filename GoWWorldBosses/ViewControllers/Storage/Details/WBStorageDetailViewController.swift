@@ -298,17 +298,17 @@ extension WBStorageDetailViewController {
         let s = string as NSString
         
         let constraintRect = CGSize(width: kTextViewWidth, height: .greatestFiniteMagnitude)
-        let font = UIFont.systemFont(ofSize: kTextViewFont, weight: UIFontWeightRegular)
-        let boundingBox = s.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [NSFontAttributeName: font], context: nil)
+        let font = UIFont.systemFont(ofSize: kTextViewFont, weight: UIFont.Weight.regular)
+        let boundingBox = s.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font: font], context: nil)
         return boundingBox.size
     }
     
     func sizeThatFits(attributedString: NSMutableAttributedString) -> CGSize {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = kTextViewLineSpace
-        attributedString.addAttribute(NSParagraphStyleAttributeName, value:paragraphStyle, range:NSMakeRange(0, attributedString.length))
+        attributedString.addAttribute(NSAttributedStringKey.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, attributedString.length))
         
-        let attrs = [NSFontAttributeName : UIFont.systemFont(ofSize: kTextViewFont, weight: UIFontWeightRegular), NSForegroundColorAttributeName: UIColor.white]
+        let attrs = [NSAttributedStringKey.font : UIFont.systemFont(ofSize: kTextViewFont, weight: UIFont.Weight.regular), NSAttributedStringKey.foregroundColor: UIColor.white]
         attributedString.addAttributes(attrs, range: NSMakeRange(0, attributedString.length))
         
         let constraintRect = CGSize(width: kTextViewWidth, height: .greatestFiniteMagnitude)
