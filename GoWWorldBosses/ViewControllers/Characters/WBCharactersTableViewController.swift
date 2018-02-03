@@ -23,6 +23,7 @@ class WBCharactersTableViewController: UITableViewController, WBDrawerItemViewCo
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
         let leftBarButtonItem = UIBarButtonItem.barButtonItem(withImageName:"icBurger",
                                                               title: "My Characters",
                                                               forTarget: self,
@@ -41,6 +42,10 @@ class WBCharactersTableViewController: UITableViewController, WBDrawerItemViewCo
         return self.characters?.count ?? 0
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 180
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "charactersTableCell", for: indexPath) as! WBCharactersTableViewCell
         
@@ -49,11 +54,10 @@ class WBCharactersTableViewController: UITableViewController, WBDrawerItemViewCo
             indexPath.row < chars.count
         {
             let char = chars[indexPath.row]
-            cell.leftImageView.image = char.iconImage
-            cell.mainLabel.text = char.race?.uppercased()
-            cell.mainLabel.textColor = char.raceFontColor
-            cell.subLabel.text = char.name?.capitalized
-            cell.rightLabel.text = "\(char.level)"
+            cell.iconImageView.image = char.iconImage
+            cell.label1.text = char.name?.capitalized
+            cell.label2.text = char.race?.uppercased()
+            cell.label3.text = "\(char.level)"
             
             if (indexPath.row % 2) > 0 {
                 // odd number

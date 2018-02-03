@@ -9,9 +9,16 @@
 import UIKit
 import RealmSwift
 import SDWebImage
+import ACKit
 
 class WBStorageBankTableViewController: WBStorageGeneralTableViewController {
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        tableView.registerCellNib(WBStorageItemTableViewCell.self)
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = super.tableView(tableView, cellForRowAt: indexPath) as! WBStorageItemTableViewCell
         

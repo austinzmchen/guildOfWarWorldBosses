@@ -10,10 +10,11 @@ import UIKit
 
 class WBCharactersTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var leftImageView: UIImageView!
-    @IBOutlet weak var mainLabel: UILabel!
-    @IBOutlet weak var subLabel: UILabel!
-    @IBOutlet weak var rightLabel: UILabel!
+    @IBOutlet weak var bgImageView: UIImageView!
+    @IBOutlet weak var iconImageView: UIImageView!
+    @IBOutlet weak var label1: UILabel!
+    @IBOutlet weak var label2: UILabel!
+    @IBOutlet weak var label3: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

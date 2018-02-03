@@ -53,12 +53,14 @@ extension WBCharacterDetailViewController: UITableViewDelegate, UITableViewDataS
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "kCurrentGearCollectionCell")!
+            let cell: WBCharacterSectionHeaderTableCell = tableView.dequeueReusableCell(for: indexPath)
+            cell.titleLabel?.text = "Current Gear".uppercased()
             return cell
         } else if indexPath.row == 1 {
             return currentGearsTableCell
         } else if indexPath.row == 2 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "kCurrentGearCollectionCell")!
+            let cell: WBCharacterSectionHeaderTableCell = tableView.dequeueReusableCell(for: indexPath)
+            cell.titleLabel?.text = "Inventory".uppercased()
             return cell
         } else {
             let cell: WBStorageItemTableViewCell = tableView.dequeueReusableCell(for: indexPath)
@@ -67,26 +69,26 @@ extension WBCharacterDetailViewController: UITableViewDelegate, UITableViewDataS
     }
 }
 
-//extension WBCharacterDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return 10
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let cell: WBStorageItemTableViewCell = collectionView.dequeueReusableCell(for: indexPath)
-//        return cell
-//    }
-//}
+extension WBCharacterDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 10
+    }
 
-//extension MBAccountsViewController: UICollectionViewDelegateFlowLayout {
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-//        return CGSize(width: 20, height: 0)
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-//        return CGSize(width: 20, height: 0)
-//    }
-//
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "kWBCharacterCurrentGearCollectionCell", for: indexPath)
+        return cell
+    }
+}
+
+extension WBCharacterDetailViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: 25, height: 0)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        return CGSize(width: 25, height: 0)
+    }
+
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 //        if accounts.count == 1 {
 //            return CGSize(width: UIScreen.main.bounds.width - 20 * 2, height: 210)
@@ -98,5 +100,5 @@ extension WBCharacterDetailViewController: UITableViewDelegate, UITableViewDataS
 //            return CGSize(width: w, height: 210)
 //        }
 //    }
-//}
+}
 

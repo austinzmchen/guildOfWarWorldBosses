@@ -20,6 +20,6 @@ protocol WBStorageTableViewModelType {
 
 extension WBStorageTableViewModelType {
     func identifierForSuitableCell(atIndex index: Int) -> String {
-        return "storageItemTableCell"
+        return "kWBStorageItemTableViewCell"
     }
 }

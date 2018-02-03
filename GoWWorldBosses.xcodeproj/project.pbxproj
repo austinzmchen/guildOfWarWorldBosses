@@ -116,6 +116,8 @@
 		C4903BFA1E006859004F3345 /* WBCharactersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4903BF91E006859004F3345 /* WBCharactersTableViewCell.swift */; };
 		C490F4032025657800C370B2 /* WBCharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C490F4022025657800C370B2 /* WBCharacterDetailViewController.swift */; };
 		C490F405202568EA00C370B2 /* WBStorageItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C490F404202568EA00C370B2 /* WBStorageItemTableViewCell.xib */; };
+		C490F4092025715800C370B2 /* WBCharacterSectionHeaderTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C490F4082025715800C370B2 /* WBCharacterSectionHeaderTableCell.swift */; };
+		C490F40B202571AA00C370B2 /* WBCharacterCurrentGearCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C490F40A202571AA00C370B2 /* WBCharacterCurrentGearCollectionCell.swift */; };
 		C499F0981E146895002F534F /* WBApiErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C499F0971E146895002F534F /* WBApiErrorView.swift */; };
 		C499F09A1E1468DA002F534F /* WBApiErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C499F0991E1468DA002F534F /* WBApiErrorView.xib */; };
 		C4A409411E01E11600130C85 /* WBSettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A409401E01E11600130C85 /* WBSettingsTableViewCell.swift */; };
@@ -256,6 +258,8 @@
 		C4903BF91E006859004F3345 /* WBCharactersTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBCharactersTableViewCell.swift; sourceTree = "<group>"; };
 		C490F4022025657800C370B2 /* WBCharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBCharacterDetailViewController.swift; sourceTree = "<group>"; };
 		C490F404202568EA00C370B2 /* WBStorageItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WBStorageItemTableViewCell.xib; sourceTree = "<group>"; };
+		C490F4082025715800C370B2 /* WBCharacterSectionHeaderTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBCharacterSectionHeaderTableCell.swift; sourceTree = "<group>"; };
+		C490F40A202571AA00C370B2 /* WBCharacterCurrentGearCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBCharacterCurrentGearCollectionCell.swift; sourceTree = "<group>"; };
 		C499F0971E146895002F534F /* WBApiErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBApiErrorView.swift; sourceTree = "<group>"; };
 		C499F0991E1468DA002F534F /* WBApiErrorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBApiErrorView.xib; sourceTree = "<group>"; };
 		C4A409401E01E11600130C85 /* WBSettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBSettingsTableViewCell.swift; sourceTree = "<group>"; };
@@ -429,6 +433,8 @@
 				C4386A271E7621E700285F5B /* WBStorageDetailArmorWeaponTypeTableCell.swift */,
 				C43EF3111E68D02C00C6FADD /* WBStorageDetailTypeTableCell.swift */,
 				C43EF3231E6CE9A500C6FADD /* WBStorageDetailCoinValueTableCell.swift */,
+				C490F40A202571AA00C370B2 /* WBCharacterCurrentGearCollectionCell.swift */,
+				C490F4082025715800C370B2 /* WBCharacterSectionHeaderTableCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -858,6 +864,7 @@
 				C45D34621DECDB42001C47F9 /* AppDelegate.swift in Sources */,
 				C4A7818E1D6915E900786488 /* WBBossFactory.swift in Sources */,
 				C446050D1E4536CD00E3B0C3 /* AppDelegate+ForceTouchMenu.swift in Sources */,
+				C490F4092025715800C370B2 /* WBCharacterSectionHeaderTableCell.swift in Sources */,
 				C47D5B2D1DE6A23500082CFD /* WBRemoteSession.swift in Sources */,
 				C459F6291E78EA460064FDB5 /* WBJsonItemPrice.swift in Sources */,
 				C4E311091E09EC8C0095EEB4 /* TechNotes.md in Sources */,
@@ -928,6 +935,7 @@
 				C48D84E81DFE16DC00585E61 /* WBMaterialRemote.swift in Sources */,
 				C43EF3261E6F6E0100C6FADD /* StringPlus.swift in Sources */,
 				C45D346D1DECEA41001C47F9 /* WBObject.swift in Sources */,
+				C490F40B202571AA00C370B2 /* WBCharacterCurrentGearCollectionCell.swift in Sources */,
 				C4386A261E7621C400285F5B /* WBStorageDetailArmorWeaponDescTableCell.swift in Sources */,
 				C45D34501DEB8417001C47F9 /* WBDrawerViewController.swift in Sources */,
 				C47D5B231DE69F3000082CFD /* WBJsonCurrency.swift in Sources */,
