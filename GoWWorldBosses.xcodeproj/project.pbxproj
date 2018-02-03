@@ -115,6 +115,8 @@
 		C4903BF51E00678F004F3345 /* Characters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4903BF41E00678F004F3345 /* Characters.storyboard */; };
 		C4903BF81E006828004F3345 /* WBCharactersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4903BF71E006828004F3345 /* WBCharactersTableViewController.swift */; };
 		C4903BFA1E006859004F3345 /* WBCharactersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4903BF91E006859004F3345 /* WBCharactersTableViewCell.swift */; };
+		C490F4032025657800C370B2 /* WBCharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C490F4022025657800C370B2 /* WBCharacterDetailViewController.swift */; };
+		C490F405202568EA00C370B2 /* WBStorageItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C490F404202568EA00C370B2 /* WBStorageItemTableViewCell.xib */; };
 		C499F0981E146895002F534F /* WBApiErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C499F0971E146895002F534F /* WBApiErrorView.swift */; };
 		C499F09A1E1468DA002F534F /* WBApiErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C499F0991E1468DA002F534F /* WBApiErrorView.xib */; };
 		C4A409411E01E11600130C85 /* WBSettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A409401E01E11600130C85 /* WBSettingsTableViewCell.swift */; };
@@ -256,6 +258,8 @@
 		C4903BF41E00678F004F3345 /* Characters.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Characters.storyboard; sourceTree = "<group>"; };
 		C4903BF71E006828004F3345 /* WBCharactersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBCharactersTableViewController.swift; sourceTree = "<group>"; };
 		C4903BF91E006859004F3345 /* WBCharactersTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBCharactersTableViewCell.swift; sourceTree = "<group>"; };
+		C490F4022025657800C370B2 /* WBCharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBCharacterDetailViewController.swift; sourceTree = "<group>"; };
+		C490F404202568EA00C370B2 /* WBStorageItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WBStorageItemTableViewCell.xib; sourceTree = "<group>"; };
 		C499F0971E146895002F534F /* WBApiErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBApiErrorView.swift; sourceTree = "<group>"; };
 		C499F0991E1468DA002F534F /* WBApiErrorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBApiErrorView.xib; sourceTree = "<group>"; };
 		C4A409401E01E11600130C85 /* WBSettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBSettingsTableViewCell.swift; sourceTree = "<group>"; };
@@ -421,6 +425,7 @@
 				C45D34521DEB8691001C47F9 /* WBDrawerTableViewCell.swift */,
 				C4903BF91E006859004F3345 /* WBCharactersTableViewCell.swift */,
 				C45D34541DEB8766001C47F9 /* WBStorageItemTableViewCell.swift */,
+				C490F404202568EA00C370B2 /* WBStorageItemTableViewCell.xib */,
 				C4873F9C1E0D93E7002E742D /* WBStorageWalletCoinTableViewCell.swift */,
 				C4A409401E01E11600130C85 /* WBSettingsTableViewCell.swift */,
 				C4A409481E01EA1A00130C85 /* WBAPIKeyTableViewCell.swift */,
@@ -574,6 +579,7 @@
 			children = (
 				C47121101F7EBE8D00A885BC /* WBCharactersPageViewController.swift */,
 				C4903BF71E006828004F3345 /* WBCharactersTableViewController.swift */,
+				C490F4022025657800C370B2 /* WBCharacterDetailViewController.swift */,
 			);
 			path = Characters;
 			sourceTree = "<group>";
@@ -737,6 +743,7 @@
 				C45B6C9E1D68BE5800F94060 /* Timer.storyboard in Resources */,
 				C45BAE2C1DF27F1800C6FB5A /* Settings.storyboard in Resources */,
 				C499F09A1E1468DA002F534F /* WBApiErrorView.xib in Resources */,
+				C490F405202568EA00C370B2 /* WBStorageItemTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -749,13 +756,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WorldBosses-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B0B0EDF9B1E08D019965315B /* [CP] Copy Pods Resources */ = {
@@ -779,9 +789,32 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-WorldBosses/Pods-WorldBosses-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ACKit/ACKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/KYDrawerController/KYDrawerController.framework",
+				"${BUILT_PRODUCTS_DIR}/Locksmith/Locksmith.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/QRCodeReader.swift/QRCodeReader.framework",
+				"${BUILT_PRODUCTS_DIR}/RZTransitions/RZTransitions.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ACKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KYDrawerController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Locksmith.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCodeReader.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RZTransitions.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -894,6 +927,7 @@
 				C48F43C81E160275008DB46B /* WBRemoteResult.swift in Sources */,
 				C4A4094F1E01FF4E00130C85 /* WBAccountProcessor.swift in Sources */,
 				C413001F1DEF88A200D2A92F /* WBCharacterProcessor.swift in Sources */,
+				C490F4032025657800C370B2 /* WBCharacterDetailViewController.swift in Sources */,
 				C45BAE291DF2550200C6FB5A /* WBAPIKeyEntryViewController.swift in Sources */,
 				C45D343F1DEB5A9E001C47F9 /* WBJsonCharacter.swift in Sources */,
 				C43EF31A1E6A7A7700C6FADD /* WBStorageWalletTableViewController.swift in Sources */,

@@ -15,12 +15,7 @@ class WBTimerPageMainViewController: ACCustomPageViewController {
         super.init(coder: aDecoder)
         
         let vc1 = WBStoryboardFactory.timerStoryboard.instantiateViewController(withIdentifier: "timerVC") as! WBTimerViewController
-//        vc1.view.backgroundColor = UIColor.green
-        
-        let vc2 = UIViewController()
-//        vc2.view.backgroundColor = UIColor.yellow
-        
-        let vcs:[UIViewController] = [vc1, vc2]
+        let vcs:[UIViewController] = [vc1]
         
         cardViewControllers = vcs
     }
@@ -28,7 +23,7 @@ class WBTimerPageMainViewController: ACCustomPageViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tabsHeaderView?.tabTitles = ["Boss Timers", "Achievements"]
+        tabsHeaderView?.tabTitles = ["Boss Timers"]
         tabsHeaderView?.style = .centerTab
     }
 }

@@ -1,7 +1,5 @@
 PODS:
-  - ACKit (0.2.2):
-    - Alamofire
-    - AlamofireObjectMapper
+  - ACKit (1.0.3)
   - Alamofire (4.5.1)
   - AlamofireObjectMapper (4.0.1):
     - Alamofire (~> 4.1)
@@ -46,14 +44,14 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   ACKit:
-    :commit: 10a03ac203d0616acb184d4c3ba9f93da5ef2243
+    :commit: 1ef893e36f105c193d6e67f5106171399415e0df
     :git: https://github.com/austinzmchen/ACKit.git
   RZTransitions:
     :commit: e1fd2cdfd32b707952bef0e7c9fa22984b149f52
     :git: https://github.com/austinzmchen/RZTransitions.git
 
 SPEC CHECKSUMS:
-  ACKit: 301ef7f5bb9edb3bae58ec6856e863ac974fc1cf
+  ACKit: afe78603a3c7a5a98dae4cf4f1bd259f3d156ae9
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   AlamofireObjectMapper: 842d2eed43a4d0593ff0110d54ac86a170c4519c
   Crashlytics: 2b6dbe138a42395577cfa73dfa1aa7248cadf39e
@@ -65,8 +63,8 @@ SPEC CHECKSUMS:
   Realm: 0ef72b837fb67e9f4b098bac771ddd72c7fdbb69
   RealmSwift: 07a9ae0505091eda6b2ee7c190c3786d6e90a7b0
   RZTransitions: 0e0013fda6989ee84dc5e44dca79fd539e1a975a
-  SDWebImage: '098e97e6176540799c27e804c96653ee0833d13c'
+  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
 
 PODFILE CHECKSUM: 05a10491e5ed0d240111a38ac50d32335e465e66
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.3.1
